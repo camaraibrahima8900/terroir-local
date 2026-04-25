@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Connexion - Terroir Local</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body { background-color: #f5f0e8; display: flex; justify-content: center; align-items: center; height: 100vh; }
+        .login-card { background: white; border-radius: 15px; padding: 40px; width: 400px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); }
+        .btn-login { background-color: #2C5F2D; color: white; width: 100%; padding: 12px; border: none; border-radius: 8px; font-size: 1.1rem; }
+        .btn-login:hover { background-color: #4a7c59; color: white; }
+        .titre { color: #2C5F2D; text-align: center; font-weight: bold; font-size: 1.8rem; }
+        .sous-titre { color: #4a7c59; text-align: center; margin-bottom: 30px; }
+        .info-box { background-color: #f0f8f0; border-left: 4px solid #2C5F2D; padding: 10px 15px; border-radius: 5px; margin-top: 20px; font-size: 0.85rem; }
+    </style>
+</head>
+<body>
+<div class="login-card">
+    <div class="text-center mb-3" style="font-size: 3rem;">🌿</div>
+    <div class="titre">Terroir Local Senegal</div>
+    <div class="sous-titre">Plateforme Agricole</div>
+    {% if erreur %}
+    <div class="alert alert-danger">{{ erreur }}</div>
+    {% endif %}
+    <form method="POST">
+        <div class="mb-3">
+            <label class="form-label fw-bold">Nom utilisateur</label>
+            <input type="text" name="username" class="form-control" placeholder="admin ou user" required autofocus>
+        </div>
+        <div class="mb-4">
+            <label class="form-label fw-bold">Mot de passe</label>
+            <input type="password" name="password" class="form-control" placeholder="Mot de passe" required>
+        </div>
+        <button type="submit" class="btn-login">Se connecter</button>
+    </form>
+    <div class="info-box mt-3">
+        <strong>Comptes disponibles :</strong><br>
+        👑 admin / admin123 → Administrateur<br>
+        👤 user / user123 → Utilisateur
+    </div>
+</div>
+</body>
+</html>

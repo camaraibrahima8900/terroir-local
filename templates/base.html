@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terroir Local Senegal</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        body { background-color: #f5f0e8; font-family: Arial, sans-serif; }
+        .navbar { background-color: #2C5F2D !important; }
+        .navbar-brand { font-weight: bold; font-size: 1.3rem; }
+        .btn-vert { background-color: #2C5F2D; color: white; }
+        .btn-vert:hover { background-color: #4a7c59; color: white; }
+        .card { border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+        .badge-admin { background-color: #f39c12; }
+        .badge-user { background-color: #3498db; }
+        .rupture { color: #c0392b; font-weight: bold; }
+        .promo { color: #27ae60; font-weight: bold; }
+        .footer { background-color: #2C5F2D; color: white; padding: 15px; text-align: center; margin-top: 40px; }
+    </style>
+</head>
+<body>
+{% if role %}
+<nav class="navbar navbar-dark navbar-expand-lg">
+    <div class="container">
+        <a class="navbar-brand" href="/boutique">🌿 Terroir Local Senegal</a>
+        <div class="navbar-nav ms-auto d-flex flex-row align-items-center gap-3">
+            <a class="nav-link text-white" href="/boutique"><i class="fas fa-store"></i> Boutique</a>
+            {% if role == "administrateur" %}
+            <a class="nav-link text-white" href="/stats"><i class="fas fa-chart-bar"></i> Stats</a>
+            <a class="nav-link text-white" href="/admin"><i class="fas fa-cog"></i> Admin</a>
+            {% endif %}
+            <span class="badge {% if role == 'administrateur' %}badge-admin{% else %}badge-user{% endif %} px-3 py-2">
+                <i class="fas fa-user"></i> {{ username }} ({{ role }})
+            </span>
+            <a class="btn btn-danger btn-sm" href="/logout"><i class="fas fa-sign-out-alt"></i> Deconnexion</a>
+        </div>
+    </div>
+</nav>
+{% endif %}
+<div class="container mt-4">
+    {% block content %}{% endblock %}
+</div>
+<div class="footer">
+    <p class="mb-0">🌿 Terroir Local Senegal &copy; 2025 | Plateforme Agricole</p>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,133 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2 class="text-success mb-4"><i class="fas fa-chart-bar"></i> Tableau de Bord</h2>
+
+<!-- Cartes globales -->
+<div class="row mb-4">
+    <div class="col-md-3">
+        <div class="card text-center p-3" style="border-left: 5px solid #2C5F2D;">
+            <h6 class="text-muted">Produits</h6>
+            <h2 class="text-success">{{ nb_produits }}</h2>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card text-center p-3" style="border-left: 5px solid #2980b9;">
+            <h6 class="text-muted">Commandes</h6>
+            <h2 class="text-primary">{{ nb_commandes }}</h2>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card text-center p-3" style="border-left: 5px solid #e67e22;">
+            <h6 class="text-muted">CA Total</h6>
+            <h2 class="text-warning">{{ ca_total }}</h2>
+            <small>{{ devise }}</small>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card text-center p-3" style="border-left: 5px solid #c0392b;">
+            <h6 class="text-muted">Ruptures</h6>
+            <h2 class="text-danger">{{ nb_ruptures }}</h2>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <!-- CA par categorie -->
+    <div class="col-md-6 mb-4">
+        <div class="card p-3">
+            <h5 class="text-success"><i class="fas fa-tags"></i> CA par Categorie</h5>
+            <table class="table table-sm mt-2">
+                <thead><tr><th>Categorie</th><th>CA ({{ devise }})</th><th>Quantite</th></tr></thead>
+                <tbody>
+                {% for cat in ca_categories %}
+                <tr>
+                    <td>{{ cat._id }}</td>
+                    <td class="fw-bold text-success">{{ cat.ca | round(0) | int }}</td>
+                    <td>{{ cat.qte }}</td>
+                </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- CA par region -->
+    <div class="col-md-6 mb-4">
+        <div class="card p-3">
+            <h5 class="text-success"><i class="fas fa-map-marker-alt"></i> CA par Region</h5>
+            <table class="table table-sm mt-2">
+                <thead><tr><th>Region</th><th>Commandes</th><th>CA ({{ devise }})</th></tr></thead>
+                <tbody>
+                {% for reg in ca_regions %}
+                <tr>
+                    <td>{{ reg._id }}</td>
+                    <td>{{ reg.nb }}</td>
+                    <td class="fw-bold text-success">{{ reg.ca | round(0) | int }}</td>
+                </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Top produits -->
+    <div class="col-md-6 mb-4">
+        <div class="card p-3">
+            <h5 class="text-success"><i class="fas fa-trophy"></i> Top 5 Produits</h5>
+            <table class="table table-sm mt-2">
+                <thead><tr><th>#</th><th>Produit</th><th>Quantite</th></tr></thead>
+                <tbody>
+                {% for p in top_produits %}
+                <tr>
+                    <td><span class="badge bg-success">{{ loop.index }}</span></td>
+                    <td>{{ p.nom }}</td>
+                    <td class="fw-bold">{{ p.qte }}</td>
+                </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Top clients -->
+    <div class="col-md-6 mb-4">
+        <div class="card p-3">
+            <h5 class="text-success"><i class="fas fa-users"></i> Top Clients</h5>
+            <table class="table table-sm mt-2">
+                <thead><tr><th>Client</th><th>Ville</th><th>Total ({{ devise }})</th></tr></thead>
+                <tbody>
+                {% for c in top_clients %}
+                <tr>
+                    <td>{{ c.nom }}</td>
+                    <td>{{ c.ville }}</td>
+                    <td class="fw-bold text-success">{{ c.total | round(0) | int }}</td>
+                </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Ruptures -->
+    {% if ruptures %}
+    <div class="col-12 mb-4">
+        <div class="card p-3 border-danger">
+            <h5 class="text-danger"><i class="fas fa-exclamation-triangle"></i> Alertes Rupture de Stock</h5>
+            <table class="table table-sm mt-2">
+                <thead><tr><th>Produit</th><th>Categorie</th><th>Stock</th><th>Producteur</th></tr></thead>
+                <tbody>
+                {% for p in ruptures %}
+                <tr class="table-danger">
+                    <td>{{ p.image }} {{ p.nom }}</td>
+                    <td>{{ p.categorie }}</td>
+                    <td class="fw-bold text-danger">{{ p.stock }}</td>
+                    <td>{{ p.producteur }}</td>
+                </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    {% endif %}
+</div>
+{% endblock %}

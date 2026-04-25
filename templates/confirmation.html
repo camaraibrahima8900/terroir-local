@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <div class="card text-center p-4">
+            <div style="font-size: 4rem;">✅</div>
+            <h2 class="text-success mt-3">Commande Confirmee !</h2>
+            <hr>
+            <div class="row text-start mt-3">
+                <div class="col-md-6">
+                    <h5 class="text-success">Informations Client</h5>
+                    <p><strong>Nom :</strong> {{ client.nom }}</p>
+                    <p><strong>Tel :</strong> {{ client.telephone }}</p>
+                    <p><strong>Email :</strong> {{ client.email }}</p>
+                </div>
+                <div class="col-md-6">
+                    <h5 class="text-success">Informations Livraison</h5>
+                    <p><strong>Region :</strong> {{ region }}</p>
+                    <p><strong>Type :</strong> {{ type_livraison }}</p>
+                    <p><strong>Frais :</strong> {{ frais }} {{ devise }}</p>
+                </div>
+            </div>
+            <hr>
+            <div class="row mt-2">
+                <div class="col-md-4">
+                    <div class="card bg-light p-3">
+                        <h6>Sous-total</h6>
+                        <h4>{{ sous_total }} {{ devise }}</h4>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card bg-success text-white p-3">
+                        <h6>Reduction</h6>
+                        <h4>-{{ reduction }} {{ devise }}</h4>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card bg-primary text-white p-3">
+                        <h6>TOTAL</h6>
+                        <h4>{{ total }} {{ devise }}</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-4">
+                <a href="/boutique" class="btn btn-success btn-lg me-3">
+                    <i class="fas fa-store"></i> Continuer les achats
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

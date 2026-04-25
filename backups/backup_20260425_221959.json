@@ -1,0 +1,201 @@
+{
+  "date": "2026-04-25 22:19:59.629521",
+  "nb_produits": 15,
+  "nb_commandes": 0,
+  "produits": [
+    {
+      "nom": "Mangues Kent",
+      "categorie": "Fruits",
+      "prix": 1500,
+      "stock": 200,
+      "producteur": "Verger de Casamance",
+      "image": "🥭",
+      "unite": "kg",
+      "attributs": {
+        "origine": "Ziguinchor",
+        "bio": true
+      }
+    },
+    {
+      "nom": "Bissap Seche",
+      "categorie": "Fruits",
+      "prix": 2500,
+      "stock": 150,
+      "producteur": "Cooperative Louga",
+      "image": "🌺",
+      "unite": "kg",
+      "attributs": {
+        "origine": "Louga",
+        "bio": true
+      }
+    },
+    {
+      "nom": "Ditakh",
+      "categorie": "Fruits",
+      "prix": 2000,
+      "stock": 80,
+      "producteur": "Groupement Fatick",
+      "image": "🍈",
+      "unite": "kg",
+      "attributs": {
+        "origine": "Fatick",
+        "bio": true
+      }
+    },
+    {
+      "nom": "Tamarin",
+      "categorie": "Fruits",
+      "prix": 1000,
+      "stock": 3,
+      "producteur": "Marche Thies",
+      "image": "🫘",
+      "unite": "kg",
+      "attributs": {
+        "origine": "Thies",
+        "bio": false
+      }
+    },
+    {
+      "nom": "Gombo Frais",
+      "categorie": "Legumes",
+      "prix": 800,
+      "stock": 120,
+      "producteur": "Maraichage Pikine",
+      "image": "🫛",
+      "unite": "kg",
+      "attributs": {
+        "origine": "Dakar",
+        "bio": false
+      }
+    },
+    {
+      "nom": "Oignons Violets",
+      "categorie": "Legumes",
+      "prix": 600,
+      "stock": 300,
+      "producteur": "Cooperative Potou",
+      "image": "🧅",
+      "unite": "kg",
+      "attributs": {
+        "origine": "Saint-Louis",
+        "bio": false
+      }
+    },
+    {
+      "nom": "Aubergine Africaine",
+      "categorie": "Legumes",
+      "prix": 700,
+      "stock": 90,
+      "producteur": "Maraichage Kaolack",
+      "image": "🍆",
+      "unite": "kg",
+      "attributs": {
+        "origine": "Kaolack",
+        "bio": true
+      }
+    },
+    {
+      "nom": "Piment Demon",
+      "categorie": "Legumes",
+      "prix": 1200,
+      "stock": 2,
+      "producteur": "Cooperative Ziguinchor",
+      "image": "🌶️",
+      "unite": "kg",
+      "attributs": {
+        "origine": "Ziguinchor",
+        "bio": true
+      }
+    },
+    {
+      "nom": "Mil Local",
+      "categorie": "Cereales",
+      "prix": 500,
+      "stock": 500,
+      "producteur": "GAEC Diourbel",
+      "image": "🌾",
+      "unite": "kg",
+      "attributs": {
+        "origine": "Diourbel",
+        "bio": true
+      }
+    },
+    {
+      "nom": "Riz Broken",
+      "categorie": "Cereales",
+      "prix": 450,
+      "stock": 400,
+      "producteur": "Riziculture Saint-Louis",
+      "image": "🍚",
+      "unite": "kg",
+      "attributs": {
+        "origine": "Saint-Louis",
+        "bio": false
+      }
+    },
+    {
+      "nom": "Mais Local",
+      "categorie": "Cereales",
+      "prix": 400,
+      "stock": 4,
+      "producteur": "Cooperative Tambacounda",
+      "image": "🌽",
+      "unite": "kg",
+      "attributs": {
+        "origine": "Tambacounda",
+        "bio": true
+      }
+    },
+    {
+      "nom": "Huile d'Arachide",
+      "categorie": "Huiles",
+      "prix": 3500,
+      "stock": 60,
+      "producteur": "Huilerie Kaolack",
+      "image": "🫙",
+      "unite": "litre",
+      "attributs": {
+        "origine": "Kaolack",
+        "bio": true
+      }
+    },
+    {
+      "nom": "Huile de Palme Rouge",
+      "categorie": "Huiles",
+      "prix": 2800,
+      "stock": 2,
+      "producteur": "Cooperative Kolda",
+      "image": "🫙",
+      "unite": "litre",
+      "attributs": {
+        "origine": "Kolda",
+        "bio": true
+      }
+    },
+    {
+      "nom": "Thiof Seche",
+      "categorie": "Poissons",
+      "prix": 8000,
+      "stock": 30,
+      "producteur": "Pecheurs Kayar",
+      "image": "🐟",
+      "unite": "kg",
+      "attributs": {
+        "origine": "Kayar"
+      }
+    },
+    {
+      "nom": "Yeet Mollusque",
+      "categorie": "Poissons",
+      "prix": 5000,
+      "stock": 25,
+      "producteur": "Pecheurs Mbour",
+      "image": "🦪",
+      "unite": "kg",
+      "attributs": {
+        "origine": "Mbour"
+      }
+    }
+  ],
+  "commandes": []
+}

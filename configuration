@@ -1,0 +1,26 @@
+# config.py - Configuration centrale du projet
+import os
+
+# MongoDB
+MONGO_URI = "mongodb://admin:motdepasse@localhost:27017/"
+MONGO_AUTH_SOURCE = "admin"
+MONGO_DB = "terroir_local"
+
+# Livraison
+FRAIS_LIVRAISON = {
+    "normal": 500,
+    "express": 2000
+}
+
+# Stock
+SEUIL_RUPTURE = 5
+SEUIL_STOCK_BAS = 20
+
+# Backup
+BACKUP_DIR = "/home/ibrahima/terroir_local/backups/"
+
+# Logs
+LOG_FILE = "/home/ibrahima/terroir_local/logs/terroir.log"
+
+# Devise
+DEVISE = "FCFA"

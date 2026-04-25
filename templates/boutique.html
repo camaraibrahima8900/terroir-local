@@ -1,0 +1,158 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="row">
+    <div class="col-12 mb-3">
+        <h2 class="text-success"><i class="fas fa-store"></i> Boutique Terroir Local</h2>
+    </div>
+</div>
+
+<!-- Filtres -->
+<div class="card mb-4">
+    <div class="card-body">
+        <form method="GET" class="row g-2 align-items-end">
+            <div class="col-md-3">
+                <label class="form-label fw-bold">Categorie</label>
+                <select name="categorie" class="form-select" onchange="this.form.submit()">
+                    <option value="Toutes" {% if categorie == 'Toutes' %}selected{% endif %}>Toutes</option>
+                    {% for cat in categories %}
+                    <option value="{{ cat }}" {% if categorie == cat %}selected{% endif %}>{{ cat }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="col-md-3">
+                <label class="form-label fw-bold">Recherche produit</label>
+                <input type="text" name="search" class="form-control" value="{{ search }}" placeholder="Nom du produit...">
+            </div>
+            <div class="col-md-2">
+                <label class="form-label fw-bold">Promotion (%)</label>
+                <select name="promo" class="form-select">
+                    {% for p in [0, 5, 10, 15, 20, 25, 30] %}
+                    <option value="{{ p }}" {% if promo == p %}selected{% endif %}>{{ p }}%</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="col-md-2">
+                <button type="submit" class="btn btn-success w-100"><i class="fas fa-search"></i> Filtrer</button>
+            </div>
+            <div class="col-md-2">
+                <a href="/boutique" class="btn btn-secondary w-100"><i class="fas fa-times"></i> Reset</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="row">
+    <!-- Produits -->
+    <div class="col-md-8">
+        <div class="row row-cols-1 row-cols-md-3 g-3">
+            {% for p in produits %}
+            <div class="col">
+                <div class="card h-100 {% if p.stock < 5 %}border-danger{% elif p.promo > 0 %}border-success{% endif %}">
+                    <div class="card-body">
+                        <div class="text-center" style="font-size: 2.5rem;">{{ p.image }}</div>
+                        <h6 class="card-title text-center mt-2 fw-bold">{{ p.nom }}</h6>
+                        <p class="text-muted text-center small mb-1">{{ p.categorie }} | {{ p.producteur }}</p>
+                        {% if p.stock < 5 %}
+                        <p class="rupture text-center small"><i class="fas fa-exclamation-triangle"></i> Stock bas: {{ p.stock }}</p>
+                        {% else %}
+                        <p class="text-center small text-muted">Stock: {{ p.stock }} {{ p.get('unite', 'kg') }}</p>
+                        {% endif %}
+                        {% if p.promo > 0 %}
+                        <p class="text-center">
+                            <del class="text-muted">{{ p.prix }} {{ devise }}</del>
+                            <span class="promo fw-bold"> {{ p.prix_final }} {{ devise }}</span>
+                            <span class="badge bg-success">-{{ p.promo }}%</span>
+                        </p>
+                        {% else %}
+                        <p class="text-center fw-bold text-success">{{ p.prix }} {{ devise }} / {{ p.get('unite', 'kg') }}</p>
+                        {% endif %}
+                        {% if p.stock > 0 %}
+                        <form method="POST" action="/ajouter_panier">
+                            <input type="hidden" name="produit_id" value="{{ p._id }}">
+                            <input type="hidden" name="promo" value="{{ promo }}">
+                            <div class="d-flex gap-2">
+                                <input type="number" name="quantite" value="1" min="1" max="{{ p.stock }}" class="form-control form-control-sm">
+                                <button type="submit" class="btn btn-success btn-sm"><i class="fas fa-cart-plus"></i></button>
+                            </div>
+                        </form>
+                        {% else %}
+                        <button class="btn btn-danger btn-sm w-100" disabled>Rupture de stock</button>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <!-- Panier -->
+    <div class="col-md-4">
+        <div class="card sticky-top" style="top: 20px;">
+            <div class="card-header bg-success text-white">
+                <h5 class="mb-0"><i class="fas fa-shopping-cart"></i> Panier ({{ panier|length }} article(s))</h5>
+            </div>
+            <div class="card-body">
+                {% if panier %}
+                {% for item in panier %}
+{% set idx = loop.index0 %}
+                <div class="d-flex justify-content-between align-items-center mb-2 p-2 bg-light rounded">
+                    <div>
+                        <small class="fw-bold">{{ item.nom[:20] }}</small><br>
+                        <small class="text-muted">x{{ item.quantite }} = {{ item.quantite * item.prix_final }} {{ devise }}</small>
+                        {% if item.promo > 0 %}<span class="badge bg-success ms-1">-{{ item.promo }}%</span>{% endif %}
+                    </div>
+                    <a href="/retirer_panier/{{ loop.index0 }}" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></a>
+                </div>
+                {% endfor %}
+                <hr>
+                <form method="POST" action="/commander">
+                    <div class="mb-2">
+                        <label class="form-label fw-bold">Region de livraison</label>
+                        <select name="region" class="form-select form-select-sm">
+                            {% for r in regions %}
+                            <option value="{{ r }}">{{ r }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label fw-bold">Type de livraison</label>
+                        <select name="livraison" class="form-select form-select-sm" id="livraison">
+                            <option value="normal">Normal (500 FCFA)</option>
+                            <option value="express">Express (2000 FCFA)</option>
+                        </select>
+                    </div>
+                    <div class="p-2 bg-light rounded mb-3">
+                        <div class="d-flex justify-content-between">
+                            <span>Sous-total:</span><span class="fw-bold">{{ total }} {{ devise }}</span>
+                        </div>
+                        <div class="d-flex justify-content-between text-success">
+                            <span>Livraison:</span><span id="frais-display">500 FCFA</span>
+                        </div>
+                        <hr class="my-1">
+                        <div class="d-flex justify-content-between fw-bold text-success">
+                            <span>TOTAL:</span><span id="total-display">{{ total + 500 }} {{ devise }}</span>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-success w-100 mb-2"><i class="fas fa-check"></i> Commander</button>
+                </form>
+                <a href="/vider_panier" class="btn btn-outline-danger w-100 btn-sm"><i class="fas fa-trash"></i> Vider panier</a>
+                {% else %}
+                <div class="text-center text-muted py-4">
+                    <i class="fas fa-shopping-cart fa-3x mb-3"></i>
+                    <p>Panier vide</p>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+document.getElementById('livraison').addEventListener('change', function() {
+    var frais = this.value === 'express' ? 2000 : 500;
+    var total = {{ total }};
+    document.getElementById('frais-display').textContent = frais + ' FCFA';
+    document.getElementById('total-display').textContent = (total + frais) + ' {{ devise }}';
+});
+</script>
+{% endblock %}

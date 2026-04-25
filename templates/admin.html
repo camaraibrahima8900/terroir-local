@@ -1,0 +1,160 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2 class="text-success mb-4"><i class="fas fa-cog"></i> Administration</h2>
+
+<ul class="nav nav-tabs mb-4" id="adminTabs">
+    <li class="nav-item"><a class="nav-link active" data-bs-toggle="tab" href="#produits">Produits</a></li>
+    <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#utilisateurs">Utilisateurs</a></li>
+    <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#actions">Actions</a></li>
+</ul>
+
+<div class="tab-content">
+
+    <!-- PRODUITS -->
+    <div class="tab-pane fade show active" id="produits">
+        <div class="card p-4 mb-4">
+            <h5 class="text-success">Ajouter un produit</h5>
+            <form method="POST" action="/admin/ajouter_produit">
+                <div class="row g-2">
+                    <div class="col-md-3"><input type="text" name="nom" class="form-control" placeholder="Nom" required></div>
+                    <div class="col-md-2">
+                        <select name="categorie" class="form-select" required>
+                            {% for cat in categories %}<option>{{ cat }}</option>{% endfor %}
+                        </select>
+                    </div>
+                    <div class="col-md-2"><input type="number" name="prix" class="form-control" placeholder="Prix FCFA" required></div>
+                    <div class="col-md-1"><input type="number" name="stock" class="form-control" placeholder="Stock" required></div>
+                    <div class="col-md-1">
+                        <select name="unite" class="form-select">
+                            <option>kg</option><option>litre</option><option>unite</option><option>botte</option><option>sac</option>
+                        </select>
+                    </div>
+                    <div class="col-md-2"><input type="text" name="producteur" class="form-control" placeholder="Producteur" required></div>
+                    <div class="col-md-1"><input type="text" name="image" class="form-control" placeholder="Emoji" value="📦"></div>
+                    <div class="col-md-2"><input type="text" name="origine" class="form-control" placeholder="Origine"></div>
+                    <div class="col-md-2"><button type="submit" class="btn btn-success w-100">Ajouter</button></div>
+                </div>
+            </form>
+        </div>
+
+        <div class="card p-3">
+            <h5 class="text-success">Liste des produits ({{ produits|length }})</h5>
+            <table class="table table-hover table-sm mt-2">
+                <thead class="table-success">
+                    <tr><th>Image</th><th>Nom</th><th>Cat.</th><th>Prix</th><th>Stock</th><th>Unite</th><th>Producteur</th><th>Stock</th><th>Prix</th><th>Action</th></tr>
+                </thead>
+                <tbody>
+                {% for p in produits %}
+                <tr class="{% if p.stock < 5 %}table-danger{% endif %}">
+                    <td>{{ p.image }}</td>
+                    <td>{{ p.nom }}</td>
+                    <td>{{ p.categorie }}</td>
+                    <td>{{ p.prix }} FCFA</td>
+                    <td class="{% if p.stock < 5 %}text-danger fw-bold{% endif %}">{{ p.stock }}</td>
+                    <td>{{ p.unite }}</td>
+                    <td>{{ p.producteur }}</td>
+                    <td>
+                        <form method="POST" action="/admin/maj_stock" class="d-flex gap-1">
+                            <input type="hidden" name="produit_id" value="{{ p._id }}">
+                            <input type="number" name="stock" class="form-control form-control-sm" style="width:70px" value="{{ p.stock }}">
+                            <button type="submit" class="btn btn-warning btn-sm">OK</button>
+                        </form>
+                    </td>
+                    <td>
+                        <form method="POST" action="/admin/maj_prix" class="d-flex gap-1">
+                            <input type="hidden" name="produit_id" value="{{ p._id }}">
+                            <input type="number" name="prix" class="form-control form-control-sm" style="width:80px" value="{{ p.prix }}">
+                            <button type="submit" class="btn btn-info btn-sm">OK</button>
+                        </form>
+                    </td>
+                    <td>
+                        <a href="/admin/supprimer_produit/{{ p._id }}" class="btn btn-danger btn-sm"
+                           onclick="return confirm('Supprimer ce produit ?')">
+                            <i class="fas fa-trash"></i>
+                        </a>
+                    </td>
+                </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- UTILISATEURS -->
+    <div class="tab-pane fade" id="utilisateurs">
+        <div class="card p-4 mb-4">
+            <h5 class="text-success">Ajouter un utilisateur</h5>
+            <form method="POST" action="/admin/ajouter_user">
+                <div class="row g-2">
+                    <div class="col-md-2"><input type="text" name="login" class="form-control" placeholder="Login" required></div>
+                    <div class="col-md-2"><input type="password" name="password" class="form-control" placeholder="Mot de passe" required></div>
+                    <div class="col-md-2"><input type="text" name="nom" class="form-control" placeholder="Nom complet" required></div>
+                    <div class="col-md-2"><input type="email" name="email" class="form-control" placeholder="Email" required></div>
+                    <div class="col-md-2">
+                        <select name="role" class="form-select">
+                            <option value="utilisateur">Utilisateur</option>
+                            <option value="administrateur">Administrateur</option>
+                        </select>
+                    </div>
+                    <div class="col-md-2"><button type="submit" class="btn btn-success w-100">Ajouter</button></div>
+                </div>
+            </form>
+        </div>
+        <div class="card p-3">
+            <h5 class="text-success">Liste des utilisateurs</h5>
+            <table class="table table-hover mt-2">
+                <thead class="table-success">
+                    <tr><th>Login</th><th>Role</th><th>Nom</th><th>Email</th><th>Action</th></tr>
+                </thead>
+                <tbody>
+                {% for u in users %}
+                <tr>
+                    <td><strong>{{ u[0] }}</strong></td>
+                    <td><span class="badge {% if u[1] == 'administrateur' %}bg-warning{% else %}bg-primary{% endif %}">{{ u[1] }}</span></td>
+                    <td>{{ u[2] }}</td>
+                    <td>{{ u[3] }}</td>
+                    <td>
+                        {% if u[0] != 'admin' %}
+                        <a href="/admin/supprimer_user/{{ u[0] }}" class="btn btn-danger btn-sm"
+                           onclick="return confirm('Supprimer cet utilisateur ?')">
+                            <i class="fas fa-trash"></i>
+                        </a>
+                        {% endif %}
+                    </td>
+                </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- ACTIONS -->
+    <div class="tab-pane fade" id="actions">
+        <div class="card p-4 mb-4">
+            <h5 class="text-success">Actions systeme</h5>
+            <div class="d-flex gap-3 flex-wrap mt-3">
+                <a href="/admin/backup" class="btn btn-purple" style="background:#8e44ad;color:white;">
+                    <i class="fas fa-save"></i> Backup maintenant
+                </a>
+                <a href="/admin/reinitialiser" class="btn btn-warning"
+                   onclick="return confirm('Reinitialiser les stocks ?')">
+                    <i class="fas fa-redo"></i> Reinitialiser stocks
+                </a>
+                <a href="/admin/supprimer_commandes" class="btn btn-danger"
+                   onclick="return confirm('Supprimer toutes les commandes ?')">
+                    <i class="fas fa-trash"></i> Supprimer commandes
+                </a>
+            </div>
+        </div>
+        <div class="card p-3">
+            <h5 class="text-success">Backups disponibles</h5>
+            <ul class="list-group mt-2">
+                {% for b in backups %}
+                <li class="list-group-item"><i class="fas fa-file-alt text-success"></i> {{ b }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+
+</div>
+{% endblock %}

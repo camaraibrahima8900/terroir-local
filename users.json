@@ -1,0 +1,14 @@
+{
+  "admin": {
+    "password": "$2b$12$iTVMx4UhhXZdtSHFFeUz.eHho6V6wUqhnm7fvZwMwH4vS5d0bdTUK",
+    "role": "administrateur",
+    "nom": "Administrateur",
+    "email": "admin@terroirlocal.sn"
+  },
+  "user": {
+    "password": "$2b$12$6D2wG1iTO2FFI35ijwzJB.krjNSxT3nDAqUln3.iz2wwQTKTlcgIa",
+    "role": "utilisateur",
+    "nom": "Utilisateur",
+    "email": "user@terroirlocal.sn"
+  }
+}

@@ -1,0 +1,782 @@
+2026-04-23 18:28:03,444 [INFO] Systeme de logs initialise !
+2026-04-23 18:28:03,444 [WARNING] Test warning
+2026-04-23 18:28:03,445 [ERROR] Test erreur
+2026-04-23 18:30:56,575 [INFO] Utilisateurs par defaut crees avec mots de passe hashe !
+2026-04-23 18:30:56,964 [INFO] Connexion reussie : admin (administrateur)
+2026-04-23 18:30:57,258 [INFO] Connexion reussie : user (utilisateur)
+2026-04-23 18:30:57,539 [WARNING] Mot de passe incorrect pour : admin
+2026-04-23 18:33:45,308 [INFO] Backup cree : /home/ibrahima/terroir_local/backups/backup_20260423_183345.json (15 produits, 167 commandes)
+2026-04-23 18:42:10,375 [WARNING] Mot de passe incorrect pour : admin
+2026-04-23 18:43:00,145 [WARNING] Mot de passe incorrect pour : admin
+2026-04-24 11:09:42,477 [INFO] Test logger OK !
+2026-04-24 11:09:42,480 [WARNING] Test warning OK !
+2026-04-24 11:09:42,480 [ERROR] Test erreur OK !
+2026-04-24 11:11:42,371 [INFO] Utilisateurs par defaut crees !
+2026-04-24 11:11:42,651 [INFO] Connexion reussie : admin
+2026-04-24 11:11:42,934 [INFO] Connexion reussie : user
+2026-04-24 11:11:43,248 [WARNING] Mot de passe incorrect : admin
+2026-04-24 11:14:30,721 [INFO] Backup cree : /home/ibrahima/terroir_local/backups/backup_20260424_111430.json
+2026-04-24 11:18:41,651 [INFO] Test final OK !
+2026-04-24 11:18:42,102 [INFO] Connexion reussie : admin
+2026-04-24 11:18:42,517 [INFO] Connexion reussie : user
+2026-04-24 11:18:42,819 [WARNING] Mot de passe incorrect : admin
+2026-04-24 11:18:47,306 [INFO] Backup cree : /home/ibrahima/terroir_local/backups/backup_20260424_111846.json
+2026-04-24 13:21:29,633 [WARNING] Mot de passe incorrect : admin
+2026-04-24 13:22:05,508 [WARNING] Mot de passe incorrect : user
+2026-04-24 22:43:55,373 [INFO] Backup automatique demarre (toutes les 24h)
+2026-04-24 22:43:55,403 [INFO] Application Flask demarree !
+2026-04-24 22:43:55,589 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.26.20.100:5000
+2026-04-24 22:43:55,590 [INFO] Backup cree : /home/ibrahima/terroir_local/backups/backup_20260424_224355.json
+2026-04-24 22:43:55,590 [INFO] [33mPress CTRL+C to quit[0m
+2026-04-24 22:43:55,595 [INFO]  * Restarting with stat
+2026-04-24 22:43:56,092 [INFO] Backup automatique demarre (toutes les 24h)
+2026-04-24 22:43:56,093 [INFO] Application Flask demarree !
+2026-04-24 22:43:56,142 [WARNING]  * Debugger is active!
+2026-04-24 22:43:56,165 [INFO] Backup cree : /home/ibrahima/terroir_local/backups/backup_20260424_224356.json
+2026-04-24 22:43:56,272 [INFO]  * Debugger PIN: 141-144-033
+2026-04-24 23:09:44,193 [INFO] Backup automatique demarre (toutes les 24h)
+2026-04-24 23:09:44,194 [INFO] Application Flask demarree !
+2026-04-24 23:09:44,250 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.26.20.100:5000
+2026-04-24 23:09:44,251 [INFO] [33mPress CTRL+C to quit[0m
+2026-04-24 23:09:44,253 [INFO]  * Restarting with stat
+2026-04-24 23:09:44,278 [INFO] Backup cree : /home/ibrahima/terroir_local/backups/backup_20260424_230944.json
+2026-04-24 23:09:44,806 [INFO] Backup automatique demarre (toutes les 24h)
+2026-04-24 23:09:44,814 [INFO] Application Flask demarree !
+2026-04-24 23:09:44,873 [WARNING]  * Debugger is active!
+2026-04-24 23:09:44,882 [INFO]  * Debugger PIN: 141-144-033
+2026-04-24 23:09:44,905 [INFO] Backup cree : /home/ibrahima/terroir_local/backups/backup_20260424_230944.json
+2026-04-24 23:10:29,967 [INFO] 127.0.0.1 - - [24/Apr/2026 23:10:29] "GET / HTTP/1.1" 200 -
+2026-04-24 23:10:43,667 [INFO] 127.0.0.1 - - [24/Apr/2026 23:10:43] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-04-24 23:16:21,547 [INFO] Connexion reussie : admin
+2026-04-24 23:16:21,548 [INFO] 127.0.0.1 - - [24/Apr/2026 23:16:21] "[32mPOST / HTTP/1.1[0m" 302 -
+2026-04-24 23:16:21,668 [INFO] 127.0.0.1 - - [24/Apr/2026 23:16:21] "[35m[1mGET /boutique HTTP/1.1[0m" 500 -
+2026-04-24 23:16:21,721 [INFO] 127.0.0.1 - - [24/Apr/2026 23:16:21] "GET /boutique?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2026-04-24 23:16:22,044 [INFO] 127.0.0.1 - - [24/Apr/2026 23:16:22] "GET /boutique?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2026-04-24 23:16:22,572 [INFO] 127.0.0.1 - - [24/Apr/2026 23:16:22] "GET /boutique?__debugger__=yes&cmd=resource&f=console.png&s=sqAzv5G3JV4Uq4MMdA2q HTTP/1.1" 200 -
+2026-04-24 23:16:22,782 [INFO] 127.0.0.1 - - [24/Apr/2026 23:16:22] "GET /boutique?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2026-04-24 23:18:20,791 [INFO] 127.0.0.1 - - [24/Apr/2026 23:18:20] "[32mGET / HTTP/1.1[0m" 302 -
+2026-04-24 23:18:20,823 [INFO] 127.0.0.1 - - [24/Apr/2026 23:18:20] "[35m[1mGET /boutique HTTP/1.1[0m" 500 -
+2026-04-24 23:18:21,018 [INFO] 127.0.0.1 - - [24/Apr/2026 23:18:21] "[36mGET /boutique?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2026-04-24 23:18:21,156 [INFO] 127.0.0.1 - - [24/Apr/2026 23:18:21] "[36mGET /boutique?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2026-04-24 23:18:21,509 [INFO] 127.0.0.1 - - [24/Apr/2026 23:18:21] "[36mGET /boutique?__debugger__=yes&cmd=resource&f=console.png&s=sqAzv5G3JV4Uq4MMdA2q HTTP/1.1[0m" 304 -
+2026-04-24 23:23:03,333 [WARNING] Mot de passe incorrect : admin
+2026-04-24 23:23:28,871 [WARNING] Mot de passe incorrect : user
+2026-04-24 23:24:40,298 [WARNING] Mot de passe incorrect : user
+2026-04-24 23:25:58,104 [INFO] Backup automatique demarre (toutes les 24h)
+2026-04-24 23:25:58,110 [INFO] Application Flask demarree !
+2026-04-24 23:25:58,158 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.26.20.100:5000
+2026-04-24 23:25:58,159 [INFO] [33mPress CTRL+C to quit[0m
+2026-04-24 23:25:58,160 [INFO]  * Restarting with stat
+2026-04-24 23:25:58,180 [INFO] Backup cree : /home/ibrahima/terroir_local/backups/backup_20260424_232558.json
+2026-04-24 23:25:58,669 [INFO] Backup automatique demarre (toutes les 24h)
+2026-04-24 23:25:58,670 [INFO] Application Flask demarree !
+2026-04-24 23:25:58,717 [WARNING]  * Debugger is active!
+2026-04-24 23:25:58,722 [INFO]  * Debugger PIN: 141-144-033
+2026-04-24 23:25:58,744 [INFO] Backup cree : /home/ibrahima/terroir_local/backups/backup_20260424_232558.json
+2026-04-24 23:26:12,131 [INFO] 127.0.0.1 - - [24/Apr/2026 23:26:12] "[32mGET / HTTP/1.1[0m" 302 -
+2026-04-24 23:26:12,166 [INFO] 127.0.0.1 - - [24/Apr/2026 23:26:12] "[35m[1mGET /boutique HTTP/1.1[0m" 500 -
+2026-04-24 23:26:12,380 [INFO] 127.0.0.1 - - [24/Apr/2026 23:26:12] "[36mGET /boutique?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2026-04-24 23:26:12,493 [INFO] 127.0.0.1 - - [24/Apr/2026 23:26:12] "[36mGET /boutique?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2026-04-24 23:26:12,862 [INFO] 127.0.0.1 - - [24/Apr/2026 23:26:12] "GET /boutique?__debugger__=yes&cmd=resource&f=console.png&s=opMzkc7b4NiPBMAI4ryK HTTP/1.1" 200 -
+2026-04-25 06:41:56,975 [INFO] Backup automatique demarre (toutes les 24h)
+2026-04-25 06:41:56,977 [INFO] Application Flask demarree !
+2026-04-25 06:41:57,148 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.26.20.100:5000
+2026-04-25 06:41:57,150 [INFO] [33mPress CTRL+C to quit[0m
+2026-04-25 06:41:57,159 [INFO]  * Restarting with stat
+2026-04-25 06:41:57,160 [INFO] Backup cree : /home/ibrahima/terroir_local/backups/backup_20260425_064157.json
+2026-04-25 06:41:57,792 [INFO] Backup automatique demarre (toutes les 24h)
+2026-04-25 06:41:57,793 [INFO] Application Flask demarree !
+2026-04-25 06:41:57,854 [WARNING]  * Debugger is active!
+2026-04-25 06:41:57,885 [INFO] Backup cree : /home/ibrahima/terroir_local/backups/backup_20260425_064157.json
+2026-04-25 06:41:57,938 [INFO]  * Debugger PIN: 142-288-378
+2026-04-25 06:43:11,217 [INFO] 127.0.0.1 - - [25/Apr/2026 06:43:11] "GET / HTTP/1.1" 200 -
+2026-04-25 06:43:13,629 [INFO] 127.0.0.1 - - [25/Apr/2026 06:43:13] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-04-25 06:43:52,944 [INFO] Connexion reussie : admin
+2026-04-25 06:43:52,946 [INFO] 127.0.0.1 - - [25/Apr/2026 06:43:52] "[32mPOST / HTTP/1.1[0m" 302 -
+2026-04-25 06:43:53,224 [INFO] 127.0.0.1 - - [25/Apr/2026 06:43:53] "[35m[1mGET /boutique HTTP/1.1[0m" 500 -
+2026-04-25 06:43:53,355 [INFO] 127.0.0.1 - - [25/Apr/2026 06:43:53] "[36mGET /boutique?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2026-04-25 06:43:53,681 [INFO] 127.0.0.1 - - [25/Apr/2026 06:43:53] "[36mGET /boutique?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2026-04-25 06:43:54,315 [INFO] 127.0.0.1 - - [25/Apr/2026 06:43:54] "GET /boutique?__debugger__=yes&cmd=resource&f=console.png&s=ox4Q7fL1HF4LzIyiuRZ5 HTTP/1.1" 200 -
+2026-04-25 06:50:30,453 [INFO]  * Detected change in '/home/ibrahima/terroir_local/app.py', reloading
+2026-04-25 06:50:30,980 [INFO]  * Restarting with stat
+2026-04-25 06:50:31,501 [INFO] Backup automatique demarre (toutes les 24h)
+2026-04-25 06:50:31,501 [INFO] Application Flask demarree !
+2026-04-25 06:50:31,542 [WARNING]  * Debugger is active!
+2026-04-25 06:50:31,545 [INFO]  * Debugger PIN: 142-288-378
+2026-04-25 06:50:31,564 [INFO] Backup cree : /home/ibrahima/terroir_local/backups/backup_20260425_065031.json
+2026-04-25 06:50:50,661 [INFO] Backup automatique demarre (toutes les 24h)
+2026-04-25 06:50:50,662 [INFO] Application Flask demarree !
+2026-04-25 06:50:50,715 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.26.20.100:5000
+2026-04-25 06:50:50,715 [INFO] [33mPress CTRL+C to quit[0m
+2026-04-25 06:50:50,717 [INFO]  * Restarting with stat
+2026-04-25 06:50:50,751 [INFO] Backup cree : /home/ibrahima/terroir_local/backups/backup_20260425_065050.json
+2026-04-25 06:50:51,266 [INFO] Backup automatique demarre (toutes les 24h)
+2026-04-25 06:50:51,267 [INFO] Application Flask demarree !
+2026-04-25 06:50:51,323 [WARNING]  * Debugger is active!
+2026-04-25 06:50:51,335 [INFO]  * Debugger PIN: 142-288-378
+2026-04-25 06:50:51,393 [INFO] Backup cree : /home/ibrahima/terroir_local/backups/backup_20260425_065051.json
+2026-04-25 06:51:15,102 [INFO] 127.0.0.1 - - [25/Apr/2026 06:51:15] "[32mGET / HTTP/1.1[0m" 302 -
+2026-04-25 06:51:15,259 [INFO] 127.0.0.1 - - [25/Apr/2026 06:51:15] "[35m[1mGET /boutique HTTP/1.1[0m" 500 -
+2026-04-25 06:51:15,409 [INFO] 127.0.0.1 - - [25/Apr/2026 06:51:15] "[36mGET /boutique?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2026-04-25 06:51:15,604 [INFO] 127.0.0.1 - - [25/Apr/2026 06:51:15] "[36mGET /boutique?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2026-04-25 06:51:16,011 [INFO] 127.0.0.1 - - [25/Apr/2026 06:51:16] "GET /boutique?__debugger__=yes&cmd=resource&f=console.png&s=Ml56MBL3TsQu0luzmPER HTTP/1.1" 200 -
+2026-04-25 06:54:43,007 [INFO]  * Detected change in '/home/ibrahima/terroir_local/app.py', reloading
+2026-04-25 06:54:43,532 [INFO]  * Restarting with stat
+2026-04-25 06:54:44,010 [INFO] Backup automatique demarre (toutes les 24h)
+2026-04-25 06:54:44,011 [INFO] Application Flask demarree !
+2026-04-25 06:54:44,055 [WARNING]  * Debugger is active!
+2026-04-25 06:54:44,059 [INFO]  * Debugger PIN: 142-288-378
+2026-04-25 06:54:44,079 [INFO] Backup cree : /home/ibrahima/terroir_local/backups/backup_20260425_065444.json
+2026-04-25 06:55:04,656 [INFO] Backup automatique demarre (toutes les 24h)
+2026-04-25 06:55:04,657 [INFO] Application Flask demarree !
+2026-04-25 06:55:04,726 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.26.20.100:5000
+2026-04-25 06:55:04,726 [INFO] [33mPress CTRL+C to quit[0m
+2026-04-25 06:55:04,727 [INFO]  * Restarting with stat
+2026-04-25 06:55:04,803 [INFO] Backup cree : /home/ibrahima/terroir_local/backups/backup_20260425_065504.json
+2026-04-25 06:55:05,421 [INFO] Backup automatique demarre (toutes les 24h)
+2026-04-25 06:55:05,422 [INFO] Application Flask demarree !
+2026-04-25 06:55:05,482 [WARNING]  * Debugger is active!
+2026-04-25 06:55:05,486 [INFO]  * Debugger PIN: 142-288-378
+2026-04-25 06:55:05,527 [INFO] Backup cree : /home/ibrahima/terroir_local/backups/backup_20260425_065505.json
+2026-04-25 06:56:05,931 [INFO] 127.0.0.1 - - [25/Apr/2026 06:56:05] "[32mGET / HTTP/1.1[0m" 302 -
+2026-04-25 06:56:07,503 [INFO] 127.0.0.1 - - [25/Apr/2026 06:56:07] "[32mGET / HTTP/1.1[0m" 302 -
+2026-04-25 06:56:07,715 [INFO] 127.0.0.1 - - [25/Apr/2026 06:56:07] "GET /boutique HTTP/1.1" 200 -
+2026-04-25 07:03:11,425 [INFO] 127.0.0.1 - - [25/Apr/2026 07:03:11] "GET /boutique HTTP/1.1" 200 -
+2026-04-25 07:03:25,323 [INFO] 127.0.0.1 - - [25/Apr/2026 07:03:25] "[35m[1mGET /stats HTTP/1.1[0m" 500 -
+2026-04-25 07:03:25,477 [INFO] 127.0.0.1 - - [25/Apr/2026 07:03:25] "GET /stats?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2026-04-25 07:03:25,764 [INFO] 127.0.0.1 - - [25/Apr/2026 07:03:25] "GET /stats?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2026-04-25 07:03:26,206 [INFO] 127.0.0.1 - - [25/Apr/2026 07:03:26] "GET /stats?__debugger__=yes&cmd=resource&f=console.png&s=BpQtT39P6ULBASxkaRSm HTTP/1.1" 200 -
+2026-04-25 07:03:28,090 [INFO] 127.0.0.1 - - [25/Apr/2026 07:03:28] "GET /stats?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2026-04-25 07:03:43,781 [INFO] 127.0.0.1 - - [25/Apr/2026 07:03:43] "[32mGET / HTTP/1.1[0m" 302 -
+2026-04-25 07:03:43,811 [INFO] 127.0.0.1 - - [25/Apr/2026 07:03:43] "GET /boutique HTTP/1.1" 200 -
+2026-04-25 07:04:21,082 [INFO] 127.0.0.1 - - [25/Apr/2026 07:04:21] "GET /boutique?categorie=Fruits&search=&promo=0 HTTP/1.1" 200 -
+2026-04-25 07:04:54,439 [INFO] 127.0.0.1 - - [25/Apr/2026 07:04:54] "GET /boutique?categorie=Toutes&search=&promo=0 HTTP/1.1" 200 -
+2026-04-25 07:05:37,777 [INFO] 127.0.0.1 - - [25/Apr/2026 07:05:37] "[32mPOST /ajouter_panier HTTP/1.1[0m" 302 -
+2026-04-25 07:05:37,841 [INFO] 127.0.0.1 - - [25/Apr/2026 07:05:37] "[35m[1mGET /boutique HTTP/1.1[0m" 500 -
+2026-04-25 07:05:38,161 [INFO] 127.0.0.1 - - [25/Apr/2026 07:05:38] "[36mGET /boutique?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2026-04-25 07:05:38,164 [INFO] 127.0.0.1 - - [25/Apr/2026 07:05:38] "[36mGET /boutique?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2026-04-25 07:05:38,392 [INFO] 127.0.0.1 - - [25/Apr/2026 07:05:38] "GET /boutique?__debugger__=yes&cmd=resource&f=console.png&s=BpQtT39P6ULBASxkaRSm HTTP/1.1" 200 -
+2026-04-25 07:05:39,367 [INFO] 127.0.0.1 - - [25/Apr/2026 07:05:39] "[36mGET /boutique?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2026-04-25 07:06:15,677 [INFO] 127.0.0.1 - - [25/Apr/2026 07:06:15] "[32mGET / HTTP/1.1[0m" 302 -
+2026-04-25 07:06:15,720 [INFO] 127.0.0.1 - - [25/Apr/2026 07:06:15] "[35m[1mGET /boutique HTTP/1.1[0m" 500 -
+2026-04-25 07:06:15,917 [INFO] 127.0.0.1 - - [25/Apr/2026 07:06:15] "[36mGET /boutique?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2026-04-25 07:06:16,042 [INFO] 127.0.0.1 - - [25/Apr/2026 07:06:16] "[36mGET /boutique?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2026-04-25 07:06:16,348 [INFO] 127.0.0.1 - - [25/Apr/2026 07:06:16] "[36mGET /boutique?__debugger__=yes&cmd=resource&f=console.png&s=BpQtT39P6ULBASxkaRSm HTTP/1.1[0m" 304 -
+2026-04-25 07:06:24,304 [INFO] 127.0.0.1 - - [25/Apr/2026 07:06:24] "[32mGET / HTTP/1.1[0m" 302 -
+2026-04-25 07:06:24,652 [INFO] 127.0.0.1 - - [25/Apr/2026 07:06:24] "[35m[1mGET /boutique HTTP/1.1[0m" 500 -
+2026-04-25 07:06:24,688 [INFO] 127.0.0.1 - - [25/Apr/2026 07:06:24] "[36mGET /boutique?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2026-04-25 07:06:24,827 [INFO] 127.0.0.1 - - [25/Apr/2026 07:06:24] "[36mGET /boutique?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2026-04-25 07:06:25,132 [INFO] 127.0.0.1 - - [25/Apr/2026 07:06:25] "[36mGET /boutique?__debugger__=yes&cmd=resource&f=console.png&s=BpQtT39P6ULBASxkaRSm HTTP/1.1[0m" 304 -
+2026-04-25 07:06:48,435 [INFO] 127.0.0.1 - - [25/Apr/2026 07:06:48] "[32mGET / HTTP/1.1[0m" 302 -
+2026-04-25 07:06:48,750 [INFO] 127.0.0.1 - - [25/Apr/2026 07:06:48] "[35m[1mGET /boutique HTTP/1.1[0m" 500 -
+2026-04-25 07:06:48,783 [INFO] 127.0.0.1 - - [25/Apr/2026 07:06:48] "[36mGET /boutique?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2026-04-25 07:06:48,973 [INFO] 127.0.0.1 - - [25/Apr/2026 07:06:48] "[36mGET /boutique?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2026-04-25 07:06:49,275 [INFO] 127.0.0.1 - - [25/Apr/2026 07:06:49] "[36mGET /boutique?__debugger__=yes&cmd=resource&f=console.png&s=BpQtT39P6ULBASxkaRSm HTTP/1.1[0m" 304 -
+2026-04-25 07:08:53,922 [INFO] 127.0.0.1 - - [25/Apr/2026 07:08:53] "[32mGET / HTTP/1.1[0m" 302 -
+2026-04-25 07:08:54,178 [INFO] 127.0.0.1 - - [25/Apr/2026 07:08:54] "[35m[1mGET /boutique HTTP/1.1[0m" 500 -
+2026-04-25 07:08:54,662 [INFO] 127.0.0.1 - - [25/Apr/2026 07:08:54] "[32mGET / HTTP/1.1[0m" 302 -
+2026-04-25 07:08:54,954 [INFO] 127.0.0.1 - - [25/Apr/2026 07:08:54] "[35m[1mGET /boutique HTTP/1.1[0m" 500 -
+2026-04-25 07:08:55,276 [INFO] 127.0.0.1 - - [25/Apr/2026 07:08:55] "[36mGET /boutique?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2026-04-25 07:08:55,281 [INFO] 127.0.0.1 - - [25/Apr/2026 07:08:55] "[36mGET /boutique?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2026-04-25 07:08:55,527 [INFO] 127.0.0.1 - - [25/Apr/2026 07:08:55] "[36mGET /boutique?__debugger__=yes&cmd=resource&f=console.png&s=BpQtT39P6ULBASxkaRSm HTTP/1.1[0m" 304 -
+2026-04-25 07:14:25,523 [INFO] Backup automatique demarre (toutes les 24h)
+2026-04-25 07:14:25,525 [INFO] Application Flask demarree !
+2026-04-25 07:14:25,577 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.26.20.100:5000
+2026-04-25 07:14:25,577 [INFO] [33mPress CTRL+C to quit[0m
+2026-04-25 07:14:25,578 [INFO]  * Restarting with stat
+2026-04-25 07:14:25,601 [INFO] Backup cree : /home/ibrahima/terroir_local/backups/backup_20260425_071425.json
+2026-04-25 07:14:26,068 [INFO] Backup automatique demarre (toutes les 24h)
+2026-04-25 07:14:26,069 [INFO] Application Flask demarree !
+2026-04-25 07:14:26,117 [WARNING]  * Debugger is active!
+2026-04-25 07:14:26,122 [INFO]  * Debugger PIN: 142-288-378
+2026-04-25 07:14:26,143 [INFO] Backup cree : /home/ibrahima/terroir_local/backups/backup_20260425_071426.json
+2026-04-25 07:14:46,488 [INFO] 127.0.0.1 - - [25/Apr/2026 07:14:46] "[32mGET / HTTP/1.1[0m" 302 -
+2026-04-25 07:14:46,807 [INFO] 127.0.0.1 - - [25/Apr/2026 07:14:46] "GET /boutique HTTP/1.1" 200 -
+2026-04-25 07:15:22,993 [INFO] 127.0.0.1 - - [25/Apr/2026 07:15:22] "[32mGET / HTTP/1.1[0m" 302 -
+2026-04-25 07:15:23,349 [INFO] 127.0.0.1 - - [25/Apr/2026 07:15:23] "GET /boutique HTTP/1.1" 200 -
+2026-04-25 07:15:54,246 [INFO] 127.0.0.1 - - [25/Apr/2026 07:15:54] "GET /boutique HTTP/1.1" 200 -
+2026-04-25 07:15:57,359 [INFO] 127.0.0.1 - - [25/Apr/2026 07:15:57] "GET /boutique HTTP/1.1" 200 -
+2026-04-25 07:16:07,692 [INFO] 127.0.0.1 - - [25/Apr/2026 07:16:07] "GET /boutique?categorie=Fruits&search=&promo=0 HTTP/1.1" 200 -
+2026-04-25 07:16:09,907 [INFO] 127.0.0.1 - - [25/Apr/2026 07:16:09] "GET /boutique?categorie=Legumes&search=&promo=0 HTTP/1.1" 200 -
+2026-04-25 07:16:12,206 [INFO] 127.0.0.1 - - [25/Apr/2026 07:16:12] "GET /boutique?categorie=Cereales&search=&promo=0 HTTP/1.1" 200 -
+2026-04-25 07:16:14,548 [INFO] 127.0.0.1 - - [25/Apr/2026 07:16:14] "GET /boutique?categorie=Huiles&search=&promo=0 HTTP/1.1" 200 -
+2026-04-25 07:16:17,171 [INFO] 127.0.0.1 - - [25/Apr/2026 07:16:17] "GET /boutique?categorie=Poissons&search=&promo=0 HTTP/1.1" 200 -
+2026-04-25 07:16:34,642 [INFO] 127.0.0.1 - - [25/Apr/2026 07:16:34] "GET /boutique?categorie=Toutes&search=&promo=0 HTTP/1.1" 200 -
+2026-04-25 07:16:49,201 [INFO] 127.0.0.1 - - [25/Apr/2026 07:16:49] "GET /boutique?categorie=Toutes&search=mil+local&promo=0 HTTP/1.1" 200 -
+2026-04-25 07:17:21,931 [INFO] 127.0.0.1 - - [25/Apr/2026 07:17:21] "GET /boutique?categorie=Fruits&search=&promo=0 HTTP/1.1" 200 -
+2026-04-25 07:17:24,674 [INFO] 127.0.0.1 - - [25/Apr/2026 07:17:24] "GET /boutique?categorie=Toutes&search=&promo=0 HTTP/1.1" 200 -
+2026-04-25 07:18:13,261 [INFO] 127.0.0.1 - - [25/Apr/2026 07:18:13] "GET /boutique?categorie=Toutes&search=Aubergine+Africaine&promo=0 HTTP/1.1" 200 -
+2026-04-25 07:18:16,926 [INFO] 127.0.0.1 - - [25/Apr/2026 07:18:16] "[32mPOST /ajouter_panier HTTP/1.1[0m" 302 -
+2026-04-25 07:18:17,186 [INFO] 127.0.0.1 - - [25/Apr/2026 07:18:17] "GET /boutique HTTP/1.1" 200 -
+2026-04-25 07:18:30,872 [INFO] 127.0.0.1 - - [25/Apr/2026 07:18:30] "GET /boutique?categorie=Toutes&search=Aubergine+Africaine&promo=0 HTTP/1.1" 200 -
+2026-04-25 07:18:57,890 [INFO] 127.0.0.1 - - [25/Apr/2026 07:18:57] "[32mPOST /ajouter_panier HTTP/1.1[0m" 302 -
+2026-04-25 07:18:57,926 [INFO] 127.0.0.1 - - [25/Apr/2026 07:18:57] "GET /boutique HTTP/1.1" 200 -
+2026-04-25 07:19:00,998 [INFO] 127.0.0.1 - - [25/Apr/2026 07:19:00] "[32mPOST /ajouter_panier HTTP/1.1[0m" 302 -
+2026-04-25 07:19:01,250 [INFO] 127.0.0.1 - - [25/Apr/2026 07:19:01] "GET /boutique HTTP/1.1" 200 -
+2026-04-25 07:19:03,026 [INFO] 127.0.0.1 - - [25/Apr/2026 07:19:03] "[32mPOST /ajouter_panier HTTP/1.1[0m" 302 -
+2026-04-25 07:19:03,376 [INFO] 127.0.0.1 - - [25/Apr/2026 07:19:03] "GET /boutique HTTP/1.1" 200 -
+2026-04-25 07:19:23,261 [INFO] 127.0.0.1 - - [25/Apr/2026 07:19:23] "[32mPOST /ajouter_panier HTTP/1.1[0m" 302 -
+2026-04-25 07:19:23,565 [INFO] 127.0.0.1 - - [25/Apr/2026 07:19:23] "GET /boutique HTTP/1.1" 200 -
+2026-04-25 07:19:40,204 [INFO] 127.0.0.1 - - [25/Apr/2026 07:19:40] "[32mPOST /ajouter_panier HTTP/1.1[0m" 302 -
+2026-04-25 07:19:40,233 [INFO] 127.0.0.1 - - [25/Apr/2026 07:19:40] "GET /boutique HTTP/1.1" 200 -
+2026-04-25 07:19:49,440 [INFO] 127.0.0.1 - - [25/Apr/2026 07:19:49] "[32mPOST /ajouter_panier HTTP/1.1[0m" 302 -
+2026-04-25 07:19:49,724 [INFO] 127.0.0.1 - - [25/Apr/2026 07:19:49] "GET /boutique HTTP/1.1" 200 -
+2026-04-25 07:19:51,190 [INFO] 127.0.0.1 - - [25/Apr/2026 07:19:51] "[32mPOST /ajouter_panier HTTP/1.1[0m" 302 -
+2026-04-25 07:19:51,222 [INFO] 127.0.0.1 - - [25/Apr/2026 07:19:51] "GET /boutique HTTP/1.1" 200 -
+2026-04-25 07:20:03,829 [INFO] 127.0.0.1 - - [25/Apr/2026 07:20:03] "[32mPOST /ajouter_panier HTTP/1.1[0m" 302 -
+2026-04-25 07:20:04,150 [INFO] 127.0.0.1 - - [25/Apr/2026 07:20:04] "GET /boutique HTTP/1.1" 200 -
+2026-04-25 07:20:11,964 [INFO] 127.0.0.1 - - [25/Apr/2026 07:20:11] "[32mPOST /ajouter_panier HTTP/1.1[0m" 302 -
+2026-04-25 07:20:11,995 [INFO] 127.0.0.1 - - [25/Apr/2026 07:20:11] "GET /boutique HTTP/1.1" 200 -
+2026-04-25 07:20:33,962 [INFO] 127.0.0.1 - - [25/Apr/2026 07:20:33] "[32mPOST /ajouter_panier HTTP/1.1[0m" 302 -
+2026-04-25 07:20:34,277 [INFO] 127.0.0.1 - - [25/Apr/2026 07:20:34] "GET /boutique HTTP/1.1" 200 -
+2026-04-25 07:20:51,602 [INFO] 127.0.0.1 - - [25/Apr/2026 07:20:51] "[32mPOST /ajouter_panier HTTP/1.1[0m" 302 -
+2026-04-25 07:20:51,634 [INFO] 127.0.0.1 - - [25/Apr/2026 07:20:51] "GET /boutique HTTP/1.1" 200 -
+2026-04-25 07:21:04,969 [INFO] 127.0.0.1 - - [25/Apr/2026 07:21:04] "[32mPOST /ajouter_panier HTTP/1.1[0m" 302 -
+2026-04-25 07:21:05,259 [INFO] 127.0.0.1 - - [25/Apr/2026 07:21:05] "GET /boutique HTTP/1.1" 200 -
+2026-04-25 07:21:10,760 [INFO] 127.0.0.1 - - [25/Apr/2026 07:21:10] "[32mPOST /ajouter_panier HTTP/1.1[0m" 302 -
+2026-04-25 07:21:10,828 [INFO] 127.0.0.1 - - [25/Apr/2026 07:21:10] "GET /boutique HTTP/1.1" 200 -
+2026-04-25 07:21:15,724 [INFO] 127.0.0.1 - - [25/Apr/2026 07:21:15] "[32mPOST /ajouter_panier HTTP/1.1[0m" 302 -
+2026-04-25 07:21:16,013 [INFO] 127.0.0.1 - - [25/Apr/2026 07:21:16] "GET /boutique HTTP/1.1" 200 -
+2026-04-25 07:21:22,325 [INFO] 127.0.0.1 - - [25/Apr/2026 07:21:22] "[32mPOST /ajouter_panier HTTP/1.1[0m" 302 -
+2026-04-25 07:21:22,365 [INFO] 127.0.0.1 - - [25/Apr/2026 07:21:22] "GET /boutique HTTP/1.1" 200 -
+2026-04-25 07:21:56,270 [INFO] 127.0.0.1 - - [25/Apr/2026 07:21:56] "[33mGET /retirer_panier/ HTTP/1.1[0m" 404 -
+2026-04-25 07:22:08,169 [INFO] 127.0.0.1 - - [25/Apr/2026 07:22:08] "[32mGET / HTTP/1.1[0m" 302 -
+2026-04-25 07:22:08,510 [INFO] 127.0.0.1 - - [25/Apr/2026 07:22:08] "GET /boutique HTTP/1.1" 200 -
+2026-04-25 07:22:25,752 [INFO] 127.0.0.1 - - [25/Apr/2026 07:22:25] "[33mGET /retirer_panier/ HTTP/1.1[0m" 404 -
+2026-04-25 07:22:40,783 [INFO] 127.0.0.1 - - [25/Apr/2026 07:22:40] "[32mGET / HTTP/1.1[0m" 302 -
+2026-04-25 07:22:41,113 [INFO] 127.0.0.1 - - [25/Apr/2026 07:22:41] "GET /boutique HTTP/1.1" 200 -
+2026-04-25 07:22:52,738 [INFO] 127.0.0.1 - - [25/Apr/2026 07:22:52] "[33mGET /retirer_panier/ HTTP/1.1[0m" 404 -
+2026-04-25 07:23:09,746 [INFO] 127.0.0.1 - - [25/Apr/2026 07:23:09] "[32mGET / HTTP/1.1[0m" 302 -
+2026-04-25 07:23:10,065 [INFO] 127.0.0.1 - - [25/Apr/2026 07:23:10] "GET /boutique HTTP/1.1" 200 -
+2026-04-25 07:23:50,500 [INFO] Commande - Ibrahima Fall - 26500 FCFA
+2026-04-25 07:23:50,505 [INFO] 127.0.0.1 - - [25/Apr/2026 07:23:50] "POST /commander HTTP/1.1" 200 -
+2026-04-25 07:24:31,988 [INFO] 127.0.0.1 - - [25/Apr/2026 07:24:31] "GET /boutique HTTP/1.1" 200 -
+2026-04-25 07:24:48,452 [INFO] 127.0.0.1 - - [25/Apr/2026 07:24:48] "[32mPOST /ajouter_panier HTTP/1.1[0m" 302 -
+2026-04-25 07:24:48,714 [INFO] 127.0.0.1 - - [25/Apr/2026 07:24:48] "GET /boutique HTTP/1.1" 200 -
+2026-04-25 07:24:53,483 [INFO] 127.0.0.1 - - [25/Apr/2026 07:24:53] "[32mPOST /ajouter_panier HTTP/1.1[0m" 302 -
+2026-04-25 07:24:53,523 [INFO] 127.0.0.1 - - [25/Apr/2026 07:24:53] "GET /boutique HTTP/1.1" 200 -
+2026-04-25 07:25:02,870 [INFO] 127.0.0.1 - - [25/Apr/2026 07:25:02] "[32mGET /vider_panier HTTP/1.1[0m" 302 -
+2026-04-25 07:25:03,177 [INFO] 127.0.0.1 - - [25/Apr/2026 07:25:03] "GET /boutique HTTP/1.1" 200 -
+2026-04-25 07:25:49,216 [INFO] 127.0.0.1 - - [25/Apr/2026 07:25:49] "GET /boutique?categorie=Toutes&search=&promo=0 HTTP/1.1" 200 -
+2026-04-25 07:25:54,539 [INFO] 127.0.0.1 - - [25/Apr/2026 07:25:54] "[32mPOST /ajouter_panier HTTP/1.1[0m" 302 -
+2026-04-25 07:25:54,587 [INFO] 127.0.0.1 - - [25/Apr/2026 07:25:54] "GET /boutique HTTP/1.1" 200 -
+2026-04-25 07:25:59,023 [INFO] 127.0.0.1 - - [25/Apr/2026 07:25:59] "[32mPOST /ajouter_panier HTTP/1.1[0m" 302 -
+2026-04-25 07:25:59,088 [INFO] 127.0.0.1 - - [25/Apr/2026 07:25:59] "GET /boutique HTTP/1.1" 200 -
+2026-04-25 07:26:01,004 [INFO] 127.0.0.1 - - [25/Apr/2026 07:26:01] "[32mPOST /ajouter_panier HTTP/1.1[0m" 302 -
+2026-04-25 07:26:01,326 [INFO] 127.0.0.1 - - [25/Apr/2026 07:26:01] "GET /boutique HTTP/1.1" 200 -
+2026-04-25 07:26:04,509 [INFO] 127.0.0.1 - - [25/Apr/2026 07:26:04] "[32mPOST /ajouter_panier HTTP/1.1[0m" 302 -
+2026-04-25 07:26:04,556 [INFO] 127.0.0.1 - - [25/Apr/2026 07:26:04] "GET /boutique HTTP/1.1" 200 -
+2026-04-25 07:26:04,892 [INFO] 127.0.0.1 - - [25/Apr/2026 07:26:04] "[32mPOST /ajouter_panier HTTP/1.1[0m" 302 -
+2026-04-25 07:26:04,925 [INFO] 127.0.0.1 - - [25/Apr/2026 07:26:04] "GET /boutique HTTP/1.1" 200 -
+2026-04-25 07:26:07,150 [INFO] 127.0.0.1 - - [25/Apr/2026 07:26:07] "GET /boutique?categorie=Toutes&search=&promo=0 HTTP/1.1" 200 -
+2026-04-25 07:26:08,637 [INFO] 127.0.0.1 - - [25/Apr/2026 07:26:08] "GET /boutique?categorie=Toutes&search=&promo=0 HTTP/1.1" 200 -
+2026-04-25 07:26:08,942 [INFO] 127.0.0.1 - - [25/Apr/2026 07:26:08] "GET /boutique?categorie=Toutes&search=&promo=0 HTTP/1.1" 200 -
+2026-04-25 07:26:09,175 [INFO] 127.0.0.1 - - [25/Apr/2026 07:26:09] "GET /boutique?categorie=Toutes&search=&promo=0 HTTP/1.1" 200 -
+2026-04-25 07:26:09,452 [INFO] 127.0.0.1 - - [25/Apr/2026 07:26:09] "GET /boutique?categorie=Toutes&search=&promo=0 HTTP/1.1" 200 -
+2026-04-25 07:26:35,818 [INFO] 127.0.0.1 - - [25/Apr/2026 07:26:35] "[32mPOST /ajouter_panier HTTP/1.1[0m" 302 -
+2026-04-25 07:26:35,990 [INFO] 127.0.0.1 - - [25/Apr/2026 07:26:35] "GET /boutique HTTP/1.1" 200 -
+2026-04-25 07:26:40,457 [INFO] 127.0.0.1 - - [25/Apr/2026 07:26:40] "[32mPOST /ajouter_panier HTTP/1.1[0m" 302 -
+2026-04-25 07:26:40,484 [INFO] 127.0.0.1 - - [25/Apr/2026 07:26:40] "GET /boutique HTTP/1.1" 200 -
+2026-04-25 07:26:46,693 [INFO] 127.0.0.1 - - [25/Apr/2026 07:26:46] "[32mPOST /ajouter_panier HTTP/1.1[0m" 302 -
+2026-04-25 07:26:46,985 [INFO] 127.0.0.1 - - [25/Apr/2026 07:26:46] "GET /boutique HTTP/1.1" 200 -
+2026-04-25 07:26:56,027 [INFO] Commande - Seydou Badji - 8450 FCFA
+2026-04-25 07:26:56,028 [INFO] 127.0.0.1 - - [25/Apr/2026 07:26:56] "POST /commander HTTP/1.1" 200 -
+2026-04-25 07:27:00,737 [INFO] 127.0.0.1 - - [25/Apr/2026 07:27:00] "GET /boutique HTTP/1.1" 200 -
+2026-04-25 07:27:06,887 [INFO] 127.0.0.1 - - [25/Apr/2026 07:27:06] "[32mPOST /ajouter_panier HTTP/1.1[0m" 302 -
+2026-04-25 07:27:07,168 [INFO] 127.0.0.1 - - [25/Apr/2026 07:27:07] "GET /boutique HTTP/1.1" 200 -
+2026-04-25 07:27:12,686 [INFO] 127.0.0.1 - - [25/Apr/2026 07:27:12] "[32mPOST /ajouter_panier HTTP/1.1[0m" 302 -
+2026-04-25 07:27:12,713 [INFO] 127.0.0.1 - - [25/Apr/2026 07:27:12] "GET /boutique HTTP/1.1" 200 -
+2026-04-25 07:27:25,227 [INFO] 127.0.0.1 - - [25/Apr/2026 07:27:25] "[32mPOST /ajouter_panier HTTP/1.1[0m" 302 -
+2026-04-25 07:27:25,533 [INFO] 127.0.0.1 - - [25/Apr/2026 07:27:25] "GET /boutique HTTP/1.1" 200 -
+2026-04-25 07:27:33,804 [INFO] Commande - Moussa Sow - 2400 FCFA
+2026-04-25 07:27:33,806 [INFO] 127.0.0.1 - - [25/Apr/2026 07:27:33] "POST /commander HTTP/1.1" 200 -
+2026-04-25 07:27:35,594 [INFO] 127.0.0.1 - - [25/Apr/2026 07:27:35] "GET /boutique HTTP/1.1" 200 -
+2026-04-25 07:27:37,703 [INFO] 127.0.0.1 - - [25/Apr/2026 07:27:37] "[32mPOST /ajouter_panier HTTP/1.1[0m" 302 -
+2026-04-25 07:27:38,015 [INFO] 127.0.0.1 - - [25/Apr/2026 07:27:38] "GET /boutique HTTP/1.1" 200 -
+2026-04-25 07:28:11,133 [INFO] 127.0.0.1 - - [25/Apr/2026 07:28:11] "[32mGET /vider_panier HTTP/1.1[0m" 302 -
+2026-04-25 07:28:11,283 [INFO] 127.0.0.1 - - [25/Apr/2026 07:28:11] "GET /boutique HTTP/1.1" 200 -
+2026-04-25 07:28:14,990 [INFO] 127.0.0.1 - - [25/Apr/2026 07:28:14] "[32mPOST /ajouter_panier HTTP/1.1[0m" 302 -
+2026-04-25 07:28:15,278 [INFO] 127.0.0.1 - - [25/Apr/2026 07:28:15] "GET /boutique HTTP/1.1" 200 -
+2026-04-25 07:28:17,923 [INFO] 127.0.0.1 - - [25/Apr/2026 07:28:17] "[32mPOST /ajouter_panier HTTP/1.1[0m" 302 -
+2026-04-25 07:28:18,168 [INFO] 127.0.0.1 - - [25/Apr/2026 07:28:18] "GET /boutique HTTP/1.1" 200 -
+2026-04-25 07:28:31,904 [INFO] 127.0.0.1 - - [25/Apr/2026 07:28:31] "[33mGET /retirer_panier/ HTTP/1.1[0m" 404 -
+2026-04-25 07:28:38,052 [INFO] 127.0.0.1 - - [25/Apr/2026 07:28:38] "[32mGET / HTTP/1.1[0m" 302 -
+2026-04-25 07:28:38,366 [INFO] 127.0.0.1 - - [25/Apr/2026 07:28:38] "GET /boutique HTTP/1.1" 200 -
+2026-04-25 07:28:44,276 [INFO] 127.0.0.1 - - [25/Apr/2026 07:28:44] "[32mGET /vider_panier HTTP/1.1[0m" 302 -
+2026-04-25 07:28:44,590 [INFO] 127.0.0.1 - - [25/Apr/2026 07:28:44] "GET /boutique HTTP/1.1" 200 -
+2026-04-25 07:28:52,105 [INFO] 127.0.0.1 - - [25/Apr/2026 07:28:52] "[32mPOST /ajouter_panier HTTP/1.1[0m" 302 -
+2026-04-25 07:28:52,134 [INFO] 127.0.0.1 - - [25/Apr/2026 07:28:52] "GET /boutique HTTP/1.1" 200 -
+2026-04-25 07:28:54,918 [INFO] 127.0.0.1 - - [25/Apr/2026 07:28:54] "[32mPOST /ajouter_panier HTTP/1.1[0m" 302 -
+2026-04-25 07:28:55,208 [INFO] 127.0.0.1 - - [25/Apr/2026 07:28:55] "GET /boutique HTTP/1.1" 200 -
+2026-04-25 07:29:33,999 [INFO] 127.0.0.1 - - [25/Apr/2026 07:29:33] "[32mGET /vider_panier HTTP/1.1[0m" 302 -
+2026-04-25 07:29:34,172 [INFO] 127.0.0.1 - - [25/Apr/2026 07:29:34] "GET /boutique HTTP/1.1" 200 -
+2026-04-25 07:29:37,744 [INFO] 127.0.0.1 - - [25/Apr/2026 07:29:37] "[32mPOST /ajouter_panier HTTP/1.1[0m" 302 -
+2026-04-25 07:29:38,061 [INFO] 127.0.0.1 - - [25/Apr/2026 07:29:38] "GET /boutique HTTP/1.1" 200 -
+2026-04-25 07:29:39,588 [INFO] 127.0.0.1 - - [25/Apr/2026 07:29:39] "[32mPOST /ajouter_panier HTTP/1.1[0m" 302 -
+2026-04-25 07:29:39,619 [INFO] 127.0.0.1 - - [25/Apr/2026 07:29:39] "GET /boutique HTTP/1.1" 200 -
+2026-04-25 07:29:45,955 [INFO] 127.0.0.1 - - [25/Apr/2026 07:29:45] "[32mGET /vider_panier HTTP/1.1[0m" 302 -
+2026-04-25 07:29:46,262 [INFO] 127.0.0.1 - - [25/Apr/2026 07:29:46] "GET /boutique HTTP/1.1" 200 -
+2026-04-25 07:30:22,208 [INFO] 127.0.0.1 - - [25/Apr/2026 07:30:22] "GET /stats HTTP/1.1" 200 -
+2026-04-25 07:30:27,408 [INFO] 127.0.0.1 - - [25/Apr/2026 07:30:27] "[35m[1mGET /admin HTTP/1.1[0m" 500 -
+2026-04-25 07:30:27,443 [INFO] 127.0.0.1 - - [25/Apr/2026 07:30:27] "GET /admin?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2026-04-25 07:30:27,715 [INFO] 127.0.0.1 - - [25/Apr/2026 07:30:27] "GET /admin?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2026-04-25 07:30:28,050 [INFO] 127.0.0.1 - - [25/Apr/2026 07:30:28] "GET /admin?__debugger__=yes&cmd=resource&f=console.png&s=eJVq1YMXAw3nwhgwMKUH HTTP/1.1" 200 -
+2026-04-25 07:30:29,582 [INFO] 127.0.0.1 - - [25/Apr/2026 07:30:29] "GET /admin?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2026-04-25 07:30:35,702 [INFO] 127.0.0.1 - - [25/Apr/2026 07:30:35] "[32mGET / HTTP/1.1[0m" 302 -
+2026-04-25 07:30:35,965 [INFO] 127.0.0.1 - - [25/Apr/2026 07:30:35] "GET /boutique HTTP/1.1" 200 -
+2026-04-25 07:30:39,309 [INFO] 127.0.0.1 - - [25/Apr/2026 07:30:39] "[32mGET /logout HTTP/1.1[0m" 302 -
+2026-04-25 07:30:39,600 [INFO] 127.0.0.1 - - [25/Apr/2026 07:30:39] "GET / HTTP/1.1" 200 -
+2026-04-25 07:33:26,893 [INFO]  * Detected change in '/home/ibrahima/terroir_local/app.py', reloading
+2026-04-25 07:33:27,513 [INFO]  * Restarting with stat
+2026-04-25 07:33:28,042 [INFO] Backup automatique demarre (toutes les 24h)
+2026-04-25 07:33:28,042 [INFO] Application Flask demarree !
+2026-04-25 07:33:28,097 [WARNING]  * Debugger is active!
+2026-04-25 07:33:28,104 [INFO]  * Debugger PIN: 142-288-378
+2026-04-25 07:33:28,127 [INFO] Backup cree : /home/ibrahima/terroir_local/backups/backup_20260425_073328.json
+2026-04-25 07:33:50,880 [INFO] Backup automatique demarre (toutes les 24h)
+2026-04-25 07:33:50,881 [INFO] Application Flask demarree !
+2026-04-25 07:33:50,929 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.26.20.100:5000
+2026-04-25 07:33:50,929 [INFO] [33mPress CTRL+C to quit[0m
+2026-04-25 07:33:50,932 [INFO]  * Restarting with stat
+2026-04-25 07:33:50,950 [INFO] Backup cree : /home/ibrahima/terroir_local/backups/backup_20260425_073350.json
+2026-04-25 07:33:51,459 [INFO] Backup automatique demarre (toutes les 24h)
+2026-04-25 07:33:51,460 [INFO] Application Flask demarree !
+2026-04-25 07:33:51,505 [WARNING]  * Debugger is active!
+2026-04-25 07:33:51,509 [INFO]  * Debugger PIN: 142-288-378
+2026-04-25 07:33:51,540 [INFO] Backup cree : /home/ibrahima/terroir_local/backups/backup_20260425_073351.json
+2026-04-25 07:34:29,324 [INFO] Connexion reussie : admin
+2026-04-25 07:34:29,326 [INFO] 127.0.0.1 - - [25/Apr/2026 07:34:29] "[32mPOST / HTTP/1.1[0m" 302 -
+2026-04-25 07:34:29,420 [INFO] 127.0.0.1 - - [25/Apr/2026 07:34:29] "GET /boutique HTTP/1.1" 200 -
+2026-04-25 07:34:43,511 [INFO] 127.0.0.1 - - [25/Apr/2026 07:34:43] "[32mPOST /ajouter_panier HTTP/1.1[0m" 302 -
+2026-04-25 07:34:43,800 [INFO] 127.0.0.1 - - [25/Apr/2026 07:34:43] "GET /boutique HTTP/1.1" 200 -
+2026-04-25 07:34:45,425 [INFO] 127.0.0.1 - - [25/Apr/2026 07:34:45] "[32mPOST /ajouter_panier HTTP/1.1[0m" 302 -
+2026-04-25 07:34:45,668 [INFO] 127.0.0.1 - - [25/Apr/2026 07:34:45] "GET /boutique HTTP/1.1" 200 -
+2026-04-25 07:35:34,056 [INFO] 127.0.0.1 - - [25/Apr/2026 07:35:34] "[33mGET /retirer_panier/ HTTP/1.1[0m" 404 -
+2026-04-25 07:35:47,595 [INFO] 127.0.0.1 - - [25/Apr/2026 07:35:47] "[32mGET / HTTP/1.1[0m" 302 -
+2026-04-25 07:35:47,658 [INFO] 127.0.0.1 - - [25/Apr/2026 07:35:47] "GET /boutique HTTP/1.1" 200 -
+2026-04-25 07:35:52,410 [INFO] 127.0.0.1 - - [25/Apr/2026 07:35:52] "[33mGET /retirer_panier/ HTTP/1.1[0m" 404 -
+2026-04-25 07:41:07,328 [INFO] 127.0.0.1 - - [25/Apr/2026 07:41:07] "GET /boutique HTTP/1.1" 200 -
+2026-04-25 07:41:10,890 [INFO] 127.0.0.1 - - [25/Apr/2026 07:41:10] "[32mPOST /ajouter_panier HTTP/1.1[0m" 302 -
+2026-04-25 07:41:10,940 [INFO] 127.0.0.1 - - [25/Apr/2026 07:41:10] "GET /boutique HTTP/1.1" 200 -
+2026-04-25 07:41:13,511 [INFO] 127.0.0.1 - - [25/Apr/2026 07:41:13] "[32mGET /retirer_panier/2 HTTP/1.1[0m" 302 -
+2026-04-25 07:41:13,773 [INFO] 127.0.0.1 - - [25/Apr/2026 07:41:13] "GET /boutique HTTP/1.1" 200 -
+2026-04-25 07:41:15,420 [INFO] 127.0.0.1 - - [25/Apr/2026 07:41:15] "[32mGET /retirer_panier/1 HTTP/1.1[0m" 302 -
+2026-04-25 07:41:15,743 [INFO] 127.0.0.1 - - [25/Apr/2026 07:41:15] "GET /boutique HTTP/1.1" 200 -
+2026-04-25 07:41:17,243 [INFO] 127.0.0.1 - - [25/Apr/2026 07:41:17] "[32mGET /retirer_panier/0 HTTP/1.1[0m" 302 -
+2026-04-25 07:41:17,543 [INFO] 127.0.0.1 - - [25/Apr/2026 07:41:17] "GET /boutique HTTP/1.1" 200 -
+2026-04-25 07:41:30,397 [INFO] 127.0.0.1 - - [25/Apr/2026 07:41:30] "GET /boutique HTTP/1.1" 200 -
+2026-04-25 07:41:32,163 [INFO] 127.0.0.1 - - [25/Apr/2026 07:41:32] "[32mPOST /ajouter_panier HTTP/1.1[0m" 302 -
+2026-04-25 07:41:32,208 [INFO] 127.0.0.1 - - [25/Apr/2026 07:41:32] "GET /boutique HTTP/1.1" 200 -
+2026-04-25 07:41:34,655 [INFO] 127.0.0.1 - - [25/Apr/2026 07:41:34] "GET /boutique HTTP/1.1" 200 -
+2026-04-25 07:41:37,175 [INFO] 127.0.0.1 - - [25/Apr/2026 07:41:37] "GET /boutique?categorie=Toutes&search=&promo=0 HTTP/1.1" 200 -
+2026-04-25 07:41:39,133 [INFO] 127.0.0.1 - - [25/Apr/2026 07:41:39] "[32mPOST /ajouter_panier HTTP/1.1[0m" 302 -
+2026-04-25 07:41:39,439 [INFO] 127.0.0.1 - - [25/Apr/2026 07:41:39] "[32mPOST /ajouter_panier HTTP/1.1[0m" 302 -
+2026-04-25 07:41:39,496 [INFO] 127.0.0.1 - - [25/Apr/2026 07:41:39] "GET /boutique HTTP/1.1" 200 -
+2026-04-25 07:41:41,409 [INFO] 127.0.0.1 - - [25/Apr/2026 07:41:41] "GET /boutique?categorie=Toutes&search=&promo=0 HTTP/1.1" 200 -
+2026-04-25 07:41:42,898 [INFO] 127.0.0.1 - - [25/Apr/2026 07:41:42] "GET /boutique HTTP/1.1" 200 -
+2026-04-25 07:41:42,994 [INFO] 127.0.0.1 - - [25/Apr/2026 07:41:42] "GET /boutique HTTP/1.1" 200 -
+2026-04-25 07:41:44,129 [INFO] 127.0.0.1 - - [25/Apr/2026 07:41:44] "GET /boutique HTTP/1.1" 200 -
+2026-04-25 07:41:44,504 [INFO] 127.0.0.1 - - [25/Apr/2026 07:41:44] "GET /boutique HTTP/1.1" 200 -
+2026-04-25 07:41:51,202 [INFO] 127.0.0.1 - - [25/Apr/2026 07:41:51] "[32mPOST /ajouter_panier HTTP/1.1[0m" 302 -
+2026-04-25 07:41:51,474 [INFO] 127.0.0.1 - - [25/Apr/2026 07:41:51] "GET /boutique HTTP/1.1" 200 -
+2026-04-25 07:42:02,766 [INFO] 127.0.0.1 - - [25/Apr/2026 07:42:02] "[32mPOST /ajouter_panier HTTP/1.1[0m" 302 -
+2026-04-25 07:42:02,798 [INFO] 127.0.0.1 - - [25/Apr/2026 07:42:02] "GET /boutique HTTP/1.1" 200 -
+2026-04-25 07:42:11,155 [INFO] 127.0.0.1 - - [25/Apr/2026 07:42:11] "[32mGET /vider_panier HTTP/1.1[0m" 302 -
+2026-04-25 07:42:11,456 [INFO] 127.0.0.1 - - [25/Apr/2026 07:42:11] "GET /boutique HTTP/1.1" 200 -
+2026-04-25 07:43:20,134 [INFO] 127.0.0.1 - - [25/Apr/2026 07:43:20] "GET /boutique HTTP/1.1" 200 -
+2026-04-25 07:43:49,968 [INFO] 127.0.0.1 - - [25/Apr/2026 07:43:49] "[32mPOST /ajouter_panier HTTP/1.1[0m" 302 -
+2026-04-25 07:43:50,010 [INFO] 127.0.0.1 - - [25/Apr/2026 07:43:50] "GET /boutique HTTP/1.1" 200 -
+2026-04-25 07:43:51,356 [INFO] 127.0.0.1 - - [25/Apr/2026 07:43:51] "[32mPOST /ajouter_panier HTTP/1.1[0m" 302 -
+2026-04-25 07:43:51,370 [INFO] 127.0.0.1 - - [25/Apr/2026 07:43:51] "[32mPOST /ajouter_panier HTTP/1.1[0m" 302 -
+2026-04-25 07:43:51,648 [INFO] 127.0.0.1 - - [25/Apr/2026 07:43:51] "[32mPOST /ajouter_panier HTTP/1.1[0m" 302 -
+2026-04-25 07:43:51,785 [INFO] 127.0.0.1 - - [25/Apr/2026 07:43:51] "[32mPOST /ajouter_panier HTTP/1.1[0m" 302 -
+2026-04-25 07:43:51,902 [INFO] 127.0.0.1 - - [25/Apr/2026 07:43:51] "GET /boutique HTTP/1.1" 200 -
+2026-04-25 07:43:51,956 [INFO] 127.0.0.1 - - [25/Apr/2026 07:43:51] "[32mPOST /ajouter_panier HTTP/1.1[0m" 302 -
+2026-04-25 07:43:52,017 [INFO] 127.0.0.1 - - [25/Apr/2026 07:43:52] "GET /boutique HTTP/1.1" 200 -
+2026-04-25 07:44:02,911 [INFO] Commande - Cheikh Mbaye - 2500 FCFA
+2026-04-25 07:44:02,921 [INFO] 127.0.0.1 - - [25/Apr/2026 07:44:02] "POST /commander HTTP/1.1" 200 -
+2026-04-25 07:44:04,983 [INFO] 127.0.0.1 - - [25/Apr/2026 07:44:04] "GET /boutique HTTP/1.1" 200 -
+2026-04-25 07:44:39,644 [INFO] Base reinitialise !
+2026-04-25 07:44:39,644 [INFO] 127.0.0.1 - - [25/Apr/2026 07:44:39] "[32mGET /admin/reinitialiser HTTP/1.1[0m" 302 -
+2026-04-25 07:44:39,701 [INFO] 127.0.0.1 - - [25/Apr/2026 07:44:39] "GET /admin HTTP/1.1" 200 -
+2026-04-25 08:49:53,691 [INFO] 127.0.0.1 - - [25/Apr/2026 08:49:53] "GET /boutique HTTP/1.1" 200 -
+2026-04-25 08:50:05,214 [INFO] 127.0.0.1 - - [25/Apr/2026 08:50:05] "GET /admin HTTP/1.1" 200 -
+2026-04-25 08:52:44,983 [INFO] Produit ajoute : aaaaa
+2026-04-25 08:52:44,984 [INFO] 127.0.0.1 - - [25/Apr/2026 08:52:44] "[32mPOST /admin/ajouter_produit HTTP/1.1[0m" 302 -
+2026-04-25 08:52:45,041 [INFO] 127.0.0.1 - - [25/Apr/2026 08:52:45] "GET /admin HTTP/1.1" 200 -
+2026-04-25 08:53:16,422 [INFO] 127.0.0.1 - - [25/Apr/2026 08:53:16] "GET /boutique HTTP/1.1" 200 -
+2026-04-25 08:53:40,878 [INFO] 127.0.0.1 - - [25/Apr/2026 08:53:40] "[32mPOST /ajouter_panier HTTP/1.1[0m" 302 -
+2026-04-25 08:53:41,161 [INFO] 127.0.0.1 - - [25/Apr/2026 08:53:41] "GET /boutique HTTP/1.1" 200 -
+2026-04-25 08:54:00,432 [INFO] 127.0.0.1 - - [25/Apr/2026 08:54:00] "[32mPOST /ajouter_panier HTTP/1.1[0m" 302 -
+2026-04-25 08:54:00,495 [INFO] 127.0.0.1 - - [25/Apr/2026 08:54:00] "GET /boutique HTTP/1.1" 200 -
+2026-04-25 08:54:30,850 [INFO] 127.0.0.1 - - [25/Apr/2026 08:54:30] "[32mGET /vider_panier HTTP/1.1[0m" 302 -
+2026-04-25 08:54:31,057 [INFO] 127.0.0.1 - - [25/Apr/2026 08:54:31] "GET /boutique HTTP/1.1" 200 -
+2026-04-25 08:54:37,355 [INFO] 127.0.0.1 - - [25/Apr/2026 08:54:37] "GET /admin HTTP/1.1" 200 -
+2026-04-25 08:54:50,822 [INFO] 127.0.0.1 - - [25/Apr/2026 08:54:50] "[35m[1mGET /admin/supprimer_produit/69ec80dcc90adf18424e16f2 HTTP/1.1[0m" 500 -
+2026-04-25 08:54:51,066 [INFO] 127.0.0.1 - - [25/Apr/2026 08:54:51] "GET /admin/supprimer_produit/69ec80dcc90adf18424e16f2?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2026-04-25 08:54:51,154 [INFO] 127.0.0.1 - - [25/Apr/2026 08:54:51] "GET /admin/supprimer_produit/69ec80dcc90adf18424e16f2?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2026-04-25 08:54:51,543 [INFO] 127.0.0.1 - - [25/Apr/2026 08:54:51] "GET /admin/supprimer_produit/69ec80dcc90adf18424e16f2?__debugger__=yes&cmd=resource&f=console.png&s=WGmTYoap9XOoIBOTNkaF HTTP/1.1" 200 -
+2026-04-25 08:54:55,239 [INFO] 127.0.0.1 - - [25/Apr/2026 08:54:55] "GET /admin/supprimer_produit/69ec80dcc90adf18424e16f2?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2026-04-25 08:56:05,667 [INFO] 127.0.0.1 - - [25/Apr/2026 08:56:05] "[33mGET /admin/ HTTP/1.1[0m" 404 -
+2026-04-25 08:56:12,497 [INFO] 127.0.0.1 - - [25/Apr/2026 08:56:12] "[32mGET / HTTP/1.1[0m" 302 -
+2026-04-25 08:56:12,573 [INFO] 127.0.0.1 - - [25/Apr/2026 08:56:12] "GET /boutique HTTP/1.1" 200 -
+2026-04-25 08:56:16,167 [INFO] 127.0.0.1 - - [25/Apr/2026 08:56:16] "GET /admin HTTP/1.1" 200 -
+2026-04-25 08:56:33,092 [INFO] Prix mis a jour : 700
+2026-04-25 08:56:33,093 [INFO] 127.0.0.1 - - [25/Apr/2026 08:56:33] "[32mPOST /admin/maj_prix HTTP/1.1[0m" 302 -
+2026-04-25 08:56:33,153 [INFO] 127.0.0.1 - - [25/Apr/2026 08:56:33] "GET /admin HTTP/1.1" 200 -
+2026-04-25 08:56:35,234 [INFO] Prix mis a jour : 700
+2026-04-25 08:56:35,235 [INFO] 127.0.0.1 - - [25/Apr/2026 08:56:35] "[32mPOST /admin/maj_prix HTTP/1.1[0m" 302 -
+2026-04-25 08:56:35,272 [INFO] 127.0.0.1 - - [25/Apr/2026 08:56:35] "GET /admin HTTP/1.1" 200 -
+2026-04-25 08:56:41,607 [INFO] Prix mis a jour : 700
+2026-04-25 08:56:41,608 [INFO] 127.0.0.1 - - [25/Apr/2026 08:56:41] "[32mPOST /admin/maj_prix HTTP/1.1[0m" 302 -
+2026-04-25 08:56:41,885 [INFO] 127.0.0.1 - - [25/Apr/2026 08:56:41] "GET /admin HTTP/1.1" 200 -
+2026-04-25 08:57:10,625 [INFO] Prix mis a jour : 700
+2026-04-25 08:57:10,626 [INFO] 127.0.0.1 - - [25/Apr/2026 08:57:10] "[32mPOST /admin/maj_prix HTTP/1.1[0m" 302 -
+2026-04-25 08:57:10,666 [INFO] 127.0.0.1 - - [25/Apr/2026 08:57:10] "GET /admin HTTP/1.1" 200 -
+2026-04-25 08:57:15,833 [INFO] Stock mis a jour : 92
+2026-04-25 08:57:15,834 [INFO] 127.0.0.1 - - [25/Apr/2026 08:57:15] "[32mPOST /admin/maj_stock HTTP/1.1[0m" 302 -
+2026-04-25 08:57:16,126 [INFO] 127.0.0.1 - - [25/Apr/2026 08:57:16] "GET /admin HTTP/1.1" 200 -
+2026-04-25 08:58:54,485 [INFO] Utilisateur cree : camara
+2026-04-25 08:58:54,486 [INFO] 127.0.0.1 - - [25/Apr/2026 08:58:54] "[32mPOST /admin/ajouter_user HTTP/1.1[0m" 302 -
+2026-04-25 08:58:54,525 [INFO] 127.0.0.1 - - [25/Apr/2026 08:58:54] "GET /admin HTTP/1.1" 200 -
+2026-04-25 09:00:14,208 [INFO] Utilisateur supprime : camara
+2026-04-25 09:00:14,208 [INFO] 127.0.0.1 - - [25/Apr/2026 09:00:14] "[32mGET /admin/supprimer_user/camara HTTP/1.1[0m" 302 -
+2026-04-25 09:00:14,524 [INFO] 127.0.0.1 - - [25/Apr/2026 09:00:14] "GET /admin HTTP/1.1" 200 -
+2026-04-25 09:01:56,468 [INFO] 127.0.0.1 - - [25/Apr/2026 09:01:56] "[35m[1mGET /admin/supprimer_produit/69ec80dcc90adf18424e16f2 HTTP/1.1[0m" 500 -
+2026-04-25 09:01:56,728 [INFO] 127.0.0.1 - - [25/Apr/2026 09:01:56] "[36mGET /admin/supprimer_produit/69ec80dcc90adf18424e16f2?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2026-04-25 09:01:56,862 [INFO] 127.0.0.1 - - [25/Apr/2026 09:01:56] "[36mGET /admin/supprimer_produit/69ec80dcc90adf18424e16f2?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2026-04-25 09:01:57,331 [INFO] 127.0.0.1 - - [25/Apr/2026 09:01:57] "[36mGET /admin/supprimer_produit/69ec80dcc90adf18424e16f2?__debugger__=yes&cmd=resource&f=console.png&s=WGmTYoap9XOoIBOTNkaF HTTP/1.1[0m" 304 -
+2026-04-25 09:02:21,043 [INFO] 127.0.0.1 - - [25/Apr/2026 09:02:21] "[32mGET / HTTP/1.1[0m" 302 -
+2026-04-25 09:02:21,424 [INFO] 127.0.0.1 - - [25/Apr/2026 09:02:21] "GET /boutique HTTP/1.1" 200 -
+2026-04-25 09:02:24,962 [INFO] 127.0.0.1 - - [25/Apr/2026 09:02:24] "GET /admin HTTP/1.1" 200 -
+2026-04-25 09:02:46,956 [INFO] Backup cree : /home/ibrahima/terroir_local/backups/backup_20260425_090246.json
+2026-04-25 09:02:46,958 [INFO] 127.0.0.1 - - [25/Apr/2026 09:02:46] "[32mGET /admin/backup HTTP/1.1[0m" 302 -
+2026-04-25 09:02:47,164 [INFO] 127.0.0.1 - - [25/Apr/2026 09:02:47] "GET /admin HTTP/1.1" 200 -
+2026-04-25 09:03:26,550 [INFO] Base reinitialise !
+2026-04-25 09:03:26,551 [INFO] 127.0.0.1 - - [25/Apr/2026 09:03:26] "[32mGET /admin/reinitialiser HTTP/1.1[0m" 302 -
+2026-04-25 09:03:26,616 [INFO] 127.0.0.1 - - [25/Apr/2026 09:03:26] "GET /admin HTTP/1.1" 200 -
+2026-04-25 09:04:07,852 [INFO] 127.0.0.1 - - [25/Apr/2026 09:04:07] "[35m[1mGET /admin/supprimer_commandes HTTP/1.1[0m" 500 -
+2026-04-25 09:04:08,104 [INFO] 127.0.0.1 - - [25/Apr/2026 09:04:08] "GET /admin/supprimer_commandes?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2026-04-25 09:04:08,194 [INFO] 127.0.0.1 - - [25/Apr/2026 09:04:08] "GET /admin/supprimer_commandes?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2026-04-25 09:04:08,522 [INFO] 127.0.0.1 - - [25/Apr/2026 09:04:08] "GET /admin/supprimer_commandes?__debugger__=yes&cmd=resource&f=console.png&s=WGmTYoap9XOoIBOTNkaF HTTP/1.1" 200 -
+2026-04-25 09:04:11,340 [INFO] 127.0.0.1 - - [25/Apr/2026 09:04:11] "GET /admin/supprimer_commandes?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2026-04-25 09:04:27,566 [INFO] 127.0.0.1 - - [25/Apr/2026 09:04:27] "[32mGET / HTTP/1.1[0m" 302 -
+2026-04-25 09:04:27,813 [INFO] 127.0.0.1 - - [25/Apr/2026 09:04:27] "GET /boutique HTTP/1.1" 200 -
+2026-04-25 09:04:35,535 [INFO] 127.0.0.1 - - [25/Apr/2026 09:04:35] "GET /admin HTTP/1.1" 200 -
+2026-04-25 09:07:00,267 [INFO] 127.0.0.1 - - [25/Apr/2026 09:07:00] "GET /boutique HTTP/1.1" 200 -
+2026-04-25 09:07:37,782 [INFO] 127.0.0.1 - - [25/Apr/2026 09:07:37] "GET /admin HTTP/1.1" 200 -
+2026-04-25 12:35:14,702 [INFO] 127.0.0.1 - - [25/Apr/2026 12:35:14] "[32mGET / HTTP/1.1[0m" 302 -
+2026-04-25 12:35:15,023 [INFO] 127.0.0.1 - - [25/Apr/2026 12:35:15] "GET /boutique HTTP/1.1" 200 -
+2026-04-25 12:39:23,062 [INFO] 127.0.0.1 - - [25/Apr/2026 12:39:23] "GET /admin HTTP/1.1" 200 -
+2026-04-25 16:59:36,356 [INFO] Backup automatique demarre (toutes les 24h)
+2026-04-25 16:59:36,357 [INFO] Application Flask demarree !
+2026-04-25 16:59:36,550 [INFO] Backup cree : /home/ibrahima/terroir_local/backups/backup_20260425_165936.json
+2026-04-25 16:59:36,557 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.26.20.100:5000
+2026-04-25 16:59:36,557 [INFO] [33mPress CTRL+C to quit[0m
+2026-04-25 16:59:36,559 [INFO]  * Restarting with stat
+2026-04-25 16:59:37,252 [INFO] Backup automatique demarre (toutes les 24h)
+2026-04-25 16:59:37,253 [INFO] Application Flask demarree !
+2026-04-25 16:59:37,294 [WARNING]  * Debugger is active!
+2026-04-25 16:59:37,325 [INFO] Backup cree : /home/ibrahima/terroir_local/backups/backup_20260425_165937.json
+2026-04-25 16:59:37,344 [INFO]  * Debugger PIN: 142-288-378
+2026-04-25 16:59:45,059 [INFO] 127.0.0.1 - - [25/Apr/2026 16:59:45] "GET /admin HTTP/1.1" 200 -
+2026-04-25 17:00:33,458 [INFO] Produit ajoute : aaaaa
+2026-04-25 17:00:33,459 [INFO] 127.0.0.1 - - [25/Apr/2026 17:00:33] "[32mPOST /admin/ajouter_produit HTTP/1.1[0m" 302 -
+2026-04-25 17:00:33,535 [INFO] 127.0.0.1 - - [25/Apr/2026 17:00:33] "GET /admin HTTP/1.1" 200 -
+2026-04-25 17:01:08,680 [INFO] Utilisateur cree : camara
+2026-04-25 17:01:08,681 [INFO] 127.0.0.1 - - [25/Apr/2026 17:01:08] "[32mPOST /admin/ajouter_user HTTP/1.1[0m" 302 -
+2026-04-25 17:01:08,710 [INFO] 127.0.0.1 - - [25/Apr/2026 17:01:08] "GET /admin HTTP/1.1" 200 -
+2026-04-25 17:01:33,219 [INFO] 171 commandes supprimees !
+2026-04-25 17:01:33,220 [INFO] 127.0.0.1 - - [25/Apr/2026 17:01:33] "[32mGET /admin/supprimer_commandes HTTP/1.1[0m" 302 -
+2026-04-25 17:01:33,483 [INFO] 127.0.0.1 - - [25/Apr/2026 17:01:33] "GET /admin HTTP/1.1" 200 -
+2026-04-25 17:02:38,444 [INFO] Produit supprime : 69ecf331880262f8779b64d2
+2026-04-25 17:02:38,446 [INFO] 127.0.0.1 - - [25/Apr/2026 17:02:38] "[32mGET /admin/supprimer_produit/69ecf331880262f8779b64d2 HTTP/1.1[0m" 302 -
+2026-04-25 17:02:38,657 [INFO] 127.0.0.1 - - [25/Apr/2026 17:02:38] "GET /admin HTTP/1.1" 200 -
+2026-04-25 17:02:53,108 [INFO] Utilisateur supprime : camara
+2026-04-25 17:02:53,109 [INFO] 127.0.0.1 - - [25/Apr/2026 17:02:53] "[32mGET /admin/supprimer_user/camara HTTP/1.1[0m" 302 -
+2026-04-25 17:02:53,427 [INFO] 127.0.0.1 - - [25/Apr/2026 17:02:53] "GET /admin HTTP/1.1" 200 -
+2026-04-25 17:03:28,893 [INFO] 127.0.0.1 - - [25/Apr/2026 17:03:28] "GET /stats HTTP/1.1" 200 -
+2026-04-25 17:03:44,199 [INFO] 127.0.0.1 - - [25/Apr/2026 17:03:44] "GET /boutique HTTP/1.1" 200 -
+2026-04-25 17:04:44,973 [INFO] 127.0.0.1 - - [25/Apr/2026 17:04:44] "GET /stats HTTP/1.1" 200 -
+2026-04-25 17:07:06,021 [INFO] 127.0.0.1 - - [25/Apr/2026 17:07:06] "GET /admin HTTP/1.1" 200 -
+2026-04-25 17:07:07,809 [INFO] 127.0.0.1 - - [25/Apr/2026 17:07:07] "GET /stats HTTP/1.1" 200 -
+2026-04-25 17:07:09,060 [INFO] 127.0.0.1 - - [25/Apr/2026 17:07:09] "GET /boutique HTTP/1.1" 200 -
+2026-04-25 17:07:11,547 [INFO] 127.0.0.1 - - [25/Apr/2026 17:07:11] "GET /boutique?categorie=Toutes&search=&promo=0 HTTP/1.1" 200 -
+2026-04-25 17:07:28,995 [INFO] 127.0.0.1 - - [25/Apr/2026 17:07:28] "[32mPOST /ajouter_panier HTTP/1.1[0m" 302 -
+2026-04-25 17:07:29,076 [INFO] 127.0.0.1 - - [25/Apr/2026 17:07:29] "GET /boutique HTTP/1.1" 200 -
+2026-04-25 17:07:43,723 [INFO] 127.0.0.1 - - [25/Apr/2026 17:07:43] "[32mPOST /ajouter_panier HTTP/1.1[0m" 302 -
+2026-04-25 17:07:43,753 [INFO] 127.0.0.1 - - [25/Apr/2026 17:07:43] "GET /boutique HTTP/1.1" 200 -
+2026-04-25 17:07:58,362 [INFO] 127.0.0.1 - - [25/Apr/2026 17:07:58] "[32mPOST /ajouter_panier HTTP/1.1[0m" 302 -
+2026-04-25 17:07:58,658 [INFO] 127.0.0.1 - - [25/Apr/2026 17:07:58] "GET /boutique HTTP/1.1" 200 -
+2026-04-25 17:08:04,331 [INFO] Commande - Mamadou Cisse - 7700 FCFA
+2026-04-25 17:08:04,451 [INFO] 127.0.0.1 - - [25/Apr/2026 17:08:04] "POST /commander HTTP/1.1" 200 -
+2026-04-25 17:10:15,581 [INFO] 127.0.0.1 - - [25/Apr/2026 17:10:15] "GET /boutique HTTP/1.1" 200 -
+2026-04-25 17:10:19,232 [INFO] 127.0.0.1 - - [25/Apr/2026 17:10:19] "GET /stats HTTP/1.1" 200 -
+2026-04-25 17:11:25,676 [INFO] 127.0.0.1 - - [25/Apr/2026 17:11:25] "GET /admin HTTP/1.1" 200 -
+2026-04-25 17:11:36,835 [INFO] Base reinitialise !
+2026-04-25 17:11:36,836 [INFO] 127.0.0.1 - - [25/Apr/2026 17:11:36] "[32mGET /admin/reinitialiser HTTP/1.1[0m" 302 -
+2026-04-25 17:11:36,869 [INFO] 127.0.0.1 - - [25/Apr/2026 17:11:36] "GET /admin HTTP/1.1" 200 -
+2026-04-25 17:11:46,243 [INFO] 127.0.0.1 - - [25/Apr/2026 17:11:46] "GET /stats HTTP/1.1" 200 -
+2026-04-25 17:12:02,321 [INFO] 127.0.0.1 - - [25/Apr/2026 17:12:02] "GET /boutique HTTP/1.1" 200 -
+2026-04-25 17:12:07,498 [INFO] 127.0.0.1 - - [25/Apr/2026 17:12:07] "GET /admin HTTP/1.1" 200 -
+2026-04-25 17:12:23,845 [INFO] 127.0.0.1 - - [25/Apr/2026 17:12:23] "GET /admin HTTP/1.1" 200 -
+2026-04-25 17:12:31,588 [INFO] 127.0.0.1 - - [25/Apr/2026 17:12:31] "GET /stats HTTP/1.1" 200 -
+2026-04-25 17:13:17,932 [INFO] 127.0.0.1 - - [25/Apr/2026 17:13:17] "GET /stats HTTP/1.1" 200 -
+2026-04-25 17:13:19,482 [INFO] 127.0.0.1 - - [25/Apr/2026 17:13:19] "GET /admin HTTP/1.1" 200 -
+2026-04-25 17:14:07,350 [INFO] 1 commandes supprimees !
+2026-04-25 17:14:07,352 [INFO] 127.0.0.1 - - [25/Apr/2026 17:14:07] "[32mGET /admin/supprimer_commandes HTTP/1.1[0m" 302 -
+2026-04-25 17:14:07,636 [INFO] 127.0.0.1 - - [25/Apr/2026 17:14:07] "GET /admin HTTP/1.1" 200 -
+2026-04-25 17:14:24,814 [INFO] 127.0.0.1 - - [25/Apr/2026 17:14:24] "GET /stats HTTP/1.1" 200 -
+2026-04-25 17:15:08,821 [INFO] 127.0.0.1 - - [25/Apr/2026 17:15:08] "[32mGET /logout HTTP/1.1[0m" 302 -
+2026-04-25 17:15:08,957 [INFO] 127.0.0.1 - - [25/Apr/2026 17:15:08] "GET / HTTP/1.1" 200 -
+2026-04-25 17:16:03,898 [INFO] Connexion reussie : user
+2026-04-25 17:16:03,899 [INFO] 127.0.0.1 - - [25/Apr/2026 17:16:03] "[32mPOST / HTTP/1.1[0m" 302 -
+2026-04-25 17:16:03,964 [INFO] 127.0.0.1 - - [25/Apr/2026 17:16:03] "GET /boutique HTTP/1.1" 200 -
+2026-04-25 17:16:59,130 [INFO] 127.0.0.1 - - [25/Apr/2026 17:16:59] "GET /boutique?categorie=Fruits&search=&promo=0 HTTP/1.1" 200 -
+2026-04-25 17:17:01,780 [INFO] 127.0.0.1 - - [25/Apr/2026 17:17:01] "GET /boutique?categorie=Legumes&search=&promo=0 HTTP/1.1" 200 -
+2026-04-25 17:17:04,367 [INFO] 127.0.0.1 - - [25/Apr/2026 17:17:04] "GET /boutique?categorie=Cereales&search=&promo=0 HTTP/1.1" 200 -
+2026-04-25 17:17:06,928 [INFO] 127.0.0.1 - - [25/Apr/2026 17:17:06] "GET /boutique?categorie=Huiles&search=&promo=0 HTTP/1.1" 200 -
+2026-04-25 17:17:09,331 [INFO] 127.0.0.1 - - [25/Apr/2026 17:17:09] "GET /boutique?categorie=Poissons&search=&promo=0 HTTP/1.1" 200 -
+2026-04-25 17:17:29,896 [INFO] 127.0.0.1 - - [25/Apr/2026 17:17:29] "GET /boutique?categorie=Toutes&search=&promo=0 HTTP/1.1" 200 -
+2026-04-25 17:17:51,495 [INFO] 127.0.0.1 - - [25/Apr/2026 17:17:51] "GET /boutique?categorie=Toutes&search=ditakh&promo=0 HTTP/1.1" 200 -
+2026-04-25 17:18:02,585 [INFO] 127.0.0.1 - - [25/Apr/2026 17:18:02] "GET /boutique?categorie=Toutes&search=&promo=0 HTTP/1.1" 200 -
+2026-04-25 17:18:41,905 [INFO] 127.0.0.1 - - [25/Apr/2026 17:18:41] "GET /boutique?categorie=Toutes&search=&promo=0 HTTP/1.1" 200 -
+2026-04-25 17:18:43,154 [INFO] 127.0.0.1 - - [25/Apr/2026 17:18:43] "GET /boutique?categorie=Toutes&search=&promo=0 HTTP/1.1" 200 -
+2026-04-25 17:18:46,437 [INFO] 127.0.0.1 - - [25/Apr/2026 17:18:46] "GET /boutique HTTP/1.1" 200 -
+2026-04-25 17:19:01,404 [INFO] 127.0.0.1 - - [25/Apr/2026 17:19:01] "[32mPOST /ajouter_panier HTTP/1.1[0m" 302 -
+2026-04-25 17:19:01,680 [INFO] 127.0.0.1 - - [25/Apr/2026 17:19:01] "GET /boutique HTTP/1.1" 200 -
+2026-04-25 17:19:04,001 [INFO] 127.0.0.1 - - [25/Apr/2026 17:19:04] "[32mPOST /ajouter_panier HTTP/1.1[0m" 302 -
+2026-04-25 17:19:04,034 [INFO] 127.0.0.1 - - [25/Apr/2026 17:19:04] "GET /boutique HTTP/1.1" 200 -
+2026-04-25 17:19:06,147 [INFO] 127.0.0.1 - - [25/Apr/2026 17:19:06] "[32mPOST /ajouter_panier HTTP/1.1[0m" 302 -
+2026-04-25 17:19:06,435 [INFO] 127.0.0.1 - - [25/Apr/2026 17:19:06] "GET /boutique HTTP/1.1" 200 -
+2026-04-25 17:19:11,797 [INFO] 127.0.0.1 - - [25/Apr/2026 17:19:11] "[32mPOST /ajouter_panier HTTP/1.1[0m" 302 -
+2026-04-25 17:19:11,828 [INFO] 127.0.0.1 - - [25/Apr/2026 17:19:11] "GET /boutique HTTP/1.1" 200 -
+2026-04-25 17:19:17,112 [INFO] 127.0.0.1 - - [25/Apr/2026 17:19:17] "[32mPOST /ajouter_panier HTTP/1.1[0m" 302 -
+2026-04-25 17:19:17,397 [INFO] 127.0.0.1 - - [25/Apr/2026 17:19:17] "GET /boutique HTTP/1.1" 200 -
+2026-04-25 17:19:21,099 [INFO] 127.0.0.1 - - [25/Apr/2026 17:19:21] "[32mPOST /ajouter_panier HTTP/1.1[0m" 302 -
+2026-04-25 17:19:21,126 [INFO] 127.0.0.1 - - [25/Apr/2026 17:19:21] "GET /boutique HTTP/1.1" 200 -
+2026-04-25 17:19:27,261 [INFO] 127.0.0.1 - - [25/Apr/2026 17:19:27] "[32mPOST /ajouter_panier HTTP/1.1[0m" 302 -
+2026-04-25 17:19:27,541 [INFO] 127.0.0.1 - - [25/Apr/2026 17:19:27] "GET /boutique HTTP/1.1" 200 -
+2026-04-25 17:19:37,557 [INFO] 127.0.0.1 - - [25/Apr/2026 17:19:37] "[32mPOST /ajouter_panier HTTP/1.1[0m" 302 -
+2026-04-25 17:19:37,588 [INFO] 127.0.0.1 - - [25/Apr/2026 17:19:37] "GET /boutique HTTP/1.1" 200 -
+2026-04-25 17:19:42,435 [INFO] 127.0.0.1 - - [25/Apr/2026 17:19:42] "[32mPOST /ajouter_panier HTTP/1.1[0m" 302 -
+2026-04-25 17:19:42,716 [INFO] 127.0.0.1 - - [25/Apr/2026 17:19:42] "GET /boutique HTTP/1.1" 200 -
+2026-04-25 17:19:48,175 [INFO] 127.0.0.1 - - [25/Apr/2026 17:19:48] "[32mPOST /ajouter_panier HTTP/1.1[0m" 302 -
+2026-04-25 17:19:48,221 [INFO] 127.0.0.1 - - [25/Apr/2026 17:19:48] "GET /boutique HTTP/1.1" 200 -
+2026-04-25 17:19:52,568 [INFO] 127.0.0.1 - - [25/Apr/2026 17:19:52] "[32mPOST /ajouter_panier HTTP/1.1[0m" 302 -
+2026-04-25 17:19:52,844 [INFO] 127.0.0.1 - - [25/Apr/2026 17:19:52] "GET /boutique HTTP/1.1" 200 -
+2026-04-25 17:19:57,563 [INFO] 127.0.0.1 - - [25/Apr/2026 17:19:57] "[32mPOST /ajouter_panier HTTP/1.1[0m" 302 -
+2026-04-25 17:19:57,595 [INFO] 127.0.0.1 - - [25/Apr/2026 17:19:57] "GET /boutique HTTP/1.1" 200 -
+2026-04-25 17:20:01,100 [INFO] 127.0.0.1 - - [25/Apr/2026 17:20:01] "[32mPOST /ajouter_panier HTTP/1.1[0m" 302 -
+2026-04-25 17:20:01,398 [INFO] 127.0.0.1 - - [25/Apr/2026 17:20:01] "GET /boutique HTTP/1.1" 200 -
+2026-04-25 17:20:15,288 [INFO] 127.0.0.1 - - [25/Apr/2026 17:20:15] "[32mPOST /ajouter_panier HTTP/1.1[0m" 302 -
+2026-04-25 17:20:15,315 [INFO] 127.0.0.1 - - [25/Apr/2026 17:20:15] "GET /boutique HTTP/1.1" 200 -
+2026-04-25 17:20:21,956 [INFO] 127.0.0.1 - - [25/Apr/2026 17:20:21] "[32mPOST /ajouter_panier HTTP/1.1[0m" 302 -
+2026-04-25 17:20:22,240 [INFO] 127.0.0.1 - - [25/Apr/2026 17:20:22] "GET /boutique HTTP/1.1" 200 -
+2026-04-25 17:22:48,940 [INFO] Commande - Awa Mendy - 32550 FCFA
+2026-04-25 17:22:48,942 [INFO] 127.0.0.1 - - [25/Apr/2026 17:22:48] "POST /commander HTTP/1.1" 200 -
+2026-04-25 17:22:52,760 [INFO] 127.0.0.1 - - [25/Apr/2026 17:22:52] "GET /boutique HTTP/1.1" 200 -
+2026-04-25 17:23:48,747 [INFO] 127.0.0.1 - - [25/Apr/2026 17:23:48] "GET /boutique HTTP/1.1" 200 -
+2026-04-25 17:23:54,104 [INFO] 127.0.0.1 - - [25/Apr/2026 17:23:54] "GET /boutique HTTP/1.1" 200 -
+2026-04-25 17:24:08,792 [INFO] 127.0.0.1 - - [25/Apr/2026 17:24:08] "[32mGET /logout HTTP/1.1[0m" 302 -
+2026-04-25 17:24:09,072 [INFO] 127.0.0.1 - - [25/Apr/2026 17:24:09] "GET / HTTP/1.1" 200 -
+2026-04-25 17:24:34,399 [INFO] Connexion reussie : admin
+2026-04-25 17:24:34,400 [INFO] 127.0.0.1 - - [25/Apr/2026 17:24:34] "[32mPOST / HTTP/1.1[0m" 302 -
+2026-04-25 17:24:34,442 [INFO] 127.0.0.1 - - [25/Apr/2026 17:24:34] "GET /boutique HTTP/1.1" 200 -
+2026-04-25 17:25:09,040 [INFO] 127.0.0.1 - - [25/Apr/2026 17:25:09] "GET /admin HTTP/1.1" 200 -
+2026-04-25 17:25:41,652 [INFO] 127.0.0.1 - - [25/Apr/2026 17:25:41] "GET /stats HTTP/1.1" 200 -
+2026-04-25 17:30:07,645 [INFO] 127.0.0.1 - - [25/Apr/2026 17:30:07] "GET /admin HTTP/1.1" 200 -
+2026-04-25 17:30:16,289 [INFO] Base reinitialise !
+2026-04-25 17:30:16,290 [INFO] 127.0.0.1 - - [25/Apr/2026 17:30:16] "[32mGET /admin/reinitialiser HTTP/1.1[0m" 302 -
+2026-04-25 17:30:16,326 [INFO] 127.0.0.1 - - [25/Apr/2026 17:30:16] "GET /admin HTTP/1.1" 200 -
+2026-04-25 17:30:27,306 [INFO] 1 commandes supprimees !
+2026-04-25 17:30:27,307 [INFO] 127.0.0.1 - - [25/Apr/2026 17:30:27] "[32mGET /admin/supprimer_commandes HTTP/1.1[0m" 302 -
+2026-04-25 17:30:27,595 [INFO] 127.0.0.1 - - [25/Apr/2026 17:30:27] "GET /admin HTTP/1.1" 200 -
+2026-04-25 17:30:31,668 [INFO] 127.0.0.1 - - [25/Apr/2026 17:30:31] "GET /stats HTTP/1.1" 200 -
+2026-04-25 17:30:42,174 [INFO] 127.0.0.1 - - [25/Apr/2026 17:30:42] "GET /boutique HTTP/1.1" 200 -
+2026-04-25 17:31:16,426 [INFO] 127.0.0.1 - - [25/Apr/2026 17:31:16] "GET /boutique HTTP/1.1" 200 -
+2026-04-25 17:31:22,297 [INFO] 127.0.0.1 - - [25/Apr/2026 17:31:22] "[32mGET /logout HTTP/1.1[0m" 302 -
+2026-04-25 17:31:22,578 [INFO] 127.0.0.1 - - [25/Apr/2026 17:31:22] "GET / HTTP/1.1" 200 -
+2026-04-25 17:55:10,854 [INFO] Backup automatique demarre (toutes les 24h)
+2026-04-25 17:55:10,855 [INFO] Application Flask demarree !
+2026-04-25 17:55:10,916 [INFO] Backup cree : /home/ibrahima/terroir_local/backups/backup_20260425_175510.json
+2026-04-25 17:56:35,747 [INFO] Backup automatique demarre (toutes les 24h)
+2026-04-25 17:56:35,748 [INFO] Application Flask demarree !
+2026-04-25 17:56:35,807 [INFO] Backup cree : /home/ibrahima/terroir_local/backups/backup_20260425_175635.json
+2026-04-25 17:57:41,273 [INFO] Backup automatique demarre (toutes les 24h)
+2026-04-25 17:57:41,275 [INFO] Application Flask demarree !
+2026-04-25 17:57:41,329 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.26.20.100:5000
+2026-04-25 17:57:41,329 [INFO] [33mPress CTRL+C to quit[0m
+2026-04-25 17:57:41,331 [INFO]  * Restarting with stat
+2026-04-25 17:57:41,339 [INFO] Backup cree : /home/ibrahima/terroir_local/backups/backup_20260425_175741.json
+2026-04-25 17:57:41,829 [INFO] Backup automatique demarre (toutes les 24h)
+2026-04-25 17:57:41,830 [INFO] Application Flask demarree !
+2026-04-25 17:57:41,882 [WARNING]  * Debugger is active!
+2026-04-25 17:57:41,891 [INFO] Backup cree : /home/ibrahima/terroir_local/backups/backup_20260425_175741.json
+2026-04-25 17:57:41,926 [INFO]  * Debugger PIN: 142-288-378
+2026-04-25 17:59:36,208 [INFO] 127.0.0.1 - - [25/Apr/2026 17:59:36] "GET / HTTP/1.1" 200 -
+2026-04-25 18:56:04,932 [INFO]  * Detected change in '/home/ibrahima/terroir_local/config.py', reloading
+2026-04-25 18:56:05,561 [INFO]  * Restarting with stat
+2026-04-25 18:56:06,184 [INFO] Backup automatique demarre (toutes les 24h)
+2026-04-25 18:56:06,184 [INFO] Application Flask demarree !
+2026-04-25 18:56:06,208 [WARNING]  * Debugger is active!
+2026-04-25 18:56:06,216 [INFO]  * Debugger PIN: 142-288-378
+2026-04-25 18:56:09,115 [INFO] Backup cree : /home/ibrahima/terroir_local/backups/backup_20260425_185609.json
+2026-04-25 18:58:24,382 [INFO] Backup automatique demarre (toutes les 24h)
+2026-04-25 18:58:24,383 [INFO] Application Flask demarree !
+2026-04-25 18:59:31,076 [INFO] Backup automatique demarre (toutes les 24h)
+2026-04-25 18:59:31,077 [INFO] Application Flask demarree !
+2026-04-25 18:59:31,196 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.26.20.100:5000
+2026-04-25 18:59:31,197 [INFO] [33mPress CTRL+C to quit[0m
+2026-04-25 18:59:31,197 [INFO]  * Restarting with stat
+2026-04-25 18:59:31,838 [INFO] Backup automatique demarre (toutes les 24h)
+2026-04-25 18:59:31,839 [INFO] Application Flask demarree !
+2026-04-25 18:59:31,891 [WARNING]  * Debugger is active!
+2026-04-25 18:59:31,900 [INFO]  * Debugger PIN: 142-288-378
+2026-04-25 18:59:33,495 [INFO] Backup cree : /home/ibrahima/terroir_local/backups/backup_20260425_185933.json
+2026-04-25 18:59:34,309 [INFO] Backup cree : /home/ibrahima/terroir_local/backups/backup_20260425_185934.json
+2026-04-25 19:00:05,186 [INFO] 127.0.0.1 - - [25/Apr/2026 19:00:05] "GET / HTTP/1.1" 200 -
+2026-04-25 19:00:10,248 [INFO] Connexion reussie : admin
+2026-04-25 19:00:10,270 [INFO] 127.0.0.1 - - [25/Apr/2026 19:00:10] "[32mPOST / HTTP/1.1[0m" 302 -
+2026-04-25 19:00:11,576 [INFO] 127.0.0.1 - - [25/Apr/2026 19:00:11] "GET /boutique HTTP/1.1" 200 -
+2026-04-25 19:00:41,218 [INFO] 127.0.0.1 - - [25/Apr/2026 19:00:41] "GET /boutique HTTP/1.1" 200 -
+2026-04-25 19:00:57,386 [INFO] 127.0.0.1 - - [25/Apr/2026 19:00:57] "GET /boutique HTTP/1.1" 200 -
+2026-04-25 19:01:01,788 [INFO] 127.0.0.1 - - [25/Apr/2026 19:01:01] "GET /stats HTTP/1.1" 200 -
+2026-04-25 19:01:11,145 [INFO] 127.0.0.1 - - [25/Apr/2026 19:01:11] "GET /stats HTTP/1.1" 200 -
+2026-04-25 19:01:15,748 [INFO] 127.0.0.1 - - [25/Apr/2026 19:01:15] "GET /admin HTTP/1.1" 200 -
+2026-04-25 19:02:31,526 [ERROR] Connexion MongoDB echouee : No replica set members found yet, Timeout: 3.0s, Topology Description: <TopologyDescription id: 69ed0fc400430dd00d0ff407, topology_type: ReplicaSetNoPrimary, servers: [<ServerDescription ('ac-qnmlyva-shard-00-00.5r4lftj.mongodb.net', 27017) server_type: Unknown, rtt: None>, <ServerDescription ('ac-qnmlyva-shard-00-01.5r4lftj.mongodb.net', 27017) server_type: Unknown, rtt: None>, <ServerDescription ('ac-qnmlyva-shard-00-02.5r4lftj.mongodb.net', 27017) server_type: Unknown, rtt: None>]>
+2026-04-25 19:02:31,527 [INFO] 127.0.0.1 - - [25/Apr/2026 19:02:31] "GET /admin HTTP/1.1" 200 -
+2026-04-25 19:02:36,823 [ERROR] Connexion MongoDB echouee : No replica set members match selector "Primary()", Timeout: 3.0s, Topology Description: <TopologyDescription id: 69ed0fc900430dd00d0ff409, topology_type: ReplicaSetNoPrimary, servers: [<ServerDescription ('ac-qnmlyva-shard-00-00.5r4lftj.mongodb.net', 27017) server_type: RSSecondary, rtt: 0.6824942719977116>, <ServerDescription ('ac-qnmlyva-shard-00-01.5r4lftj.mongodb.net', 27017) server_type: Unknown, rtt: None>, <ServerDescription ('ac-qnmlyva-shard-00-02.5r4lftj.mongodb.net', 27017) server_type: Unknown, rtt: None>]>
+2026-04-25 19:02:36,824 [INFO] 127.0.0.1 - - [25/Apr/2026 19:02:36] "GET /boutique HTTP/1.1" 200 -
+2026-04-25 19:02:42,375 [INFO] 127.0.0.1 - - [25/Apr/2026 19:02:42] "GET /stats HTTP/1.1" 200 -
+2026-04-25 19:02:52,903 [INFO] 127.0.0.1 - - [25/Apr/2026 19:02:52] "GET /stats HTTP/1.1" 200 -
+2026-04-25 19:02:53,386 [ERROR] Connexion MongoDB echouee : No replica set members match selector "Primary()", Timeout: 3.0s, Topology Description: <TopologyDescription id: 69ed0fda00430dd00d0ff40a, topology_type: ReplicaSetNoPrimary, servers: [<ServerDescription ('ac-qnmlyva-shard-00-00.5r4lftj.mongodb.net', 27017) server_type: RSSecondary, rtt: 0.3226492519970634>, <ServerDescription ('ac-qnmlyva-shard-00-01.5r4lftj.mongodb.net', 27017) server_type: Unknown, rtt: None>, <ServerDescription ('ac-qnmlyva-shard-00-02.5r4lftj.mongodb.net', 27017) server_type: Unknown, rtt: None>]>
+2026-04-25 19:02:53,387 [INFO] 127.0.0.1 - - [25/Apr/2026 19:02:53] "GET /boutique HTTP/1.1" 200 -
+2026-04-25 19:03:30,947 [INFO] 127.0.0.1 - - [25/Apr/2026 19:03:30] "GET /admin HTTP/1.1" 200 -
+2026-04-25 19:03:38,015 [INFO] 127.0.0.1 - - [25/Apr/2026 19:03:38] "GET /boutique HTTP/1.1" 200 -
+2026-04-25 19:03:38,200 [INFO] 127.0.0.1 - - [25/Apr/2026 19:03:38] "GET /boutique HTTP/1.1" 200 -
+2026-04-25 19:03:44,686 [INFO] 127.0.0.1 - - [25/Apr/2026 19:03:44] "GET /admin HTTP/1.1" 200 -
+2026-04-25 19:03:53,729 [INFO] 127.0.0.1 - - [25/Apr/2026 19:03:53] "GET /stats HTTP/1.1" 200 -
+2026-04-25 19:03:56,749 [INFO] 127.0.0.1 - - [25/Apr/2026 19:03:56] "GET /boutique HTTP/1.1" 200 -
+2026-04-25 19:03:58,379 [INFO] 127.0.0.1 - - [25/Apr/2026 19:03:58] "GET /boutique HTTP/1.1" 200 -
+2026-04-25 19:05:18,073 [INFO] Backup automatique demarre (toutes les 24h)
+2026-04-25 19:05:18,073 [INFO] Application Flask demarree !
+2026-04-25 19:05:18,134 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.26.20.100:5000
+2026-04-25 19:05:18,135 [INFO] [33mPress CTRL+C to quit[0m
+2026-04-25 19:05:18,138 [INFO]  * Restarting with stat
+2026-04-25 19:05:18,614 [INFO] Backup automatique demarre (toutes les 24h)
+2026-04-25 19:05:18,615 [INFO] Application Flask demarree !
+2026-04-25 19:05:18,667 [WARNING]  * Debugger is active!
+2026-04-25 19:05:18,674 [INFO]  * Debugger PIN: 142-288-378
+2026-04-25 19:05:22,005 [INFO] Backup cree : /home/ibrahima/terroir_local/backups/backup_20260425_190522.json
+2026-04-25 19:05:32,252 [INFO] 127.0.0.1 - - [25/Apr/2026 19:05:32] "GET /boutique HTTP/1.1" 200 -
+2026-04-25 19:05:44,221 [INFO] Backup cree : /home/ibrahima/terroir_local/backups/backup_20260425_190544.json
+2026-04-25 19:06:00,402 [ERROR] Connexion MongoDB echouee : ac-qnmlyva-shard-00-02.5r4lftj.mongodb.net:27017: timed out (configured timeouts: connectTimeoutMS: 20000.0ms)
+2026-04-25 19:06:00,403 [INFO] 127.0.0.1 - - [25/Apr/2026 19:06:00] "GET /boutique HTTP/1.1" 200 -
+2026-04-25 19:19:29,181 [INFO] Backup automatique demarre (toutes les 24h)
+2026-04-25 19:19:29,181 [INFO] Application Flask demarree !
+2026-04-25 19:19:29,274 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.26.20.100:5000
+2026-04-25 19:19:29,275 [INFO] [33mPress CTRL+C to quit[0m
+2026-04-25 19:19:29,281 [INFO]  * Restarting with stat
+2026-04-25 19:19:29,978 [INFO] Backup automatique demarre (toutes les 24h)
+2026-04-25 19:19:29,979 [INFO] Application Flask demarree !
+2026-04-25 19:19:30,038 [WARNING]  * Debugger is active!
+2026-04-25 19:19:30,072 [INFO]  * Debugger PIN: 142-288-378
+2026-04-25 19:19:31,517 [INFO] Backup cree : /home/ibrahima/terroir_local/backups/backup_20260425_191931.json
+2026-04-25 19:19:31,654 [INFO] Backup cree : /home/ibrahima/terroir_local/backups/backup_20260425_191931.json
+2026-04-25 19:20:11,487 [INFO] 127.0.0.1 - - [25/Apr/2026 19:20:11] "[32mGET / HTTP/1.1[0m" 302 -
+2026-04-25 19:20:13,077 [INFO] 127.0.0.1 - - [25/Apr/2026 19:20:13] "GET /boutique HTTP/1.1" 200 -
+2026-04-25 19:20:29,677 [INFO] 127.0.0.1 - - [25/Apr/2026 19:20:29] "GET /boutique?categorie=Toutes&search=&promo=0 HTTP/1.1" 200 -
+2026-04-25 19:20:33,492 [INFO] 127.0.0.1 - - [25/Apr/2026 19:20:33] "GET /boutique?categorie=Toutes&search=&promo=0 HTTP/1.1" 200 -
+2026-04-25 19:20:34,454 [ERROR] Connexion MongoDB echouee : No replica set members match selector "Primary()", Timeout: 3.0s, Topology Description: <TopologyDescription id: 69ed13fef730e012fd415aa7, topology_type: ReplicaSetNoPrimary, servers: [<ServerDescription ('ac-qnmlyva-shard-00-00.5r4lftj.mongodb.net', 27017) server_type: RSSecondary, rtt: 0.14607450099720154>, <ServerDescription ('ac-qnmlyva-shard-00-01.5r4lftj.mongodb.net', 27017) server_type: RSSecondary, rtt: 0.11109385900272173>, <ServerDescription ('ac-qnmlyva-shard-00-02.5r4lftj.mongodb.net', 27017) server_type: Unknown, rtt: None>]>
+2026-04-25 19:20:34,455 [INFO] 127.0.0.1 - - [25/Apr/2026 19:20:34] "GET /boutique HTTP/1.1" 200 -
+2026-04-25 19:20:53,438 [ERROR] Connexion MongoDB echouee : ac-qnmlyva-shard-00-02.5r4lftj.mongodb.net:27017: timed out (configured timeouts: connectTimeoutMS: 20000.0ms)
+2026-04-25 19:20:53,439 [INFO] 127.0.0.1 - - [25/Apr/2026 19:20:53] "GET /boutique?categorie=Toutes&search=&promo=0 HTTP/1.1" 200 -
+2026-04-25 19:22:25,740 [INFO] Backup automatique demarre (toutes les 24h)
+2026-04-25 19:22:25,742 [INFO] Application Flask demarree !
+2026-04-25 19:22:25,810 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.26.20.100:5000
+2026-04-25 19:22:25,811 [INFO] [33mPress CTRL+C to quit[0m
+2026-04-25 19:22:25,816 [INFO]  * Restarting with stat
+2026-04-25 19:22:26,435 [INFO] Backup automatique demarre (toutes les 24h)
+2026-04-25 19:22:26,435 [INFO] Application Flask demarree !
+2026-04-25 19:22:26,478 [WARNING]  * Debugger is active!
+2026-04-25 19:22:26,485 [INFO]  * Debugger PIN: 142-288-378
+2026-04-25 19:22:29,687 [INFO] Backup cree : /home/ibrahima/terroir_local/backups/backup_20260425_192229.json
+2026-04-25 19:22:53,134 [INFO] Backup cree : /home/ibrahima/terroir_local/backups/backup_20260425_192253.json
+2026-04-25 19:23:34,423 [INFO] 127.0.0.1 - - [25/Apr/2026 19:23:34] "[32mGET / HTTP/1.1[0m" 302 -
+2026-04-25 19:23:37,376 [INFO] 127.0.0.1 - - [25/Apr/2026 19:23:37] "GET /boutique HTTP/1.1" 200 -
+2026-04-25 19:24:12,290 [INFO] 127.0.0.1 - - [25/Apr/2026 19:24:12] "GET /boutique HTTP/1.1" 200 -
+2026-04-25 19:24:17,597 [INFO] 127.0.0.1 - - [25/Apr/2026 19:24:17] "GET /stats HTTP/1.1" 200 -
+2026-04-25 19:24:26,185 [INFO] 127.0.0.1 - - [25/Apr/2026 19:24:26] "GET /admin HTTP/1.1" 200 -
+2026-04-25 19:24:44,712 [ERROR] Connexion MongoDB echouee : No replica set members match selector "Primary()", Timeout: 3.0s, Topology Description: <TopologyDescription id: 69ed14f8f8cb7e1243141fcb, topology_type: ReplicaSetNoPrimary, servers: [<ServerDescription ('ac-qnmlyva-shard-00-00.5r4lftj.mongodb.net', 27017) server_type: RSSecondary, rtt: 0.3466806770011317>, <ServerDescription ('ac-qnmlyva-shard-00-01.5r4lftj.mongodb.net', 27017) server_type: Unknown, rtt: None>, <ServerDescription ('ac-qnmlyva-shard-00-02.5r4lftj.mongodb.net', 27017) server_type: Unknown, rtt: None>]>
+2026-04-25 19:24:44,713 [INFO] 127.0.0.1 - - [25/Apr/2026 19:24:44] "GET /boutique HTTP/1.1" 200 -
+2026-04-25 19:24:52,521 [INFO] 127.0.0.1 - - [25/Apr/2026 19:24:52] "[32mGET / HTTP/1.1[0m" 302 -
+2026-04-25 19:24:54,350 [INFO] 127.0.0.1 - - [25/Apr/2026 19:24:54] "GET /boutique HTTP/1.1" 200 -
+2026-04-25 22:19:56,121 [INFO] Backup automatique demarre (toutes les 24h)
+2026-04-25 22:19:56,122 [INFO] Application Flask demarree !
+2026-04-25 22:19:56,172 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.26.20.100:5000
+2026-04-25 22:19:56,172 [INFO] [33mPress CTRL+C to quit[0m
+2026-04-25 22:19:56,178 [INFO]  * Restarting with stat
+2026-04-25 22:19:56,734 [INFO] Backup automatique demarre (toutes les 24h)
+2026-04-25 22:19:56,734 [INFO] Application Flask demarree !
+2026-04-25 22:19:56,788 [WARNING]  * Debugger is active!
+2026-04-25 22:19:56,796 [INFO]  * Debugger PIN: 142-288-378
+2026-04-25 22:19:59,251 [INFO] Backup cree : /home/ibrahima/terroir_local/backups/backup_20260425_221959.json
+2026-04-25 22:19:59,630 [INFO] Backup cree : /home/ibrahima/terroir_local/backups/backup_20260425_221959.json
+2026-04-25 22:20:04,245 [INFO] 127.0.0.1 - - [25/Apr/2026 22:20:04] "GET /boutique HTTP/1.1" 200 -
+2026-04-25 22:20:25,586 [INFO] 127.0.0.1 - - [25/Apr/2026 22:20:25] "[32mPOST /ajouter_panier HTTP/1.1[0m" 302 -
+2026-04-25 22:20:26,888 [INFO] 127.0.0.1 - - [25/Apr/2026 22:20:26] "GET /boutique HTTP/1.1" 200 -
+2026-04-25 22:20:31,978 [INFO] 127.0.0.1 - - [25/Apr/2026 22:20:31] "[32mPOST /ajouter_panier HTTP/1.1[0m" 302 -
+2026-04-25 22:20:32,855 [INFO] 127.0.0.1 - - [25/Apr/2026 22:20:32] "[32mPOST /ajouter_panier HTTP/1.1[0m" 302 -
+2026-04-25 22:20:34,139 [INFO] 127.0.0.1 - - [25/Apr/2026 22:20:34] "GET /boutique HTTP/1.1" 200 -
+2026-04-25 22:20:34,657 [INFO] 127.0.0.1 - - [25/Apr/2026 22:20:34] "[32mGET /retirer_panier/0 HTTP/1.1[0m" 302 -
+2026-04-25 22:20:36,050 [INFO] 127.0.0.1 - - [25/Apr/2026 22:20:36] "GET /boutique HTTP/1.1" 200 -
+2026-04-25 22:20:38,606 [INFO] 127.0.0.1 - - [25/Apr/2026 22:20:38] "[32mGET /retirer_panier/0 HTTP/1.1[0m" 302 -
+2026-04-25 22:20:40,348 [INFO] 127.0.0.1 - - [25/Apr/2026 22:20:40] "GET /boutique HTTP/1.1" 200 -
+2026-04-25 22:20:46,365 [INFO] 127.0.0.1 - - [25/Apr/2026 22:20:46] "GET /stats HTTP/1.1" 200 -
+2026-04-25 22:20:58,722 [INFO] 127.0.0.1 - - [25/Apr/2026 22:20:58] "GET /admin HTTP/1.1" 200 -
