@@ -4,7 +4,7 @@ import os
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 # MONGODB
-MONGO_URI = "mongodb+srv://camaraibrahima8900:Pibcmr8900@cluster0.5r4lftj.mongodb.net/terroir_local?appName=Cluster0"
+MONGO_URI = os.environ.get("MONGO_URI", "mongodb+srv://camaraibrahima8900:Pibcmr8900@cluster0.5r4lftj.mongodb.net/terroir_local?appName=Cluster0")
 MONGO_AUTH_SOURCE = "admin"
 MONGO_DB = "terroir_local"
 
