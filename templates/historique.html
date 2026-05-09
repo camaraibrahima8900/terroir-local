@@ -1,0 +1,137 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="row mb-4">
+    <div class="col-12">
+        <h2 class="fw-bold text-success">
+            <i class="fas fa-history me-2"></i>Historique Commandes
+        </h2>
+    </div>
+</div>
+
+<!-- Recherche client -->
+<div class="filter-card mb-4">
+    <form method="GET" class="row g-3 align-items-end">
+        <div class="col-md-6">
+            <label class="form-label fw-semibold">
+                <i class="fas fa-search me-1 text-success"></i>Rechercher par email client
+            </label>
+            <input type="email" name="email" class="form-control rounded-3"
+                   value="{{ email }}" placeholder="exemple@gmail.com">
+        </div>
+        <div class="col-md-3">
+            <button type="submit" class="btn btn-success rounded-3 w-100">
+                <i class="fas fa-search me-1"></i>Rechercher
+            </button>
+        </div>
+        <div class="col-md-3">
+            <a href="/historique" class="btn btn-outline-secondary rounded-3 w-100">
+                <i class="fas fa-times me-1"></i>Reset
+            </a>
+        </div>
+    </form>
+</div>
+
+<div class="row g-4">
+    <!-- Liste clients -->
+    <div class="col-md-4">
+        <div class="card border-0 shadow-sm rounded-3">
+            <div class="card-header bg-success text-white rounded-top-3 py-3">
+                <h6 class="mb-0 fw-bold"><i class="fas fa-users me-2"></i>Top Clients</h6>
+            </div>
+            <div class="card-body p-0">
+                {% for c in clients %}
+                <a href="/historique?email={{ c._id }}"
+                   class="d-flex align-items-center gap-3 p-3 border-bottom text-decoration-none
+                          {% if email == c._id %}bg-success bg-opacity-10{% endif %} hover-bg">
+                    <div class="rounded-circle d-flex align-items-center justify-content-center fw-bold text-white"
+                         style="width:40px;height:40px;background:linear-gradient(135deg,#1a6b3a,#27ae60);min-width:40px">
+                        {{ c.nom[0] }}
+                    </div>
+                    <div class="flex-grow-1">
+                        <div class="fw-semibold text-dark small">{{ c.nom }}</div>
+                        <div class="text-muted" style="font-size:0.75rem">{{ c.nb }} commande(s)</div>
+                    </div>
+                    <div class="text-success fw-bold small">{{ c.total | round(0) | int }} F</div>
+                </a>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    <!-- Commandes du client -->
+    <div class="col-md-8">
+        {% if email %}
+        <div class="card border-0 shadow-sm rounded-3 mb-3 p-3" style="background:linear-gradient(135deg,#1a6b3a,#27ae60);color:white">
+            <div class="row text-center">
+                <div class="col">
+                    <div class="fs-4 fw-bold">{{ commandes|length }}</div>
+                    <div class="small opacity-75">Commandes</div>
+                </div>
+                <div class="col">
+                    <div class="fs-4 fw-bold">{{ total_depense | round(0) | int }}</div>
+                    <div class="small opacity-75">FCFA depense</div>
+                </div>
+                <div class="col">
+                    <div class="fs-4 fw-bold">
+                        {% if commandes %}{{ (total_depense / commandes|length) | round(0) | int }}{% else %}0{% endif %}
+                    </div>
+                    <div class="small opacity-75">Panier moyen</div>
+                </div>
+            </div>
+        </div>
+
+        {% for cmd in commandes %}
+        <div class="card border-0 shadow-sm rounded-3 mb-3 p-3 animate-in">
+            <div class="row align-items-center">
+                <div class="col-md-2 text-center">
+                    {% if cmd.statut == 'en_attente' %}
+                    <div style="font-size:2rem">⏳</div>
+                    <span class="badge bg-warning small">En attente</span>
+                    {% elif cmd.statut == 'confirmee' %}
+                    <div style="font-size:2rem">✅</div>
+                    <span class="badge bg-primary small">Confirmee</span>
+                    {% elif cmd.statut == 'expediee' %}
+                    <div style="font-size:2rem">🚚</div>
+                    <span class="badge bg-info small">Expediee</span>
+                    {% elif cmd.statut == 'livree' %}
+                    <div style="font-size:2rem">🎉</div>
+                    <span class="badge bg-success small">Livree</span>
+                    {% endif %}
+                </div>
+                <div class="col-md-4">
+                    <div class="small text-muted">{{ cmd.date_str }}</div>
+                    <div class="small text-muted">
+                        <i class="fas fa-map-marker-alt me-1"></i>{{ cmd.livraison.get('region','?') }}
+                    </div>
+                    <div class="small text-muted">
+                        <i class="fas fa-truck me-1"></i>{{ cmd.livraison.get('type','normal') }}
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    {% for a in cmd.articles %}
+                    <div class="small">
+                        <i class="fas fa-check text-success me-1"></i>
+                        {{ a.get('nom_produit', a.get('nom','?')) }} x{{ a.quantite }}
+                    </div>
+                    {% endfor %}
+                </div>
+                <div class="col-md-2 text-end">
+                    <div class="fw-bold text-success">{{ cmd.total }} FCFA</div>
+                    <a href="/facture/{{ cmd._id }}" class="btn btn-outline-success btn-sm rounded-3 mt-1">
+                        <i class="fas fa-file-pdf me-1"></i>Facture
+                    </a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+
+        {% else %}
+        <div class="text-center py-5">
+            <div style="font-size:4rem">🔍</div>
+            <h5 class="text-muted mt-3">Selectionnez un client</h5>
+            <p class="text-muted">Cliquez sur un client ou entrez son email</p>
+        </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

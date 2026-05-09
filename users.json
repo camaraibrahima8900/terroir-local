@@ -10,5 +10,17 @@
     "role": "utilisateur",
     "nom": "Utilisateur",
     "email": "user@terroirlocal.sn"
+  },
+  "ipc": {
+    "password": "$2b$12$KBKnmheheAtG3SwFlacAZu2LD.D17KpUR7ATErPtM7InZ8UTA8fJe",
+    "role": "administrateur",
+    "nom": "Camara",
+    "email": "ibrahimacamara8900@gmail.com"
+  },
+  "cmr": {
+    "password": "$2b$12$APFqNtiWsBhyjLmCV3vYTOg8Zx.iXexlCW86Tfnhdw4h66dOshe/e",
+    "role": "utilisateur",
+    "nom": "aaaaa",
+    "email": "maraibrahima8900@gmail.com"
   }
 }

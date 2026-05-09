@@ -1,49 +1,99 @@
 {% extends 'base.html' %}
 {% block content %}
-<div class="row justify-content-center">
+<div class="row justify-content-center mt-4">
     <div class="col-md-8">
-        <div class="card text-center p-4">
-            <div style="font-size: 4rem;">✅</div>
-            <h2 class="text-success mt-3">Commande Confirmee !</h2>
+        <div class="card border-0 shadow-sm rounded-3 text-center p-4 animate-in">
+            <div style="font-size:5rem">✅</div>
+            <h2 class="text-success fw-bold mt-3">Commande Confirmee !</h2>
+            <p class="text-muted">Merci pour votre commande sur Terroir Local Senegal</p>
             <hr>
-            <div class="row text-start mt-3">
+            <div class="row text-start mt-3 g-3">
                 <div class="col-md-6">
-                    <h5 class="text-success">Informations Client</h5>
-                    <p><strong>Nom :</strong> {{ client.nom }}</p>
-                    <p><strong>Tel :</strong> {{ client.telephone }}</p>
-                    <p><strong>Email :</strong> {{ client.email }}</p>
+                    <div class="card border-0 bg-light rounded-3 p-3 h-100">
+                        <h6 class="text-success fw-bold mb-3">
+                            <i class="fas fa-user me-2"></i>Informations Client
+                        </h6>
+                        <p class="mb-1"><strong>Nom :</strong> {{ client.nom }}</p>
+                        <p class="mb-1"><strong>Tel :</strong> {{ client.telephone }}</p>
+                        <p class="mb-0"><strong>Email :</strong> {{ client.email }}</p>
+                    </div>
                 </div>
                 <div class="col-md-6">
-                    <h5 class="text-success">Informations Livraison</h5>
-                    <p><strong>Region :</strong> {{ region }}</p>
-                    <p><strong>Type :</strong> {{ type_livraison }}</p>
-                    <p><strong>Frais :</strong> {{ frais }} {{ devise }}</p>
+                    <div class="card border-0 bg-light rounded-3 p-3 h-100">
+                        <h6 class="text-success fw-bold mb-3">
+                            <i class="fas fa-truck me-2"></i>Informations Livraison
+                        </h6>
+                        <p class="mb-1"><strong>Region :</strong> {{ region }}</p>
+                        <p class="mb-1"><strong>Type :</strong>
+                            <span class="badge {% if type_livraison == 'express' %}bg-warning{% else %}bg-success{% endif %}">
+                                {{ type_livraison }}
+                            </span>
+                        </p>
+                        <p class="mb-0"><strong>Frais :</strong> {{ frais }} {{ devise }}</p>
+                    </div>
                 </div>
             </div>
             <hr>
-            <div class="row mt-2">
+            <div class="row g-3 mt-2">
                 <div class="col-md-4">
-                    <div class="card bg-light p-3">
-                        <h6>Sous-total</h6>
-                        <h4>{{ sous_total }} {{ devise }}</h4>
+                    <div class="card border-0 bg-light rounded-3 p-3">
+                        <div class="text-muted small mb-1">Sous-total</div>
+                        <div class="fs-5 fw-bold">{{ sous_total }} {{ devise }}</div>
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="card bg-success text-white p-3">
-                        <h6>Reduction</h6>
-                        <h4>-{{ reduction }} {{ devise }}</h4>
+                    <div class="card border-0 rounded-3 p-3" style="background:#e8f5e9">
+                        <div class="text-muted small mb-1">Reduction</div>
+                        <div class="fs-5 fw-bold text-success">-{{ reduction }} {{ devise }}</div>
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="card bg-primary text-white p-3">
-                        <h6>TOTAL</h6>
-                        <h4>{{ total }} {{ devise }}</h4>
+                    <div class="card border-0 rounded-3 p-3" style="background:linear-gradient(135deg,#1a6b3a,#27ae60);color:white">
+                        <div class="small mb-1 opacity-75">TOTAL</div>
+                        <div class="fs-4 fw-bold">{{ total }} {{ devise }}</div>
                     </div>
                 </div>
             </div>
             <div class="mt-4">
-                <a href="/boutique" class="btn btn-success btn-lg me-3">
-                    <i class="fas fa-store"></i> Continuer les achats
+            <h5 class="fw-bold text-success mb-3">
+                <i class="fas fa-mobile-alt me-2"></i>Payer maintenant
+            </h5>
+            <div class="row g-3 mb-4">
+                <div class="col-md-6">
+                    <a href="https://send.wave.com/m/ibrahimacamara" target="_blank"
+                       onclick="this.parentNode.querySelector('img').style.display='block'"
+                       class="card border-0 shadow-sm rounded-3 p-3 text-center text-decoration-none d-block h-100"
+                       style="background:linear-gradient(135deg,#1a75ff,#00d4ff);color:white">
+                        <div style="font-size:2.5rem">🌊</div>
+                        <div class="fw-bold mt-2">Payer avec Wave</div>
+                        <div class="small opacity-75">+221 78 476 03 84</div>
+                        <div class="fw-bold mt-1">{{ total }} FCFA</div>
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=80x80&data=https://send.wave.com/m/ibrahimacamara"
+                             class="mt-2 rounded-2" width="70" style="display:none">
+                    </a>
+                </div>
+                <div class="col-md-6">
+                    <a href="tel:+221784760384"
+                       class="card border-0 shadow-sm rounded-3 p-3 text-center text-decoration-none d-block h-100"
+                       style="background:linear-gradient(135deg,#ff6600,#ff9900);color:white">
+                        <div style="font-size:2.5rem">🟠</div>
+                        <div class="fw-bold mt-2">Orange Money</div>
+                        <div class="small opacity-75">+221 78 476 03 84</div>
+                        <div class="fw-bold mt-1">{{ total }} FCFA</div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="mt-2 d-flex gap-3 justify-content-center">
+                {% set msg = "Nouvelle commande Terroir Local:%0ANom: " + client.nom + "%0ATel: " + client.telephone + "%0ARegion: " + region + "%0ALivraison: " + type_livraison + "%0ATotal: " + total|string + " FCFA" %}
+            <a href="https://wa.me/221784760384?text={{ msg }}" target="_blank" class="btn btn-success rounded-3 px-4" style="background:#25D366;border:none">
+                <i class="fab fa-whatsapp me-2"></i>Confirmer via WhatsApp
+            </a>
+            <a href="/boutique" class="btn btn-success rounded-3 px-4">
+                    <i class="fas fa-store me-2"></i>Continuer les achats
+                </a>
+                <a href="/stats" class="btn btn-outline-success rounded-3 px-4">
+                    <i class="fas fa-chart-bar me-2"></i>Voir les stats
                 </a>
             </div>
         </div>

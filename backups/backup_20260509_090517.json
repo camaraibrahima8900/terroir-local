@@ -1,5 +1,5 @@
 {
-  "date": "2026-04-25 22:19:59.629521",
+  "date": "2026-05-09 09:05:17.019662",
   "nb_produits": 15,
   "nb_commandes": 0,
   "produits": [
@@ -10,6 +10,7 @@
       "stock": 200,
       "producteur": "Verger de Casamance",
       "image": "🥭",
+      "photo": "https://images.pexels.com/photos/918643/pexels-photo-918643.jpeg?w=300",
       "unite": "kg",
       "attributs": {
         "origine": "Ziguinchor",
@@ -23,6 +24,7 @@
       "stock": 150,
       "producteur": "Cooperative Louga",
       "image": "🌺",
+      "photo": "https://images.pexels.com/photos/5765/flower-red-background-hibiscus.jpg?w=300",
       "unite": "kg",
       "attributs": {
         "origine": "Louga",
@@ -36,6 +38,7 @@
       "stock": 80,
       "producteur": "Groupement Fatick",
       "image": "🍈",
+      "photo": "https://images.pexels.com/photos/1132047/pexels-photo-1132047.jpeg?w=300",
       "unite": "kg",
       "attributs": {
         "origine": "Fatick",
@@ -49,6 +52,7 @@
       "stock": 3,
       "producteur": "Marche Thies",
       "image": "🫘",
+      "photo": "https://images.pexels.com/photos/4110251/pexels-photo-4110251.jpeg?w=300",
       "unite": "kg",
       "attributs": {
         "origine": "Thies",
@@ -62,6 +66,7 @@
       "stock": 120,
       "producteur": "Maraichage Pikine",
       "image": "🫛",
+      "photo": "https://images.pexels.com/photos/6157049/pexels-photo-6157049.jpeg?w=300",
       "unite": "kg",
       "attributs": {
         "origine": "Dakar",
@@ -75,6 +80,7 @@
       "stock": 300,
       "producteur": "Cooperative Potou",
       "image": "🧅",
+      "photo": "https://images.pexels.com/photos/4197447/pexels-photo-4197447.jpeg?w=300",
       "unite": "kg",
       "attributs": {
         "origine": "Saint-Louis",
@@ -88,6 +94,7 @@
       "stock": 90,
       "producteur": "Maraichage Kaolack",
       "image": "🍆",
+      "photo": "https://images.pexels.com/photos/5639/food-vegetables-eggplant-purple.jpg?w=300",
       "unite": "kg",
       "attributs": {
         "origine": "Kaolack",
@@ -101,6 +108,7 @@
       "stock": 2,
       "producteur": "Cooperative Ziguinchor",
       "image": "🌶️",
+      "photo": "https://images.pexels.com/photos/870894/pexels-photo-870894.jpeg?w=300",
       "unite": "kg",
       "attributs": {
         "origine": "Ziguinchor",
@@ -114,6 +122,7 @@
       "stock": 500,
       "producteur": "GAEC Diourbel",
       "image": "🌾",
+      "photo": "https://images.pexels.com/photos/326082/pexels-photo-326082.jpeg?w=300",
       "unite": "kg",
       "attributs": {
         "origine": "Diourbel",
@@ -127,6 +136,7 @@
       "stock": 400,
       "producteur": "Riziculture Saint-Louis",
       "image": "🍚",
+      "photo": "https://images.pexels.com/photos/7421235/pexels-photo-7421235.jpeg?w=300",
       "unite": "kg",
       "attributs": {
         "origine": "Saint-Louis",
@@ -140,6 +150,7 @@
       "stock": 4,
       "producteur": "Cooperative Tambacounda",
       "image": "🌽",
+      "photo": "https://images.pexels.com/photos/547263/pexels-photo-547263.jpeg?w=300",
       "unite": "kg",
       "attributs": {
         "origine": "Tambacounda",
@@ -153,6 +164,7 @@
       "stock": 60,
       "producteur": "Huilerie Kaolack",
       "image": "🫙",
+      "photo": "https://images.pexels.com/photos/4033158/pexels-photo-4033158.jpeg?w=300",
       "unite": "litre",
       "attributs": {
         "origine": "Kaolack",
@@ -166,6 +178,7 @@
       "stock": 2,
       "producteur": "Cooperative Kolda",
       "image": "🫙",
+      "photo": "https://images.pexels.com/photos/33783/olive-oil-salad-dressing-cooking-olive.jpg?w=300",
       "unite": "litre",
       "attributs": {
         "origine": "Kolda",
@@ -179,6 +192,7 @@
       "stock": 30,
       "producteur": "Pecheurs Kayar",
       "image": "🐟",
+      "photo": "https://images.pexels.com/photos/1148358/pexels-photo-1148358.jpeg?w=300",
       "unite": "kg",
       "attributs": {
         "origine": "Kayar"
@@ -191,6 +205,7 @@
       "stock": 25,
       "producteur": "Pecheurs Mbour",
       "image": "🦪",
+      "photo": "https://images.pexels.com/photos/3535383/pexels-photo-3535383.jpeg?w=300",
       "unite": "kg",
       "attributs": {
         "origine": "Mbour"

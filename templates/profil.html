@@ -1,0 +1,131 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="row justify-content-center mt-4">
+    <div class="col-md-8">
+        <h2 class="fw-bold text-success mb-4">
+            <i class="fas fa-user-circle me-2"></i>Mon Profil
+        </h2>
+
+        {% if msg_success %}
+        <div class="alert alert-success rounded-3">
+            <i class="fas fa-check-circle me-2"></i>{{ msg_success }}
+        </div>
+        {% endif %}
+        {% if msg_error %}
+        <div class="alert alert-danger rounded-3">
+            <i class="fas fa-exclamation-circle me-2"></i>{{ msg_error }}
+        </div>
+        {% endif %}
+
+        <div class="row g-4">
+            <!-- Avatar -->
+            <div class="col-md-5">
+                <div class="card border-0 shadow-sm rounded-3 p-4 text-center">
+                    <div style="font-size:5rem" id="avatar-display">
+                        {{ user_data.get('avatar', '👤') }}
+                    </div>
+                    <h5 class="fw-bold mt-2">{{ username }}</h5>
+                    <span class="badge {% if role == 'administrateur' %}bg-warning{% else %}bg-primary{% endif %} mb-3">
+                        {{ role }}
+                    </span>
+                    <div class="text-muted small mb-3">{{ user_data.get('nom', '') }}</div>
+                    <div class="text-muted small mb-4">{{ user_data.get('email', '') }}</div>
+
+                    <form method="POST" action="/profil">
+                        <input type="hidden" name="action" value="changer_avatar">
+                        <label class="form-label fw-semibold small">Choisir un avatar</label>
+                        <div class="d-flex flex-wrap gap-2 justify-content-center mb-3">
+                            {% for emoji in ['👤','👨‍🌾','👩‍🌾','🧑‍💼','👨‍💼','👩‍💼','🌿','🌱','🦁','🐘','🦊','🦅'] %}
+                            <button type="button" onclick="choisirAvatar('{{ emoji }}')"
+                                    class="btn btn-light rounded-3 p-2" style="font-size:1.5rem">
+                                {{ emoji }}
+                            </button>
+                            {% endfor %}
+                        </div>
+                        <input type="hidden" name="avatar" id="avatar-input"
+                               value="{{ user_data.get('avatar', '👤') }}">
+                        <button type="submit" class="btn btn-success rounded-3 w-100">
+                            <i class="fas fa-save me-2"></i>Sauvegarder avatar
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Mot de passe -->
+            <div class="col-md-7">
+                <div class="card border-0 shadow-sm rounded-3 p-4">
+                    <h5 class="fw-bold text-success mb-3">
+                        <i class="fas fa-lock me-2"></i>Changer mot de passe
+                    </h5>
+                    <form method="POST" action="/profil">
+                        <input type="hidden" name="action" value="changer_mdp">
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold small">Ancien mot de passe</label>
+                            <input type="password" name="ancien_mdp" class="form-control rounded-3"
+                                   placeholder="Votre mot de passe actuel" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold small">Nouveau mot de passe</label>
+                            <input type="password" name="nouveau_mdp" id="nouveau_mdp"
+                                   class="form-control rounded-3"
+                                   placeholder="Nouveau mot de passe" required>
+                        </div>
+                        <div class="mb-4">
+                            <label class="form-label fw-semibold small">Confirmer mot de passe</label>
+                            <input type="password" id="confirm_mdp"
+                                   class="form-control rounded-3"
+                                   placeholder="Confirmer le mot de passe">
+                            <div id="mdp-match" class="small mt-1"></div>
+                        </div>
+                        <button type="submit" class="btn btn-success rounded-3 w-100">
+                            <i class="fas fa-key me-2"></i>Changer le mot de passe
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Infos compte -->
+                <div class="card border-0 shadow-sm rounded-3 p-4 mt-3">
+                    <h5 class="fw-bold text-success mb-3">
+                        <i class="fas fa-info-circle me-2"></i>Informations compte
+                    </h5>
+                    <div class="d-flex justify-content-between p-2 bg-light rounded-3 mb-2">
+                        <span class="text-muted small">Nom complet</span>
+                        <span class="fw-semibold small">{{ user_data.get('nom', 'N/A') }}</span>
+                    </div>
+                    <div class="d-flex justify-content-between p-2 bg-light rounded-3 mb-2">
+                        <span class="text-muted small">Email</span>
+                        <span class="fw-semibold small">{{ user_data.get('email', 'N/A') }}</span>
+                    </div>
+                    <div class="d-flex justify-content-between p-2 bg-light rounded-3 mb-2">
+                        <span class="text-muted small">Role</span>
+                        <span class="badge {% if role == 'administrateur' %}bg-warning{% else %}bg-primary{% endif %}">
+                            {{ role }}
+                        </span>
+                    </div>
+                    <div class="d-flex justify-content-between p-2 bg-light rounded-3">
+                        <span class="text-muted small">Cree par</span>
+                        <span class="fw-semibold small">{{ user_data.get('cree_par', 'admin') }}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+function choisirAvatar(emoji) {
+    document.getElementById('avatar-display').textContent = emoji;
+    document.getElementById('avatar-input').value = emoji;
+}
+
+document.getElementById('confirm_mdp').addEventListener('input', function() {
+    var nouveau = document.getElementById('nouveau_mdp').value;
+    var msg = document.getElementById('mdp-match');
+    if (this.value === nouveau && this.value.length > 0) {
+        msg.innerHTML = '<span class="text-success">✅ Mots de passe identiques</span>';
+    } else if (this.value.length > 0) {
+        msg.innerHTML = '<span class="text-danger">❌ Mots de passe differents</span>';
+    }
+});
+</script>
+{% endblock %}

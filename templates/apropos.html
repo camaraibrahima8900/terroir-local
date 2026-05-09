@@ -1,0 +1,170 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="row justify-content-center mt-4">
+    <div class="col-md-10">
+
+        <!-- Hero -->
+        <div class="card border-0 shadow-sm rounded-3 p-5 mb-4 text-center animate-in"
+             style="background:linear-gradient(135deg,#1a6b3a,#27ae60);color:white">
+            <div style="font-size:4rem">🌿</div>
+            <h1 class="fw-bold mt-3">Terroir Local Senegal</h1>
+            <p class="fs-5 opacity-75">La plateforme des cooperatives agricoles senegalaises</p>
+            <p class="opacity-75">Connecter les producteurs aux consommateurs pour valoriser les produits du terroir senegalais</p>
+        </div>
+
+        <!-- Notre mission -->
+        <div class="row g-4 mb-4">
+            <div class="col-md-4">
+                <div class="card border-0 shadow-sm rounded-3 p-4 text-center h-100">
+                    <div style="font-size:3rem">🤝</div>
+                    <h5 class="fw-bold text-success mt-3">Notre Mission</h5>
+                    <p class="text-muted">Connecter les cooperatives agricoles senegalaises aux consommateurs pour une alimentation saine et locale.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card border-0 shadow-sm rounded-3 p-4 text-center h-100">
+                    <div style="font-size:3rem">🌍</div>
+                    <h5 class="fw-bold text-success mt-3">Notre Vision</h5>
+                    <p class="text-muted">Devenir la reference des produits du terroir au Senegal et contribuer au developpement agricole local.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card border-0 shadow-sm rounded-3 p-4 text-center h-100">
+                    <div style="font-size:3rem">💚</div>
+                    <h5 class="fw-bold text-success mt-3">Nos Valeurs</h5>
+                    <p class="text-muted">Transparence, qualite, proximite et soutien aux producteurs locaux des 14 regions du Senegal.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Chiffres -->
+        <div class="card border-0 shadow-sm rounded-3 p-4 mb-4">
+            <h4 class="fw-bold text-success text-center mb-4">Terroir Local en Chiffres</h4>
+            <div class="row text-center g-3">
+                <div class="col-md-3">
+                    <div class="p-3 rounded-3" style="background:#e8f5e9">
+                        <div class="fs-2 fw-bold text-success">15+</div>
+                        <div class="text-muted small">Produits disponibles</div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="p-3 rounded-3" style="background:#e3f2fd">
+                        <div class="fs-2 fw-bold text-primary">14</div>
+                        <div class="text-muted small">Regions couvertes</div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="p-3 rounded-3" style="background:#fff3e0">
+                        <div class="fs-2 fw-bold text-warning">100%</div>
+                        <div class="text-muted small">Produits locaux</div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="p-3 rounded-3" style="background:#fce4ec">
+                        <div class="fs-2 fw-bold text-danger">24/7</div>
+                        <div class="text-muted small">Disponible en ligne</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact -->
+        <div class="card border-0 shadow-sm rounded-3 p-4 mb-4">
+            <h4 class="fw-bold text-success mb-4">
+                <i class="fas fa-envelope me-2"></i>Contactez-nous
+            </h4>
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="d-flex align-items-center gap-3 mb-3">
+                        <div class="rounded-circle d-flex align-items-center justify-content-center"
+                             style="width:45px;height:45px;background:#e8f5e9">
+                            <i class="fas fa-phone text-success"></i>
+                        </div>
+                        <div>
+                            <div class="fw-bold">Telephone</div>
+                            <div class="text-muted">+221 78 476 03 84</div>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center gap-3 mb-3">
+                        <div class="rounded-circle d-flex align-items-center justify-content-center"
+                             style="width:45px;height:45px;background:#e8f5e9">
+                            <i class="fab fa-whatsapp text-success"></i>
+                        </div>
+                        <div>
+                            <div class="fw-bold">WhatsApp</div>
+                            <div class="text-muted">+221 78 476 03 84</div>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center gap-3 mb-3">
+                        <div class="rounded-circle d-flex align-items-center justify-content-center"
+                             style="width:45px;height:45px;background:#e8f5e9">
+                            <i class="fas fa-envelope text-success"></i>
+                        </div>
+                        <div>
+                            <div class="fw-bold">Email</div>
+                            <div class="text-muted">camaraibrahima8900@gmail.com</div>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center gap-3">
+                        <div class="rounded-circle d-flex align-items-center justify-content-center"
+                             style="width:45px;height:45px;background:#e8f5e9">
+                            <i class="fas fa-map-marker-alt text-success"></i>
+                        </div>
+                        <div>
+                            <div class="fw-bold">Adresse</div>
+                            <div class="text-muted">Koussanar, Tambacounda, Senegal</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <form>
+                        <div class="mb-3">
+                            <input type="text" class="form-control rounded-3" placeholder="Votre nom">
+                        </div>
+                        <div class="mb-3">
+                            <input type="email" class="form-control rounded-3" placeholder="Votre email">
+                        </div>
+                        <div class="mb-3">
+                            <textarea class="form-control rounded-3" rows="4" placeholder="Votre message"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-success rounded-3 w-100">
+                            <i class="fas fa-paper-plane me-2"></i>Envoyer le message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<!-- Newsletter -->
+<div class="row justify-content-center mt-4">
+    <div class="col-md-8">
+        <div class="card border-0 shadow-sm rounded-3 p-4 text-center"
+             style="background:linear-gradient(135deg,#1a6b3a,#27ae60);color:white">
+            <h4 class="fw-bold mb-2">📧 Newsletter Terroir Local</h4>
+            <p class="opacity-75 mb-3">Recevez nos offres et nouveaux produits par email !</p>
+            <div class="d-flex gap-2 justify-content-center">
+                <input type="email" id="newsletter-email" class="form-control rounded-3"
+                       style="max-width:300px" placeholder="votre@email.com">
+                <button onclick="sInscrire()" class="btn btn-light text-success fw-bold rounded-3">
+                    S'inscrire
+                </button>
+            </div>
+            <div id="newsletter-msg" class="mt-2 small"></div>
+        </div>
+    </div>
+</div>
+<script>
+function sInscrire() {
+    var email = document.getElementById('newsletter-email').value;
+    if (email && email.includes('@')) {
+        document.getElementById('newsletter-msg').innerHTML = '✅ Merci ! Vous etes inscrit a notre newsletter.';
+        document.getElementById('newsletter-email').value = '';
+    } else {
+        document.getElementById('newsletter-msg').innerHTML = '❌ Entrez un email valide.';
+    }
+}
+</script>
+{% endblock %}

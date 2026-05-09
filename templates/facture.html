@@ -1,0 +1,113 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <div class="card border-0 shadow-sm rounded-3 p-4" id="facture-content">
+            <!-- Header facture -->
+            <div class="row align-items-center mb-4">
+                <div class="col-6">
+                    <div style="font-size:2rem">🌿</div>
+                    <h4 class="fw-bold text-success mb-0">Terroir Local Senegal</h4>
+                    <div class="text-muted small">Koussanar, Tambacounda, Senegal</div>
+                    <div class="text-muted small">+221 78 476 03 84</div>
+                </div>
+                <div class="col-6 text-end">
+                    <h5 class="fw-bold text-dark">FACTURE</h5>
+                    <div class="text-muted small">N° {{ cmd._id[:8].upper() }}</div>
+                    <div class="text-muted small">Date: {{ cmd.date_str }}</div>
+                    <span class="badge bg-success mt-1">{{ cmd.statut.upper() }}</span>
+                </div>
+            </div>
+            <hr>
+
+            <!-- Info client -->
+            <div class="row mb-4">
+                <div class="col-6">
+                    <h6 class="fw-bold text-success">Client</h6>
+                    <div class="fw-semibold">{{ cmd.client.nom }}</div>
+                    <div class="text-muted small">{{ cmd.client.telephone }}</div>
+                    <div class="text-muted small">{{ cmd.client.email }}</div>
+                    <div class="text-muted small">{{ cmd.client.ville }}</div>
+                </div>
+                <div class="col-6">
+                    <h6 class="fw-bold text-success">Livraison</h6>
+                    <div class="text-muted small">Region: {{ cmd.livraison.get('region','?') }}</div>
+                    <div class="text-muted small">Type: {{ cmd.livraison.get('type','normal') }}</div>
+                    <div class="text-muted small">Frais: {{ cmd.livraison.get('frais',500) }} FCFA</div>
+                </div>
+            </div>
+
+            <!-- Articles -->
+            <table class="table table-bordered">
+                <thead class="table-success">
+                    <tr>
+                        <th>Produit</th>
+                        <th class="text-center">Quantite</th>
+                        <th class="text-end">Prix unitaire</th>
+                        <th class="text-end">Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for a in cmd.articles %}
+                <tr>
+                    <td>{{ a.get('nom_produit', a.get('nom','?')) }}</td>
+                    <td class="text-center">{{ a.quantite }}</td>
+                    <td class="text-end">{{ a.prix_unitaire }} FCFA</td>
+                    <td class="text-end fw-bold">{{ a.quantite * a.prix_unitaire }} FCFA</td>
+                </tr>
+                {% endfor %}
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="3" class="text-end fw-bold">Frais livraison:</td>
+                        <td class="text-end">{{ cmd.livraison.get('frais',500) }} FCFA</td>
+                    </tr>
+                    <tr class="table-success">
+                        <td colspan="3" class="text-end fw-bold fs-5">TOTAL:</td>
+                        <td class="text-end fw-bold fs-5 text-success">{{ cmd.total }} FCFA</td>
+                    </tr>
+                </tfoot>
+            </table>
+
+            <!-- Paiement -->
+            <div class="row mt-3">
+                <div class="col-6">
+                    <div class="p-3 rounded-3 text-center" style="background:#e8f5e9">
+                        <div class="fw-bold text-success">Payer via Wave</div>
+                        <div class="small text-muted">+221 78 476 03 84</div>
+                        <div class="fw-bold text-success">{{ cmd.total }} FCFA</div>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="p-3 rounded-3 text-center" style="background:#fff3e0">
+                        <div class="fw-bold text-warning">Orange Money</div>
+                        <div class="small text-muted">+221 78 476 03 84</div>
+                        <div class="fw-bold text-warning">{{ cmd.total }} FCFA</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-4 text-muted small">
+                Merci pour votre confiance ! 🌿 Terroir Local Senegal
+            </div>
+        </div>
+
+        <!-- Boutons -->
+        <div class="d-flex gap-3 justify-content-center mt-3">
+            <button onclick="window.print()" class="btn btn-success rounded-3 px-4">
+                <i class="fas fa-print me-2"></i>Imprimer / PDF
+            </button>
+            <a href="javascript:history.back()" class="btn btn-outline-success rounded-3 px-4">
+                <i class="fas fa-arrow-left me-2"></i>Retour
+            </a>
+        </div>
+    </div>
+</div>
+
+<style>
+@media print {
+    .navbar, .footer, .btn { display: none !important; }
+    .card { box-shadow: none !important; }
+}
+</style>
+{% endblock %}

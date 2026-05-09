@@ -1,160 +1,347 @@
 {% extends 'base.html' %}
 {% block content %}
-<h2 class="text-success mb-4"><i class="fas fa-cog"></i> Administration</h2>
 
-<ul class="nav nav-tabs mb-4" id="adminTabs">
-    <li class="nav-item"><a class="nav-link active" data-bs-toggle="tab" href="#produits">Produits</a></li>
-    <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#utilisateurs">Utilisateurs</a></li>
-    <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#actions">Actions</a></li>
+<div class="row mb-4">
+    <div class="col-12">
+        <h2 class="fw-bold text-success">
+            <i class="fas fa-cog me-2"></i>Administration
+        </h2>
+        <p class="text-muted">Gestion de la plateforme Terroir Local Senegal</p>
+    </div>
+</div>
+
+<ul class="nav nav-pills mb-4" id="adminTabs">
+    <li class="nav-item me-2">
+        <a class="nav-link active bg-success" data-bs-toggle="tab" href="#produits">
+            <i class="fas fa-box me-1"></i>Produits
+        </a>
+    </li>
+    <li class="nav-item me-2">
+        <a class="nav-link text-success" data-bs-toggle="tab" href="#utilisateurs">
+            <i class="fas fa-users me-1"></i>Utilisateurs
+        </a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link text-success" data-bs-toggle="tab" href="#actions">
+            <i class="fas fa-tools me-1"></i>Actions
+        </a>
+    </li>
 </ul>
 
 <div class="tab-content">
 
     <!-- PRODUITS -->
     <div class="tab-pane fade show active" id="produits">
-        <div class="card p-4 mb-4">
-            <h5 class="text-success">Ajouter un produit</h5>
+        <div class="card border-0 shadow-sm rounded-3 p-4 mb-4">
+            <h5 class="text-success fw-bold mb-3">
+                <i class="fas fa-plus-circle me-2"></i>Ajouter un produit
+            </h5>
             <form method="POST" action="/admin/ajouter_produit">
                 <div class="row g-2">
-                    <div class="col-md-3"><input type="text" name="nom" class="form-control" placeholder="Nom" required></div>
+                    <div class="col-md-3">
+                        <input type="text" name="nom" class="form-control rounded-3" placeholder="Nom du produit" required>
+                    </div>
                     <div class="col-md-2">
-                        <select name="categorie" class="form-select" required>
+                        <select name="categorie" class="form-select rounded-3" required>
                             {% for cat in categories %}<option>{{ cat }}</option>{% endfor %}
                         </select>
                     </div>
-                    <div class="col-md-2"><input type="number" name="prix" class="form-control" placeholder="Prix FCFA" required></div>
-                    <div class="col-md-1"><input type="number" name="stock" class="form-control" placeholder="Stock" required></div>
                     <div class="col-md-1">
-                        <select name="unite" class="form-select">
-                            <option>kg</option><option>litre</option><option>unite</option><option>botte</option><option>sac</option>
+                        <input type="number" name="prix" class="form-control rounded-3" placeholder="Prix" required>
+                    </div>
+                    <div class="col-md-1">
+                        <input type="number" name="stock" class="form-control rounded-3" placeholder="Stock" required>
+                    </div>
+                    <div class="col-md-1">
+                        <select name="unite" class="form-select rounded-3">
+                            <option>kg</option>
+                            <option>litre</option>
+                            <option>unite</option>
+                            <option>botte</option>
+                            <option>sac</option>
                         </select>
                     </div>
-                    <div class="col-md-2"><input type="text" name="producteur" class="form-control" placeholder="Producteur" required></div>
-                    <div class="col-md-1"><input type="text" name="image" class="form-control" placeholder="Emoji" value="📦"></div>
-                    <div class="col-md-2"><input type="text" name="origine" class="form-control" placeholder="Origine"></div>
-                    <div class="col-md-2"><button type="submit" class="btn btn-success w-100">Ajouter</button></div>
+                    <div class="col-md-2">
+                        <input type="text" name="producteur" class="form-control rounded-3" placeholder="Producteur" required>
+                    </div>
+                    <div class="col-md-1">
+                        <input type="text" name="image" class="form-control rounded-3 mb-1" placeholder="Emoji ex: 🥭" value="📦">
+                    </div>
+                    <div class="col-md-3">
+                        <input type="text" name="photo" class="form-control rounded-3" placeholder="URL image (optionnel)">
+                    </div>
+                    <div class="col-md-1">
+                        <button type="submit" class="btn btn-success w-100 rounded-3">
+                            <i class="fas fa-plus"></i>
+                        </button>
+                    </div>
                 </div>
             </form>
         </div>
 
-        <div class="card p-3">
-            <h5 class="text-success">Liste des produits ({{ produits|length }})</h5>
-            <table class="table table-hover table-sm mt-2">
-                <thead class="table-success">
-                    <tr><th>Image</th><th>Nom</th><th>Cat.</th><th>Prix</th><th>Stock</th><th>Unite</th><th>Producteur</th><th>Stock</th><th>Prix</th><th>Action</th></tr>
-                </thead>
-                <tbody>
-                {% for p in produits %}
-                <tr class="{% if p.stock < 5 %}table-danger{% endif %}">
-                    <td>{{ p.image }}</td>
-                    <td>{{ p.nom }}</td>
-                    <td>{{ p.categorie }}</td>
-                    <td>{{ p.prix }} FCFA</td>
-                    <td class="{% if p.stock < 5 %}text-danger fw-bold{% endif %}">{{ p.stock }}</td>
-                    <td>{{ p.unite }}</td>
-                    <td>{{ p.producteur }}</td>
-                    <td>
-                        <form method="POST" action="/admin/maj_stock" class="d-flex gap-1">
-                            <input type="hidden" name="produit_id" value="{{ p._id }}">
-                            <input type="number" name="stock" class="form-control form-control-sm" style="width:70px" value="{{ p.stock }}">
-                            <button type="submit" class="btn btn-warning btn-sm">OK</button>
-                        </form>
-                    </td>
-                    <td>
-                        <form method="POST" action="/admin/maj_prix" class="d-flex gap-1">
-                            <input type="hidden" name="produit_id" value="{{ p._id }}">
-                            <input type="number" name="prix" class="form-control form-control-sm" style="width:80px" value="{{ p.prix }}">
-                            <button type="submit" class="btn btn-info btn-sm">OK</button>
-                        </form>
-                    </td>
-                    <td>
-                        <a href="/admin/supprimer_produit/{{ p._id }}" class="btn btn-danger btn-sm"
-                           onclick="return confirm('Supprimer ce produit ?')">
-                            <i class="fas fa-trash"></i>
-                        </a>
-                    </td>
-                </tr>
-                {% endfor %}
-                </tbody>
-            </table>
+        <div class="card border-0 shadow-sm rounded-3">
+            <div class="card-header bg-success text-white rounded-top-3 py-3">
+                <h6 class="mb-0 fw-bold">
+                    <i class="fas fa-list me-2"></i>Catalogue ({{ produits|length }} produits)
+                </h6>
+            </div>
+            <div class="card-body p-0">
+                <div class="table-responsive">
+                    <table class="table table-hover mb-0">
+                        <thead class="table-light">
+                            <tr>
+                                <th>Image</th>
+                                <th>Nom</th>
+                                <th>Cat.</th>
+                                <th>Prix</th>
+                                <th>Stock</th>
+                                <th>Unite</th>
+                                <th>Producteur</th>
+                                <th>Ajoute par</th><th>Modifier Stock</th>
+                                <th>Modifier Prix</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        {% for p in produits %}
+                        <tr class="{% if p.stock < 5 %}table-danger{% endif %}">
+                            <td style="font-size:1.5rem">{{ p.image }}</td>
+                            <td class="fw-semibold">{{ p.nom }}</td>
+                            <td><span class="badge bg-success">{{ p.categorie }}</span></td>
+                            <td class="text-success fw-bold">{{ p.prix }}</td>
+                            <td>
+                                <span class="badge {% if p.stock == 0 %}bg-danger{% elif p.stock < 5 %}bg-warning{% else %}bg-success{% endif %}">
+                                    {{ p.stock }}
+                                </span>
+                            </td>
+                            <td>{{ p.unite }}</td>
+                            <td class="small">{{ p.producteur }}</td>
+                            <td>
+                                {% if p.ajoute_par %}
+                                <span class="badge bg-info small">{{ p.ajoute_par }}</span>
+                                {% else %}
+                                <span class="badge bg-secondary small">setup</span>
+                                {% endif %}
+                            </td>
+                            <td>
+                                <form method="POST" action="/admin/maj_stock" class="d-flex gap-1">
+                                    <input type="hidden" name="produit_id" value="{{ p._id }}">
+                                    <input type="number" name="stock" class="form-control form-control-sm rounded-3" style="width:70px" value="{{ p.stock }}">
+                                    <button type="submit" class="btn btn-warning btn-sm rounded-3">OK</button>
+                                </form>
+                            </td>
+                            <td>
+                                <form method="POST" action="/admin/maj_prix" class="d-flex gap-1">
+                                    <input type="hidden" name="produit_id" value="{{ p._id }}">
+                                    <input type="number" name="prix" class="form-control form-control-sm rounded-3" style="width:80px" value="{{ p.prix }}">
+                                    <button type="submit" class="btn btn-info btn-sm rounded-3">OK</button>
+                                </form>
+                            </td>
+                            <td>
+                                {% if username == 'admin' or p.ajoute_par == username %}
+                                <a href="/admin/supprimer_produit/{{ p._id }}"
+                                   class="btn btn-danger btn-sm rounded-3"
+                                   onclick="return confirm('Supprimer {{ p.nom }} ?')">
+                                    <i class="fas fa-trash"></i>
+                                </a>
+                                {% else %}
+                                <span class="badge bg-secondary small">
+                                    <i class="fas fa-lock"></i>
+                                </span>
+                                {% endif %}
+                            </td>
+                        </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
     </div>
 
     <!-- UTILISATEURS -->
     <div class="tab-pane fade" id="utilisateurs">
-        <div class="card p-4 mb-4">
-            <h5 class="text-success">Ajouter un utilisateur</h5>
+        <div class="card border-0 shadow-sm rounded-3 p-4 mb-4">
+            <h5 class="text-success fw-bold mb-3">
+                <i class="fas fa-user-plus me-2"></i>Ajouter un utilisateur
+            </h5>
             <form method="POST" action="/admin/ajouter_user">
                 <div class="row g-2">
-                    <div class="col-md-2"><input type="text" name="login" class="form-control" placeholder="Login" required></div>
-                    <div class="col-md-2"><input type="password" name="password" class="form-control" placeholder="Mot de passe" required></div>
-                    <div class="col-md-2"><input type="text" name="nom" class="form-control" placeholder="Nom complet" required></div>
-                    <div class="col-md-2"><input type="email" name="email" class="form-control" placeholder="Email" required></div>
                     <div class="col-md-2">
-                        <select name="role" class="form-select">
+                        <input type="text" name="login" class="form-control rounded-3" placeholder="Login" required>
+                    </div>
+                    <div class="col-md-2">
+                        <input type="password" name="password" class="form-control rounded-3" placeholder="Mot de passe" required>
+                    </div>
+                    <div class="col-md-2">
+                        <input type="text" name="nom" class="form-control rounded-3" placeholder="Nom complet" required>
+                    </div>
+                    <div class="col-md-3">
+                        <input type="email" name="email" class="form-control rounded-3" placeholder="Email" required>
+                    </div>
+                    <div class="col-md-2">
+                        <select name="role" class="form-select rounded-3">
                             <option value="utilisateur">Utilisateur</option>
                             <option value="administrateur">Administrateur</option>
                         </select>
                     </div>
-                    <div class="col-md-2"><button type="submit" class="btn btn-success w-100">Ajouter</button></div>
+                    <div class="col-md-3">
+                        <input type="text" name="photo" class="form-control rounded-3" placeholder="URL image (optionnel)">
+                    </div>
+                    <div class="col-md-1">
+                        <button type="submit" class="btn btn-success w-100 rounded-3">
+                            <i class="fas fa-plus"></i>
+                        </button>
+                    </div>
                 </div>
             </form>
         </div>
-        <div class="card p-3">
-            <h5 class="text-success">Liste des utilisateurs</h5>
-            <table class="table table-hover mt-2">
-                <thead class="table-success">
-                    <tr><th>Login</th><th>Role</th><th>Nom</th><th>Email</th><th>Action</th></tr>
-                </thead>
-                <tbody>
-                {% for u in users %}
-                <tr>
-                    <td><strong>{{ u[0] }}</strong></td>
-                    <td><span class="badge {% if u[1] == 'administrateur' %}bg-warning{% else %}bg-primary{% endif %}">{{ u[1] }}</span></td>
-                    <td>{{ u[2] }}</td>
-                    <td>{{ u[3] }}</td>
-                    <td>
-                        {% if u[0] != 'admin' %}
-                        <a href="/admin/supprimer_user/{{ u[0] }}" class="btn btn-danger btn-sm"
-                           onclick="return confirm('Supprimer cet utilisateur ?')">
-                            <i class="fas fa-trash"></i>
-                        </a>
-                        {% endif %}
-                    </td>
-                </tr>
-                {% endfor %}
-                </tbody>
-            </table>
+
+        <div class="card border-0 shadow-sm rounded-3">
+            <div class="card-header bg-success text-white rounded-top-3 py-3">
+                <h6 class="mb-0 fw-bold"><i class="fas fa-users me-2"></i>Utilisateurs</h6>
+            </div>
+            <div class="card-body">
+                <table class="table table-hover">
+                    <thead class="table-light">
+                        <tr><th>Login</th><th>Role</th><th>Nom</th><th>Email</th><th>Action</th></tr>
+                    </thead>
+                    <tbody>
+                    {% for u in users %}
+                    <tr>
+                        <td class="fw-bold">
+                            {{ u[0] }}
+                            {% if u[0] == 'admin' %}
+                            <span class="badge bg-danger ms-1 small">Super Admin</span>
+                            {% endif %}
+                        </td>
+                        <td>
+                            <span class="badge {% if u[1] == 'administrateur' %}bg-warning{% else %}bg-primary{% endif %}">
+                                {{ u[1] }}
+                            </span>
+                        </td>
+                        <td>{{ u[2] }}</td>
+                        <td>{{ u[3] }}</td>
+                        <td>
+                            {% if u[0] != 'admin' %}
+                                {% if username == 'admin' or (u|length > 4 and u[4] == username) %}
+                                <a href="/admin/supprimer_user/{{ u[0] }}"
+                                   class="btn btn-danger btn-sm rounded-3"
+                                   onclick="return confirm('Supprimer cet utilisateur ?')">
+                                    <i class="fas fa-trash"></i>
+                                </a>
+                                {% else %}
+                                <span class="badge bg-secondary small">
+                                    <i class="fas fa-lock me-1"></i>Protege
+                                </span>
+                                {% endif %}
+                            {% endif %}
+                        </td>
+                    </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
 
     <!-- ACTIONS -->
     <div class="tab-pane fade" id="actions">
-        <div class="card p-4 mb-4">
-            <h5 class="text-success">Actions systeme</h5>
-            <div class="d-flex gap-3 flex-wrap mt-3">
-                <a href="/admin/backup" class="btn btn-purple" style="background:#8e44ad;color:white;">
-                    <i class="fas fa-save"></i> Backup maintenant
-                </a>
-                <a href="/admin/reinitialiser" class="btn btn-warning"
-                   onclick="return confirm('Reinitialiser les stocks ?')">
-                    <i class="fas fa-redo"></i> Reinitialiser stocks
-                </a>
-                <a href="/admin/supprimer_commandes" class="btn btn-danger"
-                   onclick="return confirm('Supprimer toutes les commandes ?')">
-                    <i class="fas fa-trash"></i> Supprimer commandes
+        <div class="row g-3 mb-4">
+            <div class="col-md-3">
+                <a href="/admin/backup" class="card border-0 shadow-sm rounded-3 p-4 text-center text-decoration-none h-100 d-block">
+                    <i class="fas fa-save fa-2x text-purple mb-2" style="color:#8e44ad"></i>
+                    <div class="fw-bold">Backup</div>
+                    <small class="text-muted">Sauvegarder les donnees</small>
                 </a>
             </div>
+            <div class="col-md-3">
+                <a href="/admin/reinitialiser"
+                   onclick="return confirm('Reinitialiser les stocks ?')"
+                   class="card border-0 shadow-sm rounded-3 p-4 text-center text-decoration-none h-100 d-block">
+                    <i class="fas fa-redo fa-2x text-warning mb-2"></i>
+                    <div class="fw-bold">Reinitialiser</div>
+                    <small class="text-muted">Remettre les stocks</small>
+                </a>
+            </div>
+            <div class="col-md-3">
+                <a href="/admin/supprimer_commandes"
+                   onclick="return confirm('Supprimer toutes les commandes ?')"
+                   class="card border-0 shadow-sm rounded-3 p-4 text-center text-decoration-none h-100 d-block">
+                    <i class="fas fa-trash fa-2x text-danger mb-2"></i>
+                    <div class="fw-bold">Supprimer Cmds</div>
+                    <small class="text-muted">Effacer commandes</small>
+                </a>
+            </div>
+            <div class="col-md-3">
+                <a href="/stats" class="card border-0 shadow-sm rounded-3 p-4 text-center text-decoration-none h-100 d-block">
+                    <i class="fas fa-chart-bar fa-2x text-success mb-2"></i>
+                    <div class="fw-bold">Statistiques</div>
+                    <small class="text-muted">Voir le tableau de bord</small>
+                </a>
+            </div>
+            <div class="col-md-3 mt-3">
+                <a href="/export_commandes" class="card border-0 shadow-sm rounded-3 p-4 text-center text-decoration-none h-100 d-block">
+                    <i class="fas fa-file-csv fa-2x text-info mb-2"></i>
+                    <div class="fw-bold">Exporter CSV</div>
+                    <small class="text-muted">Telecharger commandes</small>
+                </a>
+            </div>
+            <div class="col-md-3 mt-3">
+                <div class="card border-0 shadow-sm rounded-3 p-4 text-center h-100">
+                    <div style="font-size:2rem">📱</div>
+                    <div class="fw-bold mt-1">QR Code Wave</div>
+                    <small class="text-muted">+221 78 476 03 84</small>
+                    <div class="mt-2">
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https://send.wave.com/m/ibrahimacamara"
+                             class="rounded-3" width="80">
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="card p-3">
-            <h5 class="text-success">Backups disponibles</h5>
-            <ul class="list-group mt-2">
+
+        <div class="card border-0 shadow-sm rounded-3">
+            <div class="card-header bg-dark text-white rounded-top-3 py-3">
+                <h6 class="mb-0 fw-bold"><i class="fas fa-database me-2"></i>Backups disponibles</h6>
+            </div>
+            <div class="card-body">
                 {% for b in backups %}
-                <li class="list-group-item"><i class="fas fa-file-alt text-success"></i> {{ b }}</li>
+                <div class="d-flex align-items-center gap-2 mb-2 p-2 bg-light rounded-3">
+                    <i class="fas fa-file-alt text-success"></i>
+                    <span class="small">{{ b }}</span>
+                </div>
                 {% endfor %}
-            </ul>
+            </div>
         </div>
     </div>
 
 </div>
+<script>
+// Maintenir position scroll dans admin
+function sauvegarderScroll() {
+    sessionStorage.setItem('scrollY_admin', window.scrollY);
+}
+
+window.addEventListener('load', function() {
+    var pos = sessionStorage.getItem('scrollY_admin');
+    if (pos) {
+        window.scrollTo(0, parseInt(pos));
+        sessionStorage.removeItem('scrollY_admin');
+    }
+});
+
+// Intercepter tous les formulaires
+document.querySelectorAll('form').forEach(function(form) {
+    form.addEventListener('submit', function() {
+        sessionStorage.setItem('scrollY_admin', window.scrollY);
+    });
+});
+
+// Intercepter tous les liens
+document.querySelectorAll('a[href^="/admin"]').forEach(function(link) {
+    link.addEventListener('click', function() {
+        sessionStorage.setItem('scrollY_admin', window.scrollY);
+    });
+});
+</script>
 {% endblock %}

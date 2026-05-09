@@ -54,7 +54,7 @@ def authentifier(username, password):
         log_erreur("Erreur auth : " + str(e))
         return None
 
-def ajouter_utilisateur(username, password, role, nom, email):
+def ajouter_utilisateur(login, password, role="utilisateur", nom="", email="", cree_par="admin"):
     try:
         users = charger_utilisateurs()
         if username in users:

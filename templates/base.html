@@ -6,6 +6,8 @@
     <title>Terroir Local Senegal</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="/static/css/style.css" rel="stylesheet">
+    <link href="/static/css/style.css" rel="stylesheet">
     <style>
         body { background-color: #f5f0e8; font-family: Arial, sans-serif; }
         .navbar { background-color: #2C5F2D !important; }
@@ -27,13 +29,22 @@
         <a class="navbar-brand" href="/boutique">🌿 Terroir Local Senegal</a>
         <div class="navbar-nav ms-auto d-flex flex-row align-items-center gap-3">
             <a class="nav-link text-white" href="/boutique"><i class="fas fa-store"></i> Boutique</a>
+            <a class="nav-link text-white" href="/historique"><i class="fas fa-history"></i> Historique</a>
+            <a class="nav-link text-white position-relative" href="/suivi">
+                <i class="fas fa-truck"></i> Suivi
+                <span id="nb-commandes" class="notification-badge" style="display:none">0</span>
+            </a>
+            <a class="nav-link text-white" href="/apropos"><i class="fas fa-info-circle"></i> A propos</a>
             {% if role == "administrateur" %}
             <a class="nav-link text-white" href="/stats"><i class="fas fa-chart-bar"></i> Stats</a>
             <a class="nav-link text-white" href="/admin"><i class="fas fa-cog"></i> Admin</a>
             {% endif %}
-            <span class="badge {% if role == 'administrateur' %}badge-admin{% else %}badge-user{% endif %} px-3 py-2">
+            <a href="/profil" class="badge {% if role == "administrateur" %}badge-admin{% else %}badge-user{% endif %} px-3 py-2 text-decoration-none">
                 <i class="fas fa-user"></i> {{ username }} ({{ role }})
-            </span>
+            </a>
+            <button onclick="toggleDarkMode()" class="btn btn-sm btn-outline-light rounded-3" title="Mode sombre">
+                <i class="fas fa-moon"></i>
+            </button>
             <a class="btn btn-danger btn-sm" href="/logout"><i class="fas fa-sign-out-alt"></i> Deconnexion</a>
         </div>
     </div>
@@ -46,5 +57,166 @@
     <p class="mb-0">🌿 Terroir Local Senegal &copy; 2025 | Plateforme Agricole</p>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<button class="scroll-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Retour en haut">
+    <i class="fas fa-arrow-up"></i>
+</button>
+<script>
+function toggleDarkMode() {
+    document.body.classList.toggle('dark-mode');
+    localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
+}
+if (localStorage.getItem('darkMode') === 'true') {
+    document.body.classList.add('dark-mode');
+}
+window.addEventListener('scroll', function() {
+    var btn = document.querySelector('.scroll-top');
+    if (btn) btn.style.display = window.scrollY > 300 ? 'flex' : 'none';
+});
+document.querySelector('.scroll-top').style.display = 'none';
+
+// ===== MAINTENIR POSITION SCROLL PARTOUT =====
+function saveScrollAndGo(url) {
+    sessionStorage.setItem('scrollPos_' + window.location.pathname, window.scrollY);
+    window.location.href = url;
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    var pos = sessionStorage.getItem('scrollPos_' + window.location.pathname);
+    if (pos) {
+        setTimeout(function() {
+            window.scrollTo(0, parseInt(pos));
+            sessionStorage.removeItem('scrollPos_' + window.location.pathname);
+        }, 100);
+    }
+
+    // Intercepter tous les formulaires pour sauvegarder position
+    document.querySelectorAll('form').forEach(function(form) {
+        form.addEventListener('submit', function() {
+            sessionStorage.setItem('scrollPos_' + window.location.pathname, window.scrollY);
+        });
+    });
+
+    // Intercepter tous les liens internes
+    document.querySelectorAll('a[href^="/"]').forEach(function(link) {
+        var href = link.getAttribute('href');
+        if (!href.includes('logout') && !href.includes('vider') && !href.includes('retirer')) {
+            link.addEventListener('click', function() {
+                sessionStorage.setItem('scrollPos_' + href.split('?')[0], window.scrollY);
+            });
+        }
+    });
+});
+// Compteur commandes en attente
+function majCompteurCommandes() {
+    fetch('/nb_commandes_attente')
+    .then(r => r.json())
+    .then(function(data) {
+        var badge = document.getElementById('nb-commandes');
+        if (badge) {
+            if (data.nb > 0) {
+                badge.textContent = data.nb;
+                badge.style.display = 'flex';
+            } else {
+                badge.style.display = 'none';
+            }
+        }
+    }).catch(function(){});
+}
+
+// Actualiser toutes les 30 secondes
+setInterval(majCompteurCommandes, 30000);
+majCompteurCommandes();
+
+// maintenir_scroll
+</script>
+
+<!-- CHATBOT -->
+<div id="chatbot" style="position:fixed;bottom:30px;left:30px;z-index:9999">
+    <button onclick="toggleChat()" class="btn btn-success rounded-circle shadow"
+            style="width:55px;height:55px;font-size:1.3rem" title="Aide">
+        💬
+    </button>
+    <div id="chat-window" style="display:none;position:absolute;bottom:65px;left:0;
+         width:300px;background:white;border-radius:15px;
+         box-shadow:0 10px 30px rgba(0,0,0,0.2);overflow:hidden">
+        <div class="p-3 text-white fw-bold" style="background:linear-gradient(135deg,#1a6b3a,#27ae60)">
+            🌿 Assistant Terroir Local
+        </div>
+        <div id="chat-messages" style="height:250px;overflow-y:auto;padding:15px">
+            <div class="p-2 rounded-3 mb-2 text-white small" style="background:#27ae60;max-width:85%">
+                Bonjour ! Comment puis-je vous aider ?
+            </div>
+        </div>
+        <div class="p-2 border-top">
+            <div class="d-flex flex-wrap gap-1 mb-2">
+                <button onclick="chatReply('commande')" class="btn btn-sm btn-outline-success rounded-3" style="font-size:0.7rem">📦 Commande</button>
+                <button onclick="chatReply('livraison')" class="btn btn-sm btn-outline-success rounded-3" style="font-size:0.7rem">🚚 Livraison</button>
+                <button onclick="chatReply('paiement')" class="btn btn-sm btn-outline-success rounded-3" style="font-size:0.7rem">💰 Paiement</button>
+                <button onclick="chatReply('contact')" class="btn btn-sm btn-outline-success rounded-3" style="font-size:0.7rem">📞 Contact</button>
+            </div>
+            <div class="d-flex gap-1">
+                <input type="text" id="chat-input" class="form-control form-control-sm rounded-3"
+                       placeholder="Votre question..." onkeypress="if(event.key=='Enter')sendChat()">
+                <button onclick="sendChat()" class="btn btn-success btn-sm rounded-3">➤</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+var chatResponses = {
+    'abaraka': 'ABARAKA BAKEE ! Bienvenue sur Terroir Local Senegal ! 🌿',
+    'mangi fi': 'Mangi fi ! Comment puis-je vous aider aujourd hui ? 🌿',
+    'wolof': 'Nous parlons aussi Wolof ! Jaaraama, nanga def ?',
+    'commande': 'Pour passer une commande, ajoutez des produits au panier et cliquez sur Commander !',
+    'livraison': 'Livraison Normal: 500 FCFA. Express: 2000 FCFA. Disponible dans les 14 regions du Senegal.',
+    'paiement': 'Nous acceptons Wave et Orange Money au +221 78 476 03 84.',
+    'contact': 'Contactez-nous au +221 78 476 03 84 (WhatsApp) ou visitez la page A propos.',
+    'produit': 'Nous avons des Fruits, Legumes, Cereales, Huiles et Poissons frais du Senegal !',
+    'prix': 'Nos prix sont en FCFA. Utilisez le filtre prix sur la boutique pour votre budget.',
+    'bonjour': 'Bonjour ! Bienvenue sur Terroir Local Senegal ! Comment puis-je vous aider ?',
+    'merci': 'De rien ! N hesitez pas si vous avez d autres questions. 🌿'
+};
+
+function toggleChat() {
+    var w = document.getElementById('chat-window');
+    w.style.display = w.style.display === 'none' ? 'block' : 'none';
+}
+
+function chatReply(key) {
+    addMessage('user', key);
+    setTimeout(function() { addMessage('bot', chatResponses[key] || 'Je suis la pour vous aider !'); }, 500);
+}
+
+function sendChat() {
+    var input = document.getElementById('chat-input');
+    var msg = input.value.trim().toLowerCase();
+    if (!msg) return;
+    addMessage('user', input.value);
+    input.value = '';
+    var response = 'Je suis la pour vous aider ! Posez-moi une question sur nos produits, livraisons ou paiements.';
+    for (var key in chatResponses) {
+        if (msg.includes(key)) { response = chatResponses[key]; break; }
+    }
+    setTimeout(function() { addMessage('bot', response); }, 600);
+}
+
+function addMessage(type, text) {
+    var msgs = document.getElementById('chat-messages');
+    var div = document.createElement('div');
+    div.className = 'p-2 rounded-3 mb-2 small';
+    div.style.maxWidth = '85%';
+    if (type === 'bot') {
+        div.style.background = '#27ae60';
+        div.style.color = 'white';
+    } else {
+        div.style.background = '#f0f0f0';
+        div.style.marginLeft = 'auto';
+    }
+    div.textContent = text;
+    msgs.appendChild(div);
+    msgs.scrollTop = msgs.scrollHeight;
+}
+</script>
 </body>
 </html>

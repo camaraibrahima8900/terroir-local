@@ -1,0 +1,166 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="row mb-4">
+    <div class="col-12 d-flex justify-content-between align-items-center">
+        <div>
+            <h2 class="fw-bold text-success">
+                <i class="fas fa-truck me-2"></i>Suivi des Commandes
+            </h2>
+            <p class="text-muted mb-0">Suivez et gerez vos livraisons</p>
+        </div>
+        <a href="/boutique" class="btn btn-outline-success rounded-3">
+            <i class="fas fa-store me-1"></i>Boutique
+        </a>
+    </div>
+</div>
+
+{% if commandes %}
+<div class="row g-3">
+{% for cmd in commandes %}
+<div class="col-12">
+    <div class="card border-0 shadow-sm rounded-3 p-4 animate-in">
+        <div class="row align-items-center">
+            <div class="col-md-2 text-center">
+                {% if cmd.statut == 'en_attente' %}
+                <div style="font-size:2.5rem">⏳</div>
+                <span class="badge bg-warning">En attente</span>
+                {% elif cmd.statut == 'confirmee' %}
+                <div style="font-size:2.5rem">✅</div>
+                <span class="badge bg-primary">Confirmee</span>
+                {% elif cmd.statut == 'expediee' %}
+                <div style="font-size:2.5rem">🚚</div>
+                <span class="badge bg-info">Expediee</span>
+                {% elif cmd.statut == 'livree' %}
+                <div style="font-size:2.5rem">🎉</div>
+                <span class="badge bg-success">Livree</span>
+                {% endif %}
+            </div>
+
+            <div class="col-md-3">
+                <div class="fw-bold">{{ cmd.client.nom }}</div>
+                <div class="text-muted small">
+                    <i class="fas fa-phone me-1"></i>{{ cmd.client.telephone }}
+                </div>
+                <div class="text-muted small">
+                    <i class="fas fa-calendar me-1"></i>{{ cmd.date_str }}
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="small text-muted mb-1 fw-bold">Articles :</div>
+                {% for a in cmd.articles %}
+                <div class="small">
+                    <i class="fas fa-check text-success me-1"></i>
+                    {{ a.get('nom_produit', a.get('nom', '?')) }} x{{ a.quantite }}
+                </div>
+                {% endfor %}
+            </div>
+
+            <div class="col-md-2 text-center">
+                <div class="fw-bold text-success fs-5">{{ cmd.total }} FCFA</div>
+                <div class="small text-muted">
+                    <i class="fas fa-truck me-1"></i>{{ cmd.livraison.get('type', 'normal') }}
+                </div>
+                <div class="small text-muted">
+                    <i class="fas fa-map-marker-alt me-1"></i>{{ cmd.livraison.get('region', '?') }}
+                </div>
+            </div>
+
+            {% if role == 'administrateur' %}
+            <div class="col-md-2">
+                <!-- Boutons rapides -->
+                <div class="d-flex flex-column gap-1 mb-2">
+                    {% if cmd.statut != 'en_attente' %}
+                    <form method="POST" action="/suivi/update/{{ cmd._id }}">
+                        <input type="hidden" name="statut" value="en_attente">
+                        <button type="submit" class="btn btn-warning btn-sm w-100 rounded-3">
+                            <i class="fas fa-arrow-left me-1"></i>En attente
+                        </button>
+                    </form>
+                    {% endif %}
+                    {% if cmd.statut == 'en_attente' %}
+                    <form method="POST" action="/suivi/update/{{ cmd._id }}">
+                        <input type="hidden" name="statut" value="confirmee">
+                        <button type="submit" class="btn btn-primary btn-sm w-100 rounded-3">
+                            <i class="fas fa-check me-1"></i>Confirmer
+                        </button>
+                    </form>
+                    {% elif cmd.statut == 'confirmee' %}
+                    <form method="POST" action="/suivi/update/{{ cmd._id }}">
+                        <input type="hidden" name="statut" value="expediee">
+                        <button type="submit" class="btn btn-info btn-sm w-100 rounded-3">
+                            <i class="fas fa-truck me-1"></i>Expedier
+                        </button>
+                    </form>
+                    {% elif cmd.statut == 'expediee' %}
+                    <form method="POST" action="/suivi/update/{{ cmd._id }}">
+                        <input type="hidden" name="statut" value="livree">
+                        <button type="submit" class="btn btn-success btn-sm w-100 rounded-3">
+                            <i class="fas fa-check-double me-1"></i>Livree
+                        </button>
+                    </form>
+                    {% endif %}
+                </div>
+                <!-- Selecteur complet -->
+                <form method="POST" action="/suivi/update/{{ cmd._id }}">
+                    <select name="statut" class="form-select form-select-sm rounded-3 mb-1">
+                        <option value="en_attente" {% if cmd.statut == 'en_attente' %}selected{% endif %}>⏳ En attente</option>
+                        <option value="confirmee" {% if cmd.statut == 'confirmee' %}selected{% endif %}>✅ Confirmee</option>
+                        <option value="expediee" {% if cmd.statut == 'expediee' %}selected{% endif %}>🚚 Expediee</option>
+                        <option value="livree" {% if cmd.statut == 'livree' %}selected{% endif %}>🎉 Livree</option>
+                    </select>
+                    <button type="submit" class="btn btn-dark btn-sm w-100 rounded-3">
+                        <i class="fas fa-save me-1"></i>OK
+                    </button>
+                </form>
+            </div>
+            {% endif %}
+        </div>
+
+        <!-- Barre de progression -->
+        <div class="mt-3">
+            <div class="d-flex justify-content-between mb-1">
+                <small class="text-muted">Progression livraison</small>
+                <small class="fw-bold text-success">
+                    {% if cmd.statut == 'en_attente' %}25%
+                    {% elif cmd.statut == 'confirmee' %}50%
+                    {% elif cmd.statut == 'expediee' %}75%
+                    {% elif cmd.statut == 'livree' %}100%
+                    {% endif %}
+                </small>
+            </div>
+            <div class="progress rounded-3" style="height:10px">
+                <div class="progress-bar bg-success progress-bar-striped" role="progressbar"
+                     style="width:{% if cmd.statut == 'en_attente' %}25{% elif cmd.statut == 'confirmee' %}50{% elif cmd.statut == 'expediee' %}75{% elif cmd.statut == 'livree' %}100{% endif %}%">
+                </div>
+            </div>
+            <div class="d-flex justify-content-between mt-2">
+                <small class="{% if cmd.statut == 'en_attente' %}text-warning fw-bold{% else %}text-muted{% endif %}">
+                    ⏳ En attente
+                </small>
+                <small class="{% if cmd.statut == 'confirmee' %}text-primary fw-bold{% else %}text-muted{% endif %}">
+                    ✅ Confirmee
+                </small>
+                <small class="{% if cmd.statut == 'expediee' %}text-info fw-bold{% else %}text-muted{% endif %}">
+                    🚚 Expediee
+                </small>
+                <small class="{% if cmd.statut == 'livree' %}text-success fw-bold{% else %}text-muted{% endif %}">
+                    🎉 Livree
+                </small>
+            </div>
+        </div>
+    </div>
+</div>
+{% endfor %}
+</div>
+{% else %}
+<div class="text-center py-5">
+    <div style="font-size:4rem">📦</div>
+    <h4 class="text-muted mt-3">Aucune commande trouvee</h4>
+    <a href="/boutique" class="btn btn-success rounded-3 mt-3">
+        <i class="fas fa-store me-2"></i>Commencer mes achats
+    </a>
+</div>
+{% endif %}
+{% endblock %}

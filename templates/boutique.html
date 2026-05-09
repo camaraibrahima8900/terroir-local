@@ -1,146 +1,397 @@
 {% extends 'base.html' %}
 {% block content %}
-<div class="row">
-    <div class="col-12 mb-3">
-        <h2 class="text-success"><i class="fas fa-store"></i> Boutique Terroir Local</h2>
+
+<div class="row mb-3">
+    <div class="col-12 d-flex justify-content-between align-items-center">
+        <div>
+            <h2 class="fw-bold text-success">
+                <i class="fas fa-store me-2"></i>Boutique Terroir Local
+            </h2>
+            <p class="text-muted mb-0">Produits frais des cooperatives senegalaises</p>
+        </div>
+        <span class="badge bg-success fs-6">{{ produits|length }} produits</span>
     </div>
 </div>
 
-<!-- Filtres -->
-<div class="card mb-4">
-    <div class="card-body">
-        <form method="GET" class="row g-2 align-items-end">
+<!-- FILTRES -->
+<div class="filter-card mb-4">
+    <form method="GET" id="filter-form">
+        <div class="row g-3">
+            <div class="col-md-4">
+                <label class="form-label fw-semibold small">
+                    <i class="fas fa-search me-1 text-success"></i>Recherche
+                </label>
+                <input type="text" name="search" class="form-control rounded-3"
+                       value="{{ search }}" placeholder="Nom du produit..." oninput="rechercheTempsReel(this.value)">
+            </div>
             <div class="col-md-3">
-                <label class="form-label fw-bold">Categorie</label>
-                <select name="categorie" class="form-select" onchange="this.form.submit()">
+                <label class="form-label fw-semibold small">
+                    <i class="fas fa-tags me-1 text-success"></i>Categorie
+                </label>
+                <select name="categorie" class="form-select rounded-3">
                     <option value="Toutes" {% if categorie == 'Toutes' %}selected{% endif %}>Toutes</option>
                     {% for cat in categories %}
                     <option value="{{ cat }}" {% if categorie == cat %}selected{% endif %}>{{ cat }}</option>
                     {% endfor %}
                 </select>
             </div>
-            <div class="col-md-3">
-                <label class="form-label fw-bold">Recherche produit</label>
-                <input type="text" name="search" class="form-control" value="{{ search }}" placeholder="Nom du produit...">
-            </div>
             <div class="col-md-2">
-                <label class="form-label fw-bold">Promotion (%)</label>
-                <select name="promo" class="form-select">
-                    {% for p in [0, 5, 10, 15, 20, 25, 30] %}
-                    <option value="{{ p }}" {% if promo == p %}selected{% endif %}>{{ p }}%</option>
+                <label class="form-label fw-semibold small">
+                    <i class="fas fa-percent me-1 text-success"></i>Promotion
+                </label>
+                <select name="promo" class="form-select rounded-3">
+                    {% for p in [0,5,10,15,20,25,30] %}
+                    <option value="{{ p }}" {% if promo == p %}selected{% endif %}>
+                        {% if p == 0 %}Sans promo{% else %}-{{ p }}%{% endif %}
+                    </option>
                     {% endfor %}
                 </select>
             </div>
             <div class="col-md-2">
-                <button type="submit" class="btn btn-success w-100"><i class="fas fa-search"></i> Filtrer</button>
+                <label class="form-label fw-semibold small">
+                    <i class="fas fa-user me-1 text-success"></i>Producteur
+                </label>
+                <input type="text" name="producteur" class="form-control rounded-3"
+                       value="{{ producteur }}" placeholder="Nom producteur...">
             </div>
             <div class="col-md-2">
-                <a href="/boutique" class="btn btn-secondary w-100"><i class="fas fa-times"></i> Reset</a>
+                <label class="form-label fw-semibold small">
+                    <i class="fas fa-sort me-1 text-success"></i>Trier par
+                </label>
+                <select name="tri" class="form-select rounded-3">
+                    <option value="nom" {% if tri == 'nom' %}selected{% endif %}>Nom A-Z</option>
+                    <option value="prix_asc" {% if tri == 'prix_asc' %}selected{% endif %}>Prix croissant</option>
+                    <option value="prix_desc" {% if tri == 'prix_desc' %}selected{% endif %}>Prix decroissant</option>
+                    <option value="stock" {% if tri == 'stock' %}selected{% endif %}>Stock disponible</option>
+                    <option value="categorie" {% if tri == 'categorie' %}selected{% endif %}>Categorie</option>
+                </select>
             </div>
-        </form>
-    </div>
+            <div class="col-md-1 d-flex align-items-end gap-2">
+                <button type="submit" class="btn btn-success rounded-3 w-100">
+                    <i class="fas fa-filter me-1"></i>Filtrer
+                </button>
+            </div>
+            <div class="col-md-1 d-flex align-items-end">
+                <a href="/boutique" class="btn btn-outline-secondary rounded-3 w-100">
+                    <i class="fas fa-times me-1"></i>Reset
+                </a>
+            </div>
+
+            <!-- Filtre prix -->
+            <div class="col-12">
+                <div class="card border-0 rounded-3 p-3" style="background:#f0faf0">
+                    <div class="row g-2 align-items-center">
+                        <div class="col-auto">
+                            <span class="fw-semibold small text-success">
+                                <i class="fas fa-coins me-1"></i>Prix (FCFA):
+                            </span>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="input-group input-group-sm">
+                                <span class="input-group-text bg-white">Min</span>
+                                <input type="number" name="prix_min" class="form-control rounded-end-3"
+                                       value="{{ prix_min if prix_min else '' }}" placeholder="0">
+                            </div>
+                        </div>
+                        <div class="col-auto text-muted">—</div>
+                        <div class="col-md-2">
+                            <div class="input-group input-group-sm">
+                                <span class="input-group-text bg-white">Max</span>
+                                <input type="number" name="prix_max" class="form-control rounded-end-3"
+                                       value="{{ prix_max if prix_max else '' }}" placeholder="10000">
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <div class="d-flex gap-1">
+                                <button type="button" onclick="setPrix(0,1000)" class="btn btn-outline-success btn-sm rounded-3">&lt;1000</button>
+                                <button type="button" onclick="setPrix(1000,3000)" class="btn btn-outline-success btn-sm rounded-3">1k-3k</button>
+                                <button type="button" onclick="setPrix(3000,8000)" class="btn btn-outline-success btn-sm rounded-3">3k-8k</button>
+                                <button type="button" onclick="setPrix(8000,'')" class="btn btn-outline-success btn-sm rounded-3">&gt;8k</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Badges rapides -->
+            <div class="col-12">
+                <div class="d-flex flex-wrap gap-2">
+                    <span class="text-muted small fw-semibold mt-1">Rapide:</span>
+                    {% for cat in categories %}
+                    <a href="/boutique?categorie={{ cat }}" class="badge text-decoration-none rounded-3 px-3 py-2
+                       {% if categorie == cat %}bg-success{% else %}bg-light text-dark{% endif %}">
+                        {{ cat }}
+                    </a>
+                    {% endfor %}
+                    <a href="/boutique?promo=10" class="badge text-decoration-none rounded-3 px-3 py-2
+                       {% if promo > 0 %}bg-warning text-dark{% else %}bg-light text-dark{% endif %}">
+                        🔥 Promos
+                    </a>
+                </div>
+            </div>
+        </div>
+    </form>
 </div>
 
 <div class="row">
-    <!-- Produits -->
-    <div class="col-md-8">
-        <div class="row row-cols-1 row-cols-md-3 g-3">
-            {% for p in produits %}
-            <div class="col">
-                <div class="card h-100 {% if p.stock < 5 %}border-danger{% elif p.promo > 0 %}border-success{% endif %}">
-                    <div class="card-body">
-                        <div class="text-center" style="font-size: 2.5rem;">{{ p.image }}</div>
-                        <h6 class="card-title text-center mt-2 fw-bold">{{ p.nom }}</h6>
-                        <p class="text-muted text-center small mb-1">{{ p.categorie }} | {{ p.producteur }}</p>
-                        {% if p.stock < 5 %}
-                        <p class="rupture text-center small"><i class="fas fa-exclamation-triangle"></i> Stock bas: {{ p.stock }}</p>
-                        {% else %}
-                        <p class="text-center small text-muted">Stock: {{ p.stock }} {{ p.get('unite', 'kg') }}</p>
-                        {% endif %}
+    <!-- PRODUITS -->
+    <div class="col-lg-9">
+        {% if produits %}
+        <div class="row g-3">
+        {% for p in produits %}
+        <div class="col-md-4 col-sm-6">
+            <div class="product-card card h-100
+                {% if p.stock == 0 %}border-danger
+                {% elif p.stock < 5 %}border-warning
+                {% elif p.promo > 0 %}border-success
+                {% endif %}">
+
+                {% if p.photo %}
+                <img src="{{ p.photo }}" class="card-img-top"
+                     style="height:160px;object-fit:cover;"
+                     onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                <div class="product-emoji" style="display:none">{{ p.image }}</div>
+                {% else %}
+                <div class="product-emoji">{{ p.image }}</div>
+                {% endif %}
+
+                <div style="position:absolute;top:10px;left:10px" class="d-flex flex-column gap-1">
+                    {% if p.promo > 0 %}
+                    <span class="badge-promo">-{{ p.promo }}%</span>
+                    {% endif %}
+                    {% if p.stock > 100 %}
+                    <span class="badge bg-primary" style="font-size:0.7rem">NOUVEAU</span>
+                    {% endif %}
+                    {% if p.stock == 0 %}
+                    <span class="badge bg-danger" style="font-size:0.7rem">RUPTURE</span>
+                    {% endif %}
+                </div>
+
+                <div class="card-body d-flex flex-column">
+                    <div class="d-flex justify-content-between align-items-start mb-1">
+                        <div class="product-name">{{ p.nom }}</div>
+                        <div class="d-flex gap-1">
+                            <button class="btn-favori" onclick="toggleFavori(this, '{{ p._id }}')" title="Favori">
+                                <i class="fas fa-heart"></i>
+                            </button>
+                            <a href="https://wa.me/?text=Decouvrez {{ p.nom }} sur Terroir Local Senegal ! Prix: {{ p.prix }} FCFA. https://terroir-local.onrender.com"
+                               target="_blank" class="btn-favori text-success" title="Partager WhatsApp">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    {% if p.note_moyenne %}
+                    <div class="stars mb-1">
+                        {% for i in range(1,6) %}{% if i <= p.note_moyenne %}⭐{% else %}☆{% endif %}{% endfor %}
+                        <small class="text-muted">({{ p.note_moyenne }})</small>
+                    </div>
+                    {% endif %}
+
+                    <div class="product-meta mb-1">
+                        <span class="badge bg-light text-dark">{{ p.categorie }}</span>
+                        <span class="ms-1 text-muted small">{{ p.producteur }}</span>
+                    </div>
+
+                    {% if p.stock == 0 %}
+                    <span class="badge-rupture mb-2">Rupture de stock</span>
+                    {% elif p.stock < 5 %}
+                    <small class="text-warning mb-1"><i class="fas fa-exclamation-triangle me-1"></i>Stock bas: {{ p.stock }}</small>
+                    {% else %}
+                    <small class="text-muted mb-1"><i class="fas fa-box me-1"></i>Stock: {{ p.stock }} {{ p.unite }}</small>
+                    {% endif %}
+
+                    <div class="mt-auto">
                         {% if p.promo > 0 %}
-                        <p class="text-center">
-                            <del class="text-muted">{{ p.prix }} {{ devise }}</del>
-                            <span class="promo fw-bold"> {{ p.prix_final }} {{ devise }}</span>
-                            <span class="badge bg-success">-{{ p.promo }}%</span>
-                        </p>
+                        <div class="text-decoration-line-through text-muted small">{{ p.prix }} FCFA</div>
+                        <div class="product-price-promo">{{ p.prix_final }} FCFA/{{ p.unite }}</div>
                         {% else %}
-                        <p class="text-center fw-bold text-success">{{ p.prix }} {{ devise }} / {{ p.get('unite', 'kg') }}</p>
+                        <div class="product-price">{{ p.prix }} FCFA/{{ p.unite }}</div>
                         {% endif %}
+
                         {% if p.stock > 0 %}
-                        <form method="POST" action="/ajouter_panier">
-                            <input type="hidden" name="produit_id" value="{{ p._id }}">
-                            <input type="hidden" name="promo" value="{{ promo }}">
-                            <div class="d-flex gap-2">
-                                <input type="number" name="quantite" value="1" min="1" max="{{ p.stock }}" class="form-control form-control-sm">
-                                <button type="submit" class="btn btn-success btn-sm"><i class="fas fa-cart-plus"></i></button>
-                            </div>
-                        </form>
+                        <div class="d-flex gap-2 mt-2">
+                            <input type="number" id="qte_{{ p._id }}" value="1"
+                                   min="1" max="{{ p.stock }}"
+                                   class="form-control form-control-sm rounded-3"
+                                   style="width:65px">
+                            <button onclick="ajouterPanier('{{ p._id }}', {{ p.promo }})"
+                                    class="btn-panier btn flex-grow-1">
+                                <i class="fas fa-cart-plus me-1"></i>Ajouter
+                            </button>
+                        </div>
                         {% else %}
-                        <button class="btn btn-danger btn-sm w-100" disabled>Rupture de stock</button>
+                        <button class="btn-panier btn mt-2 w-100" disabled>Rupture de stock</button>
                         {% endif %}
                     </div>
                 </div>
             </div>
-            {% endfor %}
         </div>
+        {% endfor %}
+        </div>
+        {% else %}
+        <div class="text-center py-5">
+            <div style="font-size:4rem">🔍</div>
+            <h4 class="text-muted mt-3">Aucun produit trouve</h4>
+            <a href="/boutique" class="btn btn-success rounded-3 mt-2">
+                <i class="fas fa-times me-1"></i>Effacer les filtres
+            </a>
+        </div>
+        {% endif %}
+
+        <!-- PAGINATION -->
+        {% if total_pages > 1 %}
+        <div class="d-flex justify-content-center align-items-center gap-2 mt-4 flex-wrap">
+            <span class="text-muted small">{{ total_produits }} produits - Page {{ page }}/{{ total_pages }}</span>
+            <nav>
+                <ul class="pagination pagination-sm mb-0">
+                    {% if page > 1 %}
+                    <li class="page-item">
+                        <a class="page-link rounded-3 me-1" onclick="sauvegarderScroll()"
+                           href="?categorie={{ categorie }}&search={{ search }}&promo={{ promo }}&prix_min={{ prix_min }}&prix_max={{ prix_max }}&tri={{ tri }}&page={{ page-1 }}">
+                            <i class="fas fa-chevron-left"></i>
+                        </a>
+                    </li>
+                    {% endif %}
+                    {% for p in range(1, total_pages+1) %}
+                    <li class="page-item {% if p == page %}active{% endif %}">
+                        <a class="page-link rounded-3 me-1" onclick="sauvegarderScroll()"
+                           href="?categorie={{ categorie }}&search={{ search }}&promo={{ promo }}&prix_min={{ prix_min }}&prix_max={{ prix_max }}&tri={{ tri }}&page={{ p }}">
+                            {{ p }}
+                        </a>
+                    </li>
+                    {% endfor %}
+                    {% if page < total_pages %}
+                    <li class="page-item">
+                        <a class="page-link rounded-3" onclick="sauvegarderScroll()"
+                           href="?categorie={{ categorie }}&search={{ search }}&promo={{ promo }}&prix_min={{ prix_min }}&prix_max={{ prix_max }}&tri={{ tri }}&page={{ page+1 }}">
+                            <i class="fas fa-chevron-right"></i>
+                        </a>
+                    </li>
+                    {% endif %}
+                </ul>
+            </nav>
+        </div>
+        {% endif %}
     </div>
 
-    <!-- Panier -->
-    <div class="col-md-4">
-        <div class="card sticky-top" style="top: 20px;">
-            <div class="card-header bg-success text-white">
-                <h5 class="mb-0"><i class="fas fa-shopping-cart"></i> Panier ({{ panier|length }} article(s))</h5>
+    <!-- PANIER -->
+    <div class="col-lg-3">
+        <div class="panier-card sticky-top">
+            <div class="panier-header">
+                <i class="fas fa-shopping-cart me-2"></i>Panier
+                (<span id="panier-count">{{ panier|length }}</span>)
             </div>
-            <div class="card-body">
-                {% if panier %}
-                {% for item in panier %}
-{% set idx = loop.index0 %}
-                <div class="d-flex justify-content-between align-items-center mb-2 p-2 bg-light rounded">
-                    <div>
-                        <small class="fw-bold">{{ item.nom[:20] }}</small><br>
-                        <small class="text-muted">x{{ item.quantite }} = {{ item.quantite * item.prix_final }} {{ devise }}</small>
-                        {% if item.promo > 0 %}<span class="badge bg-success ms-1">-{{ item.promo }}%</span>{% endif %}
+
+            <div class="p-3">
+                <div class="mb-2">
+                    <label class="form-label fw-semibold small">
+                        <i class="fas fa-map-marker-alt me-1 text-success"></i>Region
+                    </label>
+                    <select id="region-select" class="form-select form-select-sm rounded-3">
+                        {% for r in regions %}
+                        <option>{{ r }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="mb-2">
+                    <label class="form-label fw-semibold small">
+                        <i class="fas fa-truck me-1 text-success"></i>Livraison
+                    </label>
+                    <select id="livraison-select" class="form-select form-select-sm rounded-3"
+                            onchange="updateTotal()">
+                        <option value="500">Normal (500 FCFA)</option>
+                        <option value="2000">Express (2000 FCFA)</option>
+                        <option value="custom">Personnalise</option>
+                    </select>
+                </div>
+                <div class="mb-2" id="frais-custom-div" style="display:none">
+                    <label class="form-label fw-semibold small">Frais personnalises (FCFA)</label>
+                    <div class="input-group input-group-sm">
+                        <input type="number" id="frais-custom-input" class="form-control rounded-start-3"
+                               placeholder="ex: 1500" min="0" oninput="updateTotal()">
+                        <span class="input-group-text bg-success text-white">FCFA</span>
                     </div>
-                    <a href="/retirer_panier/{{ loop.index0 }}" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></a>
+                </div>
+            </div>
+
+            <div id="panier-items">
+            {% if panier %}
+                {% for item in panier %}
+                <div class="panier-item">
+                    <div>
+                        <div class="fw-semibold small">{{ item.nom[:18] }}</div>
+                        <div class="text-muted" style="font-size:0.75rem">
+                            x{{ item.quantite }} @ {{ item.prix_final }} FCFA
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center gap-1">
+                        <span class="fw-bold text-success small">
+                            {{ item.quantite * item.prix_final }} F
+                        </span>
+                        <a href="/retirer_panier/{{ loop.index0 }}"
+                           onclick="sauvegarderScroll()"
+                           class="btn btn-outline-danger btn-sm rounded-circle p-0"
+                           style="width:22px;height:22px;font-size:0.6rem;line-height:22px;text-align:center">
+                            ✕
+                        </a>
+                    </div>
                 </div>
                 {% endfor %}
-                <hr>
-                <form method="POST" action="/commander">
-                    <div class="mb-2">
-                        <label class="form-label fw-bold">Region de livraison</label>
-                        <select name="region" class="form-select form-select-sm">
-                            {% for r in regions %}
-                            <option value="{{ r }}">{{ r }}</option>
-                            {% endfor %}
-                        </select>
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label fw-bold">Type de livraison</label>
-                        <select name="livraison" class="form-select form-select-sm" id="livraison">
-                            <option value="normal">Normal (500 FCFA)</option>
-                            <option value="express">Express (2000 FCFA)</option>
-                        </select>
-                    </div>
-                    <div class="p-2 bg-light rounded mb-3">
-                        <div class="d-flex justify-content-between">
-                            <span>Sous-total:</span><span class="fw-bold">{{ total }} {{ devise }}</span>
-                        </div>
-                        <div class="d-flex justify-content-between text-success">
-                            <span>Livraison:</span><span id="frais-display">500 FCFA</span>
-                        </div>
-                        <hr class="my-1">
-                        <div class="d-flex justify-content-between fw-bold text-success">
-                            <span>TOTAL:</span><span id="total-display">{{ total + 500 }} {{ devise }}</span>
-                        </div>
-                    </div>
-                    <button type="submit" class="btn btn-success w-100 mb-2"><i class="fas fa-check"></i> Commander</button>
-                </form>
-                <a href="/vider_panier" class="btn btn-outline-danger w-100 btn-sm"><i class="fas fa-trash"></i> Vider panier</a>
-                {% else %}
-                <div class="text-center text-muted py-4">
-                    <i class="fas fa-shopping-cart fa-3x mb-3"></i>
-                    <p>Panier vide</p>
+            {% else %}
+                <div class="text-center py-4 text-muted">
+                    <i class="fas fa-shopping-cart fa-2x mb-2 d-block opacity-25"></i>
+                    <small>Panier vide</small>
                 </div>
+            {% endif %}
+            </div>
+
+            <div class="panier-total p-3">
+                <div class="d-flex justify-content-between small mb-1">
+                    <span>Sous-total:</span>
+                    <span class="fw-bold" id="panier-total">{{ total }} FCFA</span>
+                </div>
+                <div class="d-flex justify-content-between small mb-2">
+                    <span>Livraison:</span>
+                    <span id="frais-display" class="fw-bold text-warning">500 FCFA</span>
+                </div>
+                <div class="d-flex justify-content-between mb-3">
+                    <span class="fw-bold fs-6">TOTAL:</span>
+                    <span id="total-display" class="total-amount">{{ total + 500 }} FCFA</span>
+                </div>
+
+                <!-- Code Promo -->
+                <div class="mb-2">
+                    <label class="form-label fw-semibold small">
+                        <i class="fas fa-tag me-1 text-success"></i>Code Promo
+                    </label>
+                    <div class="input-group input-group-sm">
+                        <input type="text" id="code-promo" class="form-control rounded-start-3"
+                               placeholder="ex: TERROIR10">
+                        <button onclick="verifierPromo()" type="button"
+                                class="btn btn-success rounded-end-3">OK</button>
+                    </div>
+                    <div id="promo-msg" class="small mt-1"></div>
+                </div>
+
+                <form method="POST" action="/commander" id="form-commande" onsubmit="sauvegarderScroll()">
+                    <input type="hidden" name="region" id="region-input" value="Dakar">
+                    <input type="hidden" name="livraison" id="livraison-input" value="normal">
+                    <input type="hidden" name="frais_custom" id="frais-custom-hidden" value="">
+                    <button type="submit" class="btn-vert btn w-100 mb-2">
+                        <i class="fas fa-check-circle me-2"></i>Commander
+                    </button>
+                </form>
+                <a href="/vider_panier" onclick="sauvegarderScroll()"
+                   class="btn btn-outline-secondary btn-sm w-100 rounded-3 mb-2">
+                    <i class="fas fa-trash me-1"></i>Vider panier
+                </a>
+
+                {% if role == 'administrateur' %}
+                <button id="btn-gen" onclick="toggleGen()"
+                        class="btn btn-sm w-100 rounded-3 btn-outline-danger">
+                    <i class="fas fa-robot me-1"></i>Generateur <span id="gen-status">OFF</span>
+                </button>
                 {% endif %}
             </div>
         </div>
@@ -148,11 +399,206 @@
 </div>
 
 <script>
-document.getElementById('livraison').addEventListener('change', function() {
-    var frais = this.value === 'express' ? 2000 : 500;
-    var total = {{ total }};
+// ===== MAINTENIR POSITION SCROLL =====
+function sauvegarderScroll() {
+    sessionStorage.setItem('scrollY_boutique', window.scrollY);
+}
+
+window.addEventListener('load', function() {
+    var pos = sessionStorage.getItem('scrollY_boutique');
+    if (pos) {
+        window.scrollTo(0, parseInt(pos));
+        sessionStorage.removeItem('scrollY_boutique');
+    }
+});
+
+// ===== AJAX AJOUTER PANIER SANS SAUT =====
+function ajouterPanier(produitId, promo) {
+    var qte = document.getElementById('qte_' + produitId).value;
+    var scrollY = window.scrollY;
+
+    var formData = new FormData();
+    formData.append('produit_id', produitId);
+    formData.append('quantite', qte);
+    formData.append('promo', promo);
+
+    fetch('/ajouter_panier_ajax', {
+        method: 'POST',
+        body: formData
+    })
+    .then(function(r) { return r.json(); })
+    .then(function(data) {
+        if (data.success) {
+            // Mettre a jour le panier sans recharger
+            document.getElementById('panier-count').textContent = data.nb;
+            document.getElementById('panier-total').textContent = data.total + ' FCFA';
+            document.getElementById('total-display').textContent = (data.total + 500) + ' FCFA';
+            rafraichirPanier(data.items, data.total);
+            showToast('✅ ' + data.nom + ' ajoute au panier !');
+            window.scrollTo(0, scrollY);
+        } else {
+            showToast('❌ ' + (data.message || 'Erreur'));
+        }
+    })
+    .catch(function() {
+        showToast('❌ Erreur de connexion');
+    });
+}
+
+function rafraichirPanier(items, total) {
+    var container = document.getElementById('panier-items');
+    if (!container) return;
+
+    if (items.length === 0) {
+        container.innerHTML = '<div class="text-center py-4 text-muted"><i class="fas fa-shopping-cart fa-2x mb-2 d-block opacity-25"></i><small>Panier vide</small></div>';
+        // Masquer boutons commander
+        var formCommande = document.getElementById('form-commande');
+        if (formCommande) formCommande.style.display = 'none';
+        return;
+    }
+
+    var html = '';
+    items.forEach(function(item, idx) {
+        html += '<div class="panier-item">';
+        html += '<div><div class="fw-semibold small">' + item.nom.substring(0,18) + '</div>';
+        html += '<div class="text-muted" style="font-size:0.75rem">x' + item.quantite + ' @ ' + item.prix_final + ' FCFA</div></div>';
+        html += '<div class="d-flex align-items-center gap-1">';
+        html += '<span class="fw-bold text-success small">' + (item.quantite * item.prix_final) + ' F</span>';
+        html += '<a href="/retirer_panier/' + idx + '" onclick="sauvegarderScroll()" class="btn btn-outline-danger btn-sm rounded-circle p-0" style="width:22px;height:22px;font-size:0.6rem;line-height:22px;text-align:center">✕</a>';
+        html += '</div></div>';
+    });
+    container.innerHTML = html;
+
+    // Afficher boutons commander si panier non vide
+    var formCommande = document.getElementById('form-commande');
+    if (formCommande) formCommande.style.display = 'block';
+}
+
+// ===== MISE A JOUR TOTAL =====
+function updateTotal() {
+    var select = document.getElementById('livraison-select');
+    var val = select.value;
+    var total = parseInt(document.getElementById('panier-total').textContent) || {{ total }};
+    var frais = 0;
+    var customDiv = document.getElementById('frais-custom-div');
+
+    if (val === 'custom') {
+        customDiv.style.display = 'block';
+        var customVal = document.getElementById('frais-custom-input').value;
+        frais = customVal ? parseInt(customVal) : 0;
+        document.getElementById('livraison-input').value = 'custom';
+        document.getElementById('frais-custom-hidden').value = frais;
+    } else {
+        customDiv.style.display = 'none';
+        frais = parseInt(val);
+        document.getElementById('livraison-input').value = frais == 500 ? 'normal' : 'express';
+        document.getElementById('frais-custom-hidden').value = '';
+    }
+
     document.getElementById('frais-display').textContent = frais + ' FCFA';
-    document.getElementById('total-display').textContent = (total + frais) + ' {{ devise }}';
+    document.getElementById('total-display').textContent = (total + frais) + ' FCFA';
+}
+
+document.getElementById('region-select').addEventListener('change', function() {
+    document.getElementById('region-input').value = this.value;
+});
+
+// ===== FAVORIS =====
+function toggleFavori(btn, produitId) {
+    btn.classList.toggle('active');
+    var favoris = JSON.parse(localStorage.getItem('favoris') || '[]');
+    var idx = favoris.indexOf(produitId);
+    if (idx === -1) {
+        favoris.push(produitId);
+        showToast('❤️ Ajoute aux favoris !');
+    } else {
+        favoris.splice(idx, 1);
+        showToast('💔 Retire des favoris !');
+    }
+    localStorage.setItem('favoris', JSON.stringify(favoris));
+}
+
+// ===== GENERATEUR =====
+function toggleGen() {
+    var btn = document.getElementById('btn-gen');
+    var status = document.getElementById('gen-status');
+    if (status.textContent === 'OFF') {
+        status.textContent = 'ON';
+        btn.classList.remove('btn-outline-danger');
+        btn.classList.add('btn-success');
+    } else {
+        status.textContent = 'OFF';
+        btn.classList.remove('btn-success');
+        btn.classList.add('btn-outline-danger');
+    }
+}
+
+// ===== FILTRES RAPIDES PRIX =====
+function setPrix(min, max) {
+    document.querySelector('[name=prix_min]').value = min || '';
+    document.querySelector('[name=prix_max]').value = max || '';
+    sauvegarderScroll();
+    document.getElementById('filter-form').submit();
+}
+
+// ===== CODE PROMO =====
+function verifierPromo() {
+    var code = document.getElementById('code-promo').value;
+    var formData = new FormData();
+    formData.append('code', code);
+
+    fetch('/verifier_promo', {method: 'POST', body: formData})
+    .then(r => r.json())
+    .then(function(data) {
+        var msg = document.getElementById('promo-msg');
+        if (data.success) {
+            msg.innerHTML = '<span class="text-success fw-bold">✅ ' + data.message + '</span>';
+            showToast('🎉 ' + data.message);
+        } else {
+            msg.innerHTML = '<span class="text-danger">❌ ' + data.message + '</span>';
+        }
+    });
+}
+
+// ===== TOAST =====
+function showToast(msg) {
+    var existing = document.querySelector('.toast-success');
+    if (existing) existing.remove();
+    var toast = document.createElement('div');
+    toast.className = 'toast-success';
+    toast.innerHTML = msg;
+    document.body.appendChild(toast);
+    setTimeout(function() { if(toast.parentNode) toast.remove(); }, 3000);
+}
+
+// ===== RECHERCHE TEMPS REEL =====
+var rechercheTimer = null;
+function rechercheTempsReel(val) {
+    clearTimeout(rechercheTimer);
+    rechercheTimer = setTimeout(function() {
+        var form = document.getElementById('filter-form');
+        if (val.length >= 2 || val.length === 0) {
+            sauvegarderScroll();
+            form.submit();
+        }
+    }, 600);
+}
+
+// ===== CHARGER FAVORIS =====
+document.addEventListener('DOMContentLoaded', function() {
+    var favoris = JSON.parse(localStorage.getItem('favoris') || '[]');
+    document.querySelectorAll('.btn-favori').forEach(function(btn) {
+        var onclick = btn.getAttribute('onclick');
+        var match = onclick.match(/'([a-f0-9]{24})'/);
+        if (match && favoris.includes(match[1])) btn.classList.add('active');
+    });
+
+    // Restaurer scroll
+    var pos = sessionStorage.getItem('scrollY_boutique');
+    if (pos) {
+        window.scrollTo(0, parseInt(pos));
+        sessionStorage.removeItem('scrollY_boutique');
+    }
 });
 </script>
 {% endblock %}
