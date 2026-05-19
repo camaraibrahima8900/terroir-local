@@ -36,15 +36,20 @@
             <h5 class="text-success fw-bold mb-3">
                 <i class="fas fa-plus-circle me-2"></i>Ajouter un produit
             </h5>
-            <form method="POST" action="/admin/ajouter_produit">
+            <form method="POST" action="/admin/ajouter_produit" id="form-produit">
                 <div class="row g-2">
                     <div class="col-md-3">
                         <input type="text" name="nom" class="form-control rounded-3" placeholder="Nom du produit" required>
                     </div>
                     <div class="col-md-2">
-                        <select name="categorie" class="form-select rounded-3" required>
-                            {% for cat in categories %}<option>{{ cat }}</option>{% endfor %}
-                        </select>
+                        <input type="text" name="categorie" class="form-control rounded-3"
+                               list="liste-categories" placeholder="Categorie" required>
+                        <datalist id="liste-categories">
+                            {% for cat in categories %}<option value="{{ cat }}">{% endfor %}
+                            <option value="Epices">
+                            <option value="Boissons">
+                            <option value="Tubercules">
+                        </datalist>
                     </div>
                     <div class="col-md-1">
                         <input type="number" name="prix" class="form-control rounded-3" placeholder="Prix" required>
@@ -54,25 +59,40 @@
                     </div>
                     <div class="col-md-1">
                         <select name="unite" class="form-select rounded-3">
-                            <option>kg</option>
-                            <option>litre</option>
-                            <option>unite</option>
-                            <option>botte</option>
-                            <option>sac</option>
+                            <option>kg</option><option>litre</option>
+                            <option>unite</option><option>botte</option><option>sac</option>
                         </select>
                     </div>
                     <div class="col-md-2">
                         <input type="text" name="producteur" class="form-control rounded-3" placeholder="Producteur" required>
                     </div>
                     <div class="col-md-1">
-                        <input type="text" name="image" class="form-control rounded-3 mb-1" placeholder="Emoji ex: 🥭" value="📦">
+                        <input type="text" name="image" class="form-control rounded-3" placeholder="Emoji" value="📦">
                     </div>
-                    <div class="col-md-3">
-                        <input type="text" name="photo" class="form-control rounded-3" placeholder="URL image (optionnel)">
+                </div>
+                <div class="row g-2 mt-1">
+                    <div class="col-md-4">
+                        <div class="d-flex gap-1">
+                            <input type="text" name="photo" id="photo-url-produit"
+                                   class="form-control rounded-3" placeholder="URL photo">
+                            <label for="photo-upload-produit" class="btn btn-outline-success rounded-3 mb-0" style="cursor:pointer">
+                                <i class="fas fa-upload"></i>
+                            </label>
+                            <input type="file" id="photo-upload-produit" accept="image/*"
+                                   style="display:none" onchange="previewProduitPhoto(this)">
+                        </div>
+                        <input type="hidden" name="photo_base64" id="photo-base64-produit">
+                        <div id="preview-produit" style="display:none" class="mt-1">
+                            <img id="preview-produit-img" src=""
+                                 style="width:50px;height:50px;object-fit:cover;border-radius:8px;border:2px solid #27ae60">
+                        </div>
                     </div>
-                    <div class="col-md-1">
+                    <div class="col-md-2">
+                        <input type="text" name="origine" class="form-control rounded-3" placeholder="Origine">
+                    </div>
+                    <div class="col-md-2">
                         <button type="submit" class="btn btn-success w-100 rounded-3">
-                            <i class="fas fa-plus"></i>
+                            <i class="fas fa-plus me-1"></i>Ajouter
                         </button>
                     </div>
                 </div>
@@ -81,36 +101,36 @@
 
         <div class="card border-0 shadow-sm rounded-3">
             <div class="card-header bg-success text-white rounded-top-3 py-3">
-                <h6 class="mb-0 fw-bold">
-                    <i class="fas fa-list me-2"></i>Catalogue ({{ produits|length }} produits)
-                </h6>
+                <h6 class="mb-0 fw-bold"><i class="fas fa-list me-2"></i>Catalogue ({{ produits|length }} produits)</h6>
             </div>
             <div class="card-body p-0">
                 <div class="table-responsive">
-                    <table class="table table-hover mb-0">
+                    <table class="table table-hover mb-0" id="table-produits">
                         <thead class="table-light">
                             <tr>
-                                <th>Image</th>
-                                <th>Nom</th>
-                                <th>Cat.</th>
-                                <th>Prix</th>
-                                <th>Stock</th>
-                                <th>Unite</th>
-                                <th>Producteur</th>
-                                <th>Ajoute par</th><th>Modifier Stock</th>
-                                <th>Modifier Prix</th>
-                                <th>Action</th>
+                                <th>Image</th><th>Nom</th><th>Cat.</th><th>Prix</th>
+                                <th>Stock</th><th>Unite</th><th>Producteur</th>
+                                <th>Ajoute par</th><th>Changer Image</th>
+                                <th>Mod. Stock</th><th>Mod. Prix</th><th>Action</th>
                             </tr>
                         </thead>
-                        <tbody>
+                        <tbody id="tbody-produits">
                         {% for p in produits %}
-                        <tr class="{% if p.stock < 5 %}table-danger{% endif %}">
-                            <td style="font-size:1.5rem">{{ p.image }}</td>
+                        <tr id="row-produit-{{ p._id }}" class="{% if p.stock < 5 %}table-danger{% endif %}">
+                            <td>
+                                {% if p.photo %}
+                                <img src="{{ p.photo }}" id="img_{{ p._id }}"
+                                     style="width:40px;height:40px;object-fit:cover;border-radius:6px;border:2px solid #27ae60"
+                                     onerror="this.style.display='none'">
+                                {% else %}
+                                <div id="img_{{ p._id }}" style="font-size:1.8rem">{{ p.image }}</div>
+                                {% endif %}
+                            </td>
                             <td class="fw-semibold">{{ p.nom }}</td>
                             <td><span class="badge bg-success">{{ p.categorie }}</span></td>
-                            <td class="text-success fw-bold">{{ p.prix }}</td>
+                            <td class="text-success fw-bold" id="prix-display-{{ p._id }}">{{ p.prix }}</td>
                             <td>
-                                <span class="badge {% if p.stock == 0 %}bg-danger{% elif p.stock < 5 %}bg-warning{% else %}bg-success{% endif %}">
+                                <span class="badge {% if p.stock == 0 %}bg-danger{% elif p.stock < 5 %}bg-warning{% else %}bg-success{% endif %}" id="stock-display-{{ p._id }}">
                                     {{ p.stock }}
                                 </span>
                             </td>
@@ -124,30 +144,57 @@
                                 {% endif %}
                             </td>
                             <td>
-                                <form method="POST" action="/admin/maj_stock" class="d-flex gap-1">
-                                    <input type="hidden" name="produit_id" value="{{ p._id }}">
-                                    <input type="number" name="stock" class="form-control form-control-sm rounded-3" style="width:70px" value="{{ p.stock }}">
-                                    <button type="submit" class="btn btn-warning btn-sm rounded-3">OK</button>
-                                </form>
-                            </td>
-                            <td>
-                                <form method="POST" action="/admin/maj_prix" class="d-flex gap-1">
-                                    <input type="hidden" name="produit_id" value="{{ p._id }}">
-                                    <input type="number" name="prix" class="form-control form-control-sm rounded-3" style="width:80px" value="{{ p.prix }}">
-                                    <button type="submit" class="btn btn-info btn-sm rounded-3">OK</button>
-                                </form>
+                                {% if username == 'admin' or p.ajoute_par == username %}
+                                <div class="d-flex gap-1">
+                                    <input type="file" id="file_{{ p._id }}" accept="image/*"
+                                           style="display:none" onchange="changerImageProduit('{{ p._id }}', this)">
+                                    <button onclick="document.getElementById('file_{{ p._id }}').click()"
+                                            class="btn btn-outline-success btn-sm rounded-3">
+                                        <i class="fas fa-upload"></i>
+                                    </button>
+                                    <input type="text" id="url_{{ p._id }}"
+                                           class="form-control form-control-sm rounded-3"
+                                           style="width:80px" placeholder="URL"
+                                           onchange="changerImageUrl('{{ p._id }}', this.value)">
+                                </div>
+                                {% else %}
+                                <span class="badge bg-secondary small"><i class="fas fa-lock"></i></span>
+                                {% endif %}
                             </td>
                             <td>
                                 {% if username == 'admin' or p.ajoute_par == username %}
-                                <a href="/admin/supprimer_produit/{{ p._id }}"
-                                   class="btn btn-danger btn-sm rounded-3"
-                                   onclick="return confirm('Supprimer {{ p.nom }} ?')">
-                                    <i class="fas fa-trash"></i>
-                                </a>
+                                <div class="d-flex gap-1">
+                                    <input type="number" id="stock_{{ p._id }}"
+                                           class="form-control form-control-sm rounded-3"
+                                           style="width:70px" value="{{ p.stock }}">
+                                    <button onclick="majStock('{{ p._id }}')"
+                                            class="btn btn-warning btn-sm rounded-3">OK</button>
+                                </div>
                                 {% else %}
-                                <span class="badge bg-secondary small">
-                                    <i class="fas fa-lock"></i>
-                                </span>
+                                <span class="text-muted small">{{ p.stock }}</span>
+                                {% endif %}
+                            </td>
+                            <td>
+                                {% if username == 'admin' or p.ajoute_par == username %}
+                                <div class="d-flex gap-1">
+                                    <input type="number" id="prix_{{ p._id }}"
+                                           class="form-control form-control-sm rounded-3"
+                                           style="width:80px" value="{{ p.prix }}">
+                                    <button onclick="majPrix('{{ p._id }}')"
+                                            class="btn btn-info btn-sm rounded-3">OK</button>
+                                </div>
+                                {% else %}
+                                <span class="text-muted small">{{ p.prix }} FCFA</span>
+                                {% endif %}
+                            </td>
+                            <td>
+                                {% if username == 'admin' or p.ajoute_par == username %}
+                                <button onclick="supprimerProduit('{{ p._id }}', '{{ p.nom }}')"
+                                        class="btn btn-danger btn-sm rounded-3">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                                {% else %}
+                                <span class="badge bg-secondary small"><i class="fas fa-lock"></i></span>
                                 {% endif %}
                             </td>
                         </tr>
@@ -165,82 +212,125 @@
             <h5 class="text-success fw-bold mb-3">
                 <i class="fas fa-user-plus me-2"></i>Ajouter un utilisateur
             </h5>
-            <form method="POST" action="/admin/ajouter_user">
-                <div class="row g-2">
-                    <div class="col-md-2">
-                        <input type="text" name="login" class="form-control rounded-3" placeholder="Login" required>
-                    </div>
-                    <div class="col-md-2">
-                        <input type="password" name="password" class="form-control rounded-3" placeholder="Mot de passe" required>
-                    </div>
-                    <div class="col-md-2">
-                        <input type="text" name="nom" class="form-control rounded-3" placeholder="Nom complet" required>
-                    </div>
-                    <div class="col-md-3">
-                        <input type="email" name="email" class="form-control rounded-3" placeholder="Email" required>
-                    </div>
-                    <div class="col-md-2">
-                        <select name="role" class="form-select rounded-3">
-                            <option value="utilisateur">Utilisateur</option>
-                            <option value="administrateur">Administrateur</option>
-                        </select>
-                    </div>
-                    <div class="col-md-3">
-                        <input type="text" name="photo" class="form-control rounded-3" placeholder="URL image (optionnel)">
-                    </div>
-                    <div class="col-md-1">
-                        <button type="submit" class="btn btn-success w-100 rounded-3">
-                            <i class="fas fa-plus"></i>
+            <div class="row g-2" id="form-user-fields">
+                <div class="col-md-2">
+                    <input type="text" id="u-login" class="form-control rounded-3" placeholder="Login" required>
+                </div>
+                <div class="col-md-2">
+                    <div class="input-group">
+                        <input type="password" id="u-password" class="form-control rounded-start-3" placeholder="Mot de passe" required>
+                        <button type="button" class="btn btn-outline-secondary"
+                                onmousedown="document.getElementById('u-password').type='text'"
+                                onmouseup="document.getElementById('u-password').type='password'"
+                                onmouseleave="document.getElementById('u-password').type='password'">
+                            <i class="fas fa-eye"></i>
                         </button>
                     </div>
                 </div>
-            </form>
+                <div class="col-md-2">
+                    <input type="text" id="u-nom" class="form-control rounded-3" placeholder="Nom complet" required>
+                </div>
+                <div class="col-md-2">
+                    <input type="email" id="u-email" class="form-control rounded-3" placeholder="Email" required>
+                </div>
+                <div class="col-md-2">
+                    <input type="text" id="u-telephone" class="form-control rounded-3" placeholder="+221 77 000 00 00">
+                </div>
+                <div class="col-md-2">
+                    <input type="text" id="u-lieu" class="form-control rounded-3" placeholder="Ville / Lieu">
+                </div>
+                <div class="col-md-2">
+                    <select id="u-role" class="form-select rounded-3">
+                        <option value="utilisateur">Utilisateur</option>
+                        {% if username == 'admin' %}
+                        <option value="administrateur">Administrateur</option>
+                        {% endif %}
+                    </select>
+                </div>
+                <div class="col-md-2">
+                    <button onclick="ajouterUser()" class="btn btn-success w-100 rounded-3">
+                        <i class="fas fa-plus me-1"></i>Ajouter
+                    </button>
+                </div>
+            </div>
+            <div id="user-msg" class="mt-2"></div>
         </div>
 
         <div class="card border-0 shadow-sm rounded-3">
             <div class="card-header bg-success text-white rounded-top-3 py-3">
                 <h6 class="mb-0 fw-bold"><i class="fas fa-users me-2"></i>Utilisateurs</h6>
             </div>
-            <div class="card-body">
-                <table class="table table-hover">
-                    <thead class="table-light">
-                        <tr><th>Login</th><th>Role</th><th>Nom</th><th>Email</th><th>Action</th></tr>
-                    </thead>
-                    <tbody>
-                    {% for u in users %}
-                    <tr>
-                        <td class="fw-bold">
-                            {{ u[0] }}
-                            {% if u[0] == 'admin' %}
-                            <span class="badge bg-danger ms-1 small">Super Admin</span>
-                            {% endif %}
-                        </td>
-                        <td>
-                            <span class="badge {% if u[1] == 'administrateur' %}bg-warning{% else %}bg-primary{% endif %}">
-                                {{ u[1] }}
-                            </span>
-                        </td>
-                        <td>{{ u[2] }}</td>
-                        <td>{{ u[3] }}</td>
-                        <td>
-                            {% if u[0] != 'admin' %}
-                                {% if username == 'admin' or (u|length > 4 and u[4] == username) %}
-                                <a href="/admin/supprimer_user/{{ u[0] }}"
-                                   class="btn btn-danger btn-sm rounded-3"
-                                   onclick="return confirm('Supprimer cet utilisateur ?')">
+            <div class="card-body p-0">
+                <div class="table-responsive">
+                    <table class="table table-hover mb-0">
+                        <thead class="table-light">
+                            <tr>
+                                <th>Photo</th><th>Login</th><th>Role</th>
+                                <th>Nom</th><th>Email</th><th>Telephone</th>
+                                <th>Ville</th><th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tbody-users">
+                        {% for u in users %}
+                        <tr id="row-user-{{ u[0] }}">
+                            <td>
+                                {% if u|length > 6 and u[6] %}
+                                <img src="{{ u[6] }}" class="rounded-circle"
+                                     style="width:38px;height:38px;object-fit:cover;border:2px solid #27ae60"
+                                     onerror="this.src='https://ui-avatars.com/api/?name={{ u[2]|urlencode }}&background=1a6b3a&color=fff&size=38'">
+                                {% else %}
+                                <img src="https://ui-avatars.com/api/?name={{ u[2]|urlencode }}&background=1a6b3a&color=fff&size=38"
+                                     class="rounded-circle"
+                                     style="width:38px;height:38px;object-fit:cover;border:2px solid #27ae60">
+                                {% endif %}
+                            </td>
+                            <td class="fw-bold">
+                                {{ u[0] }}
+                                {% if u[0] == 'admin' %}
+                                <span class="badge bg-danger ms-1 small">Super Admin</span>
+                                {% endif %}
+                            </td>
+                            <td>
+                                <span class="badge {% if u[1] == 'administrateur' %}bg-warning{% else %}bg-primary{% endif %}">
+                                    {{ u[1] }}
+                                </span>
+                            </td>
+                            <td>{{ u[2] }}</td>
+                            <td class="small">{{ u[3] }}</td>
+                            <td class="small">
+                                {% if u|length > 4 and u[4] %}
+                                <i class="fas fa-phone text-success me-1"></i>
+                                <strong>{{ u[4] }}</strong>
+                                {% else %}
+                                <span class="text-muted">-</span>
+                                {% endif %}
+                            </td>
+                            <td class="small">
+                                {% if u|length > 5 and u[5] %}
+                                <i class="fas fa-map-marker-alt text-danger me-1"></i>{{ u[5] }}
+                                {% else %}
+                                <span class="text-muted">-</span>
+                                {% endif %}
+                            </td>
+                            <td>
+                                {% if u[0] != 'admin' %}
+                                {% if username == 'admin' or (u|length > 7 and u[7] == username) %}
+                                <button onclick="supprimerUser('{{ u[0] }}')"
+                                        class="btn btn-danger btn-sm rounded-3">
                                     <i class="fas fa-trash"></i>
-                                </a>
+                                </button>
                                 {% else %}
                                 <span class="badge bg-secondary small">
                                     <i class="fas fa-lock me-1"></i>Protege
                                 </span>
                                 {% endif %}
-                            {% endif %}
-                        </td>
-                    </tr>
-                    {% endfor %}
-                    </tbody>
-                </table>
+                                {% endif %}
+                            </td>
+                        </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     </div>
@@ -250,7 +340,7 @@
         <div class="row g-3 mb-4">
             <div class="col-md-3">
                 <a href="/admin/backup" class="card border-0 shadow-sm rounded-3 p-4 text-center text-decoration-none h-100 d-block">
-                    <i class="fas fa-save fa-2x text-purple mb-2" style="color:#8e44ad"></i>
+                    <i class="fas fa-save fa-2x mb-2" style="color:#8e44ad"></i>
                     <div class="fw-bold">Backup</div>
                     <small class="text-muted">Sauvegarder les donnees</small>
                 </a>
@@ -280,14 +370,14 @@
                     <small class="text-muted">Voir le tableau de bord</small>
                 </a>
             </div>
-            <div class="col-md-3 mt-3">
+            <div class="col-md-3">
                 <a href="/export_commandes" class="card border-0 shadow-sm rounded-3 p-4 text-center text-decoration-none h-100 d-block">
                     <i class="fas fa-file-csv fa-2x text-info mb-2"></i>
                     <div class="fw-bold">Exporter CSV</div>
                     <small class="text-muted">Telecharger commandes</small>
                 </a>
             </div>
-            <div class="col-md-3 mt-3">
+            <div class="col-md-3">
                 <div class="card border-0 shadow-sm rounded-3 p-4 text-center h-100">
                     <div style="font-size:2rem">📱</div>
                     <div class="fw-bold mt-1">QR Code Wave</div>
@@ -299,10 +389,9 @@
                 </div>
             </div>
         </div>
-
         <div class="card border-0 shadow-sm rounded-3">
             <div class="card-header bg-dark text-white rounded-top-3 py-3">
-                <h6 class="mb-0 fw-bold"><i class="fas fa-database me-2"></i>Backups disponibles</h6>
+                <h6 class="mb-0 fw-bold"><i class="fas fa-database me-2"></i>Backups</h6>
             </div>
             <div class="card-body">
                 {% for b in backups %}
@@ -314,34 +403,253 @@
             </div>
         </div>
     </div>
-
 </div>
-<script>
-// Maintenir position scroll dans admin
-function sauvegarderScroll() {
-    sessionStorage.setItem('scrollY_admin', window.scrollY);
-}
 
-window.addEventListener('load', function() {
+<script>
+// ===== SAUVEGARDER ONGLET ACTIF =====
+document.querySelectorAll('[data-bs-toggle="tab"]').forEach(function(tab) {
+    tab.addEventListener('shown.bs.tab', function(e) {
+        sessionStorage.setItem('adminTab', e.target.getAttribute('href'));
+    });
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    var savedTab = sessionStorage.getItem('adminTab');
+    if (savedTab) {
+        var tabEl = document.querySelector('[href="' + savedTab + '"]');
+        if (tabEl) new bootstrap.Tab(tabEl).show();
+    }
+    // Scroll
     var pos = sessionStorage.getItem('scrollY_admin');
     if (pos) {
-        window.scrollTo(0, parseInt(pos));
-        sessionStorage.removeItem('scrollY_admin');
+        setTimeout(function() {
+            window.scrollTo(0, parseInt(pos));
+            sessionStorage.removeItem('scrollY_admin');
+        }, 400);
     }
 });
 
-// Intercepter tous les formulaires
-document.querySelectorAll('form').forEach(function(form) {
-    form.addEventListener('submit', function() {
-        sessionStorage.setItem('scrollY_admin', window.scrollY);
-    });
-});
+// ===== TOAST =====
+function showToast(msg, type) {
+    type = type || 'success';
+    var existing = document.querySelector('.toast-admin');
+    if (existing) existing.remove();
+    var toast = document.createElement('div');
+    toast.className = 'toast-admin alert alert-' + type + ' position-fixed rounded-3 shadow';
+    toast.style.cssText = 'top:20px;right:20px;z-index:9999;min-width:280px;font-weight:500';
+    toast.innerHTML = msg;
+    document.body.appendChild(toast);
+    setTimeout(function() { if (toast.parentNode) toast.remove(); }, 3500);
+}
 
-// Intercepter tous les liens
-document.querySelectorAll('a[href^="/admin"]').forEach(function(link) {
-    link.addEventListener('click', function() {
-        sessionStorage.setItem('scrollY_admin', window.scrollY);
+// ===== AJAX AJOUTER USER =====
+function ajouterUser() {
+    var login = document.getElementById('u-login').value.trim();
+    var password = document.getElementById('u-password').value.trim();
+    var nom = document.getElementById('u-nom').value.trim();
+    var email = document.getElementById('u-email').value.trim();
+    var telephone = document.getElementById('u-telephone').value.trim();
+    var lieu = document.getElementById('u-lieu').value.trim();
+    var role = document.getElementById('u-role').value;
+
+    if (!login || !password || !nom || !email) {
+        showToast('❌ Login, mot de passe, nom et email sont obligatoires !', 'danger');
+        return;
+    }
+
+    var scrollY = window.scrollY;
+    var formData = new FormData();
+    formData.append('login', login);
+    formData.append('password', password);
+    formData.append('nom', nom);
+    formData.append('email', email);
+    formData.append('telephone', telephone);
+    formData.append('lieu', lieu);
+    formData.append('role', role);
+
+    fetch('/admin/ajouter_user_ajax', {method: 'POST', body: formData})
+    .then(function(r) { return r.json(); })
+    .then(function(data) {
+        if (data.success) {
+            // Vider les champs
+            document.getElementById('u-login').value = '';
+            document.getElementById('u-password').value = '';
+            document.getElementById('u-nom').value = '';
+            document.getElementById('u-email').value = '';
+            document.getElementById('u-telephone').value = '';
+            document.getElementById('u-lieu').value = '';
+
+            // Ajouter ligne dans tableau
+            var tbody = document.getElementById('tbody-users');
+            var tr = document.createElement('tr');
+            tr.id = 'row-user-' + data.login;
+            var badgeClass = data.role === 'administrateur' ? 'bg-warning' : 'bg-primary';
+            var avatar = 'https://ui-avatars.com/api/?name=' + encodeURIComponent(data.nom) + '&background=1a6b3a&color=fff&size=38';
+            var tel = data.telephone ? '<i class="fas fa-phone text-success me-1"></i>' + data.telephone : '-';
+            var lieu_txt = data.lieu ? '<i class="fas fa-map-marker-alt text-danger me-1"></i>' + data.lieu : '-';
+            tr.innerHTML =
+                '<td><img src="' + avatar + '" class="rounded-circle" style="width:38px;height:38px;object-fit:cover;border:2px solid #27ae60"></td>' +
+                '<td class="fw-bold">' + data.login + '</td>' +
+                '<td><span class="badge ' + badgeClass + '">' + data.role + '</span></td>' +
+                '<td>' + data.nom + '</td>' +
+                '<td class="small">' + data.email + '</td>' +
+                '<td class="small text-muted">' + tel + '</td>' +
+                '<td class="small text-muted">' + lieu_txt + '</td>' +
+                '<td><button onclick="supprimerUser(\'' + data.login + '\')" class="btn btn-danger btn-sm rounded-3"><i class="fas fa-trash"></i></button></td>';
+            tbody.appendChild(tr);
+
+            showToast('✅ Utilisateur ' + data.login + ' ajoute avec succes !', 'success');
+
+            // Rester sur onglet utilisateurs
+            sessionStorage.setItem('adminTab', '#utilisateurs');
+            setTimeout(function() { window.scrollTo(0, scrollY); }, 100);
+        } else {
+            showToast('❌ ' + (data.message || 'Erreur inconnue'), 'danger');
+        }
+    })
+    .catch(function(err) {
+        showToast('❌ Erreur reseau: ' + err, 'danger');
     });
-});
+}
+
+// ===== AJAX SUPPRIMER USER =====
+function supprimerUser(login) {
+    if (!confirm('Supprimer l utilisateur ' + login + ' ?')) return;
+    var scrollY = window.scrollY;
+    fetch('/admin/supprimer_user_ajax/' + login)
+    .then(function(r) { return r.json(); })
+    .then(function(data) {
+        if (data.success) {
+            var row = document.getElementById('row-user-' + login);
+            if (row) {
+                row.style.transition = 'opacity 0.4s';
+                row.style.opacity = '0';
+                setTimeout(function() { row.remove(); }, 400);
+            }
+            showToast('✅ Utilisateur ' + login + ' supprime !', 'success');
+            sessionStorage.setItem('adminTab', '#utilisateurs');
+            setTimeout(function() { window.scrollTo(0, scrollY); }, 100);
+        } else {
+            showToast('❌ ' + (data.message || 'Non autorise'), 'danger');
+        }
+    })
+    .catch(function(err) {
+        showToast('❌ Erreur: ' + err, 'danger');
+    });
+}
+
+// ===== AJAX SUPPRIMER PRODUIT =====
+function supprimerProduit(id, nom) {
+    if (!confirm('Supprimer le produit ' + nom + ' ?')) return;
+    var scrollY = window.scrollY;
+    fetch('/admin/supprimer_produit_ajax/' + id)
+    .then(function(r) { return r.json(); })
+    .then(function(data) {
+        if (data.success) {
+            var row = document.getElementById('row-produit-' + id);
+            if (row) {
+                row.style.transition = 'opacity 0.4s';
+                row.style.opacity = '0';
+                setTimeout(function() { row.remove(); }, 400);
+            }
+            showToast('✅ Produit supprime !', 'success');
+            sessionStorage.setItem('adminTab', '#produits');
+            setTimeout(function() { window.scrollTo(0, scrollY); }, 100);
+        } else {
+            showToast('❌ Non autorise !', 'danger');
+        }
+    })
+    .catch(function(err) {
+        showToast('❌ Erreur: ' + err, 'danger');
+    });
+}
+
+// ===== AJAX MODIFIER STOCK =====
+function majStock(id) {
+    var scrollY = window.scrollY;
+    var stock = document.getElementById('stock_' + id).value;
+    var formData = new FormData();
+    formData.append('produit_id', id);
+    formData.append('stock', stock);
+    fetch('/admin/maj_stock_ajax', {method: 'POST', body: formData})
+    .then(function(r) { return r.json(); })
+    .then(function(data) {
+        if (data.success) {
+            var badge = document.getElementById('stock-display-' + id);
+            if (badge) {
+                badge.textContent = stock;
+                badge.className = 'badge ' + (parseInt(stock) == 0 ? 'bg-danger' : parseInt(stock) < 5 ? 'bg-warning' : 'bg-success');
+            }
+            showToast('✅ Stock mis a jour : ' + stock, 'success');
+            setTimeout(function() { window.scrollTo(0, scrollY); }, 100);
+        }
+    });
+}
+
+// ===== AJAX MODIFIER PRIX =====
+function majPrix(id) {
+    var scrollY = window.scrollY;
+    var prix = document.getElementById('prix_' + id).value;
+    var formData = new FormData();
+    formData.append('produit_id', id);
+    formData.append('prix', prix);
+    fetch('/admin/maj_prix_ajax', {method: 'POST', body: formData})
+    .then(function(r) { return r.json(); })
+    .then(function(data) {
+        if (data.success) {
+            var el = document.getElementById('prix-display-' + id);
+            if (el) el.textContent = prix;
+            showToast('✅ Prix mis a jour : ' + prix + ' FCFA', 'success');
+            setTimeout(function() { window.scrollTo(0, scrollY); }, 100);
+        }
+    });
+}
+
+// ===== AJAX CHANGER IMAGE =====
+function changerImageProduit(id, input) {
+    if (!input.files || !input.files[0]) return;
+    var reader = new FileReader();
+    reader.onload = function(e) {
+        var img = document.getElementById('img_' + id);
+        if (img && img.tagName === 'IMG') img.src = e.target.result;
+        var formData = new FormData();
+        formData.append('produit_id', id);
+        formData.append('photo', e.target.result);
+        fetch('/admin/maj_image_ajax', {method: 'POST', body: formData})
+        .then(function(r) { return r.json(); })
+        .then(function(data) {
+            if (data.success) showToast('✅ Image mise a jour !', 'success');
+        });
+    };
+    reader.readAsDataURL(input.files[0]);
+}
+
+function changerImageUrl(id, url) {
+    if (!url) return;
+    var img = document.getElementById('img_' + id);
+    if (img && img.tagName === 'IMG') img.src = url;
+    var formData = new FormData();
+    formData.append('produit_id', id);
+    formData.append('photo', url);
+    fetch('/admin/maj_image_ajax', {method: 'POST', body: formData})
+    .then(function(r) { return r.json(); })
+    .then(function(data) {
+        if (data.success) showToast('✅ Image mise a jour !', 'success');
+    });
+}
+
+// ===== PREVIEW PHOTO PRODUIT =====
+function previewProduitPhoto(input) {
+    if (input.files && input.files[0]) {
+        var reader = new FileReader();
+        reader.onload = function(e) {
+            document.getElementById('preview-produit-img').src = e.target.result;
+            document.getElementById('preview-produit').style.display = 'block';
+            document.getElementById('photo-base64-produit').value = e.target.result;
+            document.getElementById('photo-url-produit').value = '';
+        };
+        reader.readAsDataURL(input.files[0]);
+    }
+}
 </script>
 {% endblock %}

@@ -158,13 +158,21 @@
 </div>
 <script>
 function sInscrire() {
+    var btn = event.target;
+    btn.innerHTML = '<i class="fas fa-spinner fa-spin me-1"></i>Inscription...';
+    btn.disabled = true;
+    setTimeout(function() {
     var email = document.getElementById('newsletter-email').value;
     if (email && email.includes('@')) {
         document.getElementById('newsletter-msg').innerHTML = '✅ Merci ! Vous etes inscrit a notre newsletter.';
         document.getElementById('newsletter-email').value = '';
+        btn.innerHTML = '✅ Inscrit !';
     } else {
         document.getElementById('newsletter-msg').innerHTML = '❌ Entrez un email valide.';
+        btn.innerHTML = "S'inscrire";
+        btn.disabled = false;
     }
+    }, 800); // newsletter_ajax
 }
 </script>
 {% endblock %}

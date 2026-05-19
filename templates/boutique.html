@@ -135,7 +135,7 @@
 
 <div class="row">
     <!-- PRODUITS -->
-    <div class="col-lg-9">
+    <div class="col-lg-9" id="liste-produits">
         {% if produits %}
         <div class="row g-3">
         {% for p in produits %}
@@ -247,7 +247,8 @@
                 <ul class="pagination pagination-sm mb-0">
                     {% if page > 1 %}
                     <li class="page-item">
-                        <a class="page-link rounded-3 me-1" onclick="sauvegarderScroll()"
+                        <a class="page-link rounded-3 me-1"
+                           onclick="scrollToListe()"
                            href="?categorie={{ categorie }}&search={{ search }}&promo={{ promo }}&prix_min={{ prix_min }}&prix_max={{ prix_max }}&tri={{ tri }}&page={{ page-1 }}">
                             <i class="fas fa-chevron-left"></i>
                         </a>
@@ -255,7 +256,8 @@
                     {% endif %}
                     {% for p in range(1, total_pages+1) %}
                     <li class="page-item {% if p == page %}active{% endif %}">
-                        <a class="page-link rounded-3 me-1" onclick="sauvegarderScroll()"
+                        <a class="page-link rounded-3 me-1"
+                           onclick="scrollToListe()"
                            href="?categorie={{ categorie }}&search={{ search }}&promo={{ promo }}&prix_min={{ prix_min }}&prix_max={{ prix_max }}&tri={{ tri }}&page={{ p }}">
                             {{ p }}
                         </a>
@@ -263,7 +265,8 @@
                     {% endfor %}
                     {% if page < total_pages %}
                     <li class="page-item">
-                        <a class="page-link rounded-3" onclick="sauvegarderScroll()"
+                        <a class="page-link rounded-3"
+                           onclick="scrollToListe()"
                            href="?categorie={{ categorie }}&search={{ search }}&promo={{ promo }}&prix_min={{ prix_min }}&prix_max={{ prix_max }}&tri={{ tri }}&page={{ page+1 }}">
                             <i class="fas fa-chevron-right"></i>
                         </a>
@@ -329,12 +332,11 @@
                         <span class="fw-bold text-success small">
                             {{ item.quantite * item.prix_final }} F
                         </span>
-                        <a href="/retirer_panier/{{ loop.index0 }}"
-                           onclick="sauvegarderScroll()"
-                           class="btn btn-outline-danger btn-sm rounded-circle p-0"
-                           style="width:22px;height:22px;font-size:0.6rem;line-height:22px;text-align:center">
+                        <button onclick="retirerPanier({{ loop.index0 }})"
+                                class="btn btn-outline-danger btn-sm rounded-circle p-0"
+                                style="width:22px;height:22px;font-size:0.6rem;line-height:22px;text-align:center">
                             ✕
-                        </a>
+                        </button>
                     </div>
                 </div>
                 {% endfor %}
@@ -382,10 +384,10 @@
                         <i class="fas fa-check-circle me-2"></i>Commander
                     </button>
                 </form>
-                <a href="/vider_panier" onclick="sauvegarderScroll()"
-                   class="btn btn-outline-secondary btn-sm w-100 rounded-3 mb-2">
+                <button onclick="viderPanier()"
+                        class="btn btn-outline-secondary btn-sm w-100 rounded-3 mb-2">
                     <i class="fas fa-trash me-1"></i>Vider panier
-                </a>
+                </button>
 
                 {% if role == 'administrateur' %}
                 <button id="btn-gen" onclick="toggleGen()"
@@ -464,7 +466,7 @@ function rafraichirPanier(items, total) {
         html += '<div class="text-muted" style="font-size:0.75rem">x' + item.quantite + ' @ ' + item.prix_final + ' FCFA</div></div>';
         html += '<div class="d-flex align-items-center gap-1">';
         html += '<span class="fw-bold text-success small">' + (item.quantite * item.prix_final) + ' F</span>';
-        html += '<a href="/retirer_panier/' + idx + '" onclick="sauvegarderScroll()" class="btn btn-outline-danger btn-sm rounded-circle p-0" style="width:22px;height:22px;font-size:0.6rem;line-height:22px;text-align:center">✕</a>';
+        html += '<button onclick="retirerPanier(' + idx + ')" class="btn btn-outline-danger btn-sm rounded-circle p-0" style="width:22px;height:22px;font-size:0.6rem;line-height:22px;text-align:center">✕</button>';
         html += '</div></div>';
     });
     container.innerHTML = html;
@@ -472,6 +474,41 @@ function rafraichirPanier(items, total) {
     // Afficher boutons commander si panier non vide
     var formCommande = document.getElementById('form-commande');
     if (formCommande) formCommande.style.display = 'block';
+}
+
+// ===== AJAX RETIRER PANIER =====
+function retirerPanier(index) {
+    var scrollY = window.scrollY;
+    fetch('/retirer_panier_ajax/' + index)
+    .then(r => r.json())
+    .then(function(data) {
+        if (data.success) {
+            document.getElementById('panier-count').textContent = data.nb;
+            document.getElementById('panier-total').textContent = data.total + ' FCFA';
+            document.getElementById('total-display').textContent = (data.total + 500) + ' FCFA';
+            rafraichirPanier(data.items, data.total);
+            showToast('🗑️ Produit retire du panier !');
+            window.scrollTo(0, scrollY);
+        }
+    });
+}
+
+// ===== AJAX VIDER PANIER =====
+function viderPanier() {
+    if (!confirm('Vider le panier ?')) return;
+    var scrollY = window.scrollY;
+    fetch('/vider_panier_ajax')
+    .then(r => r.json())
+    .then(function(data) {
+        if (data.success) {
+            document.getElementById('panier-count').textContent = '0';
+            document.getElementById('panier-total').textContent = '0 FCFA';
+            document.getElementById('total-display').textContent = '500 FCFA';
+            rafraichirPanier([], 0);
+            showToast('🗑️ Panier vide !');
+            window.scrollTo(0, scrollY);
+        }
+    });
 }
 
 // ===== MISE A JOUR TOTAL =====
@@ -569,6 +606,14 @@ function showToast(msg) {
     toast.innerHTML = msg;
     document.body.appendChild(toast);
     setTimeout(function() { if(toast.parentNode) toast.remove(); }, 3000);
+}
+
+// ===== PAGINATION - SCROLL VERS LISTE =====
+function scrollToListe() {
+    var pos = document.getElementById('liste-produits');
+    if (pos) {
+        sessionStorage.setItem('scrollY_boutique', pos.getBoundingClientRect().top + window.scrollY - 20);
+    }
 }
 
 // ===== RECHERCHE TEMPS REEL =====

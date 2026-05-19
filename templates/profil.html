@@ -18,42 +18,89 @@
         {% endif %}
 
         <div class="row g-4">
-            <!-- Avatar -->
+            <!-- Photo profil -->
             <div class="col-md-5">
                 <div class="card border-0 shadow-sm rounded-3 p-4 text-center">
-                    <div style="font-size:5rem" id="avatar-display">
-                        {{ user_data.get('avatar', '👤') }}
+                    <!-- Photo actuelle -->
+                    <div class="mb-3 position-relative d-inline-block">
+                        <img src="{{ user_data.get('photo', 'https://ui-avatars.com/api/?name=' + username + '&background=1a6b3a&color=fff&size=120') }}"
+                             id="photo-preview"
+                             class="rounded-circle shadow"
+                             style="width:130px;height:130px;object-fit:cover;border:4px solid #27ae60"
+                             onerror="this.src='https://ui-avatars.com/api/?name={{ username }}&background=1a6b3a&color=fff&size=120'">
+                        <label for="photo-upload"
+                               style="position:absolute;bottom:5px;right:5px;background:#27ae60;color:white;border-radius:50%;width:32px;height:32px;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,0.2)">
+                            <i class="fas fa-camera" style="font-size:0.8rem"></i>
+                        </label>
                     </div>
+
                     <h5 class="fw-bold mt-2">{{ username }}</h5>
-                    <span class="badge {% if role == 'administrateur' %}bg-warning{% else %}bg-primary{% endif %} mb-3">
+                    <span class="badge {% if role == 'administrateur' %}bg-warning{% else %}bg-primary{% endif %} mb-2">
                         {{ role }}
                     </span>
-                    <div class="text-muted small mb-3">{{ user_data.get('nom', '') }}</div>
-                    <div class="text-muted small mb-4">{{ user_data.get('email', '') }}</div>
+                    <div class="text-muted small mb-1">{{ user_data.get('nom', '') }}</div>
+                    <div class="text-muted small mb-3">{{ user_data.get('email', '') }}</div>
 
-                    <form method="POST" action="/profil">
-                        <input type="hidden" name="action" value="changer_avatar">
-                        <label class="form-label fw-semibold small">Choisir un avatar</label>
-                        <div class="d-flex flex-wrap gap-2 justify-content-center mb-3">
-                            {% for emoji in ['👤','👨‍🌾','👩‍🌾','🧑‍💼','👨‍💼','👩‍💼','🌿','🌱','🦁','🐘','🦊','🦅'] %}
-                            <button type="button" onclick="choisirAvatar('{{ emoji }}')"
-                                    class="btn btn-light rounded-3 p-2" style="font-size:1.5rem">
-                                {{ emoji }}
-                            </button>
-                            {% endfor %}
+                    <!-- Upload photo -->
+                    <form method="POST" action="/profil" enctype="multipart/form-data" id="photo-form">
+                        <input type="hidden" name="action" value="changer_photo">
+                        <input type="file" id="photo-upload" name="photo_file"
+                               accept="image/*" style="display:none"
+                               onchange="previewEtSauvegarder(this)">
+                        <div id="upload-progress" style="display:none" class="mb-2">
+                            <div class="progress rounded-3" style="height:8px">
+                                <div class="progress-bar bg-success progress-bar-striped progress-bar-animated w-100"></div>
+                            </div>
+                            <small class="text-muted">Upload en cours...</small>
                         </div>
-                        <input type="hidden" name="avatar" id="avatar-input"
-                               value="{{ user_data.get('avatar', '👤') }}">
-                        <button type="submit" class="btn btn-success rounded-3 w-100">
-                            <i class="fas fa-save me-2"></i>Sauvegarder avatar
+                        <input type="hidden" name="photo_base64" id="photo-base64">
+                        <button type="button" onclick="document.getElementById('photo-upload').click()"
+                                class="btn btn-success rounded-3 w-100 mb-2">
+                            <i class="fas fa-upload me-2"></i>Choisir une photo
+                        </button>
+                        <button type="submit" id="btn-sauvegarder" class="btn btn-outline-success rounded-3 w-100" style="display:none">
+                            <i class="fas fa-save me-2"></i>Sauvegarder
                         </button>
                     </form>
+
+                    <!-- Galerie photos predefinies -->
+                    <div class="mt-3">
+                        <div class="text-muted small fw-semibold mb-2">
+                            <i class="fas fa-images me-1"></i>Galerie photos :
+                        </div>
+                        <div class="row g-2">
+                            {% set photos_galerie = [
+                                ('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=120', 'Homme 1'),
+                                ('https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=120', 'Femme 1'),
+                                ('https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=120', 'Homme 2'),
+                                ('https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=120', 'Femme 2'),
+                                ('https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=120', 'Homme 3'),
+                                ('https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=120', 'Femme 3'),
+                                ('https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=120', 'Homme 4'),
+                                ('https://images.unsplash.com/photo-1517841905240-472988babdf9?w=120', 'Femme 4'),
+                                ('https://images.unsplash.com/photo-1519345182560-3f2917c472ef?w=120', 'Homme 5'),
+                                ('https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=120', 'Femme 5'),
+                                ('https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=120', 'Homme 6'),
+                                ('https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?w=120', 'Femme 6')
+                            ] %}
+                            {% for url, nom in photos_galerie %}
+                            <div class="col-4">
+                                <img src="{{ url }}"
+                                     onclick="choisirPhotoGalerie('{{ url }}')"
+                                     class="rounded-3 galerie-photo"
+                                     style="width:100%;height:70px;object-fit:cover;cursor:pointer;border:2px solid transparent;transition:all 0.2s"
+                                     title="{{ nom }}"
+                                     onerror="this.style.display='none'">
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <!-- Mot de passe -->
+            <!-- Mot de passe + infos -->
             <div class="col-md-7">
-                <div class="card border-0 shadow-sm rounded-3 p-4">
+                <div class="card border-0 shadow-sm rounded-3 p-4 mb-3">
                     <h5 class="fw-bold text-success mb-3">
                         <i class="fas fa-lock me-2"></i>Changer mot de passe
                     </h5>
@@ -61,20 +108,39 @@
                         <input type="hidden" name="action" value="changer_mdp">
                         <div class="mb-3">
                             <label class="form-label fw-semibold small">Ancien mot de passe</label>
-                            <input type="password" name="ancien_mdp" class="form-control rounded-3"
-                                   placeholder="Votre mot de passe actuel" required>
+                            <div class="input-group">
+                                <input type="password" name="ancien_mdp" id="pwd-ancien" class="form-control rounded-start-3" placeholder="Votre mot de passe actuel" required>
+                                <button type="button" class="btn btn-outline-secondary rounded-end-3"
+                                        onmousedown="document.getElementById('pwd-ancien').type='text'"
+                                        onmouseup="document.getElementById('pwd-ancien').type='password'"
+                                        onmouseleave="document.getElementById('pwd-ancien').type='password'">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </div>
                         </div>
                         <div class="mb-3">
                             <label class="form-label fw-semibold small">Nouveau mot de passe</label>
-                            <input type="password" name="nouveau_mdp" id="nouveau_mdp"
-                                   class="form-control rounded-3"
-                                   placeholder="Nouveau mot de passe" required>
+                            <div class="input-group">
+                                <input type="password" name="nouveau_mdp" id="nouveau_mdp" class="form-control rounded-start-3" placeholder="Nouveau mot de passe" required>
+                                <button type="button" class="btn btn-outline-secondary rounded-end-3"
+                                        onmousedown="document.getElementById('nouveau_mdp').type='text'"
+                                        onmouseup="document.getElementById('nouveau_mdp').type='password'"
+                                        onmouseleave="document.getElementById('nouveau_mdp').type='password'">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </div>
                         </div>
                         <div class="mb-4">
                             <label class="form-label fw-semibold small">Confirmer mot de passe</label>
-                            <input type="password" id="confirm_mdp"
-                                   class="form-control rounded-3"
-                                   placeholder="Confirmer le mot de passe">
+                            <div class="input-group">
+                                <input type="password" id="confirm_mdp" class="form-control rounded-start-3" placeholder="Confirmer le mot de passe">
+                                <button type="button" class="btn btn-outline-secondary rounded-end-3"
+                                        onmousedown="document.getElementById('confirm_mdp').type='text'"
+                                        onmouseup="document.getElementById('confirm_mdp').type='password'"
+                                        onmouseleave="document.getElementById('confirm_mdp').type='password'">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </div>
                             <div id="mdp-match" class="small mt-1"></div>
                         </div>
                         <button type="submit" class="btn btn-success rounded-3 w-100">
@@ -83,8 +149,7 @@
                     </form>
                 </div>
 
-                <!-- Infos compte -->
-                <div class="card border-0 shadow-sm rounded-3 p-4 mt-3">
+                <div class="card border-0 shadow-sm rounded-3 p-4">
                     <h5 class="fw-bold text-success mb-3">
                         <i class="fas fa-info-circle me-2"></i>Informations compte
                     </h5>
@@ -112,12 +177,39 @@
     </div>
 </div>
 
+<style>
+.galerie-photo:hover { border-color: #27ae60 !important; transform: scale(1.05); }
+.galerie-photo.selected { border-color: #27ae60 !important; box-shadow: 0 0 0 3px rgba(39,174,96,0.3); }
+</style>
+
 <script>
-function choisirAvatar(emoji) {
-    document.getElementById('avatar-display').textContent = emoji;
-    document.getElementById('avatar-input').value = emoji;
+// Preview photo uploadee
+function previewEtSauvegarder(input) {
+    if (input.files && input.files[0]) {
+        var reader = new FileReader();
+        reader.onload = function(e) {
+            document.getElementById('photo-preview').src = e.target.result;
+            document.getElementById('photo-base64').value = e.target.result;
+            document.getElementById('btn-sauvegarder').style.display = 'block';
+        };
+        reader.readAsDataURL(input.files[0]);
+    }
 }
 
+// Choisir depuis galerie
+function choisirPhotoGalerie(url) {
+    document.getElementById('photo-preview').src = url;
+    document.getElementById('photo-base64').value = url;
+    document.getElementById('btn-sauvegarder').style.display = 'block';
+
+    // Marquer photo selectionnee
+    document.querySelectorAll('.galerie-photo').forEach(function(img) {
+        img.classList.remove('selected');
+    });
+    event.target.classList.add('selected');
+}
+
+// Verification mot de passe
 document.getElementById('confirm_mdp').addEventListener('input', function() {
     var nouveau = document.getElementById('nouveau_mdp').value;
     var msg = document.getElementById('mdp-match');

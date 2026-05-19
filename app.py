@@ -237,6 +237,52 @@ def retirer_panier(index):
     referer = request.referrer or url_for("boutique")
     return redirect(referer)
 
+@app.route("/vider_panier_ajax")
+@login_requis
+def vider_panier_ajax():
+    session["panier"] = []
+    session.modified = True
+    return jsonify({"success": True})
+
+@app.route("/retirer_panier_ajax/<int:index>")
+@login_requis
+def retirer_panier_ajax(index):
+    panier = session.get("panier", [])
+    if 0 <= index < len(panier):
+        panier.pop(index)
+    session["panier"] = panier
+    session.modified = True
+    total = sum(i["quantite"] * i["prix_final"] for i in panier)
+    return jsonify({"success": True, "nb": len(panier), "total": total, "items": panier})
+
+@app.route("/suivi/update_ajax/<commande_id>", methods=["POST"])
+@login_requis
+@admin_requis
+def update_statut_ajax(commande_id):
+    db = get_db()
+    if db is None:
+        return jsonify({"success": False})
+    nouveau_statut = request.form.get("statut")
+    db.commandes.update_one(
+        {"_id": ObjectId(commande_id)},
+        {"$set": {"statut": nouveau_statut}}
+    )
+    log_info("Statut AJAX mis a jour : " + commande_id + " -> " + nouveau_statut)
+    return jsonify({"success": True, "statut": nouveau_statut})
+
+@app.route("/noter_ajax/<produit_id>", methods=["POST"])
+@login_requis
+def noter_produit_ajax(produit_id):
+    db = get_db()
+    if db is None:
+        return jsonify({"success": False})
+    note = int(request.form.get("note", 5))
+    db.produits.update_one(
+        {"_id": ObjectId(produit_id)},
+        {"$push": {"notes": note}, "$set": {"note_moyenne": note}}
+    )
+    return jsonify({"success": True, "note": note})
+
 @app.route("/vider_panier")
 @login_requis
 def vider_panier():
@@ -350,12 +396,22 @@ def admin():
     produits = list(db.produits.find({}).sort("nom", 1)) if db is not None else []
     for p in produits:
         p["_id"] = str(p["_id"])
-    users = lister_utilisateurs()
+    role_actuel = session.get("role", "")
+    users_brut = lister_utilisateurs()
+    # Admin voit TOUJOURS telephone et ville en clair
+    # Utilisateur normal ne voit jamais ces infos
+    users = []
+    for u in users_brut:
+        u_list = list(u)
+        if role_actuel != "administrateur":
+            if len(u_list) > 4: u_list[4] = ""
+            if len(u_list) > 5: u_list[5] = ""
+        users.append(tuple(u_list))
     backups = lister_backups()
     return render_template("admin.html",
         produits=produits, users=users, backups=backups,
         categories=CATEGORIES, regions=REGIONS,
-        role=session.get("role"), username=session.get("username"))
+        role=role_actuel, username=session.get("username"))
 
 @app.route("/admin/ajouter_produit", methods=["POST"])
 @login_requis
@@ -373,6 +429,9 @@ def ajouter_produit():
     origine = request.form.get("origine", "").strip()
     image = request.form.get("image", "📦").strip()
     photo = request.form.get("photo", "").strip()
+    photo_base64 = request.form.get("photo_base64", "").strip()
+    if photo_base64:
+        photo = photo_base64
     if nom and categorie and prix and stock and producteur:
         db.produits.insert_one({
             "nom": nom, "categorie": categorie, "prix": prix,
@@ -383,6 +442,81 @@ def ajouter_produit():
         })
         log_info("Produit ajoute : " + nom)
     return redirect(url_for("admin"))
+
+@app.route("/admin/maj_image_ajax", methods=["POST"])
+@login_requis
+@admin_requis
+def maj_image_ajax():
+    db = get_db()
+    if db is None:
+        return jsonify({"success": False})
+    produit_id = request.form.get("produit_id")
+    photo = request.form.get("photo", "")
+    db.produits.update_one(
+        {"_id": ObjectId(produit_id)},
+        {"$set": {"photo": photo}}
+    )
+    log_info("Image produit mise a jour : " + produit_id)
+    return jsonify({"success": True})
+
+@app.route("/admin/supprimer_produit_ajax/<produit_id>")
+@login_requis
+@admin_requis
+def supprimer_produit_ajax(produit_id):
+    db = get_db()
+    if db is not None:
+        username = session.get("username")
+        if username == "admin":
+            db.produits.delete_one({"_id": ObjectId(produit_id)})
+        else:
+            db.produits.delete_one({"_id": ObjectId(produit_id), "ajoute_par": username})
+        log_info("Produit supprime AJAX : " + produit_id)
+        return jsonify({"success": True})
+    return jsonify({"success": False})
+
+@app.route("/admin/supprimer_user_ajax/<username_cible>")
+@login_requis
+@admin_requis
+def supprimer_user_ajax(username_cible):
+    current = session.get("username")
+    if username_cible == "admin":
+        return jsonify({"success": False, "message": "Impossible de supprimer admin"})
+    if current == "admin":
+        supprimer_utilisateur(username_cible)
+        return jsonify({"success": True})
+    else:
+        users = lister_utilisateurs()
+        user_data = next((u for u in users if u[0] == username_cible), None)
+        if user_data and len(user_data) > 4 and user_data[4] == current:
+            supprimer_utilisateur(username_cible)
+            return jsonify({"success": True})
+    return jsonify({"success": False, "message": "Non autorise"})
+
+@app.route("/admin/maj_stock_ajax", methods=["POST"])
+@login_requis
+@admin_requis
+def maj_stock_ajax():
+    db = get_db()
+    if db is None:
+        return jsonify({"success": False})
+    produit_id = request.form.get("produit_id")
+    stock = int(request.form.get("stock", 0))
+    db.produits.update_one({"_id": ObjectId(produit_id)}, {"$set": {"stock": stock}})
+    log_info("Stock AJAX mis a jour : " + str(stock))
+    return jsonify({"success": True, "stock": stock})
+
+@app.route("/admin/maj_prix_ajax", methods=["POST"])
+@login_requis
+@admin_requis
+def maj_prix_ajax():
+    db = get_db()
+    if db is None:
+        return jsonify({"success": False})
+    produit_id = request.form.get("produit_id")
+    prix = int(request.form.get("prix", 0))
+    db.produits.update_one({"_id": ObjectId(produit_id)}, {"$set": {"prix": prix}})
+    log_info("Prix AJAX mis a jour : " + str(prix))
+    return jsonify({"success": True, "prix": prix})
 
 @app.route("/admin/supprimer_produit/<produit_id>")
 @login_requis
@@ -424,6 +558,38 @@ def maj_prix():
     log_info("Prix mis a jour : " + str(prix))
     return redirect(url_for("admin"))
 
+@app.route("/admin/ajouter_user_ajax", methods=["POST"])
+@login_requis
+@admin_requis
+def ajouter_user_ajax():
+    login = request.form.get("login", "").strip()
+    password = request.form.get("password", "").strip()
+    role = request.form.get("role", "utilisateur").strip()
+    nom = request.form.get("nom", "").strip()
+    email = request.form.get("email", "").strip()
+    telephone = request.form.get("telephone", "").strip()
+    lieu = request.form.get("lieu", "").strip()
+    if login and password and nom and email:
+        try:
+            result = ajouter_utilisateur(login, password, role, nom, email,
+                                        session.get("username"), telephone, lieu)
+            if isinstance(result, tuple):
+                success, msg = result
+            else:
+                success, msg = True, "OK"
+            if success:
+                log_info("Utilisateur AJAX cree : " + login)
+                return jsonify({
+                    "success": True,
+                    "login": login, "nom": nom, "email": email,
+                    "role": role, "telephone": telephone, "lieu": lieu
+                })
+            else:
+                return jsonify({"success": False, "message": msg})
+        except Exception as e:
+            return jsonify({"success": False, "message": str(e)})
+    return jsonify({"success": False, "message": "Champs obligatoires manquants"})
+
 @app.route("/admin/ajouter_user", methods=["POST"])
 @login_requis
 @admin_requis
@@ -433,8 +599,11 @@ def ajouter_user():
     role = request.form.get("role", "utilisateur").strip()
     nom = request.form.get("nom", "").strip()
     email = request.form.get("email", "").strip()
+    telephone = request.form.get("telephone", "").strip()
+    lieu = request.form.get("lieu", "").strip()
     if login and password and nom and email:
-        ajouter_utilisateur(login, password, role, nom, email, session.get("username"))
+        ajouter_utilisateur(login, password, role, nom, email,
+                           session.get("username"), telephone, lieu)
     return redirect(url_for("admin"))
 
 @app.route("/admin/supprimer_user/<username>")
@@ -460,6 +629,44 @@ def supprimer_user(username):
         else:
             log_info("Suppression refusee : " + current + " ne peut pas supprimer " + username)
     return redirect(url_for("admin"))
+
+@app.route("/admin/backup_ajax")
+@login_requis
+@admin_requis
+def backup_ajax():
+    try:
+        faire_backup()
+        return jsonify({"success": True})
+    except Exception as e:
+        return jsonify({"success": False, "error": str(e)})
+
+@app.route("/admin/reinitialiser_ajax")
+@login_requis
+@admin_requis
+def reinitialiser_ajax():
+    try:
+        import importlib
+        import setup_db as sdb
+        importlib.reload(sdb)
+        sdb.creer_produits()
+        log_info("Base reinitialise AJAX!")
+        return jsonify({"success": True})
+    except Exception as e:
+        return jsonify({"success": False, "error": str(e)})
+
+@app.route("/admin/supprimer_commandes_ajax")
+@login_requis
+@admin_requis
+def supprimer_commandes_ajax():
+    try:
+        db = get_db()
+        if db is not None:
+            result = db.commandes.delete_many({})
+            log_info(str(result.deleted_count) + " commandes supprimees AJAX!")
+            return jsonify({"success": True, "nb": result.deleted_count})
+        return jsonify({"success": False})
+    except Exception as e:
+        return jsonify({"success": False, "error": str(e)})
 
 @app.route("/admin/backup")
 @login_requis
@@ -657,13 +864,43 @@ def profil():
                 users = charger_users()
                 users[username]["password"] = bcrypt.hashpw(nouveau.encode(), bcrypt.gensalt()).decode()
                 sauvegarder_users(users)
+                from auth import charger_users
+                users_data = charger_users()
+                ud = users_data.get(username, {})
                 return render_template("profil.html",
                     msg_success="Mot de passe change avec succes !",
-                    role=session.get("role"), username=username)
+                    user_data=ud, role=session.get("role"), username=username)
             else:
+                from auth import charger_users
+                users_data = charger_users()
+                ud = users_data.get(username, {})
                 return render_template("profil.html",
                     msg_error="Ancien mot de passe incorrect !",
-                    role=session.get("role"), username=username)
+                    user_data=ud, role=session.get("role"), username=username)
+        elif action == "toggle_telephone":
+            telephone_public = request.form.get("telephone_public") == "on"
+            from auth import charger_users, sauvegarder_users
+            users_t = charger_users()
+            if username in users_t:
+                users_t[username]["telephone_public"] = telephone_public
+                sauvegarder_users(users_t)
+            ud = users_t.get(username, {})
+            return render_template("profil.html",
+                user_data=ud,
+                msg_success="Preference mise a jour !",
+                role=session.get("role"), username=username)
+        elif action == "changer_photo":
+            photo_data = request.form.get("photo_base64", "").strip()
+            from auth import charger_users, sauvegarder_users
+            users = charger_users()
+            if username in users and photo_data:
+                users[username]["photo"] = photo_data
+                sauvegarder_users(users)
+            user_data = users.get(username, {})
+            return render_template("profil.html",
+                user_data=user_data,
+                msg_success="Photo mise a jour !",
+                role=session.get("role"), username=username)
         elif action == "changer_avatar":
             avatar = request.form.get("avatar", "👤")
             from auth import charger_users, sauvegarder_users
@@ -677,11 +914,12 @@ def profil():
                 role=session.get("role"), username=username)
     from auth import charger_users
     users = charger_users()
-    user_data = users.get(session.get("username"), {})
+    username_val = session.get("username")
+    user_data = users.get(username_val, {})
     return render_template("profil.html",
         user_data=user_data,
         role=session.get("role"),
-        username=session.get("username"))
+        username=username_val)
 
 @app.route("/nb_commandes_attente")
 @login_requis

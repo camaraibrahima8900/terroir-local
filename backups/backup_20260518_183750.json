@@ -1,13 +1,13 @@
 {
-  "date": "2026-05-08 22:07:08.938984",
+  "date": "2026-05-18 18:37:50.342058",
   "nb_produits": 15,
-  "nb_commandes": 4,
+  "nb_commandes": 2,
   "produits": [
     {
       "nom": "Mangues Kent",
       "categorie": "Fruits",
       "prix": 1500,
-      "stock": 197,
+      "stock": 170,
       "producteur": "Verger de Casamance",
       "image": "🥭",
       "photo": "https://images.pexels.com/photos/918643/pexels-photo-918643.jpeg?w=300",
@@ -215,12 +215,12 @@
   "commandes": [
     {
       "client": {
-        "nom": "Amadou Diallo",
-        "email": "amadou.diallo@gmail.com",
-        "telephone": "+221771234567",
-        "ville": "Dakar"
+        "nom": "Mariama Diop",
+        "email": "mariama.diop@gmail.com",
+        "telephone": "+221701234572",
+        "ville": "Tambacounda"
       },
-      "date": "2026-05-06 23:11:23.339000",
+      "date": "2026-05-16 20:23:20.397000",
       "articles": [
         {
           "image": "🥭",
@@ -228,54 +228,14 @@
           "prix_final": 1500,
           "prix_unitaire": 1500,
           "promo": 0,
-          "quantite": 3,
-          "unite": "kg"
-        }
-      ],
-      "statut": "confirmee",
-      "sous_total": 4500,
-      "reduction": 0,
-      "total": 6500,
-      "devise": "FCFA",
-      "livraison": {
-        "type": "express",
-        "frais": 2000,
-        "ville": "Tambacounda",
-        "region": "Tambacounda"
-      }
-    },
-    {
-      "client": {
-        "nom": "Aissatou Ba",
-        "email": "aissatou.ba@gmail.com",
-        "telephone": "+221771234570",
-        "ville": "Ziguinchor"
-      },
-      "date": "2026-05-08 21:52:13.709000",
-      "articles": [
-        {
-          "image": "🧅",
-          "nom": "Oignons Violets",
-          "prix_final": 600,
-          "prix_unitaire": 600,
-          "promo": 0,
-          "quantite": 1,
-          "unite": "kg"
-        },
-        {
-          "image": "🍚",
-          "nom": "Riz Broken",
-          "prix_final": 450,
-          "prix_unitaire": 450,
-          "promo": 0,
-          "quantite": 1,
+          "quantite": 5,
           "unite": "kg"
         }
       ],
       "statut": "en_attente",
-      "sous_total": 1050,
+      "sous_total": 7500,
       "reduction": 0,
-      "total": 1550,
+      "total": 8000,
       "devise": "FCFA",
       "livraison": {
         "type": "normal",
@@ -286,76 +246,27 @@
     },
     {
       "client": {
-        "nom": "Awa Mendy",
-        "email": "awa.mendy@gmail.com",
-        "telephone": "+221781234580",
-        "ville": "Sedhiou"
+        "nom": "Rokhaya Sarr",
+        "email": "rokhaya.sarr@gmail.com",
+        "telephone": "+221781234574",
+        "ville": "Fatick"
       },
-      "date": "2026-05-08 21:52:57.299000",
+      "date": "2026-05-16 20:25:26.652000",
       "articles": [
         {
-          "image": "🧅",
-          "nom": "Oignons Violets",
-          "prix_final": 600,
-          "prix_unitaire": 600,
+          "image": "🥭",
+          "nom": "Mangues Kent",
+          "prix_final": 1500,
+          "prix_unitaire": 1500,
           "promo": 0,
-          "quantite": 1,
-          "unite": "kg"
-        },
-        {
-          "image": "🍚",
-          "nom": "Riz Broken",
-          "prix_final": 450,
-          "prix_unitaire": 450,
-          "promo": 0,
-          "quantite": 1,
+          "quantite": 25,
           "unite": "kg"
         }
       ],
-      "statut": "en_attente",
-      "sous_total": 1050,
+      "statut": "expediee",
+      "sous_total": 37500,
       "reduction": 0,
-      "total": 1550,
-      "devise": "FCFA",
-      "livraison": {
-        "type": "normal",
-        "frais": 500,
-        "ville": "Dakar",
-        "region": "Dakar"
-      }
-    },
-    {
-      "client": {
-        "nom": "Moussa Sow",
-        "email": "moussa.sow@gmail.com",
-        "telephone": "+221701234569",
-        "ville": "Saint-Louis"
-      },
-      "date": "2026-05-08 21:54:44.461000",
-      "articles": [
-        {
-          "image": "🧅",
-          "nom": "Oignons Violets",
-          "prix_final": 600,
-          "prix_unitaire": 600,
-          "promo": 0,
-          "quantite": 1,
-          "unite": "kg"
-        },
-        {
-          "image": "🍚",
-          "nom": "Riz Broken",
-          "prix_final": 450,
-          "prix_unitaire": 450,
-          "promo": 0,
-          "quantite": 1,
-          "unite": "kg"
-        }
-      ],
-      "statut": "en_attente",
-      "sous_total": 1050,
-      "reduction": 0,
-      "total": 1550,
+      "total": 38000,
       "devise": "FCFA",
       "livraison": {
         "type": "normal",

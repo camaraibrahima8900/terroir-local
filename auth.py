@@ -54,18 +54,19 @@ def authentifier(username, password):
         log_erreur("Erreur auth : " + str(e))
         return None
 
-def ajouter_utilisateur(login, password, role="utilisateur", nom="", email="", cree_par="admin"):
+def ajouter_utilisateur(login, password, role="utilisateur", nom="", email="", cree_par="admin", telephone="", lieu=""):
     try:
         users = charger_utilisateurs()
-        if username in users:
+        if login in users:
             return False, "Utilisateur deja existant !"
-        users[username] = {
+        users[login] = {
             "password": hasher_mot_de_passe(password),
-            "role": role, "nom": nom, "email": email
+            "role": role, "nom": nom, "email": email,
+            "cree_par": cree_par
         }
         with open(USERS_FILE, "w", encoding="utf-8") as f:
             json.dump(users, f, indent=2, ensure_ascii=False)
-        log_info("Utilisateur cree : " + username)
+        log_info("Utilisateur cree : " + login)
         return True, "Utilisateur cree !"
     except Exception as e:
         return False, str(e)
@@ -85,9 +86,29 @@ def supprimer_utilisateur(username):
     except Exception as e:
         return False, str(e)
 
+def charger_users():
+    return charger_utilisateurs()
+
+def sauvegarder_users(users):
+    with open(USERS_FILE, "w", encoding="utf-8") as f:
+        import json
+        json.dump(users, f, indent=2, ensure_ascii=False)
+
 def lister_utilisateurs():
     users = charger_utilisateurs()
-    return [(u, users[u]["role"], users[u]["nom"], users[u]["email"]) for u in users]
+    return [
+        (
+            u,                              # 0 login
+            users[u]["role"],              # 1 role
+            users[u].get("nom",""),        # 2 nom
+            users[u].get("email",""),      # 3 email
+            users[u].get("telephone",""),  # 4 telephone
+            users[u].get("lieu",""),       # 5 lieu
+            users[u].get("photo",""),      # 6 photo
+            users[u].get("cree_par","admin") # 7 cree_par
+        )
+        for u in users
+    ]
 
 if __name__ == "__main__":
     creer_utilisateurs_defaut()

@@ -1,13 +1,13 @@
 {
-  "date": "2026-05-09 08:43:05.256056",
+  "date": "2026-05-19 00:46:19.924809",
   "nb_produits": 15,
-  "nb_commandes": 5,
+  "nb_commandes": 2,
   "produits": [
     {
       "nom": "Mangues Kent",
       "categorie": "Fruits",
       "prix": 1500,
-      "stock": 200,
+      "stock": 170,
       "producteur": "Verger de Casamance",
       "image": "🥭",
       "photo": "https://images.pexels.com/photos/918643/pexels-photo-918643.jpeg?w=300",
@@ -215,67 +215,27 @@
   "commandes": [
     {
       "client": {
-        "nom": "Seydou Badji",
-        "email": "seydou.badji@gmail.com",
-        "telephone": "+221771234579",
-        "ville": "Kedougou"
+        "nom": "Mariama Diop",
+        "email": "mariama.diop@gmail.com",
+        "telephone": "+221701234572",
+        "ville": "Tambacounda"
       },
-      "date": "2026-05-08 22:44:14.416000",
+      "date": "2026-05-16 20:23:20.397000",
       "articles": [
         {
-          "image": "🦪",
-          "nom": "Yeet Mollusque",
-          "prix_final": 5000,
-          "prix_unitaire": 5000,
+          "image": "🥭",
+          "nom": "Mangues Kent",
+          "prix_final": 1500,
+          "prix_unitaire": 1500,
           "promo": 0,
-          "quantite": 1,
+          "quantite": 5,
           "unite": "kg"
         }
       ],
       "statut": "en_attente",
-      "sous_total": 5000,
+      "sous_total": 7500,
       "reduction": 0,
-      "total": 5500,
-      "devise": "FCFA",
-      "livraison": {
-        "type": "normal",
-        "frais": 500,
-        "ville": "Dakar",
-        "region": "Dakar"
-      }
-    },
-    {
-      "client": {
-        "nom": "Awa Mendy",
-        "email": "awa.mendy@gmail.com",
-        "telephone": "+221781234580",
-        "ville": "Sedhiou"
-      },
-      "date": "2026-05-08 23:18:26.251000",
-      "articles": [
-        {
-          "image": "🐟",
-          "nom": "Thiof Seche",
-          "prix_final": 8000,
-          "prix_unitaire": 8000,
-          "promo": 0,
-          "quantite": 1,
-          "unite": "kg"
-        },
-        {
-          "image": "🍆",
-          "nom": "Aubergine Africaine",
-          "prix_final": 700,
-          "prix_unitaire": 700,
-          "promo": 0,
-          "quantite": 1,
-          "unite": "kg"
-        }
-      ],
-      "statut": "en_attente",
-      "sous_total": 8700,
-      "reduction": 0,
-      "total": 9200,
+      "total": 8000,
       "devise": "FCFA",
       "livraison": {
         "type": "normal",
@@ -291,111 +251,22 @@
         "telephone": "+221781234574",
         "ville": "Fatick"
       },
-      "date": "2026-05-08 23:18:50.125000",
+      "date": "2026-05-16 20:25:26.652000",
       "articles": [
         {
-          "image": "🐟",
-          "nom": "Thiof Seche",
-          "prix_final": 8000,
-          "prix_unitaire": 8000,
+          "image": "🥭",
+          "nom": "Mangues Kent",
+          "prix_final": 1500,
+          "prix_unitaire": 1500,
           "promo": 0,
-          "quantite": 1,
-          "unite": "kg"
-        },
-        {
-          "image": "🍆",
-          "nom": "Aubergine Africaine",
-          "prix_final": 700,
-          "prix_unitaire": 700,
-          "promo": 0,
-          "quantite": 1,
+          "quantite": 25,
           "unite": "kg"
         }
       ],
-      "statut": "en_attente",
-      "sous_total": 8700,
+      "statut": "expediee",
+      "sous_total": 37500,
       "reduction": 0,
-      "total": 9200,
-      "devise": "FCFA",
-      "livraison": {
-        "type": "normal",
-        "frais": 500,
-        "ville": "Dakar",
-        "region": "Dakar"
-      }
-    },
-    {
-      "client": {
-        "nom": "Ibrahima Fall",
-        "email": "ibrahima.fall@gmail.com",
-        "telephone": "+221781234571",
-        "ville": "Kaolack"
-      },
-      "date": "2026-05-08 23:19:49.542000",
-      "articles": [
-        {
-          "image": "🐟",
-          "nom": "Thiof Seche",
-          "prix_final": 8000,
-          "prix_unitaire": 8000,
-          "promo": 0,
-          "quantite": 1,
-          "unite": "kg"
-        },
-        {
-          "image": "🍆",
-          "nom": "Aubergine Africaine",
-          "prix_final": 700,
-          "prix_unitaire": 700,
-          "promo": 0,
-          "quantite": 1,
-          "unite": "kg"
-        }
-      ],
-      "statut": "en_attente",
-      "sous_total": 8700,
-      "reduction": 0,
-      "total": 9200,
-      "devise": "FCFA",
-      "livraison": {
-        "type": "normal",
-        "frais": 500,
-        "ville": "Dakar",
-        "region": "Dakar"
-      }
-    },
-    {
-      "client": {
-        "nom": "Ndeye Thiam",
-        "email": "ndeye.thiam@gmail.com",
-        "telephone": "+221771234576",
-        "ville": "Kolda"
-      },
-      "date": "2026-05-08 23:20:37.440000",
-      "articles": [
-        {
-          "image": "🐟",
-          "nom": "Thiof Seche",
-          "prix_final": 8000,
-          "prix_unitaire": 8000,
-          "promo": 0,
-          "quantite": 1,
-          "unite": "kg"
-        },
-        {
-          "image": "🍆",
-          "nom": "Aubergine Africaine",
-          "prix_final": 700,
-          "prix_unitaire": 700,
-          "promo": 0,
-          "quantite": 1,
-          "unite": "kg"
-        }
-      ],
-      "statut": "en_attente",
-      "sous_total": 8700,
-      "reduction": 0,
-      "total": 9200,
+      "total": 38000,
       "devise": "FCFA",
       "livraison": {
         "type": "normal",
