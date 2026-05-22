@@ -1,0 +1,332 @@
+{
+  "date": "2026-05-21 02:21:11.888876",
+  "nb_produits": 17,
+  "nb_commandes": 2,
+  "produits": [
+    {
+      "nom": "Mil Local",
+      "categorie": "Cereales",
+      "prix": 500,
+      "stock": 500,
+      "producteur": "GAEC Diourbel",
+      "image": "🌾",
+      "photo": "https://images.pexels.com/photos/326082/pexels-photo-326082.jpeg?w=300",
+      "unite": "kg",
+      "attributs": {
+        "origine": "Diourbel",
+        "bio": true
+      },
+      "prix_final": 500
+    },
+    {
+      "nom": "Huile d'Arachide",
+      "categorie": "Huiles",
+      "prix": 3500,
+      "stock": 60,
+      "producteur": "Huilerie Kaolack",
+      "image": "🫙",
+      "photo": "https://images.pexels.com/photos/4033158/pexels-photo-4033158.jpeg?w=300",
+      "unite": "litre",
+      "attributs": {
+        "origine": "Kaolack",
+        "bio": true
+      },
+      "prix_final": 2520,
+      "promo": 28
+    },
+    {
+      "nom": "Gombo Frais",
+      "categorie": "Legumes",
+      "prix": 800,
+      "stock": 120,
+      "producteur": "Maraichage Pikine",
+      "image": "🫛",
+      "photo": "https://images.pexels.com/photos/6157049/pexels-photo-6157049.jpeg?w=300",
+      "unite": "kg",
+      "attributs": {
+        "origine": "Dakar",
+        "bio": false
+      },
+      "promo": 50,
+      "prix_final": 400
+    },
+    {
+      "nom": "Riz Broken",
+      "categorie": "Cereales",
+      "prix": 450,
+      "stock": 400,
+      "producteur": "Riziculture Saint-Louis",
+      "image": "🍚",
+      "photo": "https://images.pexels.com/photos/7421235/pexels-photo-7421235.jpeg?w=300",
+      "unite": "kg",
+      "attributs": {
+        "origine": "Saint-Louis",
+        "bio": false
+      },
+      "prix_final": 450
+    },
+    {
+      "nom": "Mais Local",
+      "categorie": "Cereales",
+      "prix": 400,
+      "stock": 4,
+      "producteur": "Cooperative Tambacounda",
+      "image": "🌽",
+      "photo": "https://images.pexels.com/photos/547263/pexels-photo-547263.jpeg?w=300",
+      "unite": "kg",
+      "attributs": {
+        "origine": "Tambacounda",
+        "bio": true
+      },
+      "prix_final": 400
+    },
+    {
+      "nom": "Huile de Palme Rouge",
+      "categorie": "Huiles",
+      "prix": 2800,
+      "stock": 2,
+      "producteur": "Cooperative Kolda",
+      "image": "🫙",
+      "photo": "https://images.pexels.com/photos/33783/olive-oil-salad-dressing-cooking-olive.jpg?w=300",
+      "unite": "litre",
+      "attributs": {
+        "origine": "Kolda",
+        "bio": true
+      },
+      "prix_final": 2800
+    },
+    {
+      "nom": "Thiof Seche",
+      "categorie": "Poissons",
+      "prix": 8000,
+      "stock": 30,
+      "producteur": "Pecheurs Kayar",
+      "image": "🐟",
+      "photo": "https://images.pexels.com/photos/1148358/pexels-photo-1148358.jpeg?w=300",
+      "unite": "kg",
+      "attributs": {
+        "origine": "Kayar"
+      },
+      "prix_final": 8000
+    },
+    {
+      "nom": "Yeet Mollusque",
+      "categorie": "Poissons",
+      "prix": 5000,
+      "stock": 25,
+      "producteur": "Pecheurs Mbour",
+      "image": "🦪",
+      "photo": "https://images.pexels.com/photos/3535383/pexels-photo-3535383.jpeg?w=300",
+      "unite": "kg",
+      "attributs": {
+        "origine": "Mbour"
+      },
+      "prix_final": 5000
+    },
+    {
+      "nom": "Mangues Kent",
+      "categorie": "Fruits",
+      "prix": 1500,
+      "stock": 170,
+      "producteur": "Verger de Casamance",
+      "image": "🥭",
+      "photo": "https://images.pexels.com/photos/918643/pexels-photo-918643.jpeg?w=300",
+      "unite": "kg",
+      "attributs": {
+        "origine": "Ziguinchor",
+        "bio": true
+      },
+      "promo": 37,
+      "prix_final": 945
+    },
+    {
+      "nom": "Tamarin",
+      "categorie": "Fruits",
+      "prix": 1000,
+      "stock": 3,
+      "producteur": "Marche Thies",
+      "image": "🫘",
+      "photo": "https://images.pexels.com/photos/4110251/pexels-photo-4110251.jpeg?w=300",
+      "unite": "kg",
+      "attributs": {
+        "origine": "Thies",
+        "bio": false
+      },
+      "prix_final": 890,
+      "promo": 11
+    },
+    {
+      "nom": "Oignons Violets",
+      "categorie": "Legumes",
+      "prix": 600,
+      "stock": 300,
+      "producteur": "Cooperative Potou",
+      "image": "🧅",
+      "photo": "https://images.pexels.com/photos/4197447/pexels-photo-4197447.jpeg?w=300",
+      "unite": "kg",
+      "attributs": {
+        "origine": "Saint-Louis",
+        "bio": false
+      },
+      "prix_final": 600
+    },
+    {
+      "nom": "Aubergine Africaine",
+      "categorie": "Legumes",
+      "prix": 700,
+      "stock": 90,
+      "producteur": "Maraichage Kaolack",
+      "image": "🍆",
+      "photo": "https://images.pexels.com/photos/5639/food-vegetables-eggplant-purple.jpg?w=300",
+      "unite": "kg",
+      "attributs": {
+        "origine": "Kaolack",
+        "bio": true
+      },
+      "prix_final": 700
+    },
+    {
+      "nom": "Piment Demon",
+      "categorie": "Legumes",
+      "prix": 1200,
+      "stock": 2,
+      "producteur": "Cooperative Ziguinchor",
+      "image": "🌶️",
+      "photo": "https://images.pexels.com/photos/870894/pexels-photo-870894.jpeg?w=300",
+      "unite": "kg",
+      "attributs": {
+        "origine": "Ziguinchor",
+        "bio": true
+      },
+      "prix_final": 1200
+    },
+    {
+      "nom": "Bissap Seche",
+      "categorie": "Fruits",
+      "prix": 2500,
+      "stock": 150,
+      "producteur": "Cooperative Louga",
+      "image": "🌺",
+      "photo": "https://images.pexels.com/photos/5765/flower-red-background-hibiscus.jpg?w=300",
+      "unite": "kg",
+      "attributs": {
+        "origine": "Louga",
+        "bio": true
+      },
+      "prix_final": 2500
+    },
+    {
+      "nom": "Ditakh",
+      "categorie": "Fruits",
+      "prix": 2000,
+      "stock": 80,
+      "producteur": "Groupement Fatick",
+      "image": "🍈",
+      "photo": "https://images.pexels.com/photos/1132047/pexels-photo-1132047.jpeg?w=300",
+      "unite": "kg",
+      "attributs": {
+        "origine": "Fatick",
+        "bio": true
+      },
+      "promo": 50,
+      "prix_final": 1000
+    },
+    {
+      "nom": "kama",
+      "categorie": "Legumes",
+      "prix": 3,
+      "stock": 4,
+      "unite": "kg",
+      "producteur": "koussanar",
+      "image": "📦",
+      "photo": "",
+      "ajoute_par": "ipc",
+      "attributs": {
+        "origine": "",
+        "bio": false
+      },
+      "prix_final": 3
+    },
+    {
+      "nom": "Ib Camara",
+      "categorie": "Cereales",
+      "prix": 5,
+      "stock": 5,
+      "unite": "kg",
+      "producteur": "CAMARAiofcj",
+      "image": "📦",
+      "photo": "",
+      "ajoute_par": "cmr",
+      "attributs": {
+        "origine": "",
+        "bio": false
+      },
+      "promo": 10,
+      "prix_final": 4
+    }
+  ],
+  "commandes": [
+    {
+      "client": {
+        "nom": "Mariama Diop",
+        "email": "mariama.diop@gmail.com",
+        "telephone": "+221701234572",
+        "ville": "Tambacounda"
+      },
+      "date": "2026-05-16 20:23:20.397000",
+      "articles": [
+        {
+          "image": "🥭",
+          "nom": "Mangues Kent",
+          "prix_final": 1500,
+          "prix_unitaire": 1500,
+          "promo": 0,
+          "quantite": 5,
+          "unite": "kg"
+        }
+      ],
+      "statut": "en_attente",
+      "sous_total": 7500,
+      "reduction": 0,
+      "total": 8000,
+      "devise": "FCFA",
+      "livraison": {
+        "type": "normal",
+        "frais": 500,
+        "ville": "Dakar",
+        "region": "Dakar"
+      }
+    },
+    {
+      "client": {
+        "nom": "Rokhaya Sarr",
+        "email": "rokhaya.sarr@gmail.com",
+        "telephone": "+221781234574",
+        "ville": "Fatick"
+      },
+      "date": "2026-05-16 20:25:26.652000",
+      "articles": [
+        {
+          "image": "🥭",
+          "nom": "Mangues Kent",
+          "prix_final": 1500,
+          "prix_unitaire": 1500,
+          "promo": 0,
+          "quantite": 25,
+          "unite": "kg"
+        }
+      ],
+      "statut": "expediee",
+      "sous_total": 37500,
+      "reduction": 0,
+      "total": 38000,
+      "devise": "FCFA",
+      "livraison": {
+        "type": "normal",
+        "frais": 500,
+        "ville": "Dakar",
+        "region": "Dakar"
+      }
+    }
+  ]
+}

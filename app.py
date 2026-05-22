@@ -137,6 +137,14 @@ def boutique():
     total_pages = max(1, (total_produits + par_page - 1) // par_page)
     page = max(1, min(page, total_pages))
     produits = list(db.produits.find(filtre).sort(tri_field, tri_order).skip((page-1)*par_page).limit(par_page))
+    # Calculer prix_final selon promo stockee en DB
+    for p in produits:
+        p["_id"] = str(p["_id"])
+        promo_produit = p.get("promo", 0)
+        if promo_produit > 0:
+            p["prix_final"] = int(p["prix"] * (1 - promo_produit / 100))
+        else:
+            p["prix_final"] = p["prix"]
     for p in produits:
         p["_id"] = str(p["_id"])
         p["prix_final"] = int(p["prix"] * (1 - promo / 100))
@@ -398,15 +406,7 @@ def admin():
         p["_id"] = str(p["_id"])
     role_actuel = session.get("role", "")
     users_brut = lister_utilisateurs()
-    # Admin voit TOUJOURS telephone et ville en clair
-    # Utilisateur normal ne voit jamais ces infos
-    users = []
-    for u in users_brut:
-        u_list = list(u)
-        if role_actuel != "administrateur":
-            if len(u_list) > 4: u_list[4] = ""
-            if len(u_list) > 5: u_list[5] = ""
-        users.append(tuple(u_list))
+    users = users_brut
     backups = lister_backups()
     return render_template("admin.html",
         produits=produits, users=users, backups=backups,
@@ -474,6 +474,23 @@ def supprimer_produit_ajax(produit_id):
         return jsonify({"success": True})
     return jsonify({"success": False})
 
+@app.route("/admin/bloquer_user_ajax/<username_cible>")
+@login_requis
+@admin_requis
+def bloquer_user_ajax(username_cible):
+    if session.get("username") != "admin":
+        return jsonify({"success": False, "message": "Non autorise"})
+    from auth import charger_users, sauvegarder_users
+    users = charger_users()
+    if username_cible not in users or username_cible == "admin":
+        return jsonify({"success": False, "message": "Utilisateur introuvable"})
+    current = users[username_cible].get("bloque", False)
+    users[username_cible]["bloque"] = not current
+    sauvegarder_users(users)
+    statut = "bloque" if not current else "debloque"
+    log_info(f"Utilisateur {username_cible} {statut} par admin")
+    return jsonify({"success": True, "bloque": not current, "statut": statut})
+
 @app.route("/admin/supprimer_user_ajax/<username_cible>")
 @login_requis
 @admin_requis
@@ -504,6 +521,27 @@ def maj_stock_ajax():
     db.produits.update_one({"_id": ObjectId(produit_id)}, {"$set": {"stock": stock}})
     log_info("Stock AJAX mis a jour : " + str(stock))
     return jsonify({"success": True, "stock": stock})
+
+@app.route("/admin/maj_promo_ajax", methods=["POST"])
+@login_requis
+@admin_requis
+def maj_promo_ajax():
+    db = get_db()
+    if db is None:
+        return jsonify({"success": False})
+    produit_id = request.form.get("produit_id")
+    promo = int(request.form.get("promo", 0))
+    produit = db.produits.find_one({"_id": ObjectId(produit_id)})
+    if not produit:
+        return jsonify({"success": False})
+    prix = produit["prix"]
+    prix_final = int(prix * (1 - promo / 100))
+    db.produits.update_one(
+        {"_id": ObjectId(produit_id)},
+        {"$set": {"promo": promo, "prix_final": prix_final}}
+    )
+    log_info("Promo mis a jour : " + str(promo) + "% prix_final=" + str(prix_final))
+    return jsonify({"success": True, "promo": promo, "prix": prix, "prix_final": prix_final})
 
 @app.route("/admin/maj_prix_ajax", methods=["POST"])
 @login_requis

@@ -58,10 +58,26 @@
                         <input type="number" name="stock" class="form-control rounded-3" placeholder="Stock" required>
                     </div>
                     <div class="col-md-1">
-                        <select name="unite" class="form-select rounded-3">
-                            <option>kg</option><option>litre</option>
-                            <option>unite</option><option>botte</option><option>sac</option>
-                        </select>
+                        <input type="text" name="unite" class="form-control rounded-3"
+                               list="liste-unites" placeholder="Unite" value="kg">
+                        <datalist id="liste-unites">
+                            <option value="kg">
+                            <option value="litre">
+                            <option value="unite">
+                            <option value="botte">
+                            <option value="sac">
+                            <option value="g">
+                            <option value="ml">
+                            <option value="piece">
+                            <option value="paquet">
+                            <option value="boite">
+                            <option value="bouteille">
+                            <option value="tonne">
+                        </datalist>
+                    </div>
+                    <div class="col-md-1">
+                        <input type="number" name="promo" class="form-control rounded-3"
+                               placeholder="Promo %" min="0" max="100" value="0">
                     </div>
                     <div class="col-md-2">
                         <input type="text" name="producteur" class="form-control rounded-3" placeholder="Producteur" required>
@@ -111,7 +127,7 @@
                                 <th>Image</th><th>Nom</th><th>Cat.</th><th>Prix</th>
                                 <th>Stock</th><th>Unite</th><th>Producteur</th>
                                 <th>Ajoute par</th><th>Changer Image</th>
-                                <th>Mod. Stock</th><th>Mod. Prix</th><th>Action</th>
+                                <th>Mod. Stock</th><th>Mod. Prix</th><th>Mod. Promo</th><th>Action</th>
                             </tr>
                         </thead>
                         <tbody id="tbody-produits">
@@ -128,7 +144,15 @@
                             </td>
                             <td class="fw-semibold">{{ p.nom }}</td>
                             <td><span class="badge bg-success">{{ p.categorie }}</span></td>
-                            <td class="text-success fw-bold" id="prix-display-{{ p._id }}">{{ p.prix }}</td>
+                            <td id="prix-display-{{ p._id }}">
+                                {% if p.promo|default(0) > 0 %}
+                                <div class="text-decoration-line-through text-muted small">{{ p.prix }} FCFA</div>
+                                <div class="text-danger fw-bold">{{ p.prix_final|default(p.prix) }} FCFA</div>
+                                <span class="badge bg-danger">-{{ p.promo }}%</span>
+                                {% else %}
+                                <span class="text-success fw-bold">{{ p.prix }} FCFA</span>
+                                {% endif %}
+                            </td>
                             <td>
                                 <span class="badge {% if p.stock == 0 %}bg-danger{% elif p.stock < 5 %}bg-warning{% else %}bg-success{% endif %}" id="stock-display-{{ p._id }}">
                                     {{ p.stock }}
@@ -185,6 +209,33 @@
                                 </div>
                                 {% else %}
                                 <span class="text-muted small">{{ p.prix }} FCFA</span>
+                                {% endif %}
+                            </td>
+                            <td>
+                                {% if username == 'admin' or p.ajoute_par == username %}
+                                <div class="d-flex gap-1 align-items-center">
+                                    <input type="number" id="promo_{{ p._id }}"
+                                           class="form-control form-control-sm rounded-3"
+                                           style="width:60px" value="{{ p.promo|default(0) }}"
+                                           min="0" max="100">
+                                    <span class="text-danger small fw-bold">%</span>
+                                    <button onclick="majPromo('{{ p._id }}', {{ p.prix }})"
+                                            class="btn btn-success btn-sm rounded-3">OK</button>
+                                </div>
+                                {% if p.promo|default(0) > 0 %}
+                                <div class="small mt-1">
+                                    <span class="text-decoration-line-through text-muted">{{ p.prix }}</span>
+                                    <span class="text-danger fw-bold ms-1">{{ p.prix_final|default(p.prix) }} FCFA</span>
+                                    <span class="badge bg-danger ms-1">-{{ p.promo }}%</span>
+                                </div>
+                                {% endif %}
+                                {% else %}
+                                {% if p.promo|default(0) > 0 %}
+                                <span class="badge bg-danger">-{{ p.promo }}%</span>
+                                <div class="small text-danger fw-bold">{{ p.prix_final|default(p.prix) }} FCFA</div>
+                                {% else %}
+                                <span class="text-muted small">0%</span>
+                                {% endif %}
                                 {% endif %}
                             </td>
                             <td>
@@ -267,7 +318,7 @@
                             <tr>
                                 <th>Photo</th><th>Login</th><th>Role</th>
                                 <th>Nom</th><th>Email</th><th>Telephone</th>
-                                <th>Ville</th><th>Action</th>
+                                <th>Ville</th><th>Statut</th><th>Action</th>
                             </tr>
                         </thead>
                         <tbody id="tbody-users">
@@ -310,6 +361,18 @@
                                 <i class="fas fa-map-marker-alt text-danger me-1"></i>{{ u[5] }}
                                 {% else %}
                                 <span class="text-muted">-</span>
+                                {% endif %}
+                            </td>
+                            <td>
+                                {% if u[0] != 'admin' and username == 'admin' %}
+                                <button onclick="bloquerUser('{{ u[0] }}', this)"
+                                        class="btn btn-sm rounded-3 {% if u|length > 8 and u[8] %}btn-warning{% else %}btn-outline-warning{% endif %}"
+                                        title="{% if u|length > 8 and u[8] %}Debloquer{% else %}Bloquer{% endif %}">
+                                    <i class="fas fa-{% if u|length > 8 and u[8] %}lock{% else %}lock-open{% endif %}"></i>
+                                    {% if u|length > 8 and u[8] %}Bloque{% else %}Actif{% endif %}
+                                </button>
+                                {% else %}
+                                <span class="badge bg-success small">Actif</span>
                                 {% endif %}
                             </td>
                             <td>
@@ -561,6 +624,61 @@ function supprimerProduit(id, nom) {
     })
     .catch(function(err) {
         showToast('❌ Erreur: ' + err, 'danger');
+    });
+}
+
+// ===== AJAX MODIFIER PROMO =====
+function majPromo(id, prixOriginal) {
+    var scrollY = window.scrollY;
+    var promo = parseInt(document.getElementById('promo_' + id).value) || 0;
+    var formData = new FormData();
+    formData.append('produit_id', id);
+    formData.append('promo', promo);
+    fetch('/admin/maj_promo_ajax', {method: 'POST', body: formData})
+    .then(function(r) { return r.json(); })
+    .then(function(data) {
+        if (data.success) {
+            // Mettre a jour affichage prix dans colonne Prix
+            var prixDisplay = document.getElementById('prix-display-' + id);
+            if (prixDisplay) {
+                if (promo > 0) {
+                    prixDisplay.innerHTML =
+                        '<span class="text-decoration-line-through text-muted small">' + data.prix + '</span>' +
+                        '<span class="text-danger fw-bold ms-1">' + data.prix_final + '</span>' +
+                        '<span class="badge bg-danger ms-1 small">-' + promo + '%</span>';
+                } else {
+                    prixDisplay.textContent = data.prix;
+                }
+            }
+            var msg = promo > 0
+                ? '✅ Promo ' + promo + '% ! Prix: ' + data.prix + ' → ' + data.prix_final + ' FCFA'
+                : '✅ Promo supprimee !';
+            showToast(msg, 'success');
+            setTimeout(function() { window.scrollTo(0, scrollY); }, 100);
+        }
+    });
+}
+
+// ===== AJAX BLOQUER/DEBLOQUER USER =====
+function bloquerUser(login, btn) {
+    var scrollY = window.scrollY;
+    fetch('/admin/bloquer_user_ajax/' + login)
+    .then(function(r) { return r.json(); })
+    .then(function(data) {
+        if (data.success) {
+            if (data.bloque) {
+                btn.className = 'btn btn-sm rounded-3 btn-warning';
+                btn.innerHTML = '<i class="fas fa-lock"></i> Bloque';
+            } else {
+                btn.className = 'btn btn-sm rounded-3 btn-outline-warning';
+                btn.innerHTML = '<i class="fas fa-lock-open"></i> Actif';
+            }
+            showToast('✅ Utilisateur ' + login + ' ' + data.statut + ' !', 'success');
+            sessionStorage.setItem('adminTab', '#utilisateurs');
+            setTimeout(function() { window.scrollTo(0, scrollY); }, 100);
+        } else {
+            showToast('❌ ' + (data.message || 'Non autorise'), 'danger');
+        }
     });
 }
 

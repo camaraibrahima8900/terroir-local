@@ -44,6 +44,9 @@ def authentifier(username, password):
         if username not in users:
             log_warning("Utilisateur inconnu : " + username)
             return None
+        if users[username].get("bloque", False):
+            log_warning("Compte bloque : " + username)
+            return "BLOQUE"
         if verifier_mot_de_passe(password, users[username]["password"]):
             log_info("Connexion reussie : " + username)
             return users[username]["role"]
@@ -98,14 +101,15 @@ def lister_utilisateurs():
     users = charger_utilisateurs()
     return [
         (
-            u,                              # 0 login
-            users[u]["role"],              # 1 role
-            users[u].get("nom",""),        # 2 nom
-            users[u].get("email",""),      # 3 email
-            users[u].get("telephone",""),  # 4 telephone
-            users[u].get("lieu",""),       # 5 lieu
-            users[u].get("photo",""),      # 6 photo
-            users[u].get("cree_par","admin") # 7 cree_par
+            u,                                    # 0 login
+            users[u]["role"],                    # 1 role
+            users[u].get("nom",""),              # 2 nom
+            users[u].get("email",""),            # 3 email
+            users[u].get("telephone",""),        # 4 telephone
+            users[u].get("lieu",""),             # 5 lieu
+            users[u].get("photo",""),            # 6 photo
+            users[u].get("cree_par","admin"),    # 7 cree_par
+            users[u].get("bloque", False)        # 8 bloque
         )
         for u in users
     ]

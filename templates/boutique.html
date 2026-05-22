@@ -202,9 +202,12 @@
                     {% endif %}
 
                     <div class="mt-auto">
-                        {% if p.promo > 0 %}
+                        {% if p.promo|default(0) > 0 %}
                         <div class="text-decoration-line-through text-muted small">{{ p.prix }} FCFA</div>
-                        <div class="product-price-promo">{{ p.prix_final }} FCFA/{{ p.unite }}</div>
+                        <div class="product-price-promo">
+                            {{ p.prix_final }} FCFA/{{ p.unite }}
+                            <span class="badge bg-danger ms-1">-{{ p.promo }}%</span>
+                        </div>
                         {% else %}
                         <div class="product-price">{{ p.prix }} FCFA/{{ p.unite }}</div>
                         {% endif %}
