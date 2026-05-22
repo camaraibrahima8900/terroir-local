@@ -1,7 +1,7 @@
 {
-  "date": "2026-05-21 02:16:53.668642",
+  "date": "2026-05-22 23:21:01.864518",
   "nb_produits": 17,
-  "nb_commandes": 2,
+  "nb_commandes": 3,
   "produits": [
     {
       "nom": "Mil Local",
@@ -127,7 +127,7 @@
       "nom": "Mangues Kent",
       "categorie": "Fruits",
       "prix": 1500,
-      "stock": 170,
+      "stock": 169,
       "producteur": "Verger de Casamance",
       "image": "🥭",
       "photo": "https://images.pexels.com/photos/918643/pexels-photo-918643.jpeg?w=300",
@@ -136,8 +136,8 @@
         "origine": "Ziguinchor",
         "bio": true
       },
-      "promo": 37,
-      "prix_final": 945
+      "promo": 42,
+      "prix_final": 870
     },
     {
       "nom": "Tamarin",
@@ -245,7 +245,8 @@
         "origine": "",
         "bio": false
       },
-      "prix_final": 3
+      "prix_final": 2,
+      "promo": 10
     },
     {
       "nom": "Ib Camara",
@@ -261,7 +262,7 @@
         "origine": "",
         "bio": false
       },
-      "promo": 10,
+      "promo": 6,
       "prix_final": 4
     }
   ],
@@ -320,6 +321,37 @@
       "sous_total": 37500,
       "reduction": 0,
       "total": 38000,
+      "devise": "FCFA",
+      "livraison": {
+        "type": "normal",
+        "frais": 500,
+        "ville": "Dakar",
+        "region": "Dakar"
+      }
+    },
+    {
+      "client": {
+        "nom": "Ibrahima Fall",
+        "email": "ibrahima.fall@gmail.com",
+        "telephone": "+221781234571",
+        "ville": "Kaolack"
+      },
+      "date": "2026-05-21 11:51:32.933000",
+      "articles": [
+        {
+          "image": "🥭",
+          "nom": "Mangues Kent",
+          "prix_final": 1500,
+          "prix_unitaire": 1500,
+          "promo": 0,
+          "quantite": 1,
+          "unite": "kg"
+        }
+      ],
+      "statut": "en_attente",
+      "sous_total": 1500,
+      "reduction": 0,
+      "total": 2000,
       "devise": "FCFA",
       "livraison": {
         "type": "normal",

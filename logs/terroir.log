@@ -10271,3 +10271,79 @@
 2026-05-21 07:03:34,953 [INFO] 127.0.0.1 - - [21/May/2026 07:03:34] "[32mGET /logout HTTP/1.1[0m" 302 -
 2026-05-21 07:03:35,102 [INFO] 127.0.0.1 - - [21/May/2026 07:03:35] "GET / HTTP/1.1" 200 -
 2026-05-21 07:03:35,218 [INFO] 127.0.0.1 - - [21/May/2026 07:03:35] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-22 23:13:24,481 [INFO] Backup automatique demarre (toutes les 24h)
+2026-05-22 23:13:24,482 [INFO] Application Flask demarree !
+2026-05-22 23:13:24,719 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.26.20.100:5000
+2026-05-22 23:13:24,719 [INFO] [33mPress CTRL+C to quit[0m
+2026-05-22 23:13:24,723 [INFO]  * Restarting with stat
+2026-05-22 23:13:26,776 [INFO] Backup automatique demarre (toutes les 24h)
+2026-05-22 23:13:26,777 [INFO] Application Flask demarree !
+2026-05-22 23:13:26,965 [WARNING]  * Debugger is active!
+2026-05-22 23:13:27,098 [INFO]  * Debugger PIN: 306-786-278
+2026-05-22 23:13:29,573 [INFO] Backup cree : /home/ibrahima/terroir_local/backups/backup_20260522_231329.json
+2026-05-22 23:13:30,654 [INFO] Backup cree : /home/ibrahima/terroir_local/backups/backup_20260522_231330.json
+2026-05-22 23:13:36,196 [INFO] 127.0.0.1 - - [22/May/2026 23:13:36] "[32mGET /boutique HTTP/1.1[0m" 302 -
+2026-05-22 23:13:36,215 [INFO] 127.0.0.1 - - [22/May/2026 23:13:36] "GET / HTTP/1.1" 200 -
+2026-05-22 23:13:36,470 [INFO] 127.0.0.1 - - [22/May/2026 23:13:36] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-22 23:13:36,950 [INFO] 127.0.0.1 - - [22/May/2026 23:13:36] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-05-22 23:13:52,399 [INFO] Connexion reussie : admin
+2026-05-22 23:13:52,418 [INFO] 127.0.0.1 - - [22/May/2026 23:13:52] "[32mPOST / HTTP/1.1[0m" 302 -
+2026-05-22 23:13:55,612 [INFO] 127.0.0.1 - - [22/May/2026 23:13:55] "GET /boutique HTTP/1.1" 200 -
+2026-05-22 23:13:55,994 [INFO] 127.0.0.1 - - [22/May/2026 23:13:55] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-22 23:13:58,422 [INFO] 127.0.0.1 - - [22/May/2026 23:13:58] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-22 23:14:10,616 [INFO] 127.0.0.1 - - [22/May/2026 23:14:10] "GET /admin HTTP/1.1" 200 -
+2026-05-22 23:14:10,658 [INFO] 127.0.0.1 - - [22/May/2026 23:14:10] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-22 23:14:13,598 [INFO] 127.0.0.1 - - [22/May/2026 23:14:13] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-22 23:14:35,845 [INFO] 127.0.0.1 - - [22/May/2026 23:14:35] "GET /admin HTTP/1.1" 200 -
+2026-05-22 23:14:35,892 [INFO] 127.0.0.1 - - [22/May/2026 23:14:35] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-22 23:14:39,854 [INFO] 127.0.0.1 - - [22/May/2026 23:14:39] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-22 23:15:12,224 [INFO] 127.0.0.1 - - [22/May/2026 23:15:12] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-22 23:15:46,199 [INFO] 127.0.0.1 - - [22/May/2026 23:15:46] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-22 23:16:10,695 [INFO] 127.0.0.1 - - [22/May/2026 23:16:10] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-22 23:16:47,808 [ERROR] Connexion MongoDB echouee : No replica set members match selector "Primary()", Timeout: 10.0s, Topology Description: <TopologyDescription id: 6a10e3d58967926ff7f1ad12, topology_type: ReplicaSetNoPrimary, servers: [<ServerDescription ('ac-qnmlyva-shard-00-00.5r4lftj.mongodb.net', 27017) server_type: RSSecondary, rtt: 0.3573413099948084>, <ServerDescription ('ac-qnmlyva-shard-00-01.5r4lftj.mongodb.net', 27017) server_type: Unknown, rtt: None>, <ServerDescription ('ac-qnmlyva-shard-00-02.5r4lftj.mongodb.net', 27017) server_type: RSSecondary, rtt: 0.19084810499771265>]>
+2026-05-22 23:16:47,809 [INFO] 127.0.0.1 - - [22/May/2026 23:16:47] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-22 23:17:25,696 [INFO] 127.0.0.1 - - [22/May/2026 23:17:25] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-22 23:17:42,132 [INFO] 127.0.0.1 - - [22/May/2026 23:17:42] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-22 23:20:57,432 [INFO] Backup automatique demarre (toutes les 24h)
+2026-05-22 23:20:57,432 [INFO] Application Flask demarree !
+2026-05-22 23:20:57,587 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.26.20.100:5000
+2026-05-22 23:20:57,589 [INFO] [33mPress CTRL+C to quit[0m
+2026-05-22 23:20:57,592 [INFO]  * Restarting with stat
+2026-05-22 23:20:58,184 [INFO] Backup automatique demarre (toutes les 24h)
+2026-05-22 23:20:58,184 [INFO] Application Flask demarree !
+2026-05-22 23:20:58,237 [WARNING]  * Debugger is active!
+2026-05-22 23:20:58,408 [INFO]  * Debugger PIN: 306-786-278
+2026-05-22 23:21:01,686 [INFO] Backup cree : /home/ibrahima/terroir_local/backups/backup_20260522_232101.json
+2026-05-22 23:21:01,865 [INFO] Backup cree : /home/ibrahima/terroir_local/backups/backup_20260522_232101.json
+2026-05-22 23:21:04,861 [INFO] 127.0.0.1 - - [22/May/2026 23:21:04] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-22 23:21:08,795 [INFO] 127.0.0.1 - - [22/May/2026 23:21:08] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-22 23:21:15,175 [INFO] 127.0.0.1 - - [22/May/2026 23:21:15] "GET /admin HTTP/1.1" 200 -
+2026-05-22 23:21:15,242 [INFO] 127.0.0.1 - - [22/May/2026 23:21:15] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-22 23:21:19,645 [INFO] 127.0.0.1 - - [22/May/2026 23:21:19] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-22 23:21:47,857 [INFO] 127.0.0.1 - - [22/May/2026 23:21:47] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-22 23:21:54,369 [ERROR] Connexion MongoDB echouee : No replica set members match selector "Primary()", Timeout: 10.0s, Topology Description: <TopologyDescription id: 6a10e506ee87b6c9ecac6ce8, topology_type: ReplicaSetNoPrimary, servers: [<ServerDescription ('ac-qnmlyva-shard-00-00.5r4lftj.mongodb.net', 27017) server_type: RSSecondary, rtt: 0.16871635100687854>, <ServerDescription ('ac-qnmlyva-shard-00-01.5r4lftj.mongodb.net', 27017) server_type: Unknown, rtt: None>, <ServerDescription ('ac-qnmlyva-shard-00-02.5r4lftj.mongodb.net', 27017) server_type: RSSecondary, rtt: 0.17765296900324756>]>
+2026-05-22 23:21:54,377 [INFO] 127.0.0.1 - - [22/May/2026 23:21:54] "GET /admin HTTP/1.1" 200 -
+2026-05-22 23:21:54,427 [INFO] 127.0.0.1 - - [22/May/2026 23:21:54] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-22 23:22:00,815 [INFO] 127.0.0.1 - - [22/May/2026 23:22:00] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-22 23:22:15,500 [INFO] 127.0.0.1 - - [22/May/2026 23:22:15] "[32mGET /logout HTTP/1.1[0m" 302 -
+2026-05-22 23:22:15,812 [INFO] 127.0.0.1 - - [22/May/2026 23:22:15] "GET / HTTP/1.1" 200 -
+2026-05-22 23:22:16,155 [INFO] 127.0.0.1 - - [22/May/2026 23:22:16] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-22 23:22:37,939 [INFO] Connexion reussie : ipc
+2026-05-22 23:22:37,940 [INFO] 127.0.0.1 - - [22/May/2026 23:22:37] "[32mPOST / HTTP/1.1[0m" 302 -
+2026-05-22 23:22:41,877 [INFO] 127.0.0.1 - - [22/May/2026 23:22:41] "GET /boutique HTTP/1.1" 200 -
+2026-05-22 23:22:42,228 [INFO] 127.0.0.1 - - [22/May/2026 23:22:42] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-22 23:22:44,864 [INFO] 127.0.0.1 - - [22/May/2026 23:22:44] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-22 23:22:49,056 [INFO] 127.0.0.1 - - [22/May/2026 23:22:49] "GET /admin HTTP/1.1" 200 -
+2026-05-22 23:22:49,092 [INFO] 127.0.0.1 - - [22/May/2026 23:22:49] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-22 23:22:52,025 [INFO] 127.0.0.1 - - [22/May/2026 23:22:52] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-22 23:22:59,706 [INFO] 127.0.0.1 - - [22/May/2026 23:22:59] "GET /admin HTTP/1.1" 200 -
+2026-05-22 23:22:59,766 [INFO] 127.0.0.1 - - [22/May/2026 23:22:59] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-22 23:23:03,487 [INFO] 127.0.0.1 - - [22/May/2026 23:23:03] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-22 23:23:32,484 [INFO] 127.0.0.1 - - [22/May/2026 23:23:32] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-22 23:24:03,081 [INFO] 127.0.0.1 - - [22/May/2026 23:24:03] "GET /nb_commandes_attente HTTP/1.1" 200 -
