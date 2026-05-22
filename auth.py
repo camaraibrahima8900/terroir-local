@@ -64,8 +64,13 @@ def ajouter_utilisateur(login, password, role="utilisateur", nom="", email="", c
             return False, "Utilisateur deja existant !"
         users[login] = {
             "password": hasher_mot_de_passe(password),
-            "role": role, "nom": nom, "email": email,
-            "cree_par": cree_par
+            "role": role,
+            "nom": nom,
+            "email": email,
+            "cree_par": cree_par,
+            "telephone": telephone,
+            "lieu": lieu,
+            "bloque": False
         }
         with open(USERS_FILE, "w", encoding="utf-8") as f:
             json.dump(users, f, indent=2, ensure_ascii=False)

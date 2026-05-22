@@ -14,8 +14,8 @@
     "role": "utilisateur",
     "nom": "Utilisateur",
     "email": "user@terroirlocal.sn",
-    "telephone": "",
-    "lieu": "",
+    "telephone": "+221784760384",
+    "lieu": "Koussanar",
     "cree_par": "admin",
     "bloque": false
   },
@@ -47,17 +47,8 @@
     "nom": "Ibrahima Camara",
     "email": "raibrahima8900@gmail.com",
     "cree_par": "ipc",
-    "telephone": "",
-    "lieu": ""
-  },
-  "adminyukf": {
-    "password": "$2b$12$YGynkO24iqtCazt0V5MGvuNHBJd3vGuDSNDzBCluGnnvCrDkOYUSm",
-    "role": "utilisateur",
-    "nom": "Ibrahima Camara",
-    "email": "camaraibrahima8900@gmail.com",
-    "cree_par": "cmr",
-    "telephone": "",
-    "lieu": ""
+    "telephone": "+221784760384",
+    "lieu": "Koussanar"
   },
   "lkjdd": {
     "password": "$2b$12$dCFjFWKpdrpQAYWmOR4I4u3uZ194I0hS/OaKqevxZKVFA8K1ECnxi",
@@ -65,8 +56,8 @@
     "nom": "Ibrahima Camaraljk75",
     "email": "okolcamaraibrahima8900@gmail.com",
     "cree_par": "admin",
-    "telephone": "",
-    "lieu": ""
+    "telephone": "+221784760384",
+    "lieu": "Koussanar"
   },
   "minrfqzmj!": {
     "password": "$2b$12$wj8VTgz0bpZu42JO.TS5COaLcbf0rEPtoWuqfnUSOy/E9.wvTc4aq",
@@ -74,16 +65,17 @@
     "nom": "Ibrahima Camara",
     "email": "camaraibrahima8900@gmail.com",
     "cree_par": "cmr",
-    "telephone": "",
-    "lieu": ""
+    "telephone": "+221784760384",
+    "lieu": "Koussanar"
   },
-  "muolgiyu": {
-    "password": "$2b$12$omMOYRXcaPeFxTFrmPUaneklBESlhLq4GJ5rx4.WIBAOe0ZTl1Ymy",
+  "adminklsdjhkd": {
+    "password": "$2b$12$PvJYwMCn1ZkBQLq7Acf3IeWUGeYhL1mVPoDM4XvLFnyYydenyaWEO",
     "role": "utilisateur",
-    "nom": "Ibrahima Camaradiyfk",
-    "email": "sukdcamaraibrahima8900@gmail.com",
+    "nom": "dslfdui",
+    "email": "cam@gmail.com",
     "cree_par": "ipc",
-    "telephone": "",
-    "lieu": ""
+    "telephone": "+2213449464784760384",
+    "lieu": "DKDHGanar",
+    "bloque": false
   }
 }
