@@ -10499,3 +10499,177 @@
 2026-05-22 23:44:27,679 [INFO] 127.0.0.1 - - [22/May/2026 23:44:27] "GET /nb_commandes_attente HTTP/1.1" 200 -
 2026-05-22 23:45:18,291 [ERROR] Connexion MongoDB echouee : ac-qnmlyva-shard-00-01.5r4lftj.mongodb.net:27017: timed out (configured timeouts: connectTimeoutMS: 20000.0ms)
 2026-05-22 23:45:18,292 [INFO] 127.0.0.1 - - [22/May/2026 23:45:18] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-22 23:53:36,556 [INFO] Backup automatique demarre (toutes les 24h)
+2026-05-22 23:53:36,557 [INFO] Application Flask demarree !
+2026-05-22 23:53:36,610 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.26.20.100:5000
+2026-05-22 23:53:36,611 [INFO] [33mPress CTRL+C to quit[0m
+2026-05-22 23:53:36,614 [INFO]  * Restarting with stat
+2026-05-22 23:53:37,201 [INFO] Backup automatique demarre (toutes les 24h)
+2026-05-22 23:53:37,201 [INFO] Application Flask demarree !
+2026-05-22 23:53:37,258 [WARNING]  * Debugger is active!
+2026-05-22 23:53:37,264 [INFO]  * Debugger PIN: 306-786-278
+2026-05-22 23:53:43,177 [INFO] Backup cree : /home/ibrahima/terroir_local/backups/backup_20260522_235343.json
+2026-05-22 23:53:43,857 [INFO] Backup cree : /home/ibrahima/terroir_local/backups/backup_20260522_235343.json
+2026-05-22 23:53:49,719 [INFO] 127.0.0.1 - - [22/May/2026 23:53:49] "GET /admin HTTP/1.1" 200 -
+2026-05-22 23:53:49,791 [INFO] 127.0.0.1 - - [22/May/2026 23:53:49] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-22 23:53:51,945 [INFO] 127.0.0.1 - - [22/May/2026 23:53:51] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-22 23:53:59,528 [INFO] Utilisateur cmr debloque par admin
+2026-05-22 23:53:59,529 [INFO] 127.0.0.1 - - [22/May/2026 23:53:59] "GET /admin/bloquer_user_ajax/cmr HTTP/1.1" 200 -
+2026-05-22 23:54:14,609 [INFO] 127.0.0.1 - - [22/May/2026 23:54:14] "GET /admin HTTP/1.1" 200 -
+2026-05-22 23:54:14,657 [INFO] 127.0.0.1 - - [22/May/2026 23:54:14] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-22 23:54:17,054 [INFO] 127.0.0.1 - - [22/May/2026 23:54:17] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-22 23:54:48,001 [INFO] 127.0.0.1 - - [22/May/2026 23:54:48] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-22 23:55:18,437 [INFO] 127.0.0.1 - - [22/May/2026 23:55:18] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-22 23:55:29,803 [INFO] 127.0.0.1 - - [22/May/2026 23:55:29] "GET /admin HTTP/1.1" 200 -
+2026-05-22 23:55:29,864 [INFO] 127.0.0.1 - - [22/May/2026 23:55:29] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-22 23:55:31,607 [INFO] 127.0.0.1 - - [22/May/2026 23:55:31] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-22 23:56:23,082 [ERROR] Connexion MongoDB echouee : ac-qnmlyva-shard-00-01.5r4lftj.mongodb.net:27017: timed out (configured timeouts: connectTimeoutMS: 20000.0ms)
+2026-05-22 23:56:23,083 [INFO] 127.0.0.1 - - [22/May/2026 23:56:23] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-22 23:56:33,049 [INFO] 127.0.0.1 - - [22/May/2026 23:56:33] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-23 00:02:07,909 [INFO] Backup automatique demarre (toutes les 24h)
+2026-05-23 00:02:07,909 [INFO] Application Flask demarree !
+2026-05-23 00:02:07,961 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.26.20.100:5000
+2026-05-23 00:02:07,962 [INFO] [33mPress CTRL+C to quit[0m
+2026-05-23 00:02:07,964 [INFO]  * Restarting with stat
+2026-05-23 00:02:08,510 [INFO] Backup automatique demarre (toutes les 24h)
+2026-05-23 00:02:08,510 [INFO] Application Flask demarree !
+2026-05-23 00:02:08,563 [WARNING]  * Debugger is active!
+2026-05-23 00:02:08,571 [INFO]  * Debugger PIN: 306-786-278
+2026-05-23 00:02:12,888 [INFO] Backup cree : /home/ibrahima/terroir_local/backups/backup_20260523_000212.json
+2026-05-23 00:02:12,898 [INFO] Backup cree : /home/ibrahima/terroir_local/backups/backup_20260523_000212.json
+2026-05-23 00:02:13,460 [INFO] 127.0.0.1 - - [23/May/2026 00:02:13] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-23 00:02:14,805 [INFO] 127.0.0.1 - - [23/May/2026 00:02:14] "[35m[1mGET /admin HTTP/1.1[0m" 500 -
+2026-05-23 00:02:15,189 [INFO] 127.0.0.1 - - [23/May/2026 00:02:15] "GET /admin?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2026-05-23 00:02:15,190 [INFO] 127.0.0.1 - - [23/May/2026 00:02:15] "GET /admin?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2026-05-23 00:02:15,442 [INFO] 127.0.0.1 - - [23/May/2026 00:02:15] "GET /admin?__debugger__=yes&cmd=resource&f=console.png&s=K1Zu6c6MQMzxcmjWDyU3 HTTP/1.1" 200 -
+2026-05-23 00:02:15,696 [INFO] 127.0.0.1 - - [23/May/2026 00:02:15] "GET /admin?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2026-05-23 00:02:56,992 [INFO] 127.0.0.1 - - [23/May/2026 00:02:56] "[35m[1mGET /admin HTTP/1.1[0m" 500 -
+2026-05-23 00:02:57,027 [INFO] 127.0.0.1 - - [23/May/2026 00:02:57] "[36mGET /admin?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2026-05-23 00:02:57,353 [INFO] 127.0.0.1 - - [23/May/2026 00:02:57] "[36mGET /admin?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2026-05-23 00:02:57,605 [INFO] 127.0.0.1 - - [23/May/2026 00:02:57] "[36mGET /admin?__debugger__=yes&cmd=resource&f=console.png&s=K1Zu6c6MQMzxcmjWDyU3 HTTP/1.1[0m" 304 -
+2026-05-23 00:03:21,790 [INFO] 127.0.0.1 - - [23/May/2026 00:03:21] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-23 00:03:51,599 [INFO] 127.0.0.1 - - [23/May/2026 00:03:51] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-23 23:37:54,770 [INFO] Backup automatique demarre (toutes les 24h)
+2026-05-23 23:37:54,798 [INFO] Application Flask demarree !
+2026-05-23 23:37:54,976 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.26.20.100:5000
+2026-05-23 23:37:54,976 [INFO] [33mPress CTRL+C to quit[0m
+2026-05-23 23:37:54,982 [INFO]  * Restarting with stat
+2026-05-23 23:37:55,583 [INFO] Backup automatique demarre (toutes les 24h)
+2026-05-23 23:37:55,584 [INFO] Application Flask demarree !
+2026-05-23 23:37:55,636 [WARNING]  * Debugger is active!
+2026-05-23 23:37:55,718 [INFO]  * Debugger PIN: 610-724-944
+2026-05-23 23:38:00,502 [INFO] Backup cree : /home/ibrahima/terroir_local/backups/backup_20260523_233800.json
+2026-05-23 23:38:00,723 [INFO] Backup cree : /home/ibrahima/terroir_local/backups/backup_20260523_233800.json
+2026-05-23 23:38:24,010 [INFO] 127.0.0.1 - - [23/May/2026 23:38:24] "GET /boutique HTTP/1.1" 200 -
+2026-05-23 23:38:24,128 [INFO] 127.0.0.1 - - [23/May/2026 23:38:24] "GET /static/css/style.css HTTP/1.1" 200 -
+2026-05-23 23:38:41,689 [INFO] 127.0.0.1 - - [23/May/2026 23:38:41] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-23 23:38:43,156 [INFO] 127.0.0.1 - - [23/May/2026 23:38:43] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-05-23 23:39:07,187 [INFO] 127.0.0.1 - - [23/May/2026 23:39:07] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-23 23:39:07,539 [INFO] 127.0.0.1 - - [23/May/2026 23:39:07] "GET /admin HTTP/1.1" 200 -
+2026-05-23 23:39:07,892 [INFO] 127.0.0.1 - - [23/May/2026 23:39:07] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-23 23:39:10,843 [INFO] 127.0.0.1 - - [23/May/2026 23:39:10] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-23 23:39:42,267 [INFO] 127.0.0.1 - - [23/May/2026 23:39:42] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-23 23:40:08,511 [INFO] Super admin modifie role de adminklsdjhkd
+2026-05-23 23:40:08,512 [INFO] 127.0.0.1 - - [23/May/2026 23:40:08] "POST /admin/modifier_user_ajax HTTP/1.1" 200 -
+2026-05-23 23:40:11,500 [INFO] 127.0.0.1 - - [23/May/2026 23:40:11] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-23 23:40:24,048 [INFO] Super admin modifie role de adminklsdjhkd
+2026-05-23 23:40:24,049 [INFO] 127.0.0.1 - - [23/May/2026 23:40:24] "POST /admin/modifier_user_ajax HTTP/1.1" 200 -
+2026-05-23 23:40:31,147 [INFO] Super admin modifie role de cmr
+2026-05-23 23:40:31,148 [INFO] 127.0.0.1 - - [23/May/2026 23:40:31] "POST /admin/modifier_user_ajax HTTP/1.1" 200 -
+2026-05-23 23:40:40,505 [INFO] 127.0.0.1 - - [23/May/2026 23:40:40] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-23 23:40:41,402 [INFO] Super admin modifie email de cmr
+2026-05-23 23:40:41,403 [INFO] 127.0.0.1 - - [23/May/2026 23:40:41] "POST /admin/modifier_user_ajax HTTP/1.1" 200 -
+2026-05-23 23:41:18,061 [INFO] Super admin modifie telephone de cmr
+2026-05-23 23:41:18,061 [INFO] 127.0.0.1 - - [23/May/2026 23:41:18] "POST /admin/modifier_user_ajax HTTP/1.1" 200 -
+2026-05-23 23:41:18,765 [ERROR] Connexion MongoDB echouee : No replica set members match selector "Primary()", Timeout: 10.0s, Topology Description: <TopologyDescription id: 6a123b14f7ee6e74adfaa729, topology_type: ReplicaSetNoPrimary, servers: [<ServerDescription ('ac-qnmlyva-shard-00-00.5r4lftj.mongodb.net', 27017) server_type: RSSecondary, rtt: 0.16446629540041613>, <ServerDescription ('ac-qnmlyva-shard-00-01.5r4lftj.mongodb.net', 27017) server_type: RSSecondary, rtt: 0.19980643600047188>, <ServerDescription ('ac-qnmlyva-shard-00-02.5r4lftj.mongodb.net', 27017) server_type: Unknown, rtt: None>]>
+2026-05-23 23:41:18,766 [INFO] 127.0.0.1 - - [23/May/2026 23:41:18] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-23 23:41:19,702 [INFO] Super admin modifie role de cmr
+2026-05-23 23:41:19,703 [INFO] 127.0.0.1 - - [23/May/2026 23:41:19] "POST /admin/modifier_user_ajax HTTP/1.1" 200 -
+2026-05-23 23:41:41,364 [INFO] 127.0.0.1 - - [23/May/2026 23:41:41] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-23 23:41:41,957 [INFO] Super admin modifie telephone de cmr
+2026-05-23 23:41:41,957 [INFO] 127.0.0.1 - - [23/May/2026 23:41:41] "POST /admin/modifier_user_ajax HTTP/1.1" 200 -
+2026-05-23 23:41:58,709 [INFO] Super admin modifie telephone de ipc
+2026-05-23 23:41:58,709 [INFO] 127.0.0.1 - - [23/May/2026 23:41:58] "POST /admin/modifier_user_ajax HTTP/1.1" 200 -
+2026-05-23 23:42:12,468 [INFO] 127.0.0.1 - - [23/May/2026 23:42:12] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-23 23:42:15,879 [INFO] Super admin modifie role de cmr
+2026-05-23 23:42:15,881 [INFO] 127.0.0.1 - - [23/May/2026 23:42:15] "POST /admin/modifier_user_ajax HTTP/1.1" 200 -
+2026-05-23 23:42:19,808 [INFO] Utilisateur cmr bloque par admin
+2026-05-23 23:42:19,808 [INFO] 127.0.0.1 - - [23/May/2026 23:42:19] "GET /admin/bloquer_user_ajax/cmr HTTP/1.1" 200 -
+2026-05-23 23:42:24,260 [INFO] Utilisateur cmr debloque par admin
+2026-05-23 23:42:24,261 [INFO] 127.0.0.1 - - [23/May/2026 23:42:24] "GET /admin/bloquer_user_ajax/cmr HTTP/1.1" 200 -
+2026-05-23 23:42:32,338 [INFO] Super admin modifie role de cmr
+2026-05-23 23:42:32,339 [INFO] 127.0.0.1 - - [23/May/2026 23:42:32] "POST /admin/modifier_user_ajax HTTP/1.1" 200 -
+2026-05-23 23:42:36,961 [INFO] Utilisateur cmr bloque par admin
+2026-05-23 23:42:36,962 [INFO] 127.0.0.1 - - [23/May/2026 23:42:36] "GET /admin/bloquer_user_ajax/cmr HTTP/1.1" 200 -
+2026-05-23 23:42:40,499 [INFO] 127.0.0.1 - - [23/May/2026 23:42:40] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-23 23:42:49,852 [INFO] Super admin modifie lieu de ipc
+2026-05-23 23:42:49,853 [INFO] 127.0.0.1 - - [23/May/2026 23:42:49] "POST /admin/modifier_user_ajax HTTP/1.1" 200 -
+2026-05-23 23:43:10,336 [INFO] 127.0.0.1 - - [23/May/2026 23:43:10] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-23 23:43:30,826 [INFO] Super admin modifie lieu de lkjdd
+2026-05-23 23:43:30,827 [INFO] 127.0.0.1 - - [23/May/2026 23:43:30] "POST /admin/modifier_user_ajax HTTP/1.1" 200 -
+2026-05-23 23:43:43,418 [INFO] 127.0.0.1 - - [23/May/2026 23:43:43] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-23 23:44:09,724 [INFO] 127.0.0.1 - - [23/May/2026 23:44:09] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-23 23:44:21,116 [INFO] Super admin modifie lieu de adminfk
+2026-05-23 23:44:21,117 [INFO] 127.0.0.1 - - [23/May/2026 23:44:21] "POST /admin/modifier_user_ajax HTTP/1.1" 200 -
+2026-05-23 23:44:31,513 [INFO] Super admin modifie lieu de lkjdd
+2026-05-23 23:44:31,514 [INFO] 127.0.0.1 - - [23/May/2026 23:44:31] "POST /admin/modifier_user_ajax HTTP/1.1" 200 -
+2026-05-23 23:44:38,040 [INFO] Super admin modifie lieu de minrfqzmj!
+2026-05-23 23:44:38,040 [INFO] 127.0.0.1 - - [23/May/2026 23:44:38] "POST /admin/modifier_user_ajax HTTP/1.1" 200 -
+2026-05-23 23:44:45,419 [INFO] 127.0.0.1 - - [23/May/2026 23:44:45] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-23 23:45:11,874 [INFO] 127.0.0.1 - - [23/May/2026 23:45:11] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-23 23:45:37,211 [INFO] Super admin modifie email de admin
+2026-05-23 23:45:37,212 [INFO] 127.0.0.1 - - [23/May/2026 23:45:37] "POST /admin/modifier_user_ajax HTTP/1.1" 200 -
+2026-05-23 23:45:58,135 [INFO] Super admin modifie email de minrfqzmj!
+2026-05-23 23:45:58,136 [INFO] 127.0.0.1 - - [23/May/2026 23:45:58] "POST /admin/modifier_user_ajax HTTP/1.1" 200 -
+2026-05-23 23:45:59,227 [ERROR] Connexion MongoDB echouee : ac-qnmlyva-shard-00-02.5r4lftj.mongodb.net:27017: timed out (configured timeouts: connectTimeoutMS: 20000.0ms)
+2026-05-23 23:45:59,227 [INFO] 127.0.0.1 - - [23/May/2026 23:45:59] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-23 23:46:09,899 [INFO] Super admin modifie email de admin
+2026-05-23 23:46:09,900 [INFO] 127.0.0.1 - - [23/May/2026 23:46:09] "POST /admin/modifier_user_ajax HTTP/1.1" 200 -
+2026-05-23 23:46:11,471 [INFO] 127.0.0.1 - - [23/May/2026 23:46:11] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-23 23:46:41,185 [INFO] 127.0.0.1 - - [23/May/2026 23:46:41] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-23 23:47:11,271 [INFO] 127.0.0.1 - - [23/May/2026 23:47:11] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-23 23:47:38,454 [INFO] 127.0.0.1 - - [23/May/2026 23:47:38] "[32mGET /logout HTTP/1.1[0m" 302 -
+2026-05-23 23:47:38,841 [INFO] 127.0.0.1 - - [23/May/2026 23:47:38] "GET / HTTP/1.1" 200 -
+2026-05-23 23:47:39,847 [INFO] 127.0.0.1 - - [23/May/2026 23:47:39] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-23 23:47:42,333 [INFO] 127.0.0.1 - - [23/May/2026 23:47:42] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-23 23:48:09,883 [WARNING] Mot de passe incorrect : ipc
+2026-05-23 23:48:09,884 [INFO] 127.0.0.1 - - [23/May/2026 23:48:09] "POST / HTTP/1.1" 200 -
+2026-05-23 23:48:09,933 [INFO] 127.0.0.1 - - [23/May/2026 23:48:09] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-23 23:48:35,142 [WARNING] Mot de passe incorrect : ipc
+2026-05-23 23:48:35,143 [INFO] 127.0.0.1 - - [23/May/2026 23:48:35] "POST / HTTP/1.1" 200 -
+2026-05-23 23:48:35,178 [INFO] 127.0.0.1 - - [23/May/2026 23:48:35] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-23 23:48:48,618 [WARNING] Mot de passe incorrect : admin
+2026-05-23 23:48:48,619 [INFO] 127.0.0.1 - - [23/May/2026 23:48:48] "POST / HTTP/1.1" 200 -
+2026-05-23 23:48:48,650 [INFO] 127.0.0.1 - - [23/May/2026 23:48:48] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-23 23:48:51,241 [WARNING] Mot de passe incorrect : admin
+2026-05-23 23:48:51,241 [INFO] 127.0.0.1 - - [23/May/2026 23:48:51] "POST / HTTP/1.1" 200 -
+2026-05-23 23:48:51,274 [INFO] 127.0.0.1 - - [23/May/2026 23:48:51] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-23 23:49:41,226 [INFO] Connexion reussie : ipc
+2026-05-23 23:49:41,228 [INFO] 127.0.0.1 - - [23/May/2026 23:49:41] "[32mPOST / HTTP/1.1[0m" 302 -
+2026-05-23 23:49:44,711 [INFO] 127.0.0.1 - - [23/May/2026 23:49:44] "GET /boutique HTTP/1.1" 200 -
+2026-05-23 23:49:44,761 [INFO] 127.0.0.1 - - [23/May/2026 23:49:44] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-23 23:50:06,256 [INFO] 127.0.0.1 - - [23/May/2026 23:50:06] "GET /admin HTTP/1.1" 200 -
+2026-05-23 23:50:06,543 [INFO] 127.0.0.1 - - [23/May/2026 23:50:06] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-23 23:50:06,602 [INFO] 127.0.0.1 - - [23/May/2026 23:50:06] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-23 23:50:10,075 [INFO] 127.0.0.1 - - [23/May/2026 23:50:10] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-23 23:50:38,188 [INFO] 127.0.0.1 - - [23/May/2026 23:50:38] "[32mGET /logout HTTP/1.1[0m" 302 -
+2026-05-23 23:50:38,509 [INFO] 127.0.0.1 - - [23/May/2026 23:50:38] "GET / HTTP/1.1" 200 -
+2026-05-23 23:50:38,726 [INFO] 127.0.0.1 - - [23/May/2026 23:50:38] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-23 23:50:38,942 [INFO] 127.0.0.1 - - [23/May/2026 23:50:38] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-23 23:51:03,044 [WARNING] Compte bloque : cmr
+2026-05-23 23:51:03,045 [INFO] 127.0.0.1 - - [23/May/2026 23:51:03] "[32mPOST / HTTP/1.1[0m" 302 -
+2026-05-23 23:51:08,267 [INFO] 127.0.0.1 - - [23/May/2026 23:51:08] "GET /boutique HTTP/1.1" 200 -
+2026-05-23 23:51:08,310 [INFO] 127.0.0.1 - - [23/May/2026 23:51:08] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-23 23:51:11,742 [INFO] 127.0.0.1 - - [23/May/2026 23:51:11] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-23 23:51:17,013 [INFO] 127.0.0.1 - - [23/May/2026 23:51:17] "[32mGET /logout HTTP/1.1[0m" 302 -
+2026-05-23 23:51:17,324 [INFO] 127.0.0.1 - - [23/May/2026 23:51:17] "GET / HTTP/1.1" 200 -
+2026-05-23 23:51:17,659 [INFO] 127.0.0.1 - - [23/May/2026 23:51:17] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -

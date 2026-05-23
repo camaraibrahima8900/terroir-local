@@ -342,25 +342,63 @@
                                 {% endif %}
                             </td>
                             <td>
+                                {% if username == 'admin' and u[0] != 'admin' %}
+                                <select onchange="modifierUser('{{ u[0] }}','role',this.value)"
+                                        class="form-select form-select-sm rounded-3" style="width:130px">
+                                    <option value="utilisateur" {% if u[1]=='utilisateur' %}selected{% endif %}>Utilisateur</option>
+                                    <option value="administrateur" {% if u[1]=='administrateur' %}selected{% endif %}>Administrateur</option>
+                                </select>
+                                {% else %}
                                 <span class="badge {% if u[1] == 'administrateur' %}bg-warning{% else %}bg-primary{% endif %}">
                                     {{ u[1] }}
                                 </span>
+                                {% endif %}
                             </td>
-                            <td>{{ u[2] }}</td>
-                            <td class="small">{{ u[3] }}</td>
+                            <td>
+                                {% if username == 'admin' %}
+                                <input type="text" value="{{ u[2] }}"
+                                       class="form-control form-control-sm rounded-3"
+                                       style="min-width:120px"
+                                       onblur="modifierUser('{{ u[0] }}','nom',this.value)"
+                                       onkeypress="if(event.key=='Enter')modifierUser('{{ u[0] }}','nom',this.value)">
+                                {% else %}{{ u[2] }}{% endif %}
+                            </td>
                             <td class="small">
+                                {% if username == 'admin' %}
+                                <input type="email" value="{{ u[3] }}"
+                                       class="form-control form-control-sm rounded-3"
+                                       style="min-width:150px"
+                                       onblur="modifierUser('{{ u[0] }}','email',this.value)"
+                                       onkeypress="if(event.key=='Enter')modifierUser('{{ u[0] }}','email',this.value)">
+                                {% else %}{{ u[3] }}{% endif %}
+                            </td>
+                            <td class="small">
+                                {% if username == 'admin' %}
+                                <input type="text" value="{{ u[4] if u|length > 4 else '' }}"
+                                       class="form-control form-control-sm rounded-3"
+                                       placeholder="+221 77 000 00 00"
+                                       style="min-width:130px"
+                                       onblur="modifierUser('{{ u[0] }}','telephone',this.value)"
+                                       onkeypress="if(event.key=='Enter')modifierUser('{{ u[0] }}','telephone',this.value)">
+                                {% else %}
                                 {% if u|length > 4 and u[4] %}
                                 <i class="fas fa-phone text-success me-1"></i>
                                 <strong>{{ u[4] }}</strong>
-                                {% else %}
-                                <span class="text-muted">-</span>
+                                {% else %}-{% endif %}
                                 {% endif %}
                             </td>
                             <td class="small">
+                                {% if username == 'admin' %}
+                                <input type="text" value="{{ u[5] if u|length > 5 else '' }}"
+                                       class="form-control form-control-sm rounded-3"
+                                       placeholder="Ville"
+                                       style="min-width:100px"
+                                       onblur="modifierUser('{{ u[0] }}','lieu',this.value)"
+                                       onkeypress="if(event.key=='Enter')modifierUser('{{ u[0] }}','lieu',this.value)">
+                                {% else %}
                                 {% if u|length > 5 and u[5] %}
                                 <i class="fas fa-map-marker-alt text-danger me-1"></i>{{ u[5] }}
-                                {% else %}
-                                <span class="text-muted">-</span>
+                                {% else %}-{% endif %}
                                 {% endif %}
                             </td>
                             <td>
@@ -655,6 +693,25 @@ function majPromo(id, prixOriginal) {
                 : '✅ Promo supprimee !';
             showToast(msg, 'success');
             setTimeout(function() { window.scrollTo(0, scrollY); }, 100);
+        }
+    });
+}
+
+// ===== AJAX MODIFIER CHAMP USER (SUPER ADMIN) =====
+function modifierUser(login, champ, valeur) {
+    var scrollY = window.scrollY;
+    var formData = new FormData();
+    formData.append('login', login);
+    formData.append('champ', champ);
+    formData.append('valeur', valeur);
+    fetch('/admin/modifier_user_ajax', {method: 'POST', body: formData})
+    .then(function(r) { return r.json(); })
+    .then(function(data) {
+        if (data.success) {
+            showToast('✅ ' + champ + ' mis a jour !', 'success');
+            setTimeout(function() { window.scrollTo(0, scrollY); }, 100);
+        } else {
+            showToast('❌ ' + (data.message || 'Erreur'), 'danger');
         }
     });
 }

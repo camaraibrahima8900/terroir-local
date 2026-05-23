@@ -474,6 +474,26 @@ def supprimer_produit_ajax(produit_id):
         return jsonify({"success": True})
     return jsonify({"success": False})
 
+@app.route("/admin/modifier_user_ajax", methods=["POST"])
+@login_requis
+@admin_requis
+def modifier_user_ajax():
+    if session.get("username") != "admin":
+        return jsonify({"success": False, "message": "Seul le super admin peut modifier"})
+    from auth import charger_users, sauvegarder_users
+    login_cible = request.form.get("login", "").strip()
+    champ = request.form.get("champ", "").strip()
+    valeur = request.form.get("valeur", "").strip()
+    champs_autorises = ["nom", "email", "telephone", "lieu", "role"]
+    if login_cible not in [""] and champ in champs_autorises:
+        users = charger_users()
+        if login_cible in users:
+            users[login_cible][champ] = valeur
+            sauvegarder_users(users)
+            log_info(f"Super admin modifie {champ} de {login_cible}")
+            return jsonify({"success": True, "champ": champ, "valeur": valeur})
+    return jsonify({"success": False, "message": "Erreur modification"})
+
 @app.route("/admin/bloquer_user_ajax/<username_cible>")
 @login_requis
 @admin_requis
