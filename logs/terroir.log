@@ -10802,3 +10802,685 @@
 2026-05-24 07:32:13,023 [INFO] 127.0.0.1 - - [24/May/2026 07:32:13] "GET /nb_commandes_attente HTTP/1.1" 200 -
 2026-05-24 07:33:23,846 [INFO] 127.0.0.1 - - [24/May/2026 07:33:23] "GET /nb_commandes_attente HTTP/1.1" 200 -
 2026-05-24 07:33:40,731 [INFO] 127.0.0.1 - - [24/May/2026 07:33:40] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 07:48:55,846 [INFO] Backup automatique demarre (toutes les 24h)
+2026-05-24 07:48:55,847 [INFO] Application Flask demarree !
+2026-05-24 07:48:55,895 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.26.20.100:5000
+2026-05-24 07:48:55,896 [INFO] [33mPress CTRL+C to quit[0m
+2026-05-24 07:48:55,899 [INFO]  * Restarting with stat
+2026-05-24 07:48:56,385 [INFO] Backup automatique demarre (toutes les 24h)
+2026-05-24 07:48:56,386 [INFO] Application Flask demarree !
+2026-05-24 07:48:56,436 [WARNING]  * Debugger is active!
+2026-05-24 07:48:56,444 [INFO]  * Debugger PIN: 452-512-962
+2026-05-24 07:48:58,426 [INFO] Backup cree : /home/ibrahima/terroir_local/backups/backup_20260524_074858.json
+2026-05-24 07:48:58,851 [INFO] Backup cree : /home/ibrahima/terroir_local/backups/backup_20260524_074858.json
+2026-05-24 07:49:02,081 [INFO] 127.0.0.1 - - [24/May/2026 07:49:02] "GET /admin HTTP/1.1" 200 -
+2026-05-24 07:49:02,135 [INFO] 127.0.0.1 - - [24/May/2026 07:49:02] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-24 07:49:03,649 [INFO] 127.0.0.1 - - [24/May/2026 07:49:03] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 07:49:30,144 [INFO] 127.0.0.1 - - [24/May/2026 07:49:30] "GET /boutique HTTP/1.1" 200 -
+2026-05-24 07:49:30,181 [INFO] 127.0.0.1 - - [24/May/2026 07:49:30] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-24 07:49:31,490 [INFO] 127.0.0.1 - - [24/May/2026 07:49:31] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 07:49:39,980 [INFO] 127.0.0.1 - - [24/May/2026 07:49:39] "GET /boutique HTTP/1.1" 200 -
+2026-05-24 07:49:40,016 [INFO] 127.0.0.1 - - [24/May/2026 07:49:40] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-24 07:49:41,303 [INFO] 127.0.0.1 - - [24/May/2026 07:49:41] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 07:50:02,121 [INFO] 127.0.0.1 - - [24/May/2026 07:50:02] "GET /admin HTTP/1.1" 200 -
+2026-05-24 07:50:02,161 [INFO] 127.0.0.1 - - [24/May/2026 07:50:02] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-24 07:50:03,563 [INFO] 127.0.0.1 - - [24/May/2026 07:50:03] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 07:50:16,703 [INFO] Promo mis a jour : 24% prix_final=1520
+2026-05-24 07:50:16,703 [INFO] 127.0.0.1 - - [24/May/2026 07:50:16] "POST /admin/maj_promo_ajax HTTP/1.1" 200 -
+2026-05-24 07:50:31,827 [INFO] 127.0.0.1 - - [24/May/2026 07:50:31] "GET /boutique HTTP/1.1" 200 -
+2026-05-24 07:50:32,181 [INFO] 127.0.0.1 - - [24/May/2026 07:50:32] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-24 07:50:32,420 [INFO] 127.0.0.1 - - [24/May/2026 07:50:32] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 07:50:35,002 [INFO] 127.0.0.1 - - [24/May/2026 07:50:35] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 07:51:04,484 [INFO] 127.0.0.1 - - [24/May/2026 07:51:04] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 07:51:33,985 [INFO] 127.0.0.1 - - [24/May/2026 07:51:33] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 07:52:04,842 [INFO] 127.0.0.1 - - [24/May/2026 07:52:04] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 07:52:16,060 [INFO] 127.0.0.1 - - [24/May/2026 07:52:16] "GET /boutique?search=&categorie=Toutes&promo=0&producteur=&tri=prix_desc&prix_min=&prix_max= HTTP/1.1" 200 -
+2026-05-24 07:52:16,111 [INFO] 127.0.0.1 - - [24/May/2026 07:52:16] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-24 07:52:17,484 [INFO] 127.0.0.1 - - [24/May/2026 07:52:17] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 07:52:32,273 [INFO] 127.0.0.1 - - [24/May/2026 07:52:32] "GET /admin HTTP/1.1" 200 -
+2026-05-24 07:52:32,323 [INFO] 127.0.0.1 - - [24/May/2026 07:52:32] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-24 07:52:33,705 [INFO] 127.0.0.1 - - [24/May/2026 07:52:33] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 07:52:48,978 [INFO] Promo mis a jour : 30% prix_final=2450
+2026-05-24 07:52:48,979 [INFO] 127.0.0.1 - - [24/May/2026 07:52:48] "POST /admin/maj_promo_ajax HTTP/1.1" 200 -
+2026-05-24 07:53:06,644 [INFO] 127.0.0.1 - - [24/May/2026 07:53:06] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 07:53:18,145 [INFO] Promo mis a jour : 17% prix_final=4150
+2026-05-24 07:53:18,146 [INFO] 127.0.0.1 - - [24/May/2026 07:53:18] "POST /admin/maj_promo_ajax HTTP/1.1" 200 -
+2026-05-24 07:53:33,728 [INFO] 127.0.0.1 - - [24/May/2026 07:53:33] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 07:53:46,765 [INFO] Promo mis a jour : 35% prix_final=5200
+2026-05-24 07:53:46,766 [INFO] 127.0.0.1 - - [24/May/2026 07:53:46] "POST /admin/maj_promo_ajax HTTP/1.1" 200 -
+2026-05-24 07:54:01,263 [INFO] 127.0.0.1 - - [24/May/2026 07:54:01] "GET /boutique HTTP/1.1" 200 -
+2026-05-24 07:54:01,317 [INFO] 127.0.0.1 - - [24/May/2026 07:54:01] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-24 07:54:03,156 [INFO] 127.0.0.1 - - [24/May/2026 07:54:03] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 07:54:12,467 [INFO] 127.0.0.1 - - [24/May/2026 07:54:12] "GET /boutique?search=&categorie=Toutes&promo=0&producteur=&tri=prix_desc&prix_min=&prix_max= HTTP/1.1" 200 -
+2026-05-24 07:54:12,502 [INFO] 127.0.0.1 - - [24/May/2026 07:54:12] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-24 07:54:14,054 [INFO] 127.0.0.1 - - [24/May/2026 07:54:14] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 07:54:44,873 [INFO] 127.0.0.1 - - [24/May/2026 07:54:44] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 07:55:15,521 [INFO] 127.0.0.1 - - [24/May/2026 07:55:15] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 07:55:22,257 [INFO] 127.0.0.1 - - [24/May/2026 07:55:22] "GET /admin HTTP/1.1" 200 -
+2026-05-24 07:55:22,303 [INFO] 127.0.0.1 - - [24/May/2026 07:55:22] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-24 07:55:24,025 [INFO] 127.0.0.1 - - [24/May/2026 07:55:24] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 07:55:54,028 [INFO] 127.0.0.1 - - [24/May/2026 07:55:54] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 07:56:25,672 [INFO] 127.0.0.1 - - [24/May/2026 07:56:25] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 07:56:54,480 [INFO] 127.0.0.1 - - [24/May/2026 07:56:54] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 07:57:24,639 [INFO] 127.0.0.1 - - [24/May/2026 07:57:24] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 07:57:53,876 [INFO] 127.0.0.1 - - [24/May/2026 07:57:53] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 07:58:32,976 [ERROR] Connexion MongoDB echouee : No replica set members match selector "Primary()", Timeout: 10.0s, Topology Description: <TopologyDescription id: 6a12af9ef574e04d10e48dd8, topology_type: ReplicaSetNoPrimary, servers: [<ServerDescription ('ac-qnmlyva-shard-00-00.5r4lftj.mongodb.net', 27017) server_type: Unknown, rtt: None>, <ServerDescription ('ac-qnmlyva-shard-00-01.5r4lftj.mongodb.net', 27017) server_type: RSSecondary, rtt: 0.10083233000023029>, <ServerDescription ('ac-qnmlyva-shard-00-02.5r4lftj.mongodb.net', 27017) server_type: Unknown, rtt: None>]>
+2026-05-24 07:58:32,977 [INFO] 127.0.0.1 - - [24/May/2026 07:58:32] "GET /boutique?search=&categorie=Toutes&promo=20&producteur=&tri=prix_desc&prix_min=&prix_max= HTTP/1.1" 200 -
+2026-05-24 07:58:43,500 [INFO] 127.0.0.1 - - [24/May/2026 07:58:43] "GET /boutique?search=&categorie=Toutes&promo=20&producteur=&tri=prix_desc&prix_min=&prix_max= HTTP/1.1" 200 -
+2026-05-24 07:58:43,536 [INFO] 127.0.0.1 - - [24/May/2026 07:58:43] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-24 07:58:45,097 [INFO] 127.0.0.1 - - [24/May/2026 07:58:45] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 07:59:16,207 [INFO] 127.0.0.1 - - [24/May/2026 07:59:16] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 07:59:20,418 [INFO] 127.0.0.1 - - [24/May/2026 07:59:20] "GET /boutique?categorie=Toutes&search=&promo=20&prix_min=&prix_max=&tri=prix_desc&page=2 HTTP/1.1" 200 -
+2026-05-24 07:59:20,469 [INFO] 127.0.0.1 - - [24/May/2026 07:59:20] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-24 07:59:21,751 [INFO] 127.0.0.1 - - [24/May/2026 07:59:21] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 07:59:48,982 [INFO] 127.0.0.1 - - [24/May/2026 07:59:48] "GET /admin HTTP/1.1" 200 -
+2026-05-24 07:59:49,025 [INFO] 127.0.0.1 - - [24/May/2026 07:59:49] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-24 07:59:50,398 [INFO] 127.0.0.1 - - [24/May/2026 07:59:50] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 08:00:20,951 [INFO] 127.0.0.1 - - [24/May/2026 08:00:20] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 08:01:20,176 [INFO] 127.0.0.1 - - [24/May/2026 08:01:20] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 08:01:49,169 [INFO] 127.0.0.1 - - [24/May/2026 08:01:49] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 08:02:20,403 [INFO] 127.0.0.1 - - [24/May/2026 08:02:20] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 08:03:11,388 [ERROR] Connexion MongoDB echouee : ac-qnmlyva-shard-00-02.5r4lftj.mongodb.net:27017: timed out (configured timeouts: connectTimeoutMS: 20000.0ms)
+2026-05-24 08:03:11,389 [INFO] 127.0.0.1 - - [24/May/2026 08:03:11] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 08:03:20,435 [INFO] 127.0.0.1 - - [24/May/2026 08:03:20] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 08:03:49,874 [INFO] 127.0.0.1 - - [24/May/2026 08:03:49] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 08:04:21,242 [INFO] 127.0.0.1 - - [24/May/2026 08:04:21] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 08:06:45,961 [INFO] Backup automatique demarre (toutes les 24h)
+2026-05-24 08:06:45,961 [INFO] Application Flask demarree !
+2026-05-24 08:06:46,007 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.26.20.100:5000
+2026-05-24 08:06:46,008 [INFO] [33mPress CTRL+C to quit[0m
+2026-05-24 08:06:46,011 [INFO]  * Restarting with stat
+2026-05-24 08:06:46,477 [INFO] Backup automatique demarre (toutes les 24h)
+2026-05-24 08:06:46,477 [INFO] Application Flask demarree !
+2026-05-24 08:06:46,524 [WARNING]  * Debugger is active!
+2026-05-24 08:06:46,530 [INFO]  * Debugger PIN: 452-512-962
+2026-05-24 08:06:48,888 [INFO] Backup cree : /home/ibrahima/terroir_local/backups/backup_20260524_080648.json
+2026-05-24 08:06:49,221 [INFO] Backup cree : /home/ibrahima/terroir_local/backups/backup_20260524_080649.json
+2026-05-24 08:06:54,260 [INFO] 127.0.0.1 - - [24/May/2026 08:06:54] "GET /boutique?categorie=Toutes&search=&promo=20&prix_min=&prix_max=&tri=prix_desc&page=2 HTTP/1.1" 200 -
+2026-05-24 08:06:54,317 [INFO] 127.0.0.1 - - [24/May/2026 08:06:54] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-24 08:06:56,112 [INFO] 127.0.0.1 - - [24/May/2026 08:06:56] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 08:07:07,165 [INFO] 127.0.0.1 - - [24/May/2026 08:07:07] "GET /boutique?categorie=Toutes&search=&promo=20&prix_min=&prix_max=&tri=prix_desc&page=2 HTTP/1.1" 200 -
+2026-05-24 08:07:07,202 [INFO] 127.0.0.1 - - [24/May/2026 08:07:07] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-24 08:07:08,798 [INFO] 127.0.0.1 - - [24/May/2026 08:07:08] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 08:07:38,240 [INFO] 127.0.0.1 - - [24/May/2026 08:07:38] "GET /boutique?categorie=Toutes&search=&promo=20&prix_min=&prix_max=&tri=prix_desc&page=2 HTTP/1.1" 200 -
+2026-05-24 08:07:38,295 [INFO] 127.0.0.1 - - [24/May/2026 08:07:38] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-24 08:07:38,631 [INFO] 127.0.0.1 - - [24/May/2026 08:07:38] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 08:07:40,117 [INFO] 127.0.0.1 - - [24/May/2026 08:07:40] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 08:07:44,032 [INFO] 127.0.0.1 - - [24/May/2026 08:07:44] "GET /boutique?categorie=Toutes&search=&promo=20&prix_min=&prix_max=&tri=prix_desc&page=1 HTTP/1.1" 200 -
+2026-05-24 08:07:44,071 [INFO] 127.0.0.1 - - [24/May/2026 08:07:44] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-24 08:07:45,674 [INFO] 127.0.0.1 - - [24/May/2026 08:07:45] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 08:08:03,670 [INFO] 127.0.0.1 - - [24/May/2026 08:08:03] "GET /boutique?categorie=Toutes&search=&promo=20&prix_min=&prix_max=&tri=prix_desc&page=1 HTTP/1.1" 200 -
+2026-05-24 08:08:03,707 [INFO] 127.0.0.1 - - [24/May/2026 08:08:03] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-24 08:08:05,239 [INFO] 127.0.0.1 - - [24/May/2026 08:08:05] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 08:08:25,032 [INFO] 127.0.0.1 - - [24/May/2026 08:08:25] "GET /boutique?search=&categorie=Toutes&promo=0&producteur=&tri=prix_desc&prix_min=&prix_max= HTTP/1.1" 200 -
+2026-05-24 08:08:25,067 [INFO] 127.0.0.1 - - [24/May/2026 08:08:25] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-24 08:08:28,566 [INFO] 127.0.0.1 - - [24/May/2026 08:08:28] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 08:08:48,709 [INFO] 127.0.0.1 - - [24/May/2026 08:08:48] "GET /admin HTTP/1.1" 200 -
+2026-05-24 08:08:48,757 [INFO] 127.0.0.1 - - [24/May/2026 08:08:48] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-24 08:08:50,720 [INFO] 127.0.0.1 - - [24/May/2026 08:08:50] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 08:09:21,731 [INFO] 127.0.0.1 - - [24/May/2026 08:09:21] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 08:09:21,822 [INFO] 127.0.0.1 - - [24/May/2026 08:09:21] "GET /boutique HTTP/1.1" 200 -
+2026-05-24 08:09:22,150 [INFO] 127.0.0.1 - - [24/May/2026 08:09:22] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-24 08:09:23,623 [INFO] 127.0.0.1 - - [24/May/2026 08:09:23] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 08:09:54,728 [INFO] 127.0.0.1 - - [24/May/2026 08:09:54] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 08:10:26,903 [INFO] 127.0.0.1 - - [24/May/2026 08:10:26] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 08:10:27,422 [INFO] 127.0.0.1 - - [24/May/2026 08:10:27] "GET /boutique?search=&categorie=Toutes&promo=5&producteur=&tri=nom&prix_min=&prix_max= HTTP/1.1" 200 -
+2026-05-24 08:10:27,759 [INFO] 127.0.0.1 - - [24/May/2026 08:10:27] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-24 08:10:29,410 [INFO] 127.0.0.1 - - [24/May/2026 08:10:29] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 08:10:59,585 [INFO] 127.0.0.1 - - [24/May/2026 08:10:59] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 08:11:31,107 [INFO] 127.0.0.1 - - [24/May/2026 08:11:31] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 08:11:59,162 [INFO] 127.0.0.1 - - [24/May/2026 08:11:59] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 08:12:30,770 [INFO] 127.0.0.1 - - [24/May/2026 08:12:30] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 08:13:20,416 [INFO] 127.0.0.1 - - [24/May/2026 08:13:20] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 08:13:30,962 [INFO] 127.0.0.1 - - [24/May/2026 08:13:30] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 08:13:59,863 [INFO] 127.0.0.1 - - [24/May/2026 08:13:59] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 08:14:35,189 [INFO] 127.0.0.1 - - [24/May/2026 08:14:35] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 08:15:36,110 [INFO] 127.0.0.1 - - [24/May/2026 08:15:36] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 08:17:34,487 [INFO] Backup automatique demarre (toutes les 24h)
+2026-05-24 08:17:34,487 [INFO] Application Flask demarree !
+2026-05-24 08:17:34,534 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.26.20.100:5000
+2026-05-24 08:17:34,534 [INFO] [33mPress CTRL+C to quit[0m
+2026-05-24 08:17:34,539 [INFO]  * Restarting with stat
+2026-05-24 08:17:35,026 [INFO] Backup automatique demarre (toutes les 24h)
+2026-05-24 08:17:35,027 [INFO] Application Flask demarree !
+2026-05-24 08:17:35,069 [WARNING]  * Debugger is active!
+2026-05-24 08:17:35,075 [INFO]  * Debugger PIN: 452-512-962
+2026-05-24 08:17:37,158 [INFO] Backup cree : /home/ibrahima/terroir_local/backups/backup_20260524_081737.json
+2026-05-24 08:17:37,561 [INFO] Backup cree : /home/ibrahima/terroir_local/backups/backup_20260524_081737.json
+2026-05-24 08:17:43,430 [INFO] 127.0.0.1 - - [24/May/2026 08:17:43] "GET /boutique?search=&categorie=Toutes&promo=5&producteur=&tri=nom&prix_min=&prix_max= HTTP/1.1" 200 -
+2026-05-24 08:17:43,496 [INFO] 127.0.0.1 - - [24/May/2026 08:17:43] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-24 08:17:45,843 [INFO] 127.0.0.1 - - [24/May/2026 08:17:45] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 08:18:15,486 [INFO] 127.0.0.1 - - [24/May/2026 08:18:15] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 08:18:48,030 [INFO] 127.0.0.1 - - [24/May/2026 08:18:48] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 08:18:57,873 [INFO] 127.0.0.1 - - [24/May/2026 08:18:57] "GET /boutique?search=&categorie=Toutes&promo=0&producteur=&tri=nom&prix_min=&prix_max= HTTP/1.1" 200 -
+2026-05-24 08:18:57,914 [INFO] 127.0.0.1 - - [24/May/2026 08:18:57] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-24 08:18:59,527 [INFO] 127.0.0.1 - - [24/May/2026 08:18:59] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 08:19:19,210 [INFO] 127.0.0.1 - - [24/May/2026 08:19:19] "GET /admin HTTP/1.1" 200 -
+2026-05-24 08:19:19,260 [INFO] 127.0.0.1 - - [24/May/2026 08:19:19] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-24 08:19:20,662 [INFO] 127.0.0.1 - - [24/May/2026 08:19:20] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 08:19:51,607 [INFO] 127.0.0.1 - - [24/May/2026 08:19:51] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 08:20:03,779 [INFO] Promo globale 10% appliquee sur 0 produits de admin
+2026-05-24 08:20:03,780 [INFO] 127.0.0.1 - - [24/May/2026 08:20:03] "POST /admin/promo_global_ajax HTTP/1.1" 200 -
+2026-05-24 08:20:08,599 [INFO] 127.0.0.1 - - [24/May/2026 08:20:08] "GET /admin HTTP/1.1" 200 -
+2026-05-24 08:20:08,651 [INFO] 127.0.0.1 - - [24/May/2026 08:20:08] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-24 08:20:10,108 [INFO] 127.0.0.1 - - [24/May/2026 08:20:10] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 08:20:32,522 [INFO] Promo globale 0% appliquee sur 0 produits de admin
+2026-05-24 08:20:32,523 [INFO] 127.0.0.1 - - [24/May/2026 08:20:32] "POST /admin/promo_global_ajax HTTP/1.1" 200 -
+2026-05-24 08:20:35,267 [INFO] 127.0.0.1 - - [24/May/2026 08:20:35] "GET /admin HTTP/1.1" 200 -
+2026-05-24 08:20:35,315 [INFO] 127.0.0.1 - - [24/May/2026 08:20:35] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-24 08:20:36,976 [INFO] 127.0.0.1 - - [24/May/2026 08:20:36] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 08:20:46,907 [INFO] Promo globale 10% appliquee sur 0 produits de admin
+2026-05-24 08:20:46,908 [INFO] 127.0.0.1 - - [24/May/2026 08:20:46] "POST /admin/promo_global_ajax HTTP/1.1" 200 -
+2026-05-24 08:20:50,111 [INFO] 127.0.0.1 - - [24/May/2026 08:20:50] "GET /admin HTTP/1.1" 200 -
+2026-05-24 08:20:50,156 [INFO] 127.0.0.1 - - [24/May/2026 08:20:50] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-24 08:20:51,900 [INFO] 127.0.0.1 - - [24/May/2026 08:20:51] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 08:21:08,505 [INFO] 127.0.0.1 - - [24/May/2026 08:21:08] "GET /boutique HTTP/1.1" 200 -
+2026-05-24 08:21:08,549 [INFO] 127.0.0.1 - - [24/May/2026 08:21:08] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-24 08:21:09,995 [INFO] 127.0.0.1 - - [24/May/2026 08:21:09] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 08:21:40,778 [INFO] 127.0.0.1 - - [24/May/2026 08:21:40] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 08:22:11,118 [INFO] 127.0.0.1 - - [24/May/2026 08:22:11] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 08:22:41,679 [INFO] 127.0.0.1 - - [24/May/2026 08:22:41] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 08:23:11,928 [INFO] 127.0.0.1 - - [24/May/2026 08:23:11] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 08:23:40,543 [INFO] 127.0.0.1 - - [24/May/2026 08:23:40] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 08:24:10,843 [INFO] 127.0.0.1 - - [24/May/2026 08:24:10] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 08:24:38,757 [INFO] Backup automatique demarre (toutes les 24h)
+2026-05-24 08:24:38,757 [INFO] Application Flask demarree !
+2026-05-24 08:24:38,802 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.26.20.100:5000
+2026-05-24 08:24:38,805 [INFO] [33mPress CTRL+C to quit[0m
+2026-05-24 08:24:38,808 [INFO]  * Restarting with stat
+2026-05-24 08:24:39,294 [INFO] Backup automatique demarre (toutes les 24h)
+2026-05-24 08:24:39,295 [INFO] Application Flask demarree !
+2026-05-24 08:24:39,343 [WARNING]  * Debugger is active!
+2026-05-24 08:24:39,354 [INFO]  * Debugger PIN: 452-512-962
+2026-05-24 08:24:40,258 [INFO] Backup cree : /home/ibrahima/terroir_local/backups/backup_20260524_082440.json
+2026-05-24 08:24:41,112 [INFO] 127.0.0.1 - - [24/May/2026 08:24:41] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 08:24:50,202 [INFO] 127.0.0.1 - - [24/May/2026 08:24:50] "GET /boutique HTTP/1.1" 200 -
+2026-05-24 08:24:50,264 [INFO] 127.0.0.1 - - [24/May/2026 08:24:50] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-24 08:24:53,317 [INFO] 127.0.0.1 - - [24/May/2026 08:24:53] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 08:25:03,187 [INFO] Backup cree : /home/ibrahima/terroir_local/backups/backup_20260524_082503.json
+2026-05-24 08:25:22,103 [INFO] 127.0.0.1 - - [24/May/2026 08:25:22] "GET /admin HTTP/1.1" 200 -
+2026-05-24 08:25:22,451 [INFO] 127.0.0.1 - - [24/May/2026 08:25:22] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-24 08:25:22,480 [INFO] 127.0.0.1 - - [24/May/2026 08:25:22] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 08:25:24,105 [INFO] 127.0.0.1 - - [24/May/2026 08:25:24] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 08:25:51,847 [INFO] Promo globale 10% appliquee sur 0 produits de admin
+2026-05-24 08:25:51,848 [INFO] 127.0.0.1 - - [24/May/2026 08:25:51] "POST /admin/promo_global_ajax HTTP/1.1" 200 -
+2026-05-24 08:25:54,224 [INFO] 127.0.0.1 - - [24/May/2026 08:25:54] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 08:25:54,718 [INFO] 127.0.0.1 - - [24/May/2026 08:25:54] "GET /admin HTTP/1.1" 200 -
+2026-05-24 08:25:55,073 [INFO] 127.0.0.1 - - [24/May/2026 08:25:55] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-24 08:25:58,408 [INFO] 127.0.0.1 - - [24/May/2026 08:25:58] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 08:26:13,608 [INFO] 127.0.0.1 - - [24/May/2026 08:26:13] "GET /boutique HTTP/1.1" 200 -
+2026-05-24 08:26:13,642 [INFO] 127.0.0.1 - - [24/May/2026 08:26:13] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-24 08:26:15,196 [INFO] 127.0.0.1 - - [24/May/2026 08:26:15] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 08:26:29,853 [INFO] 127.0.0.1 - - [24/May/2026 08:26:29] "GET /admin HTTP/1.1" 200 -
+2026-05-24 08:26:29,904 [INFO] 127.0.0.1 - - [24/May/2026 08:26:29] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-24 08:26:31,629 [INFO] 127.0.0.1 - - [24/May/2026 08:26:31] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 08:27:01,502 [INFO] 127.0.0.1 - - [24/May/2026 08:27:01] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 08:27:33,246 [INFO] 127.0.0.1 - - [24/May/2026 08:27:33] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 08:28:09,051 [INFO] 127.0.0.1 - - [24/May/2026 08:28:09] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 08:28:32,302 [INFO] 127.0.0.1 - - [24/May/2026 08:28:32] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 08:28:33,926 [INFO] Promo mis a jour : 0% prix_final=3
+2026-05-24 08:28:33,928 [INFO] 127.0.0.1 - - [24/May/2026 08:28:33] "POST /admin/maj_promo_ajax HTTP/1.1" 200 -
+2026-05-24 08:28:36,552 [INFO] Promo mis a jour : 0% prix_final=5000
+2026-05-24 08:28:36,553 [INFO] 127.0.0.1 - - [24/May/2026 08:28:36] "POST /admin/maj_promo_ajax HTTP/1.1" 200 -
+2026-05-24 08:28:41,859 [INFO] Promo mis a jour : 0% prix_final=8000
+2026-05-24 08:28:41,860 [INFO] 127.0.0.1 - - [24/May/2026 08:28:41] "POST /admin/maj_promo_ajax HTTP/1.1" 200 -
+2026-05-24 08:28:52,201 [INFO] Promo mis a jour : 0% prix_final=1000
+2026-05-24 08:28:52,202 [INFO] 127.0.0.1 - - [24/May/2026 08:28:52] "POST /admin/maj_promo_ajax HTTP/1.1" 200 -
+2026-05-24 08:28:57,859 [INFO] Promo mis a jour : 0% prix_final=1500
+2026-05-24 08:28:57,860 [INFO] 127.0.0.1 - - [24/May/2026 08:28:57] "POST /admin/maj_promo_ajax HTTP/1.1" 200 -
+2026-05-24 08:29:02,332 [INFO] 127.0.0.1 - - [24/May/2026 08:29:02] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 08:29:03,423 [INFO] Promo mis a jour : 0% prix_final=5
+2026-05-24 08:29:03,424 [INFO] 127.0.0.1 - - [24/May/2026 08:29:03] "POST /admin/maj_promo_ajax HTTP/1.1" 200 -
+2026-05-24 08:29:08,339 [INFO] Promo mis a jour : 0% prix_final=2800
+2026-05-24 08:29:08,340 [INFO] 127.0.0.1 - - [24/May/2026 08:29:08] "POST /admin/maj_promo_ajax HTTP/1.1" 200 -
+2026-05-24 08:29:09,101 [INFO] Promo mis a jour : 0% prix_final=2800
+2026-05-24 08:29:09,102 [INFO] 127.0.0.1 - - [24/May/2026 08:29:09] "POST /admin/maj_promo_ajax HTTP/1.1" 200 -
+2026-05-24 08:29:14,612 [INFO] Promo mis a jour : 0% prix_final=3500
+2026-05-24 08:29:14,613 [INFO] 127.0.0.1 - - [24/May/2026 08:29:14] "POST /admin/maj_promo_ajax HTTP/1.1" 200 -
+2026-05-24 08:29:23,601 [INFO] Promo mis a jour : 0% prix_final=800
+2026-05-24 08:29:23,602 [INFO] 127.0.0.1 - - [24/May/2026 08:29:23] "POST /admin/maj_promo_ajax HTTP/1.1" 200 -
+2026-05-24 08:29:29,533 [INFO] Promo mis a jour : 0% prix_final=2000
+2026-05-24 08:29:29,533 [INFO] 127.0.0.1 - - [24/May/2026 08:29:29] "POST /admin/maj_promo_ajax HTTP/1.1" 200 -
+2026-05-24 08:29:31,344 [INFO] 127.0.0.1 - - [24/May/2026 08:29:31] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 08:29:47,925 [INFO] Promo globale 10% appliquee sur 0 produits de admin
+2026-05-24 08:29:47,988 [INFO] 127.0.0.1 - - [24/May/2026 08:29:47] "POST /admin/promo_global_ajax HTTP/1.1" 200 -
+2026-05-24 08:29:50,922 [INFO] 127.0.0.1 - - [24/May/2026 08:29:50] "GET /admin HTTP/1.1" 200 -
+2026-05-24 08:29:50,991 [INFO] 127.0.0.1 - - [24/May/2026 08:29:50] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-24 08:29:52,607 [INFO] 127.0.0.1 - - [24/May/2026 08:29:52] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 08:30:21,152 [INFO] 127.0.0.1 - - [24/May/2026 08:30:21] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 08:30:53,288 [INFO] 127.0.0.1 - - [24/May/2026 08:30:53] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 08:31:22,258 [INFO] 127.0.0.1 - - [24/May/2026 08:31:22] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 08:31:53,042 [INFO] 127.0.0.1 - - [24/May/2026 08:31:53] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 08:32:21,153 [INFO] 127.0.0.1 - - [24/May/2026 08:32:21] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 08:32:51,774 [INFO] 127.0.0.1 - - [24/May/2026 08:32:51] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 08:37:04,263 [INFO] Backup automatique demarre (toutes les 24h)
+2026-05-24 08:37:04,264 [INFO] Application Flask demarree !
+2026-05-24 08:37:04,320 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.26.20.100:5000
+2026-05-24 08:37:04,321 [INFO] [33mPress CTRL+C to quit[0m
+2026-05-24 08:37:04,324 [INFO]  * Restarting with stat
+2026-05-24 08:37:04,834 [INFO] Backup automatique demarre (toutes les 24h)
+2026-05-24 08:37:04,834 [INFO] Application Flask demarree !
+2026-05-24 08:37:04,880 [WARNING]  * Debugger is active!
+2026-05-24 08:37:04,887 [INFO]  * Debugger PIN: 452-512-962
+2026-05-24 08:37:08,608 [INFO] Backup cree : /home/ibrahima/terroir_local/backups/backup_20260524_083708.json
+2026-05-24 08:37:08,711 [INFO] Backup cree : /home/ibrahima/terroir_local/backups/backup_20260524_083708.json
+2026-05-24 08:37:10,393 [INFO] 127.0.0.1 - - [24/May/2026 08:37:10] "GET /admin HTTP/1.1" 200 -
+2026-05-24 08:37:10,452 [INFO] 127.0.0.1 - - [24/May/2026 08:37:10] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-24 08:37:12,062 [INFO] 127.0.0.1 - - [24/May/2026 08:37:12] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 08:37:22,027 [INFO] Promo globale 10% appliquee sur 0 produits de admin
+2026-05-24 08:37:22,029 [INFO] 127.0.0.1 - - [24/May/2026 08:37:22] "POST /admin/promo_global_ajax HTTP/1.1" 200 -
+2026-05-24 08:37:25,631 [INFO] 127.0.0.1 - - [24/May/2026 08:37:25] "GET /admin HTTP/1.1" 200 -
+2026-05-24 08:37:25,677 [INFO] 127.0.0.1 - - [24/May/2026 08:37:25] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-24 08:37:28,866 [INFO] 127.0.0.1 - - [24/May/2026 08:37:28] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 08:37:57,901 [INFO] 127.0.0.1 - - [24/May/2026 08:37:57] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 08:38:02,170 [INFO] 127.0.0.1 - - [24/May/2026 08:38:02] "GET /boutique HTTP/1.1" 200 -
+2026-05-24 08:38:02,214 [INFO] 127.0.0.1 - - [24/May/2026 08:38:02] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-24 08:38:03,638 [INFO] 127.0.0.1 - - [24/May/2026 08:38:03] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 08:38:29,292 [INFO] 127.0.0.1 - - [24/May/2026 08:38:29] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 08:38:39,238 [INFO] Promo mis a jour : 0% prix_final=2000
+2026-05-24 08:38:39,238 [INFO] 127.0.0.1 - - [24/May/2026 08:38:39] "POST /admin/maj_promo_ajax HTTP/1.1" 200 -
+2026-05-24 08:38:49,675 [INFO] Promo mis a jour : 100% prix_final=0
+2026-05-24 08:38:49,675 [INFO] 127.0.0.1 - - [24/May/2026 08:38:49] "POST /admin/maj_promo_ajax HTTP/1.1" 200 -
+2026-05-24 08:39:06,408 [ERROR] Connexion MongoDB echouee : No replica set members match selector "Primary()", Timeout: 10.0s, Topology Description: <TopologyDescription id: 6a12b91f6b102bab3692df39, topology_type: ReplicaSetNoPrimary, servers: [<ServerDescription ('ac-qnmlyva-shard-00-00.5r4lftj.mongodb.net', 27017) server_type: RSSecondary, rtt: 0.09419872200032842>, <ServerDescription ('ac-qnmlyva-shard-00-01.5r4lftj.mongodb.net', 27017) server_type: RSSecondary, rtt: 0.1349418110003171>, <ServerDescription ('ac-qnmlyva-shard-00-02.5r4lftj.mongodb.net', 27017) server_type: Unknown, rtt: None>]>
+2026-05-24 08:39:06,409 [INFO] 127.0.0.1 - - [24/May/2026 08:39:06] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 08:39:12,560 [INFO] Promo mis a jour : 0% prix_final=800
+2026-05-24 08:39:12,561 [INFO] 127.0.0.1 - - [24/May/2026 08:39:12] "POST /admin/maj_promo_ajax HTTP/1.1" 200 -
+2026-05-24 08:39:19,291 [INFO] Promo mis a jour : 0% prix_final=3500
+2026-05-24 08:39:19,292 [INFO] 127.0.0.1 - - [24/May/2026 08:39:19] "POST /admin/maj_promo_ajax HTTP/1.1" 200 -
+2026-05-24 08:39:27,494 [INFO] 127.0.0.1 - - [24/May/2026 08:39:27] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 08:39:57,461 [INFO] 127.0.0.1 - - [24/May/2026 08:39:57] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 08:40:07,216 [INFO] Promo mis a jour : 0% prix_final=1500
+2026-05-24 08:40:07,217 [INFO] 127.0.0.1 - - [24/May/2026 08:40:07] "POST /admin/maj_promo_ajax HTTP/1.1" 200 -
+2026-05-24 08:40:48,047 [ERROR] Connexion MongoDB echouee : ac-qnmlyva-shard-00-02.5r4lftj.mongodb.net:27017: timed out (configured timeouts: connectTimeoutMS: 20000.0ms)
+2026-05-24 08:40:48,048 [INFO] 127.0.0.1 - - [24/May/2026 08:40:48] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 08:40:58,073 [INFO] 127.0.0.1 - - [24/May/2026 08:40:58] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 08:41:28,823 [INFO] 127.0.0.1 - - [24/May/2026 08:41:28] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 08:42:42,698 [INFO] Backup automatique demarre (toutes les 24h)
+2026-05-24 08:42:42,699 [INFO] Application Flask demarree !
+2026-05-24 08:42:42,751 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.26.20.100:5000
+2026-05-24 08:42:42,753 [INFO] [33mPress CTRL+C to quit[0m
+2026-05-24 08:42:42,756 [INFO]  * Restarting with stat
+2026-05-24 08:42:43,226 [INFO] Backup automatique demarre (toutes les 24h)
+2026-05-24 08:42:43,227 [INFO] Application Flask demarree !
+2026-05-24 08:42:43,278 [WARNING]  * Debugger is active!
+2026-05-24 08:42:43,286 [INFO]  * Debugger PIN: 452-512-962
+2026-05-24 08:42:44,176 [INFO] Backup cree : /home/ibrahima/terroir_local/backups/backup_20260524_084244.json
+2026-05-24 08:42:44,595 [INFO] Backup cree : /home/ibrahima/terroir_local/backups/backup_20260524_084244.json
+2026-05-24 08:42:50,713 [INFO] 127.0.0.1 - - [24/May/2026 08:42:50] "GET /admin HTTP/1.1" 200 -
+2026-05-24 08:42:50,780 [INFO] 127.0.0.1 - - [24/May/2026 08:42:50] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-24 08:42:53,950 [INFO] 127.0.0.1 - - [24/May/2026 08:42:53] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 08:43:22,573 [INFO] 127.0.0.1 - - [24/May/2026 08:43:22] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 08:43:54,799 [INFO] 127.0.0.1 - - [24/May/2026 08:43:54] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 08:44:23,170 [INFO] 127.0.0.1 - - [24/May/2026 08:44:23] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 08:44:53,105 [INFO] 127.0.0.1 - - [24/May/2026 08:44:53] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 08:45:44,313 [INFO] Backup automatique demarre (toutes les 24h)
+2026-05-24 08:45:44,313 [INFO] Application Flask demarree !
+2026-05-24 08:45:44,359 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.26.20.100:5000
+2026-05-24 08:45:44,363 [INFO] [33mPress CTRL+C to quit[0m
+2026-05-24 08:45:44,365 [INFO]  * Restarting with stat
+2026-05-24 08:45:44,850 [INFO] Backup automatique demarre (toutes les 24h)
+2026-05-24 08:45:44,850 [INFO] Application Flask demarree !
+2026-05-24 08:45:44,895 [WARNING]  * Debugger is active!
+2026-05-24 08:45:44,902 [INFO]  * Debugger PIN: 452-512-962
+2026-05-24 08:45:46,208 [INFO] Backup cree : /home/ibrahima/terroir_local/backups/backup_20260524_084545.json
+2026-05-24 08:45:46,247 [INFO] Backup cree : /home/ibrahima/terroir_local/backups/backup_20260524_084546.json
+2026-05-24 08:45:50,970 [INFO] 127.0.0.1 - - [24/May/2026 08:45:50] "GET /admin HTTP/1.1" 200 -
+2026-05-24 08:45:51,068 [INFO] 127.0.0.1 - - [24/May/2026 08:45:51] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-24 08:45:51,584 [INFO] 127.0.0.1 - - [24/May/2026 08:45:51] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 08:45:52,731 [INFO] 127.0.0.1 - - [24/May/2026 08:45:52] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 08:46:23,728 [INFO] 127.0.0.1 - - [24/May/2026 08:46:23] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 08:46:54,303 [INFO] 127.0.0.1 - - [24/May/2026 08:46:54] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 08:47:24,176 [INFO] 127.0.0.1 - - [24/May/2026 08:47:24] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 08:48:39,484 [INFO] Backup automatique demarre (toutes les 24h)
+2026-05-24 08:48:39,484 [INFO] Application Flask demarree !
+2026-05-24 08:48:39,536 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.26.20.100:5000
+2026-05-24 08:48:39,536 [INFO] [33mPress CTRL+C to quit[0m
+2026-05-24 08:48:39,539 [INFO]  * Restarting with stat
+2026-05-24 08:48:40,031 [INFO] Backup automatique demarre (toutes les 24h)
+2026-05-24 08:48:40,032 [INFO] Application Flask demarree !
+2026-05-24 08:48:40,079 [WARNING]  * Debugger is active!
+2026-05-24 08:48:40,088 [INFO]  * Debugger PIN: 452-512-962
+2026-05-24 08:48:43,050 [INFO] Backup cree : /home/ibrahima/terroir_local/backups/backup_20260524_084843.json
+2026-05-24 08:48:45,684 [INFO] Backup cree : /home/ibrahima/terroir_local/backups/backup_20260524_084845.json
+2026-05-24 08:48:48,025 [INFO] 127.0.0.1 - - [24/May/2026 08:48:48] "GET /admin HTTP/1.1" 200 -
+2026-05-24 08:48:48,088 [INFO] 127.0.0.1 - - [24/May/2026 08:48:48] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-24 08:48:49,489 [INFO] 127.0.0.1 - - [24/May/2026 08:48:49] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 08:49:09,962 [INFO] Promo globale 13% appliquee sur 0 produits de admin
+2026-05-24 08:49:09,963 [INFO] 127.0.0.1 - - [24/May/2026 08:49:09] "POST /admin/promo_global_ajax HTTP/1.1" 200 -
+2026-05-24 08:49:12,758 [INFO] 127.0.0.1 - - [24/May/2026 08:49:12] "GET /admin HTTP/1.1" 200 -
+2026-05-24 08:49:12,803 [INFO] 127.0.0.1 - - [24/May/2026 08:49:12] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-24 08:49:14,510 [INFO] 127.0.0.1 - - [24/May/2026 08:49:14] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 08:49:44,173 [INFO] 127.0.0.1 - - [24/May/2026 08:49:44] "GET /boutique HTTP/1.1" 200 -
+2026-05-24 08:49:44,508 [INFO] 127.0.0.1 - - [24/May/2026 08:49:44] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 08:49:44,530 [INFO] 127.0.0.1 - - [24/May/2026 08:49:44] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-24 08:49:46,181 [INFO] 127.0.0.1 - - [24/May/2026 08:49:46] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 08:50:13,162 [INFO] 127.0.0.1 - - [24/May/2026 08:50:13] "GET /profil HTTP/1.1" 200 -
+2026-05-24 08:50:13,441 [INFO] 127.0.0.1 - - [24/May/2026 08:50:13] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-24 08:50:17,410 [INFO] 127.0.0.1 - - [24/May/2026 08:50:17] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 08:50:21,111 [INFO] 127.0.0.1 - - [24/May/2026 08:50:21] "[32mGET /logout HTTP/1.1[0m" 302 -
+2026-05-24 08:50:21,426 [INFO] 127.0.0.1 - - [24/May/2026 08:50:21] "GET / HTTP/1.1" 200 -
+2026-05-24 08:50:21,764 [INFO] 127.0.0.1 - - [24/May/2026 08:50:21] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-24 08:50:49,530 [INFO] Connexion reussie : ipc
+2026-05-24 08:50:49,531 [INFO] 127.0.0.1 - - [24/May/2026 08:50:49] "[32mPOST / HTTP/1.1[0m" 302 -
+2026-05-24 08:51:12,213 [ERROR] Connexion MongoDB echouee : ac-qnmlyva-shard-00-02.5r4lftj.mongodb.net:27017: timed out (configured timeouts: connectTimeoutMS: 20000.0ms)
+2026-05-24 08:51:12,214 [INFO] 127.0.0.1 - - [24/May/2026 08:51:12] "GET /boutique HTTP/1.1" 200 -
+2026-05-24 08:51:17,298 [INFO] 127.0.0.1 - - [24/May/2026 08:51:17] "GET /boutique HTTP/1.1" 200 -
+2026-05-24 08:51:17,339 [INFO] 127.0.0.1 - - [24/May/2026 08:51:17] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-24 08:51:18,645 [INFO] 127.0.0.1 - - [24/May/2026 08:51:18] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 08:51:34,285 [INFO] 127.0.0.1 - - [24/May/2026 08:51:34] "GET /admin HTTP/1.1" 200 -
+2026-05-24 08:51:34,324 [INFO] 127.0.0.1 - - [24/May/2026 08:51:34] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-24 08:51:35,893 [INFO] 127.0.0.1 - - [24/May/2026 08:51:35] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 08:52:05,642 [INFO] 127.0.0.1 - - [24/May/2026 08:52:05] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 08:52:10,960 [INFO] Produit ajoute : AAAY
+2026-05-24 08:52:10,961 [INFO] 127.0.0.1 - - [24/May/2026 08:52:10] "[32mPOST /admin/ajouter_produit HTTP/1.1[0m" 302 -
+2026-05-24 08:52:12,362 [INFO] 127.0.0.1 - - [24/May/2026 08:52:12] "GET /admin HTTP/1.1" 200 -
+2026-05-24 08:52:12,721 [INFO] 127.0.0.1 - - [24/May/2026 08:52:12] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-24 08:52:14,305 [INFO] 127.0.0.1 - - [24/May/2026 08:52:14] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 08:52:45,084 [INFO] 127.0.0.1 - - [24/May/2026 08:52:45] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 08:53:14,049 [INFO] Produit ajoute : PHUP
+2026-05-24 08:53:14,051 [INFO] 127.0.0.1 - - [24/May/2026 08:53:14] "[32mPOST /admin/ajouter_produit HTTP/1.1[0m" 302 -
+2026-05-24 08:53:14,834 [INFO] 127.0.0.1 - - [24/May/2026 08:53:14] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 08:53:15,451 [INFO] 127.0.0.1 - - [24/May/2026 08:53:15] "GET /admin HTTP/1.1" 200 -
+2026-05-24 08:53:15,820 [INFO] 127.0.0.1 - - [24/May/2026 08:53:15] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-24 08:53:27,430 [ERROR] Connexion MongoDB echouee : No replica set members match selector "Primary()", Timeout: 10.0s, Topology Description: <TopologyDescription id: 6a12bc7c20fabc4dc796f32c, topology_type: ReplicaSetNoPrimary, servers: [<ServerDescription ('ac-qnmlyva-shard-00-00.5r4lftj.mongodb.net', 27017) server_type: RSSecondary, rtt: 0.1018503603998397>, <ServerDescription ('ac-qnmlyva-shard-00-01.5r4lftj.mongodb.net', 27017) server_type: RSSecondary, rtt: 0.10278950400061149>, <ServerDescription ('ac-qnmlyva-shard-00-02.5r4lftj.mongodb.net', 27017) server_type: Unknown, rtt: None>]>
+2026-05-24 08:53:27,430 [INFO] 127.0.0.1 - - [24/May/2026 08:53:27] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 08:53:36,590 [INFO] Promo globale 10% appliquee sur 3 produits de ipc
+2026-05-24 08:53:36,591 [INFO] 127.0.0.1 - - [24/May/2026 08:53:36] "POST /admin/promo_global_ajax HTTP/1.1" 200 -
+2026-05-24 08:53:39,642 [INFO] 127.0.0.1 - - [24/May/2026 08:53:39] "GET /admin HTTP/1.1" 200 -
+2026-05-24 08:53:39,689 [INFO] 127.0.0.1 - - [24/May/2026 08:53:39] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-24 08:53:41,284 [INFO] 127.0.0.1 - - [24/May/2026 08:53:41] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 08:54:06,092 [INFO] Promo globale 10% appliquee sur 3 produits de ipc
+2026-05-24 08:54:06,093 [INFO] 127.0.0.1 - - [24/May/2026 08:54:06] "POST /admin/promo_global_ajax HTTP/1.1" 200 -
+2026-05-24 08:54:08,926 [INFO] 127.0.0.1 - - [24/May/2026 08:54:08] "GET /admin HTTP/1.1" 200 -
+2026-05-24 08:54:08,977 [INFO] 127.0.0.1 - - [24/May/2026 08:54:08] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-24 08:54:10,747 [INFO] 127.0.0.1 - - [24/May/2026 08:54:10] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 08:54:41,386 [INFO] 127.0.0.1 - - [24/May/2026 08:54:41] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 08:54:52,908 [INFO] Promo globale 50% appliquee sur 3 produits de ipc
+2026-05-24 08:54:52,909 [INFO] 127.0.0.1 - - [24/May/2026 08:54:52] "POST /admin/promo_global_ajax HTTP/1.1" 200 -
+2026-05-24 08:54:55,925 [INFO] 127.0.0.1 - - [24/May/2026 08:54:55] "GET /admin HTTP/1.1" 200 -
+2026-05-24 08:54:55,994 [INFO] 127.0.0.1 - - [24/May/2026 08:54:55] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-24 08:54:58,254 [INFO] 127.0.0.1 - - [24/May/2026 08:54:58] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 08:55:26,362 [ERROR] Connexion MongoDB echouee : No replica set members match selector "Primary()", Timeout: 10.0s, Topology Description: <TopologyDescription id: 6a12bcf220fabc4dc796f337, topology_type: ReplicaSetNoPrimary, servers: [<ServerDescription ('ac-qnmlyva-shard-00-00.5r4lftj.mongodb.net', 27017) server_type: RSSecondary, rtt: 0.11685741399924154>, <ServerDescription ('ac-qnmlyva-shard-00-01.5r4lftj.mongodb.net', 27017) server_type: RSSecondary, rtt: 0.10512232299970492>, <ServerDescription ('ac-qnmlyva-shard-00-02.5r4lftj.mongodb.net', 27017) server_type: Unknown, rtt: None>]>
+2026-05-24 08:55:26,363 [INFO] 127.0.0.1 - - [24/May/2026 08:55:26] "GET /boutique HTTP/1.1" 200 -
+2026-05-24 08:55:32,608 [INFO] 127.0.0.1 - - [24/May/2026 08:55:32] "GET /boutique HTTP/1.1" 200 -
+2026-05-24 08:55:32,956 [INFO] 127.0.0.1 - - [24/May/2026 08:55:32] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-24 08:55:47,900 [ERROR] Connexion MongoDB echouee : ac-qnmlyva-shard-00-02.5r4lftj.mongodb.net:27017: timed out (configured timeouts: connectTimeoutMS: 20000.0ms)
+2026-05-24 08:55:47,901 [INFO] 127.0.0.1 - - [24/May/2026 08:55:47] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 08:55:50,151 [INFO] 127.0.0.1 - - [24/May/2026 08:55:50] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 08:55:57,755 [INFO] 127.0.0.1 - - [24/May/2026 08:55:57] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 08:56:28,597 [INFO] 127.0.0.1 - - [24/May/2026 08:56:28] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 08:56:40,059 [INFO] Promo mis a jour : 10% prix_final=3
+2026-05-24 08:56:40,060 [INFO] 127.0.0.1 - - [24/May/2026 08:56:40] "POST /admin/maj_promo_ajax HTTP/1.1" 200 -
+2026-05-24 08:56:54,947 [INFO] 127.0.0.1 - - [24/May/2026 08:56:54] "GET /boutique HTTP/1.1" 200 -
+2026-05-24 08:56:54,998 [INFO] 127.0.0.1 - - [24/May/2026 08:56:54] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-24 08:56:56,431 [INFO] 127.0.0.1 - - [24/May/2026 08:56:56] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 08:57:14,759 [INFO] 127.0.0.1 - - [24/May/2026 08:57:14] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 08:57:28,199 [INFO] 127.0.0.1 - - [24/May/2026 08:57:28] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 08:57:30,248 [INFO] Promo mis a jour : 0% prix_final=4
+2026-05-24 08:57:30,249 [INFO] 127.0.0.1 - - [24/May/2026 08:57:30] "POST /admin/maj_promo_ajax HTTP/1.1" 200 -
+2026-05-24 08:57:59,388 [INFO] 127.0.0.1 - - [24/May/2026 08:57:59] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 08:58:29,702 [INFO] 127.0.0.1 - - [24/May/2026 08:58:29] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 09:02:05,224 [INFO] Backup automatique demarre (toutes les 24h)
+2026-05-24 09:02:05,224 [INFO] Application Flask demarree !
+2026-05-24 09:02:05,271 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.26.20.100:5000
+2026-05-24 09:02:05,272 [INFO] [33mPress CTRL+C to quit[0m
+2026-05-24 09:02:05,277 [INFO]  * Restarting with stat
+2026-05-24 09:02:05,848 [INFO] Backup automatique demarre (toutes les 24h)
+2026-05-24 09:02:05,848 [INFO] Application Flask demarree !
+2026-05-24 09:02:05,895 [WARNING]  * Debugger is active!
+2026-05-24 09:02:05,904 [INFO]  * Debugger PIN: 452-512-962
+2026-05-24 09:02:07,671 [INFO] Backup cree : /home/ibrahima/terroir_local/backups/backup_20260524_090207.json
+2026-05-24 09:02:08,095 [INFO] Backup cree : /home/ibrahima/terroir_local/backups/backup_20260524_090208.json
+2026-05-24 09:02:09,764 [INFO] 127.0.0.1 - - [24/May/2026 09:02:09] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 09:02:13,333 [INFO] 127.0.0.1 - - [24/May/2026 09:02:13] "GET /admin HTTP/1.1" 200 -
+2026-05-24 09:02:13,400 [INFO] 127.0.0.1 - - [24/May/2026 09:02:13] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-24 09:02:15,003 [INFO] 127.0.0.1 - - [24/May/2026 09:02:15] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 09:02:43,710 [INFO] Promo mis a jour : 10% prix_final=3
+2026-05-24 09:02:43,711 [INFO] 127.0.0.1 - - [24/May/2026 09:02:43] "POST /admin/maj_promo_ajax HTTP/1.1" 200 -
+2026-05-24 09:02:45,650 [INFO] 127.0.0.1 - - [24/May/2026 09:02:45] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 09:02:51,283 [INFO] 127.0.0.1 - - [24/May/2026 09:02:51] "GET /boutique HTTP/1.1" 200 -
+2026-05-24 09:02:51,331 [INFO] 127.0.0.1 - - [24/May/2026 09:02:51] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-24 09:02:52,701 [INFO] 127.0.0.1 - - [24/May/2026 09:02:52] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 09:03:00,840 [INFO] 127.0.0.1 - - [24/May/2026 09:03:00] "GET /boutique?categorie=Toutes&search=&promo=0&prix_min=&prix_max=&tri=nom&page=2 HTTP/1.1" 200 -
+2026-05-24 09:03:00,890 [INFO] 127.0.0.1 - - [24/May/2026 09:03:00] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-24 09:03:02,183 [INFO] 127.0.0.1 - - [24/May/2026 09:03:02] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 09:03:13,546 [INFO] 127.0.0.1 - - [24/May/2026 09:03:13] "GET /boutique?categorie=Toutes&search=&promo=0&prix_min=&prix_max=&tri=nom&page=2 HTTP/1.1" 200 -
+2026-05-24 09:03:13,590 [INFO] 127.0.0.1 - - [24/May/2026 09:03:13] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-24 09:03:14,999 [INFO] 127.0.0.1 - - [24/May/2026 09:03:14] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 09:03:45,506 [INFO] 127.0.0.1 - - [24/May/2026 09:03:45] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 09:04:15,061 [INFO] 127.0.0.1 - - [24/May/2026 09:04:15] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 09:04:44,393 [INFO] 127.0.0.1 - - [24/May/2026 09:04:44] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 09:05:17,991 [INFO] 127.0.0.1 - - [24/May/2026 09:05:17] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 09:05:45,140 [INFO] 127.0.0.1 - - [24/May/2026 09:05:45] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 09:06:15,209 [INFO] 127.0.0.1 - - [24/May/2026 09:06:15] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 09:06:52,487 [INFO] Backup automatique demarre (toutes les 24h)
+2026-05-24 09:06:52,489 [INFO] Application Flask demarree !
+2026-05-24 09:06:52,553 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.26.20.100:5000
+2026-05-24 09:06:52,553 [INFO] [33mPress CTRL+C to quit[0m
+2026-05-24 09:06:52,556 [INFO]  * Restarting with stat
+2026-05-24 09:06:53,087 [INFO] Backup automatique demarre (toutes les 24h)
+2026-05-24 09:06:53,088 [INFO] Application Flask demarree !
+2026-05-24 09:06:53,147 [WARNING]  * Debugger is active!
+2026-05-24 09:06:53,153 [INFO]  * Debugger PIN: 452-512-962
+2026-05-24 09:06:54,136 [INFO] Backup cree : /home/ibrahima/terroir_local/backups/backup_20260524_090654.json
+2026-05-24 09:06:54,543 [INFO] Backup cree : /home/ibrahima/terroir_local/backups/backup_20260524_090654.json
+2026-05-24 09:06:58,138 [INFO] 127.0.0.1 - - [24/May/2026 09:06:58] "GET /boutique?categorie=Toutes&search=&promo=0&prix_min=&prix_max=&tri=nom&page=2 HTTP/1.1" 200 -
+2026-05-24 09:06:58,198 [INFO] 127.0.0.1 - - [24/May/2026 09:06:58] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-24 09:07:00,043 [INFO] 127.0.0.1 - - [24/May/2026 09:07:00] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 09:07:04,808 [INFO] 127.0.0.1 - - [24/May/2026 09:07:04] "GET /admin HTTP/1.1" 200 -
+2026-05-24 09:07:04,848 [INFO] 127.0.0.1 - - [24/May/2026 09:07:04] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-24 09:07:06,208 [INFO] 127.0.0.1 - - [24/May/2026 09:07:06] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 09:07:30,824 [INFO] 127.0.0.1 - - [24/May/2026 09:07:30] "GET /boutique HTTP/1.1" 200 -
+2026-05-24 09:07:30,863 [INFO] 127.0.0.1 - - [24/May/2026 09:07:30] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-24 09:07:32,259 [INFO] 127.0.0.1 - - [24/May/2026 09:07:32] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 09:07:45,156 [INFO] 127.0.0.1 - - [24/May/2026 09:07:45] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 09:08:05,910 [INFO] Promo mis a jour : 0% prix_final=4
+2026-05-24 09:08:05,911 [INFO] 127.0.0.1 - - [24/May/2026 09:08:05] "POST /admin/maj_promo_ajax HTTP/1.1" 200 -
+2026-05-24 09:08:08,575 [INFO] 127.0.0.1 - - [24/May/2026 09:08:08] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 09:08:37,624 [INFO] 127.0.0.1 - - [24/May/2026 09:08:37] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 09:09:07,602 [INFO] 127.0.0.1 - - [24/May/2026 09:09:07] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 09:09:37,673 [INFO] 127.0.0.1 - - [24/May/2026 09:09:37] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 09:10:08,320 [INFO] 127.0.0.1 - - [24/May/2026 09:10:08] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 09:10:36,232 [INFO] 127.0.0.1 - - [24/May/2026 09:10:36] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 09:11:34,626 [INFO] 127.0.0.1 - - [24/May/2026 09:11:34] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 09:13:58,636 [INFO] Backup automatique demarre (toutes les 24h)
+2026-05-24 09:13:58,637 [INFO] Application Flask demarree !
+2026-05-24 09:13:58,684 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.26.20.100:5000
+2026-05-24 09:13:58,685 [INFO] [33mPress CTRL+C to quit[0m
+2026-05-24 09:13:58,689 [INFO]  * Restarting with stat
+2026-05-24 09:13:59,152 [INFO] Backup automatique demarre (toutes les 24h)
+2026-05-24 09:13:59,155 [INFO] Application Flask demarree !
+2026-05-24 09:13:59,205 [WARNING]  * Debugger is active!
+2026-05-24 09:13:59,212 [INFO]  * Debugger PIN: 452-512-962
+2026-05-24 09:14:02,083 [INFO] Backup cree : /home/ibrahima/terroir_local/backups/backup_20260524_091402.json
+2026-05-24 09:14:02,673 [INFO] Backup cree : /home/ibrahima/terroir_local/backups/backup_20260524_091402.json
+2026-05-24 09:14:04,935 [INFO] 127.0.0.1 - - [24/May/2026 09:14:04] "GET /admin HTTP/1.1" 200 -
+2026-05-24 09:14:05,267 [INFO] 127.0.0.1 - - [24/May/2026 09:14:05] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-24 09:14:07,813 [INFO] 127.0.0.1 - - [24/May/2026 09:14:07] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 09:14:22,930 [ERROR] Connexion MongoDB echouee : ac-qnmlyva-shard-00-02.5r4lftj.mongodb.net:27017: timed out (configured timeouts: connectTimeoutMS: 20000.0ms)
+2026-05-24 09:14:22,931 [INFO] 127.0.0.1 - - [24/May/2026 09:14:22] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 09:14:27,227 [INFO] 127.0.0.1 - - [24/May/2026 09:14:27] "GET /boutique HTTP/1.1" 200 -
+2026-05-24 09:14:27,260 [INFO] 127.0.0.1 - - [24/May/2026 09:14:27] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-24 09:14:29,321 [INFO] 127.0.0.1 - - [24/May/2026 09:14:29] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 09:14:33,340 [INFO] 127.0.0.1 - - [24/May/2026 09:14:33] "GET /boutique?categorie=Toutes&search=&promo=0&prix_min=&prix_max=&tri=nom&page=2 HTTP/1.1" 200 -
+2026-05-24 09:14:33,373 [INFO] 127.0.0.1 - - [24/May/2026 09:14:33] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-24 09:14:35,463 [INFO] 127.0.0.1 - - [24/May/2026 09:14:35] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 09:15:06,872 [INFO] 127.0.0.1 - - [24/May/2026 09:15:06] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 09:15:44,986 [ERROR] Connexion MongoDB echouee : No replica set members match selector "Primary()", Timeout: 10.0s, Topology Description: <TopologyDescription id: 6a12c1b66c91ae9e84ac0450, topology_type: ReplicaSetNoPrimary, servers: [<ServerDescription ('ac-qnmlyva-shard-00-00.5r4lftj.mongodb.net', 27017) server_type: RSSecondary, rtt: 0.22219641100036824>, <ServerDescription ('ac-qnmlyva-shard-00-01.5r4lftj.mongodb.net', 27017) server_type: RSSecondary, rtt: 0.22267096899940952>, <ServerDescription ('ac-qnmlyva-shard-00-02.5r4lftj.mongodb.net', 27017) server_type: Unknown, rtt: None>]>
+2026-05-24 09:15:44,987 [INFO] 127.0.0.1 - - [24/May/2026 09:15:44] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 09:16:22,780 [INFO] 127.0.0.1 - - [24/May/2026 09:16:22] "GET /admin HTTP/1.1" 200 -
+2026-05-24 09:16:23,127 [INFO] 127.0.0.1 - - [24/May/2026 09:16:23] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-24 09:16:26,010 [ERROR] Connexion MongoDB echouee : ac-qnmlyva-shard-00-02.5r4lftj.mongodb.net:27017: timed out (configured timeouts: connectTimeoutMS: 20000.0ms)
+2026-05-24 09:16:26,011 [INFO] 127.0.0.1 - - [24/May/2026 09:16:26] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 09:16:28,226 [INFO] 127.0.0.1 - - [24/May/2026 09:16:28] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 09:16:32,715 [INFO] Promo globale 7% appliquee sur 3 produits de ipc
+2026-05-24 09:16:32,716 [INFO] 127.0.0.1 - - [24/May/2026 09:16:32] "POST /admin/promo_global_ajax HTTP/1.1" 200 -
+2026-05-24 09:16:39,189 [INFO] 127.0.0.1 - - [24/May/2026 09:16:39] "GET /admin HTTP/1.1" 200 -
+2026-05-24 09:16:39,228 [INFO] 127.0.0.1 - - [24/May/2026 09:16:39] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-24 09:16:42,722 [INFO] 127.0.0.1 - - [24/May/2026 09:16:42] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 09:17:00,215 [INFO] Promo mis a jour : 9% prix_final=3
+2026-05-24 09:17:00,216 [INFO] 127.0.0.1 - - [24/May/2026 09:17:00] "POST /admin/maj_promo_ajax HTTP/1.1" 200 -
+2026-05-24 09:17:12,867 [INFO] 127.0.0.1 - - [24/May/2026 09:17:12] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 09:17:15,652 [INFO] 127.0.0.1 - - [24/May/2026 09:17:15] "GET /boutique HTTP/1.1" 200 -
+2026-05-24 09:17:15,981 [INFO] 127.0.0.1 - - [24/May/2026 09:17:15] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-24 09:17:18,060 [INFO] 127.0.0.1 - - [24/May/2026 09:17:18] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 09:17:49,440 [INFO] 127.0.0.1 - - [24/May/2026 09:17:49] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 09:17:57,888 [INFO] 127.0.0.1 - - [24/May/2026 09:17:57] "GET /admin HTTP/1.1" 200 -
+2026-05-24 09:17:57,948 [INFO] 127.0.0.1 - - [24/May/2026 09:17:57] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-24 09:18:08,279 [ERROR] Connexion MongoDB echouee : No replica set members match selector "Primary()", Timeout: 10.0s, Topology Description: <TopologyDescription id: 6a12c2456c91ae9e84ac045d, topology_type: ReplicaSetNoPrimary, servers: [<ServerDescription ('ac-qnmlyva-shard-00-00.5r4lftj.mongodb.net', 27017) server_type: RSSecondary, rtt: 0.14692789099990478>, <ServerDescription ('ac-qnmlyva-shard-00-01.5r4lftj.mongodb.net', 27017) server_type: RSSecondary, rtt: 0.13712249199943471>, <ServerDescription ('ac-qnmlyva-shard-00-02.5r4lftj.mongodb.net', 27017) server_type: Unknown, rtt: None>]>
+2026-05-24 09:18:08,280 [INFO] 127.0.0.1 - - [24/May/2026 09:18:08] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 09:18:17,792 [INFO] Promo mis a jour : 0% prix_final=4
+2026-05-24 09:18:17,793 [INFO] 127.0.0.1 - - [24/May/2026 09:18:17] "POST /admin/maj_promo_ajax HTTP/1.1" 200 -
+2026-05-24 09:18:30,611 [INFO] 127.0.0.1 - - [24/May/2026 09:18:30] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 09:19:00,985 [INFO] 127.0.0.1 - - [24/May/2026 09:19:00] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 09:19:30,694 [INFO] 127.0.0.1 - - [24/May/2026 09:19:30] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 09:19:59,832 [INFO] 127.0.0.1 - - [24/May/2026 09:19:59] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 09:20:31,068 [INFO] 127.0.0.1 - - [24/May/2026 09:20:31] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 09:21:00,912 [INFO] 127.0.0.1 - - [24/May/2026 09:21:00] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 09:21:31,285 [INFO] 127.0.0.1 - - [24/May/2026 09:21:31] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 09:22:35,246 [INFO] 127.0.0.1 - - [24/May/2026 09:22:35] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 09:23:33,639 [INFO] 127.0.0.1 - - [24/May/2026 09:23:33] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 09:25:28,826 [INFO] Backup automatique demarre (toutes les 24h)
+2026-05-24 09:25:28,827 [INFO] Application Flask demarree !
+2026-05-24 09:25:28,872 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.26.20.100:5000
+2026-05-24 09:25:28,873 [INFO] [33mPress CTRL+C to quit[0m
+2026-05-24 09:25:28,875 [INFO]  * Restarting with stat
+2026-05-24 09:25:29,407 [INFO] Backup automatique demarre (toutes les 24h)
+2026-05-24 09:25:29,408 [INFO] Application Flask demarree !
+2026-05-24 09:25:29,458 [WARNING]  * Debugger is active!
+2026-05-24 09:25:29,464 [INFO]  * Debugger PIN: 452-512-962
+2026-05-24 09:25:31,335 [INFO] Backup cree : /home/ibrahima/terroir_local/backups/backup_20260524_092531.json
+2026-05-24 09:25:31,760 [INFO] Backup cree : /home/ibrahima/terroir_local/backups/backup_20260524_092531.json
+2026-05-24 09:25:33,385 [INFO] 127.0.0.1 - - [24/May/2026 09:25:33] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 09:25:43,042 [INFO] 127.0.0.1 - - [24/May/2026 09:25:43] "GET /admin HTTP/1.1" 200 -
+2026-05-24 09:25:43,127 [INFO] 127.0.0.1 - - [24/May/2026 09:25:43] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-24 09:25:44,869 [INFO] 127.0.0.1 - - [24/May/2026 09:25:44] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 09:26:16,300 [INFO] 127.0.0.1 - - [24/May/2026 09:26:16] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 09:26:20,671 [ERROR] Connexion MongoDB echouee : No replica set members found yet, Timeout: 10.0s, Topology Description: <TopologyDescription id: 6a12c432e4afcaa92739b412, topology_type: ReplicaSetNoPrimary, servers: [<ServerDescription ('ac-qnmlyva-shard-00-00.5r4lftj.mongodb.net', 27017) server_type: Unknown, rtt: None>, <ServerDescription ('ac-qnmlyva-shard-00-01.5r4lftj.mongodb.net', 27017) server_type: Unknown, rtt: None>, <ServerDescription ('ac-qnmlyva-shard-00-02.5r4lftj.mongodb.net', 27017) server_type: Unknown, rtt: None>]>
+2026-05-24 09:26:20,672 [INFO] 127.0.0.1 - - [24/May/2026 09:26:20] "POST /admin/maj_promo_ajax HTTP/1.1" 200 -
+2026-05-24 09:26:26,757 [ERROR] Connexion MongoDB echouee : No replica set members match selector "Primary()", Timeout: 10.0s, Topology Description: <TopologyDescription id: 6a12c438e4afcaa92739b414, topology_type: ReplicaSetNoPrimary, servers: [<ServerDescription ('ac-qnmlyva-shard-00-00.5r4lftj.mongodb.net', 27017) server_type: RSSecondary, rtt: 0.09860612120010047>, <ServerDescription ('ac-qnmlyva-shard-00-01.5r4lftj.mongodb.net', 27017) server_type: RSSecondary, rtt: 0.12840189100006683>, <ServerDescription ('ac-qnmlyva-shard-00-02.5r4lftj.mongodb.net', 27017) server_type: Unknown, rtt: None>]>
+2026-05-24 09:26:26,758 [INFO] 127.0.0.1 - - [24/May/2026 09:26:26] "POST /admin/maj_promo_ajax HTTP/1.1" 200 -
+2026-05-24 09:26:27,168 [INFO] Promo mis a jour : 10% prix_final=3
+2026-05-24 09:26:27,169 [INFO] 127.0.0.1 - - [24/May/2026 09:26:27] "POST /admin/maj_promo_ajax HTTP/1.1" 200 -
+2026-05-24 09:26:35,655 [INFO] 127.0.0.1 - - [24/May/2026 09:26:35] "GET /boutique HTTP/1.1" 200 -
+2026-05-24 09:26:35,711 [INFO] 127.0.0.1 - - [24/May/2026 09:26:35] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-24 09:26:37,909 [INFO] 127.0.0.1 - - [24/May/2026 09:26:37] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 09:26:54,688 [INFO] 127.0.0.1 - - [24/May/2026 09:26:54] "GET /boutique?categorie=Toutes&search=&promo=0&prix_min=&prix_max=&tri=nom&page=2 HTTP/1.1" 200 -
+2026-05-24 09:26:54,737 [INFO] 127.0.0.1 - - [24/May/2026 09:26:54] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-24 09:26:56,104 [INFO] 127.0.0.1 - - [24/May/2026 09:26:56] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 09:27:04,640 [INFO] 127.0.0.1 - - [24/May/2026 09:27:04] "GET /admin HTTP/1.1" 200 -
+2026-05-24 09:27:04,699 [INFO] 127.0.0.1 - - [24/May/2026 09:27:04] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-24 09:27:06,133 [INFO] 127.0.0.1 - - [24/May/2026 09:27:06] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 09:27:33,345 [ERROR] Connexion MongoDB echouee : No replica set members match selector "Primary()", Timeout: 10.0s, Topology Description: <TopologyDescription id: 6a12c47ae4afcaa92739b41c, topology_type: ReplicaSetNoPrimary, servers: [<ServerDescription ('ac-qnmlyva-shard-00-00.5r4lftj.mongodb.net', 27017) server_type: Unknown, rtt: None>, <ServerDescription ('ac-qnmlyva-shard-00-01.5r4lftj.mongodb.net', 27017) server_type: RSSecondary, rtt: 0.10115599399978237>, <ServerDescription ('ac-qnmlyva-shard-00-02.5r4lftj.mongodb.net', 27017) server_type: Unknown, rtt: None>]>
+2026-05-24 09:27:33,346 [INFO] 127.0.0.1 - - [24/May/2026 09:27:33] "POST /admin/promo_global_ajax HTTP/1.1" 200 -
+2026-05-24 09:27:34,087 [INFO] Promo globale 50% appliquee sur 3 produits de ipc
+2026-05-24 09:27:34,088 [INFO] 127.0.0.1 - - [24/May/2026 09:27:34] "POST /admin/promo_global_ajax HTTP/1.1" 200 -
+2026-05-24 09:27:37,459 [INFO] 127.0.0.1 - - [24/May/2026 09:27:37] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 09:27:37,852 [INFO] 127.0.0.1 - - [24/May/2026 09:27:37] "GET /admin HTTP/1.1" 200 -
+2026-05-24 09:27:38,223 [INFO] 127.0.0.1 - - [24/May/2026 09:27:38] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-24 09:27:39,695 [INFO] 127.0.0.1 - - [24/May/2026 09:27:39] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 09:28:05,444 [INFO] 127.0.0.1 - - [24/May/2026 09:28:05] "GET /boutique HTTP/1.1" 200 -
+2026-05-24 09:28:05,477 [INFO] 127.0.0.1 - - [24/May/2026 09:28:05] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-24 09:28:07,055 [INFO] 127.0.0.1 - - [24/May/2026 09:28:07] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 09:28:24,842 [INFO] 127.0.0.1 - - [24/May/2026 09:28:24] "GET /boutique?categorie=Toutes&search=&promo=0&prix_min=&prix_max=&tri=nom&page=2 HTTP/1.1" 200 -
+2026-05-24 09:28:24,879 [INFO] 127.0.0.1 - - [24/May/2026 09:28:24] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-24 09:28:26,585 [INFO] 127.0.0.1 - - [24/May/2026 09:28:26] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 09:28:56,756 [INFO] 127.0.0.1 - - [24/May/2026 09:28:56] "GET /boutique?categorie=Toutes&search=&promo=0&prix_min=&prix_max=&tri=nom&page=3 HTTP/1.1" 200 -
+2026-05-24 09:28:56,995 [INFO] 127.0.0.1 - - [24/May/2026 09:28:56] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 09:28:57,104 [INFO] 127.0.0.1 - - [24/May/2026 09:28:57] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-24 09:28:58,822 [INFO] 127.0.0.1 - - [24/May/2026 09:28:58] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 09:29:06,602 [INFO] 127.0.0.1 - - [24/May/2026 09:29:06] "GET /boutique?categorie=Toutes&search=&promo=0&prix_min=&prix_max=&tri=nom&page=2 HTTP/1.1" 200 -
+2026-05-24 09:29:06,639 [INFO] 127.0.0.1 - - [24/May/2026 09:29:06] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-24 09:29:08,341 [INFO] 127.0.0.1 - - [24/May/2026 09:29:08] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 09:29:20,712 [INFO] 127.0.0.1 - - [24/May/2026 09:29:20] "GET /boutique?categorie=Toutes&search=&promo=0&prix_min=&prix_max=&tri=nom&page=1 HTTP/1.1" 200 -
+2026-05-24 09:29:20,753 [INFO] 127.0.0.1 - - [24/May/2026 09:29:20] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-24 09:29:22,482 [INFO] 127.0.0.1 - - [24/May/2026 09:29:22] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 09:29:39,809 [INFO] 127.0.0.1 - - [24/May/2026 09:29:39] "GET /admin HTTP/1.1" 200 -
+2026-05-24 09:29:39,855 [INFO] 127.0.0.1 - - [24/May/2026 09:29:39] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-24 09:29:41,724 [INFO] 127.0.0.1 - - [24/May/2026 09:29:41] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 09:30:07,480 [INFO] Promo mis a jour : 0% prix_final=4
+2026-05-24 09:30:07,481 [INFO] 127.0.0.1 - - [24/May/2026 09:30:07] "POST /admin/maj_promo_ajax HTTP/1.1" 200 -
+2026-05-24 09:30:10,790 [INFO] 127.0.0.1 - - [24/May/2026 09:30:10] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 09:30:40,948 [INFO] 127.0.0.1 - - [24/May/2026 09:30:40] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 09:30:52,872 [INFO] 127.0.0.1 - - [24/May/2026 09:30:52] "GET /boutique HTTP/1.1" 200 -
+2026-05-24 09:30:52,922 [INFO] 127.0.0.1 - - [24/May/2026 09:30:52] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-24 09:30:54,260 [INFO] 127.0.0.1 - - [24/May/2026 09:30:54] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 09:31:05,397 [INFO] 127.0.0.1 - - [24/May/2026 09:31:05] "GET /boutique?categorie=Toutes&search=&promo=0&prix_min=&prix_max=&tri=nom&page=2 HTTP/1.1" 200 -
+2026-05-24 09:31:05,434 [INFO] 127.0.0.1 - - [24/May/2026 09:31:05] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-24 09:31:07,753 [INFO] 127.0.0.1 - - [24/May/2026 09:31:07] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 09:31:18,929 [INFO] 127.0.0.1 - - [24/May/2026 09:31:18] "GET /admin HTTP/1.1" 200 -
+2026-05-24 09:31:18,979 [INFO] 127.0.0.1 - - [24/May/2026 09:31:18] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-24 09:31:20,406 [INFO] 127.0.0.1 - - [24/May/2026 09:31:20] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 09:31:27,198 [INFO] Promo globale 0% appliquee sur 3 produits de ipc
+2026-05-24 09:31:27,199 [INFO] 127.0.0.1 - - [24/May/2026 09:31:27] "POST /admin/promo_global_ajax HTTP/1.1" 200 -
+2026-05-24 09:31:30,024 [INFO] 127.0.0.1 - - [24/May/2026 09:31:30] "GET /admin HTTP/1.1" 200 -
+2026-05-24 09:31:30,084 [INFO] 127.0.0.1 - - [24/May/2026 09:31:30] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-24 09:31:32,158 [INFO] 127.0.0.1 - - [24/May/2026 09:31:32] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 09:32:02,216 [INFO] 127.0.0.1 - - [24/May/2026 09:32:02] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 09:32:35,278 [INFO] 127.0.0.1 - - [24/May/2026 09:32:35] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 09:33:02,192 [INFO] 127.0.0.1 - - [24/May/2026 09:33:02] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 09:33:32,138 [INFO] 127.0.0.1 - - [24/May/2026 09:33:32] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 09:34:26,717 [INFO] Backup automatique demarre (toutes les 24h)
+2026-05-24 09:34:26,718 [INFO] Application Flask demarree !
+2026-05-24 09:34:26,771 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.26.20.100:5000
+2026-05-24 09:34:26,771 [INFO] [33mPress CTRL+C to quit[0m
+2026-05-24 09:34:26,775 [INFO]  * Restarting with stat
+2026-05-24 09:34:27,292 [INFO] Backup automatique demarre (toutes les 24h)
+2026-05-24 09:34:27,293 [INFO] Application Flask demarree !
+2026-05-24 09:34:27,344 [WARNING]  * Debugger is active!
+2026-05-24 09:34:27,349 [INFO]  * Debugger PIN: 452-512-962
+2026-05-24 09:34:29,625 [INFO] Backup cree : /home/ibrahima/terroir_local/backups/backup_20260524_093429.json
+2026-05-24 09:34:29,667 [INFO] Backup cree : /home/ibrahima/terroir_local/backups/backup_20260524_093429.json
+2026-05-24 09:34:31,453 [INFO] 127.0.0.1 - - [24/May/2026 09:34:31] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 09:34:34,536 [INFO] 127.0.0.1 - - [24/May/2026 09:34:34] "GET /admin HTTP/1.1" 200 -
+2026-05-24 09:34:34,614 [INFO] 127.0.0.1 - - [24/May/2026 09:34:34] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-24 09:34:37,023 [INFO] 127.0.0.1 - - [24/May/2026 09:34:37] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 09:35:06,268 [INFO] 127.0.0.1 - - [24/May/2026 09:35:06] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 09:35:08,352 [INFO] Promo globale 9% appliquee sur 3 produits de ipc
+2026-05-24 09:35:08,353 [INFO] 127.0.0.1 - - [24/May/2026 09:35:08] "POST /admin/promo_global_ajax HTTP/1.1" 200 -
+2026-05-24 09:35:11,603 [INFO] 127.0.0.1 - - [24/May/2026 09:35:11] "GET /admin HTTP/1.1" 200 -
+2026-05-24 09:35:11,669 [INFO] 127.0.0.1 - - [24/May/2026 09:35:11] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-24 09:35:14,108 [INFO] 127.0.0.1 - - [24/May/2026 09:35:14] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 09:35:43,234 [INFO] 127.0.0.1 - - [24/May/2026 09:35:43] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 09:35:43,293 [INFO] 127.0.0.1 - - [24/May/2026 09:35:43] "GET /boutique HTTP/1.1" 200 -
+2026-05-24 09:35:43,333 [INFO] 127.0.0.1 - - [24/May/2026 09:35:43] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-24 09:35:44,908 [INFO] 127.0.0.1 - - [24/May/2026 09:35:44] "GET /nb_commandes_attente HTTP/1.1" 200 -

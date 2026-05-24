@@ -35,18 +35,7 @@
                     {% endfor %}
                 </select>
             </div>
-            <div class="col-md-2">
-                <label class="form-label fw-semibold small">
-                    <i class="fas fa-percent me-1 text-success"></i>Promotion
-                </label>
-                <select name="promo" class="form-select rounded-3">
-                    {% for p in [0,5,10,15,20,25,30] %}
-                    <option value="{{ p }}" {% if promo == p %}selected{% endif %}>
-                        {% if p == 0 %}Sans promo{% else %}-{{ p }}%{% endif %}
-                    </option>
-                    {% endfor %}
-                </select>
-            </div>
+
             <div class="col-md-2">
                 <label class="form-label fw-semibold small">
                     <i class="fas fa-user me-1 text-success"></i>Producteur
@@ -123,10 +112,7 @@
                         {{ cat }}
                     </a>
                     {% endfor %}
-                    <a href="/boutique?promo=10" class="badge text-decoration-none rounded-3 px-3 py-2
-                       {% if promo > 0 %}bg-warning text-dark{% else %}bg-light text-dark{% endif %}">
-                        🔥 Promos
-                    </a>
+
                 </div>
             </div>
         </div>

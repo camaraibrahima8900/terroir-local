@@ -1,5 +1,5 @@
 {
-  "date": "2026-05-23 23:38:00.720345",
+  "date": "2026-05-24 08:48:45.682994",
   "nb_produits": 17,
   "nb_commandes": 3,
   "produits": [
@@ -16,8 +16,8 @@
         "origine": "Ziguinchor",
         "bio": true
       },
-      "promo": 42,
-      "prix_final": 870
+      "promo": 0,
+      "prix_final": 1500
     },
     {
       "nom": "Bissap Seche",
@@ -32,7 +32,8 @@
         "origine": "Louga",
         "bio": true
       },
-      "prix_final": 2500
+      "prix_final": 2500,
+      "promo": 0
     },
     {
       "nom": "Ditakh",
@@ -47,8 +48,8 @@
         "origine": "Fatick",
         "bio": true
       },
-      "promo": 50,
-      "prix_final": 1000
+      "promo": 0,
+      "prix_final": 2000
     },
     {
       "nom": "Tamarin",
@@ -63,8 +64,8 @@
         "origine": "Thies",
         "bio": false
       },
-      "prix_final": 890,
-      "promo": 11
+      "prix_final": 1000,
+      "promo": 0
     },
     {
       "nom": "Gombo Frais",
@@ -79,8 +80,8 @@
         "origine": "Dakar",
         "bio": false
       },
-      "promo": 50,
-      "prix_final": 400
+      "promo": 0,
+      "prix_final": 800
     },
     {
       "nom": "Oignons Violets",
@@ -95,7 +96,8 @@
         "origine": "Saint-Louis",
         "bio": false
       },
-      "prix_final": 600
+      "prix_final": 600,
+      "promo": 0
     },
     {
       "nom": "Aubergine Africaine",
@@ -110,7 +112,8 @@
         "origine": "Kaolack",
         "bio": true
       },
-      "prix_final": 700
+      "prix_final": 700,
+      "promo": 0
     },
     {
       "nom": "Piment Demon",
@@ -125,7 +128,8 @@
         "origine": "Ziguinchor",
         "bio": true
       },
-      "prix_final": 1200
+      "prix_final": 1200,
+      "promo": 0
     },
     {
       "nom": "Mil Local",
@@ -140,7 +144,8 @@
         "origine": "Diourbel",
         "bio": true
       },
-      "prix_final": 500
+      "prix_final": 500,
+      "promo": 0
     },
     {
       "nom": "Riz Broken",
@@ -155,7 +160,8 @@
         "origine": "Saint-Louis",
         "bio": false
       },
-      "prix_final": 450
+      "prix_final": 450,
+      "promo": 0
     },
     {
       "nom": "Mais Local",
@@ -170,7 +176,8 @@
         "origine": "Tambacounda",
         "bio": true
       },
-      "prix_final": 400
+      "prix_final": 400,
+      "promo": 0
     },
     {
       "nom": "Huile d'Arachide",
@@ -185,8 +192,8 @@
         "origine": "Kaolack",
         "bio": true
       },
-      "prix_final": 2520,
-      "promo": 28
+      "prix_final": 3500,
+      "promo": 0
     },
     {
       "nom": "Huile de Palme Rouge",
@@ -201,7 +208,8 @@
         "origine": "Kolda",
         "bio": true
       },
-      "prix_final": 2800
+      "prix_final": 2800,
+      "promo": 0
     },
     {
       "nom": "Thiof Seche",
@@ -215,7 +223,8 @@
       "attributs": {
         "origine": "Kayar"
       },
-      "prix_final": 8000
+      "prix_final": 8000,
+      "promo": 0
     },
     {
       "nom": "Yeet Mollusque",
@@ -229,7 +238,8 @@
       "attributs": {
         "origine": "Mbour"
       },
-      "prix_final": 5000
+      "prix_final": 5000,
+      "promo": 0
     },
     {
       "nom": "kama",
@@ -245,8 +255,8 @@
         "origine": "",
         "bio": false
       },
-      "prix_final": 2,
-      "promo": 10
+      "prix_final": 3,
+      "promo": 0
     },
     {
       "nom": "Ib Camara",
@@ -262,8 +272,8 @@
         "origine": "",
         "bio": false
       },
-      "promo": 6,
-      "prix_final": 4
+      "promo": 0,
+      "prix_final": 5
     }
   ],
   "commandes": [

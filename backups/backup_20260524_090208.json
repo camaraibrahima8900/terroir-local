@@ -1,128 +1,8 @@
 {
-  "date": "2026-05-22 23:38:38.675105",
-  "nb_produits": 17,
+  "date": "2026-05-24 09:02:08.093957",
+  "nb_produits": 19,
   "nb_commandes": 3,
   "produits": [
-    {
-      "nom": "Mil Local",
-      "categorie": "Cereales",
-      "prix": 500,
-      "stock": 500,
-      "producteur": "GAEC Diourbel",
-      "image": "🌾",
-      "photo": "https://images.pexels.com/photos/326082/pexels-photo-326082.jpeg?w=300",
-      "unite": "kg",
-      "attributs": {
-        "origine": "Diourbel",
-        "bio": true
-      },
-      "prix_final": 500
-    },
-    {
-      "nom": "Huile d'Arachide",
-      "categorie": "Huiles",
-      "prix": 3500,
-      "stock": 60,
-      "producteur": "Huilerie Kaolack",
-      "image": "🫙",
-      "photo": "https://images.pexels.com/photos/4033158/pexels-photo-4033158.jpeg?w=300",
-      "unite": "litre",
-      "attributs": {
-        "origine": "Kaolack",
-        "bio": true
-      },
-      "prix_final": 2520,
-      "promo": 28
-    },
-    {
-      "nom": "Gombo Frais",
-      "categorie": "Legumes",
-      "prix": 800,
-      "stock": 120,
-      "producteur": "Maraichage Pikine",
-      "image": "🫛",
-      "photo": "https://images.pexels.com/photos/6157049/pexels-photo-6157049.jpeg?w=300",
-      "unite": "kg",
-      "attributs": {
-        "origine": "Dakar",
-        "bio": false
-      },
-      "promo": 50,
-      "prix_final": 400
-    },
-    {
-      "nom": "Riz Broken",
-      "categorie": "Cereales",
-      "prix": 450,
-      "stock": 400,
-      "producteur": "Riziculture Saint-Louis",
-      "image": "🍚",
-      "photo": "https://images.pexels.com/photos/7421235/pexels-photo-7421235.jpeg?w=300",
-      "unite": "kg",
-      "attributs": {
-        "origine": "Saint-Louis",
-        "bio": false
-      },
-      "prix_final": 450
-    },
-    {
-      "nom": "Mais Local",
-      "categorie": "Cereales",
-      "prix": 400,
-      "stock": 4,
-      "producteur": "Cooperative Tambacounda",
-      "image": "🌽",
-      "photo": "https://images.pexels.com/photos/547263/pexels-photo-547263.jpeg?w=300",
-      "unite": "kg",
-      "attributs": {
-        "origine": "Tambacounda",
-        "bio": true
-      },
-      "prix_final": 400
-    },
-    {
-      "nom": "Huile de Palme Rouge",
-      "categorie": "Huiles",
-      "prix": 2800,
-      "stock": 2,
-      "producteur": "Cooperative Kolda",
-      "image": "🫙",
-      "photo": "https://images.pexels.com/photos/33783/olive-oil-salad-dressing-cooking-olive.jpg?w=300",
-      "unite": "litre",
-      "attributs": {
-        "origine": "Kolda",
-        "bio": true
-      },
-      "prix_final": 2800
-    },
-    {
-      "nom": "Thiof Seche",
-      "categorie": "Poissons",
-      "prix": 8000,
-      "stock": 30,
-      "producteur": "Pecheurs Kayar",
-      "image": "🐟",
-      "photo": "https://images.pexels.com/photos/1148358/pexels-photo-1148358.jpeg?w=300",
-      "unite": "kg",
-      "attributs": {
-        "origine": "Kayar"
-      },
-      "prix_final": 8000
-    },
-    {
-      "nom": "Yeet Mollusque",
-      "categorie": "Poissons",
-      "prix": 5000,
-      "stock": 25,
-      "producteur": "Pecheurs Mbour",
-      "image": "🦪",
-      "photo": "https://images.pexels.com/photos/3535383/pexels-photo-3535383.jpeg?w=300",
-      "unite": "kg",
-      "attributs": {
-        "origine": "Mbour"
-      },
-      "prix_final": 5000
-    },
     {
       "nom": "Mangues Kent",
       "categorie": "Fruits",
@@ -136,68 +16,7 @@
         "origine": "Ziguinchor",
         "bio": true
       },
-      "promo": 42,
-      "prix_final": 870
-    },
-    {
-      "nom": "Tamarin",
-      "categorie": "Fruits",
-      "prix": 1000,
-      "stock": 3,
-      "producteur": "Marche Thies",
-      "image": "🫘",
-      "photo": "https://images.pexels.com/photos/4110251/pexels-photo-4110251.jpeg?w=300",
-      "unite": "kg",
-      "attributs": {
-        "origine": "Thies",
-        "bio": false
-      },
-      "prix_final": 890,
-      "promo": 11
-    },
-    {
-      "nom": "Oignons Violets",
-      "categorie": "Legumes",
-      "prix": 600,
-      "stock": 300,
-      "producteur": "Cooperative Potou",
-      "image": "🧅",
-      "photo": "https://images.pexels.com/photos/4197447/pexels-photo-4197447.jpeg?w=300",
-      "unite": "kg",
-      "attributs": {
-        "origine": "Saint-Louis",
-        "bio": false
-      },
-      "prix_final": 600
-    },
-    {
-      "nom": "Aubergine Africaine",
-      "categorie": "Legumes",
-      "prix": 700,
-      "stock": 90,
-      "producteur": "Maraichage Kaolack",
-      "image": "🍆",
-      "photo": "https://images.pexels.com/photos/5639/food-vegetables-eggplant-purple.jpg?w=300",
-      "unite": "kg",
-      "attributs": {
-        "origine": "Kaolack",
-        "bio": true
-      },
-      "prix_final": 700
-    },
-    {
-      "nom": "Piment Demon",
-      "categorie": "Legumes",
-      "prix": 1200,
-      "stock": 2,
-      "producteur": "Cooperative Ziguinchor",
-      "image": "🌶️",
-      "photo": "https://images.pexels.com/photos/870894/pexels-photo-870894.jpeg?w=300",
-      "unite": "kg",
-      "attributs": {
-        "origine": "Ziguinchor",
-        "bio": true
-      },
+      "promo": 20,
       "prix_final": 1200
     },
     {
@@ -213,7 +32,8 @@
         "origine": "Louga",
         "bio": true
       },
-      "prix_final": 2500
+      "prix_final": 2500,
+      "promo": 0
     },
     {
       "nom": "Ditakh",
@@ -228,8 +48,198 @@
         "origine": "Fatick",
         "bio": true
       },
-      "promo": 50,
-      "prix_final": 1000
+      "promo": 0,
+      "prix_final": 2000
+    },
+    {
+      "nom": "Tamarin",
+      "categorie": "Fruits",
+      "prix": 1000,
+      "stock": 3,
+      "producteur": "Marche Thies",
+      "image": "🫘",
+      "photo": "https://images.pexels.com/photos/4110251/pexels-photo-4110251.jpeg?w=300",
+      "unite": "kg",
+      "attributs": {
+        "origine": "Thies",
+        "bio": false
+      },
+      "prix_final": 1000,
+      "promo": 0
+    },
+    {
+      "nom": "Gombo Frais",
+      "categorie": "Legumes",
+      "prix": 800,
+      "stock": 120,
+      "producteur": "Maraichage Pikine",
+      "image": "🫛",
+      "photo": "https://images.pexels.com/photos/6157049/pexels-photo-6157049.jpeg?w=300",
+      "unite": "kg",
+      "attributs": {
+        "origine": "Dakar",
+        "bio": false
+      },
+      "promo": 0,
+      "prix_final": 800
+    },
+    {
+      "nom": "Oignons Violets",
+      "categorie": "Legumes",
+      "prix": 600,
+      "stock": 300,
+      "producteur": "Cooperative Potou",
+      "image": "🧅",
+      "photo": "https://images.pexels.com/photos/4197447/pexels-photo-4197447.jpeg?w=300",
+      "unite": "kg",
+      "attributs": {
+        "origine": "Saint-Louis",
+        "bio": false
+      },
+      "prix_final": 600,
+      "promo": 0
+    },
+    {
+      "nom": "Aubergine Africaine",
+      "categorie": "Legumes",
+      "prix": 700,
+      "stock": 90,
+      "producteur": "Maraichage Kaolack",
+      "image": "🍆",
+      "photo": "https://images.pexels.com/photos/5639/food-vegetables-eggplant-purple.jpg?w=300",
+      "unite": "kg",
+      "attributs": {
+        "origine": "Kaolack",
+        "bio": true
+      },
+      "prix_final": 700,
+      "promo": 0
+    },
+    {
+      "nom": "Piment Demon",
+      "categorie": "Legumes",
+      "prix": 1200,
+      "stock": 2,
+      "producteur": "Cooperative Ziguinchor",
+      "image": "🌶️",
+      "photo": "https://images.pexels.com/photos/870894/pexels-photo-870894.jpeg?w=300",
+      "unite": "kg",
+      "attributs": {
+        "origine": "Ziguinchor",
+        "bio": true
+      },
+      "prix_final": 1200,
+      "promo": 0
+    },
+    {
+      "nom": "Mil Local",
+      "categorie": "Cereales",
+      "prix": 500,
+      "stock": 500,
+      "producteur": "GAEC Diourbel",
+      "image": "🌾",
+      "photo": "https://images.pexels.com/photos/326082/pexels-photo-326082.jpeg?w=300",
+      "unite": "kg",
+      "attributs": {
+        "origine": "Diourbel",
+        "bio": true
+      },
+      "prix_final": 500,
+      "promo": 0
+    },
+    {
+      "nom": "Riz Broken",
+      "categorie": "Cereales",
+      "prix": 450,
+      "stock": 400,
+      "producteur": "Riziculture Saint-Louis",
+      "image": "🍚",
+      "photo": "https://images.pexels.com/photos/7421235/pexels-photo-7421235.jpeg?w=300",
+      "unite": "kg",
+      "attributs": {
+        "origine": "Saint-Louis",
+        "bio": false
+      },
+      "prix_final": 450,
+      "promo": 0
+    },
+    {
+      "nom": "Mais Local",
+      "categorie": "Cereales",
+      "prix": 400,
+      "stock": 4,
+      "producteur": "Cooperative Tambacounda",
+      "image": "🌽",
+      "photo": "https://images.pexels.com/photos/547263/pexels-photo-547263.jpeg?w=300",
+      "unite": "kg",
+      "attributs": {
+        "origine": "Tambacounda",
+        "bio": true
+      },
+      "prix_final": 400,
+      "promo": 0
+    },
+    {
+      "nom": "Huile d'Arachide",
+      "categorie": "Huiles",
+      "prix": 3500,
+      "stock": 60,
+      "producteur": "Huilerie Kaolack",
+      "image": "🫙",
+      "photo": "https://images.pexels.com/photos/4033158/pexels-photo-4033158.jpeg?w=300",
+      "unite": "litre",
+      "attributs": {
+        "origine": "Kaolack",
+        "bio": true
+      },
+      "prix_final": 3500,
+      "promo": 0
+    },
+    {
+      "nom": "Huile de Palme Rouge",
+      "categorie": "Huiles",
+      "prix": 2800,
+      "stock": 2,
+      "producteur": "Cooperative Kolda",
+      "image": "🫙",
+      "photo": "https://images.pexels.com/photos/33783/olive-oil-salad-dressing-cooking-olive.jpg?w=300",
+      "unite": "litre",
+      "attributs": {
+        "origine": "Kolda",
+        "bio": true
+      },
+      "prix_final": 2800,
+      "promo": 0
+    },
+    {
+      "nom": "Thiof Seche",
+      "categorie": "Poissons",
+      "prix": 8000,
+      "stock": 30,
+      "producteur": "Pecheurs Kayar",
+      "image": "🐟",
+      "photo": "https://images.pexels.com/photos/1148358/pexels-photo-1148358.jpeg?w=300",
+      "unite": "kg",
+      "attributs": {
+        "origine": "Kayar"
+      },
+      "prix_final": 8000,
+      "promo": 0
+    },
+    {
+      "nom": "Yeet Mollusque",
+      "categorie": "Poissons",
+      "prix": 5000,
+      "stock": 25,
+      "producteur": "Pecheurs Mbour",
+      "image": "🦪",
+      "photo": "https://images.pexels.com/photos/3535383/pexels-photo-3535383.jpeg?w=300",
+      "unite": "kg",
+      "attributs": {
+        "origine": "Mbour"
+      },
+      "prix_final": 5000,
+      "promo": 0
     },
     {
       "nom": "kama",
@@ -245,8 +255,9 @@
         "origine": "",
         "bio": false
       },
-      "prix_final": 2,
-      "promo": 10
+      "prix_final": 1,
+      "promo": 0,
+      "promo_global": 50
     },
     {
       "nom": "Ib Camara",
@@ -262,8 +273,43 @@
         "origine": "",
         "bio": false
       },
-      "promo": 6,
-      "prix_final": 4
+      "promo": 0,
+      "prix_final": 5
+    },
+    {
+      "nom": "AAAY",
+      "categorie": "Poissons",
+      "prix": 4,
+      "stock": 10,
+      "unite": "kg",
+      "producteur": "jkreuhr",
+      "image": "📦",
+      "photo": "",
+      "ajoute_par": "ipc",
+      "attributs": {
+        "origine": "",
+        "bio": false
+      },
+      "prix_final": 4,
+      "promo_global": 50,
+      "promo": 0
+    },
+    {
+      "nom": "PHUP",
+      "categorie": "Boissons",
+      "prix": 19,
+      "stock": 38,
+      "unite": "kg",
+      "producteur": "koussanar",
+      "image": "📦",
+      "photo": "",
+      "ajoute_par": "ipc",
+      "attributs": {
+        "origine": "",
+        "bio": false
+      },
+      "prix_final": 9,
+      "promo_global": 50
     }
   ],
   "commandes": [

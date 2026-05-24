@@ -32,6 +32,32 @@
 
     <!-- PRODUITS -->
     <div class="tab-pane fade show active" id="produits">
+        <!-- PROMO GLOBAL -->
+        <div class="card border-0 shadow-sm rounded-3 p-3 mb-3" style="background:#fff8e1;border-left:4px solid #ff9800 !important">
+            <div class="d-flex align-items-center justify-content-between flex-wrap gap-2">
+                <div>
+                    <h6 class="fw-bold text-warning mb-0">
+                        <i class="fas fa-percentage me-2"></i>Promo Globale — Tous mes produits
+                    </h6>
+                    <small class="text-muted">Applique une reduction sur tous vos produits d un coup</small>
+                </div>
+                <div class="d-flex gap-2 align-items-center">
+                    <input type="number" id="promo-global-input" class="form-control rounded-3"
+                           style="width:80px" placeholder="%" min="0" max="100" value="0">
+                    <span class="fw-bold text-warning">%</span>
+                    <button onclick="appliquerPromoGlobal()"
+                            class="btn btn-warning rounded-3 fw-bold">
+                        <i class="fas fa-bolt me-1"></i>Appliquer
+                    </button>
+                    <button onclick="appliquerPromoGlobal(0)"
+                            class="btn btn-outline-secondary rounded-3">
+                        <i class="fas fa-times me-1"></i>Annuler promo
+                    </button>
+                </div>
+            </div>
+            <div id="promo-global-msg" class="mt-2"></div>
+        </div>
+
         <div class="card border-0 shadow-sm rounded-3 p-4 mb-4">
             <h5 class="text-success fw-bold mb-3">
                 <i class="fas fa-plus-circle me-2"></i>Ajouter un produit
@@ -127,7 +153,7 @@
                                 <th>Image</th><th>Nom</th><th>Cat.</th><th>Prix</th>
                                 <th>Stock</th><th>Unite</th><th>Producteur</th>
                                 <th>Ajoute par</th><th>Changer Image</th>
-                                <th>Mod. Stock</th><th>Mod. Prix</th><th>Mod. Promo</th><th>Action</th>
+                                <th>Mod. Stock</th><th>Mod. Prix</th><th>Promo %</th><th>Action</th>
                             </tr>
                         </thead>
                         <tbody id="tbody-produits">
@@ -145,10 +171,19 @@
                             <td class="fw-semibold">{{ p.nom }}</td>
                             <td><span class="badge bg-success">{{ p.categorie }}</span></td>
                             <td id="prix-display-{{ p._id }}">
-                                {% if p.promo|default(0) > 0 %}
+                                {% set promo_glob = promo_globals.get(p.ajoute_par, 0) %}
+                                {% set promo_finale = [p.promo|default(0), promo_glob]|max %}
+                                {% if promo_finale > 0 %}
                                 <div class="text-decoration-line-through text-muted small">{{ p.prix }} FCFA</div>
-                                <div class="text-danger fw-bold">{{ p.prix_final|default(p.prix) }} FCFA</div>
-                                <span class="badge bg-danger">-{{ p.promo }}%</span>
+                                <div class="text-danger fw-bold">
+                                    {{ (p.prix * (1 - promo_finale/100))|int }} FCFA
+                                </div>
+                                {% if p.promo|default(0) > 0 %}
+                                <span class="badge bg-danger">-{{ p.promo }}% individuel</span>
+                                {% endif %}
+                                {% if promo_glob > 0 %}
+                                <span class="badge bg-warning text-dark">-{{ promo_glob }}% global</span>
+                                {% endif %}
                                 {% else %}
                                 <span class="text-success fw-bold">{{ p.prix }} FCFA</span>
                                 {% endif %}
@@ -211,28 +246,30 @@
                                 <span class="text-muted small">{{ p.prix }} FCFA</span>
                                 {% endif %}
                             </td>
+
                             <td>
                                 {% if username == 'admin' or p.ajoute_par == username %}
                                 <div class="d-flex gap-1 align-items-center">
                                     <input type="number" id="promo_{{ p._id }}"
                                            class="form-control form-control-sm rounded-3"
-                                           style="width:60px" value="{{ p.promo|default(0) }}"
+                                           style="width:65px"
+                                           value="{{ p.promo|default(0) }}"
                                            min="0" max="100">
-                                    <span class="text-danger small fw-bold">%</span>
-                                    <button onclick="majPromo('{{ p._id }}', {{ p.prix }})"
-                                            class="btn btn-success btn-sm rounded-3">OK</button>
+                                    <span class="text-danger fw-bold small">%</span>
+                                    <button onclick="majPromoIndiv('{{ p._id }}', {{ p.prix }})"
+                                            class="btn btn-danger btn-sm rounded-3">OK</button>
                                 </div>
                                 {% if p.promo|default(0) > 0 %}
                                 <div class="small mt-1">
                                     <span class="text-decoration-line-through text-muted">{{ p.prix }}</span>
                                     <span class="text-danger fw-bold ms-1">{{ p.prix_final|default(p.prix) }} FCFA</span>
-                                    <span class="badge bg-danger ms-1">-{{ p.promo }}%</span>
+                                    <span class="badge bg-danger">-{{ p.promo }}%</span>
                                 </div>
                                 {% endif %}
                                 {% else %}
                                 {% if p.promo|default(0) > 0 %}
                                 <span class="badge bg-danger">-{{ p.promo }}%</span>
-                                <div class="small text-danger fw-bold">{{ p.prix_final|default(p.prix) }} FCFA</div>
+                                <small class="text-danger fw-bold d-block">{{ p.prix_final|default(p.prix) }} FCFA</small>
                                 {% else %}
                                 <span class="text-muted small">0%</span>
                                 {% endif %}
@@ -665,6 +702,30 @@ function supprimerProduit(id, nom) {
     });
 }
 
+// ===== AJAX PROMO GLOBALE =====
+function appliquerPromoGlobal(forcePromo) {
+    var scrollY = window.scrollY;
+    var promo = forcePromo !== undefined ? forcePromo : parseInt(document.getElementById('promo-global-input').value) || 0;
+    var formData = new FormData();
+    formData.append('promo', promo);
+    fetch('/admin/promo_global_ajax', {method: 'POST', body: formData})
+    .then(function(r) { return r.json(); })
+    .then(function(data) {
+        if (data.success) {
+            var msg = promo > 0
+                ? '✅ Promo ' + promo + '% appliquee sur ' + data.nb + ' produits !'
+                : '✅ Promo globale annulee sur ' + data.nb + ' produits !';
+            document.getElementById('promo-global-msg').innerHTML =
+                '<span class="badge bg-' + (promo > 0 ? 'warning' : 'secondary') + ' fs-6">' + msg + '</span>';
+            showToast(msg, 'success');
+            setTimeout(function() { location.reload(); }, 1500);
+        } else {
+            showToast('❌ Erreur promo globale', 'danger');
+        }
+        setTimeout(function() { window.scrollTo(0, scrollY); }, 100);
+    });
+}
+
 // ===== AJAX MODIFIER PROMO =====
 function majPromo(id, prixOriginal) {
     var scrollY = window.scrollY;
@@ -735,6 +796,37 @@ function bloquerUser(login, btn) {
             setTimeout(function() { window.scrollTo(0, scrollY); }, 100);
         } else {
             showToast('❌ ' + (data.message || 'Non autorise'), 'danger');
+        }
+    });
+}
+
+// ===== AJAX PROMO INDIVIDUELLE =====
+function majPromoIndiv(id, prixOriginal) {
+    var scrollY = window.scrollY;
+    var promo = parseInt(document.getElementById('promo_' + id).value) || 0;
+    var formData = new FormData();
+    formData.append('produit_id', id);
+    formData.append('promo', promo);
+    fetch('/admin/maj_promo_ajax', {method: 'POST', body: formData})
+    .then(function(r) { return r.json(); })
+    .then(function(data) {
+        if (data.success) {
+            var prixDisplay = document.getElementById('prix-display-' + id);
+            if (prixDisplay) {
+                if (promo > 0) {
+                    prixDisplay.innerHTML =
+                        '<div class="text-decoration-line-through text-muted small">' + data.prix + ' FCFA</div>' +
+                        '<div class="text-danger fw-bold">' + data.prix_final + ' FCFA</div>' +
+                        '<span class="badge bg-danger">-' + promo + '%</span>';
+                } else {
+                    prixDisplay.innerHTML = '<span class="text-success fw-bold">' + data.prix + ' FCFA</span>';
+                }
+            }
+            var msg = promo > 0
+                ? '✅ Promo ' + promo + '% ! ' + data.prix + ' → ' + data.prix_final + ' FCFA'
+                : '✅ Promo supprimee !';
+            showToast(msg, 'success');
+            setTimeout(function() { window.scrollTo(0, scrollY); }, 100);
         }
     });
 }

@@ -137,18 +137,17 @@ def boutique():
     total_pages = max(1, (total_produits + par_page - 1) // par_page)
     page = max(1, min(page, total_pages))
     produits = list(db.produits.find(filtre).sort(tri_field, tri_order).skip((page-1)*par_page).limit(par_page))
-    # Calculer prix_final selon promo stockee en DB
+    # Appliquer promo finale sur chaque produit
+    from auth import charger_users as cu
+    users_data = cu()
     for p in produits:
         p["_id"] = str(p["_id"])
-        promo_produit = p.get("promo", 0)
-        if promo_produit > 0:
-            p["prix_final"] = int(p["prix"] * (1 - promo_produit / 100))
-        else:
-            p["prix_final"] = p["prix"]
-    for p in produits:
-        p["_id"] = str(p["_id"])
-        p["prix_final"] = int(p["prix"] * (1 - promo / 100))
-        p["promo"] = promo
+        promo_indiv = int(p.get("promo", 0))
+        createur = p.get("ajoute_par", "")
+        promo_glob = int(users_data.get(createur, {}).get("promo_global", 0))
+        promo_finale = max(promo_indiv, promo_glob)
+        p["promo"] = promo_finale
+        p["prix_final"] = int(p["prix"] * (1 - promo_finale / 100)) if promo_finale > 0 else p["prix"]
     panier = session.get("panier", [])
     total = sum(i["quantite"] * i["prix_final"] for i in panier)
     return render_template("boutique.html",
@@ -408,9 +407,14 @@ def admin():
     users_brut = lister_utilisateurs()
     users = users_brut
     backups = lister_backups()
+    # Promo globale par admin
+    from auth import charger_users as cu
+    users_json = cu()
+    promo_globals = {u: users_json[u].get("promo_global", 0) for u in users_json}
     return render_template("admin.html",
         produits=produits, users=users, backups=backups,
         categories=CATEGORIES, regions=REGIONS,
+        promo_globals=promo_globals,
         role=role_actuel, username=session.get("username"))
 
 @app.route("/admin/ajouter_produit", methods=["POST"])
@@ -541,6 +545,35 @@ def maj_stock_ajax():
     db.produits.update_one({"_id": ObjectId(produit_id)}, {"$set": {"stock": stock}})
     log_info("Stock AJAX mis a jour : " + str(stock))
     return jsonify({"success": True, "stock": stock})
+
+@app.route("/admin/promo_global_ajax", methods=["POST"])
+@login_requis
+@admin_requis
+def promo_global_ajax():
+    from auth import charger_users, sauvegarder_users
+    username_admin = session.get("username")
+    promo = int(request.form.get("promo", 0))
+    # Sauvegarder promo_global dans profil admin
+    users = charger_users()
+    if username_admin in users:
+        users[username_admin]["promo_global"] = promo
+        sauvegarder_users(users)
+    # Appliquer sur tous ses produits
+    db = get_db()
+    if db is not None:
+        produits = list(db.produits.find({"ajoute_par": username_admin}))
+        for p in produits:
+            # Respecter promo individuelle si elle est plus grande
+            promo_indiv = p.get("promo", 0)
+            promo_finale = max(promo, promo_indiv)
+            prix_final = int(p["prix"] * (1 - promo_finale / 100))
+            db.produits.update_one(
+                {"_id": p["_id"]},
+                {"$set": {"promo_global": promo, "prix_final": prix_final}}
+            )
+        log_info(f"Promo globale {promo}% appliquee sur {len(produits)} produits de {username_admin}")
+        return jsonify({"success": True, "promo": promo, "nb": len(produits)})
+    return jsonify({"success": False})
 
 @app.route("/admin/maj_promo_ajax", methods=["POST"])
 @login_requis
