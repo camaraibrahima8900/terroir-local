@@ -1,6 +1,6 @@
 {
   "admin": {
-    "password": "$2b$12$ms2Htokjseo05cZZArsO5.TuEXMyrPhuJ0WOp1O/J2966jrRwh2bm",
+    "password": "$2b$12$4AZ0HYe56JvO/vKlpDCXn.hm.4la72s5c5xmkmnxvlKfQn1efQnZm",
     "role": "administrateur",
     "nom": "Administrateur",
     "email": "camaraibrahima8900@gmail.com",
@@ -20,7 +20,7 @@
     "bloque": false
   },
   "ipc": {
-    "password": "$2b$12$COEk9Het7gglETuqfOlrvO/WjIr1IE5o1PFPBHpiEZFGeSWBIe4tG",
+    "password": "$2b$12$KLGfSI73BT6lZITpG4vWW.3T85A2f5CkW3bqn.l0JUdlU/kGhW7h6",
     "role": "administrateur",
     "nom": "Pa-ibou Camara",
     "email": "ibrahimacamara8900@gmail.com",
@@ -31,7 +31,7 @@
     "lieu": "Koussanar"
   },
   "cmr": {
-    "password": "$2b$12$Lr0.lMaSV2HozjM.0vC5VOgXyCFE6Avup.njN86eEO0.YqKFg6GHC",
+    "password": "$2b$12$I.rVCidNHdKGiZNqd4c3JOnfkOTDxHvSFqKeeef4wnDSZlvtET0a.",
     "role": "administrateur",
     "nom": "Ib Camara",
     "email": "amaraibrahima8900@gmail.com",

@@ -855,13 +855,20 @@ def export_commandes():
         return redirect(url_for("admin"))
     commandes = list(db.commandes.find({}).sort("date", -1))
     output = io.StringIO()
-    writer = csv.writer(output)
-    writer.writerow(["Date", "Client", "Telephone", "Ville", "Region", "Livraison", "Total FCFA", "Statut"])
+    # Point-virgule pour Excel francais
+    writer = csv.writer(output, delimiter=";")
+    writer.writerow(["Date", "Client", "Telephone", "Ville", "Region",
+                     "Livraison", "Frais FCFA", "Total FCFA", "Statut",
+                     "Numero Commande", "Lieu Livraison"])
     for c in commandes:
+        articles = ", ".join([
+            f"{a.get('nom','?')} x{a.get('quantite',1)}"
+            for a in c.get("articles", [])
+        ])
         writer.writerow([
             c["date"].strftime("%d/%m/%Y %H:%M"),
             c["client"]["nom"],
-            c["client"]["telephone"],
+            c["client"].get("telephone", ""),
             c["client"].get("ville", ""),
             c["livraison"].get("region", ""),
             c["livraison"].get("type", "normal"),
