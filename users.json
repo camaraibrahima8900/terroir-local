@@ -85,5 +85,15 @@
     "lieu": "DKDHGanar",
     "bloque": false,
     "promo_global": 0
+  },
+  "adm": {
+    "password": "$2b$12$wsKoKQGoW0T8BYBtFctTTeWiCr37APVbd6P1Ws3aGSYlR3jis1J2W",
+    "role": "administrateur",
+    "nom": "hima amara",
+    "email": "iglokcamaraibrahima8900@gmail.com",
+    "cree_par": "admin",
+    "telephone": "+2217847603847536",
+    "lieu": "koussanar",
+    "bloque": false
   }
 }

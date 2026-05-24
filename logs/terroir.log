@@ -11484,3 +11484,263 @@
 2026-05-24 09:35:43,293 [INFO] 127.0.0.1 - - [24/May/2026 09:35:43] "GET /boutique HTTP/1.1" 200 -
 2026-05-24 09:35:43,333 [INFO] 127.0.0.1 - - [24/May/2026 09:35:43] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
 2026-05-24 09:35:44,908 [INFO] 127.0.0.1 - - [24/May/2026 09:35:44] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 12:41:13,843 [INFO] Backup automatique demarre (toutes les 24h)
+2026-05-24 12:41:14,013 [INFO] Application Flask demarree !
+2026-05-24 12:41:14,484 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.26.20.100:5000
+2026-05-24 12:41:14,484 [INFO] [33mPress CTRL+C to quit[0m
+2026-05-24 12:41:14,489 [INFO]  * Restarting with stat
+2026-05-24 12:41:15,054 [INFO] Backup automatique demarre (toutes les 24h)
+2026-05-24 12:41:15,055 [INFO] Application Flask demarree !
+2026-05-24 12:41:15,099 [WARNING]  * Debugger is active!
+2026-05-24 12:41:15,238 [INFO]  * Debugger PIN: 452-512-962
+2026-05-24 12:41:18,516 [INFO] Backup cree : /home/ibrahima/terroir_local/backups/backup_20260524_124118.json
+2026-05-24 12:41:18,521 [INFO] Backup cree : /home/ibrahima/terroir_local/backups/backup_20260524_124118.json
+2026-05-24 12:41:18,683 [INFO] 127.0.0.1 - - [24/May/2026 12:41:18] "GET /admin HTTP/1.1" 200 -
+2026-05-24 12:41:19,119 [INFO] 127.0.0.1 - - [24/May/2026 12:41:19] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-24 12:41:20,840 [INFO] 127.0.0.1 - - [24/May/2026 12:41:20] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 12:41:51,751 [INFO] 127.0.0.1 - - [24/May/2026 12:41:51] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 12:41:58,053 [INFO] 127.0.0.1 - - [24/May/2026 12:41:58] "GET /stats HTTP/1.1" 200 -
+2026-05-24 12:41:58,098 [INFO] 127.0.0.1 - - [24/May/2026 12:41:58] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-24 12:42:01,279 [INFO] 127.0.0.1 - - [24/May/2026 12:42:01] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 12:42:32,773 [INFO] 127.0.0.1 - - [24/May/2026 12:42:32] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 12:42:35,174 [INFO] 127.0.0.1 - - [24/May/2026 12:42:35] "GET /admin HTTP/1.1" 200 -
+2026-05-24 12:42:35,535 [INFO] 127.0.0.1 - - [24/May/2026 12:42:35] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-24 12:42:37,363 [INFO] 127.0.0.1 - - [24/May/2026 12:42:37] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 12:43:06,367 [INFO] 127.0.0.1 - - [24/May/2026 12:43:06] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 12:43:15,806 [INFO] Produit ajoute : uhfduy
+2026-05-24 12:43:15,807 [INFO] 127.0.0.1 - - [24/May/2026 12:43:15] "[32mPOST /admin/ajouter_produit HTTP/1.1[0m" 302 -
+2026-05-24 12:43:17,874 [INFO] 127.0.0.1 - - [24/May/2026 12:43:17] "GET /admin HTTP/1.1" 200 -
+2026-05-24 12:43:17,943 [INFO] 127.0.0.1 - - [24/May/2026 12:43:17] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-24 12:43:30,697 [ERROR] Connexion MongoDB echouee : No replica set members match selector "Primary()", Timeout: 10.0s, Topology Description: <TopologyDescription id: 6a12f266665482cbc1a7fb1b, topology_type: ReplicaSetNoPrimary, servers: [<ServerDescription ('ac-qnmlyva-shard-00-00.5r4lftj.mongodb.net', 27017) server_type: Unknown, rtt: None>, <ServerDescription ('ac-qnmlyva-shard-00-01.5r4lftj.mongodb.net', 27017) server_type: RSSecondary, rtt: 0.1311205419988255>, <ServerDescription ('ac-qnmlyva-shard-00-02.5r4lftj.mongodb.net', 27017) server_type: Unknown, rtt: None>]>
+2026-05-24 12:43:30,697 [INFO] 127.0.0.1 - - [24/May/2026 12:43:30] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 12:43:52,830 [INFO] 127.0.0.1 - - [24/May/2026 12:43:52] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 12:44:21,911 [INFO] 127.0.0.1 - - [24/May/2026 12:44:21] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 12:44:22,176 [INFO] Produit ajoute : okyiy
+2026-05-24 12:44:22,177 [INFO] 127.0.0.1 - - [24/May/2026 12:44:22] "[32mPOST /admin/ajouter_produit HTTP/1.1[0m" 302 -
+2026-05-24 12:44:23,965 [INFO] 127.0.0.1 - - [24/May/2026 12:44:23] "GET /admin HTTP/1.1" 200 -
+2026-05-24 12:44:24,038 [INFO] 127.0.0.1 - - [24/May/2026 12:44:24] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-24 12:44:26,184 [INFO] 127.0.0.1 - - [24/May/2026 12:44:26] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 12:44:31,810 [ERROR] Connexion MongoDB echouee : ac-qnmlyva-shard-00-02.5r4lftj.mongodb.net:27017: timed out (configured timeouts: connectTimeoutMS: 20000.0ms)
+2026-05-24 12:44:31,811 [INFO] 127.0.0.1 - - [24/May/2026 12:44:31] "[32mPOST /admin/ajouter_produit HTTP/1.1[0m" 302 -
+2026-05-24 12:44:55,235 [INFO] 127.0.0.1 - - [24/May/2026 12:44:55] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 12:45:28,416 [INFO] 127.0.0.1 - - [24/May/2026 12:45:28] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 12:46:16,187 [ERROR] Connexion MongoDB echouee : ac-qnmlyva-shard-00-02.5r4lftj.mongodb.net:27017: timed out (configured timeouts: connectTimeoutMS: 20000.0ms)
+2026-05-24 12:46:16,188 [INFO] 127.0.0.1 - - [24/May/2026 12:46:16] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 12:46:27,300 [INFO] 127.0.0.1 - - [24/May/2026 12:46:27] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 12:46:34,418 [INFO] 127.0.0.1 - - [24/May/2026 12:46:34] "GET /profil HTTP/1.1" 200 -
+2026-05-24 12:46:34,596 [INFO] 127.0.0.1 - - [24/May/2026 12:46:34] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-24 12:46:37,161 [INFO] 127.0.0.1 - - [24/May/2026 12:46:37] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 12:46:40,171 [INFO] 127.0.0.1 - - [24/May/2026 12:46:40] "[32mGET /logout HTTP/1.1[0m" 302 -
+2026-05-24 12:46:40,493 [INFO] 127.0.0.1 - - [24/May/2026 12:46:40] "GET / HTTP/1.1" 200 -
+2026-05-24 12:46:40,821 [INFO] 127.0.0.1 - - [24/May/2026 12:46:40] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-24 12:47:00,779 [WARNING] Compte bloque : cmr
+2026-05-24 12:47:00,780 [INFO] 127.0.0.1 - - [24/May/2026 12:47:00] "[32mPOST / HTTP/1.1[0m" 302 -
+2026-05-24 12:47:04,436 [INFO] 127.0.0.1 - - [24/May/2026 12:47:04] "GET /boutique HTTP/1.1" 200 -
+2026-05-24 12:47:04,808 [INFO] 127.0.0.1 - - [24/May/2026 12:47:04] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-24 12:47:07,261 [INFO] 127.0.0.1 - - [24/May/2026 12:47:07] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 12:47:11,599 [INFO] 127.0.0.1 - - [24/May/2026 12:47:11] "[32mGET /logout HTTP/1.1[0m" 302 -
+2026-05-24 12:47:11,913 [INFO] 127.0.0.1 - - [24/May/2026 12:47:11] "GET / HTTP/1.1" 200 -
+2026-05-24 12:47:11,943 [INFO] 127.0.0.1 - - [24/May/2026 12:47:11] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-24 12:47:25,211 [INFO] Connexion reussie : admin
+2026-05-24 12:47:25,212 [INFO] 127.0.0.1 - - [24/May/2026 12:47:25] "[32mPOST / HTTP/1.1[0m" 302 -
+2026-05-24 12:47:27,791 [INFO] 127.0.0.1 - - [24/May/2026 12:47:27] "GET /boutique HTTP/1.1" 200 -
+2026-05-24 12:47:28,133 [INFO] 127.0.0.1 - - [24/May/2026 12:47:28] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-24 12:47:31,648 [INFO] 127.0.0.1 - - [24/May/2026 12:47:31] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 12:48:01,127 [INFO] 127.0.0.1 - - [24/May/2026 12:48:01] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 12:48:06,960 [INFO] 127.0.0.1 - - [24/May/2026 12:48:06] "GET /admin HTTP/1.1" 200 -
+2026-05-24 12:48:07,016 [INFO] 127.0.0.1 - - [24/May/2026 12:48:07] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-24 12:48:09,463 [INFO] 127.0.0.1 - - [24/May/2026 12:48:09] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 12:48:40,265 [INFO] 127.0.0.1 - - [24/May/2026 12:48:40] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 12:48:58,813 [INFO] Utilisateur cmr debloque par admin
+2026-05-24 12:48:58,813 [INFO] 127.0.0.1 - - [24/May/2026 12:48:58] "GET /admin/bloquer_user_ajax/cmr HTTP/1.1" 200 -
+2026-05-24 12:49:17,615 [ERROR] Connexion MongoDB echouee : No replica set members match selector "Primary()", Timeout: 10.0s, Topology Description: <TopologyDescription id: 6a12f3c3665482cbc1a7fb30, topology_type: ReplicaSetNoPrimary, servers: [<ServerDescription ('ac-qnmlyva-shard-00-00.5r4lftj.mongodb.net', 27017) server_type: RSSecondary, rtt: 0.14511080299962487>, <ServerDescription ('ac-qnmlyva-shard-00-01.5r4lftj.mongodb.net', 27017) server_type: RSSecondary, rtt: 0.11835214199891197>, <ServerDescription ('ac-qnmlyva-shard-00-02.5r4lftj.mongodb.net', 27017) server_type: Unknown, rtt: None>]>
+2026-05-24 12:49:17,616 [INFO] 127.0.0.1 - - [24/May/2026 12:49:17] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 12:49:46,429 [ERROR] Connexion MongoDB echouee : No replica set members match selector "Primary()", Timeout: 10.0s, Topology Description: <TopologyDescription id: 6a12f3df665482cbc1a7fb31, topology_type: ReplicaSetNoPrimary, servers: [<ServerDescription ('ac-qnmlyva-shard-00-00.5r4lftj.mongodb.net', 27017) server_type: RSSecondary, rtt: 0.17276993500126991>, <ServerDescription ('ac-qnmlyva-shard-00-01.5r4lftj.mongodb.net', 27017) server_type: RSSecondary, rtt: 0.12700898899856838>, <ServerDescription ('ac-qnmlyva-shard-00-02.5r4lftj.mongodb.net', 27017) server_type: Unknown, rtt: None>]>
+2026-05-24 12:49:46,430 [INFO] 127.0.0.1 - - [24/May/2026 12:49:46] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 12:50:12,856 [INFO] 127.0.0.1 - - [24/May/2026 12:50:12] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 12:50:40,388 [INFO] 127.0.0.1 - - [24/May/2026 12:50:40] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 12:51:09,647 [INFO] 127.0.0.1 - - [24/May/2026 12:51:09] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 12:51:22,013 [INFO] 127.0.0.1 - - [24/May/2026 12:51:22] "[32mGET /logout HTTP/1.1[0m" 302 -
+2026-05-24 12:51:22,296 [INFO] 127.0.0.1 - - [24/May/2026 12:51:22] "GET / HTTP/1.1" 200 -
+2026-05-24 12:51:22,615 [INFO] 127.0.0.1 - - [24/May/2026 12:51:22] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-24 12:51:36,668 [INFO] Connexion reussie : cmr
+2026-05-24 12:51:36,669 [INFO] 127.0.0.1 - - [24/May/2026 12:51:36] "[32mPOST / HTTP/1.1[0m" 302 -
+2026-05-24 12:51:38,553 [INFO] 127.0.0.1 - - [24/May/2026 12:51:38] "GET /boutique HTTP/1.1" 200 -
+2026-05-24 12:51:38,907 [INFO] 127.0.0.1 - - [24/May/2026 12:51:38] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-24 12:51:40,850 [INFO] 127.0.0.1 - - [24/May/2026 12:51:40] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 12:51:46,487 [INFO] 127.0.0.1 - - [24/May/2026 12:51:46] "GET /admin HTTP/1.1" 200 -
+2026-05-24 12:51:46,528 [INFO] 127.0.0.1 - - [24/May/2026 12:51:46] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-24 12:51:48,711 [INFO] 127.0.0.1 - - [24/May/2026 12:51:48] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 12:52:19,504 [INFO] 127.0.0.1 - - [24/May/2026 12:52:19] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 12:52:50,605 [INFO] 127.0.0.1 - - [24/May/2026 12:52:50] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 12:52:53,924 [INFO] Produit ajoute : slkjc
+2026-05-24 12:52:53,925 [INFO] 127.0.0.1 - - [24/May/2026 12:52:53] "[32mPOST /admin/ajouter_produit HTTP/1.1[0m" 302 -
+2026-05-24 12:52:56,778 [INFO] 127.0.0.1 - - [24/May/2026 12:52:56] "GET /admin HTTP/1.1" 200 -
+2026-05-24 12:52:57,154 [INFO] 127.0.0.1 - - [24/May/2026 12:52:57] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-24 12:53:01,590 [INFO] 127.0.0.1 - - [24/May/2026 12:53:01] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 12:53:29,209 [INFO] 127.0.0.1 - - [24/May/2026 12:53:29] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 12:54:00,506 [INFO] 127.0.0.1 - - [24/May/2026 12:54:00] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 12:54:29,714 [INFO] 127.0.0.1 - - [24/May/2026 12:54:29] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 12:54:59,979 [INFO] 127.0.0.1 - - [24/May/2026 12:54:59] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 12:55:02,971 [INFO] Produit ajoute : wsdjc
+2026-05-24 12:55:02,972 [INFO] 127.0.0.1 - - [24/May/2026 12:55:02] "[32mPOST /admin/ajouter_produit HTTP/1.1[0m" 302 -
+2026-05-24 12:55:05,200 [INFO] 127.0.0.1 - - [24/May/2026 12:55:05] "GET /admin HTTP/1.1" 200 -
+2026-05-24 12:55:05,575 [INFO] 127.0.0.1 - - [24/May/2026 12:55:05] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-24 12:55:08,156 [INFO] 127.0.0.1 - - [24/May/2026 12:55:08] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 12:55:20,768 [INFO] Promo mis a jour : 5% prix_final=19
+2026-05-24 12:55:20,769 [INFO] 127.0.0.1 - - [24/May/2026 12:55:20] "POST /admin/maj_promo_ajax HTTP/1.1" 200 -
+2026-05-24 12:55:38,254 [INFO] 127.0.0.1 - - [24/May/2026 12:55:38] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 12:55:40,050 [INFO] Promo mis a jour : 20% prix_final=16
+2026-05-24 12:55:40,051 [INFO] 127.0.0.1 - - [24/May/2026 12:55:40] "POST /admin/maj_promo_ajax HTTP/1.1" 200 -
+2026-05-24 12:56:07,977 [INFO] 127.0.0.1 - - [24/May/2026 12:56:07] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 12:56:29,215 [INFO] 127.0.0.1 - - [24/May/2026 12:56:29] "GET /boutique HTTP/1.1" 200 -
+2026-05-24 12:56:29,262 [INFO] 127.0.0.1 - - [24/May/2026 12:56:29] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-24 12:56:32,554 [INFO] 127.0.0.1 - - [24/May/2026 12:56:32] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 12:56:40,198 [INFO] 127.0.0.1 - - [24/May/2026 12:56:40] "GET /boutique?categorie=Toutes&search=&promo=0&prix_min=&prix_max=&tri=nom&page=2 HTTP/1.1" 200 -
+2026-05-24 12:56:40,235 [INFO] 127.0.0.1 - - [24/May/2026 12:56:40] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-24 12:56:42,634 [INFO] 127.0.0.1 - - [24/May/2026 12:56:42] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 12:56:58,852 [INFO] 127.0.0.1 - - [24/May/2026 12:56:58] "GET /boutique?categorie=Toutes&search=&promo=0&prix_min=&prix_max=&tri=nom&page=3 HTTP/1.1" 200 -
+2026-05-24 12:56:58,886 [INFO] 127.0.0.1 - - [24/May/2026 12:56:58] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-24 12:57:00,646 [INFO] 127.0.0.1 - - [24/May/2026 12:57:00] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 12:57:31,667 [INFO] 127.0.0.1 - - [24/May/2026 12:57:31] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 12:58:02,491 [INFO] 127.0.0.1 - - [24/May/2026 12:58:02] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 12:58:33,567 [INFO] 127.0.0.1 - - [24/May/2026 12:58:33] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 12:59:01,865 [INFO] 127.0.0.1 - - [24/May/2026 12:59:01] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 12:59:32,296 [INFO] 127.0.0.1 - - [24/May/2026 12:59:32] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 13:00:02,219 [INFO] 127.0.0.1 - - [24/May/2026 13:00:02] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 13:00:40,813 [ERROR] Connexion MongoDB echouee : No replica set members match selector "Primary()", Timeout: 10.0s, Topology Description: <TopologyDescription id: 6a12f66e665482cbc1a7fb57, topology_type: ReplicaSetNoPrimary, servers: [<ServerDescription ('ac-qnmlyva-shard-00-00.5r4lftj.mongodb.net', 27017) server_type: RSSecondary, rtt: 0.15429365740092182>, <ServerDescription ('ac-qnmlyva-shard-00-01.5r4lftj.mongodb.net', 27017) server_type: RSSecondary, rtt: 0.13791792040028666>, <ServerDescription ('ac-qnmlyva-shard-00-02.5r4lftj.mongodb.net', 27017) server_type: Unknown, rtt: None>]>
+2026-05-24 13:00:40,813 [INFO] 127.0.0.1 - - [24/May/2026 13:00:40] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 13:01:27,691 [INFO] 127.0.0.1 - - [24/May/2026 13:01:27] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 13:02:03,964 [INFO] Backup automatique demarre (toutes les 24h)
+2026-05-24 13:02:03,965 [INFO] Application Flask demarree !
+2026-05-24 13:02:04,024 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.26.20.100:5000
+2026-05-24 13:02:04,024 [INFO] [33mPress CTRL+C to quit[0m
+2026-05-24 13:02:04,028 [INFO]  * Restarting with stat
+2026-05-24 13:02:04,528 [INFO] Backup automatique demarre (toutes les 24h)
+2026-05-24 13:02:04,529 [INFO] Application Flask demarree !
+2026-05-24 13:02:04,572 [WARNING]  * Debugger is active!
+2026-05-24 13:02:04,581 [INFO]  * Debugger PIN: 452-512-962
+2026-05-24 13:02:08,075 [INFO] Backup cree : /home/ibrahima/terroir_local/backups/backup_20260524_130207.json
+2026-05-24 13:02:09,702 [INFO] 127.0.0.1 - - [24/May/2026 13:02:09] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 13:02:18,731 [INFO] 127.0.0.1 - - [24/May/2026 13:02:18] "GET /boutique?categorie=Toutes&search=&promo=0&prix_min=&prix_max=&tri=nom&page=3 HTTP/1.1" 200 -
+2026-05-24 13:02:18,779 [INFO] 127.0.0.1 - - [24/May/2026 13:02:18] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-24 13:02:20,342 [INFO] 127.0.0.1 - - [24/May/2026 13:02:20] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 13:02:29,120 [INFO] Backup cree : /home/ibrahima/terroir_local/backups/backup_20260524_130229.json
+2026-05-24 13:02:30,099 [INFO] 127.0.0.1 - - [24/May/2026 13:02:30] "GET /admin HTTP/1.1" 200 -
+2026-05-24 13:02:30,131 [INFO] 127.0.0.1 - - [24/May/2026 13:02:30] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-24 13:02:31,764 [INFO] 127.0.0.1 - - [24/May/2026 13:02:31] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 13:03:03,598 [INFO] 127.0.0.1 - - [24/May/2026 13:03:03] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 13:03:34,079 [INFO] 127.0.0.1 - - [24/May/2026 13:03:34] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 13:04:03,238 [INFO] 127.0.0.1 - - [24/May/2026 13:04:03] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 13:04:36,342 [INFO] 127.0.0.1 - - [24/May/2026 13:04:36] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 13:05:01,849 [INFO] 127.0.0.1 - - [24/May/2026 13:05:01] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 13:05:03,720 [INFO] 127.0.0.1 - - [24/May/2026 13:05:03] "GET /boutique HTTP/1.1" 200 -
+2026-05-24 13:05:03,776 [INFO] 127.0.0.1 - - [24/May/2026 13:05:03] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-24 13:05:05,338 [INFO] 127.0.0.1 - - [24/May/2026 13:05:05] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 13:05:23,799 [INFO] 127.0.0.1 - - [24/May/2026 13:05:23] "GET /boutique?categorie=Toutes&search=&promo=0&prix_min=&prix_max=&tri=nom&page=3 HTTP/1.1" 200 -
+2026-05-24 13:05:23,830 [INFO] 127.0.0.1 - - [24/May/2026 13:05:23] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-24 13:05:25,115 [INFO] 127.0.0.1 - - [24/May/2026 13:05:25] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 13:05:38,211 [INFO] 127.0.0.1 - - [24/May/2026 13:05:38] "GET /boutique?categorie=Toutes&search=&promo=0&prix_min=&prix_max=&tri=nom&page=2 HTTP/1.1" 200 -
+2026-05-24 13:05:38,251 [INFO] 127.0.0.1 - - [24/May/2026 13:05:38] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-24 13:05:39,601 [INFO] 127.0.0.1 - - [24/May/2026 13:05:39] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 13:05:50,742 [INFO] 127.0.0.1 - - [24/May/2026 13:05:50] "POST /ajouter_panier_ajax HTTP/1.1" 200 -
+2026-05-24 13:05:54,355 [INFO] 127.0.0.1 - - [24/May/2026 13:05:54] "POST /ajouter_panier_ajax HTTP/1.1" 200 -
+2026-05-24 13:06:14,029 [INFO] Commande - Ibrahima Fall - 510 FCFA
+2026-05-24 13:06:14,054 [INFO] 127.0.0.1 - - [24/May/2026 13:06:14] "POST /commander HTTP/1.1" 200 -
+2026-05-24 13:06:14,392 [INFO] 127.0.0.1 - - [24/May/2026 13:06:14] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-24 13:06:30,974 [ERROR] Connexion MongoDB echouee : ac-qnmlyva-shard-00-02.5r4lftj.mongodb.net:27017: timed out (configured timeouts: connectTimeoutMS: 20000.0ms)
+2026-05-24 13:06:30,974 [INFO] 127.0.0.1 - - [24/May/2026 13:06:30] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 13:06:32,780 [INFO] 127.0.0.1 - - [24/May/2026 13:06:32] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 13:06:46,785 [INFO] 127.0.0.1 - - [24/May/2026 13:06:46] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 13:07:16,984 [INFO] 127.0.0.1 - - [24/May/2026 13:07:16] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 13:07:45,664 [INFO] 127.0.0.1 - - [24/May/2026 13:07:45] "[32mGET /logout HTTP/1.1[0m" 302 -
+2026-05-24 13:07:45,965 [INFO] 127.0.0.1 - - [24/May/2026 13:07:45] "GET / HTTP/1.1" 200 -
+2026-05-24 13:07:46,311 [INFO] 127.0.0.1 - - [24/May/2026 13:07:46] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-24 13:07:48,589 [INFO] 127.0.0.1 - - [24/May/2026 13:07:48] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 13:07:59,747 [INFO] Connexion reussie : admin
+2026-05-24 13:07:59,749 [INFO] 127.0.0.1 - - [24/May/2026 13:07:59] "[32mPOST / HTTP/1.1[0m" 302 -
+2026-05-24 13:08:01,100 [INFO] 127.0.0.1 - - [24/May/2026 13:08:01] "GET /boutique HTTP/1.1" 200 -
+2026-05-24 13:08:01,444 [INFO] 127.0.0.1 - - [24/May/2026 13:08:01] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-24 13:08:03,134 [INFO] 127.0.0.1 - - [24/May/2026 13:08:03] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 13:08:11,705 [INFO] 127.0.0.1 - - [24/May/2026 13:08:11] "GET /admin HTTP/1.1" 200 -
+2026-05-24 13:08:11,742 [INFO] 127.0.0.1 - - [24/May/2026 13:08:11] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-24 13:08:13,583 [INFO] 127.0.0.1 - - [24/May/2026 13:08:13] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 13:09:05,251 [INFO] 127.0.0.1 - - [24/May/2026 13:09:05] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 13:09:13,503 [INFO] 127.0.0.1 - - [24/May/2026 13:09:13] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 13:09:33,006 [INFO] Utilisateur cree : adm
+2026-05-24 13:09:33,006 [INFO] Utilisateur AJAX cree : adm
+2026-05-24 13:09:33,007 [INFO] 127.0.0.1 - - [24/May/2026 13:09:33] "POST /admin/ajouter_user_ajax HTTP/1.1" 200 -
+2026-05-24 13:09:37,908 [INFO] Utilisateur cmr bloque par admin
+2026-05-24 13:09:37,908 [INFO] 127.0.0.1 - - [24/May/2026 13:09:37] "GET /admin/bloquer_user_ajax/cmr HTTP/1.1" 200 -
+2026-05-24 13:09:43,644 [INFO] 127.0.0.1 - - [24/May/2026 13:09:43] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 13:10:14,119 [INFO] 127.0.0.1 - - [24/May/2026 13:10:14] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 13:10:19,692 [INFO] 127.0.0.1 - - [24/May/2026 13:10:19] "GET /admin HTTP/1.1" 200 -
+2026-05-24 13:10:19,761 [INFO] 127.0.0.1 - - [24/May/2026 13:10:19] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-24 13:10:21,309 [INFO] 127.0.0.1 - - [24/May/2026 13:10:21] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 13:10:51,926 [INFO] 127.0.0.1 - - [24/May/2026 13:10:51] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 13:11:14,544 [INFO] 127.0.0.1 - - [24/May/2026 13:11:14] "[32mGET /logout HTTP/1.1[0m" 302 -
+2026-05-24 13:11:14,830 [INFO] 127.0.0.1 - - [24/May/2026 13:11:14] "GET / HTTP/1.1" 200 -
+2026-05-24 13:11:15,148 [INFO] 127.0.0.1 - - [24/May/2026 13:11:15] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-24 13:11:34,713 [INFO] Connexion reussie : adm
+2026-05-24 13:11:34,714 [INFO] 127.0.0.1 - - [24/May/2026 13:11:34] "[32mPOST / HTTP/1.1[0m" 302 -
+2026-05-24 13:11:38,939 [INFO] 127.0.0.1 - - [24/May/2026 13:11:38] "GET /boutique HTTP/1.1" 200 -
+2026-05-24 13:11:39,278 [INFO] 127.0.0.1 - - [24/May/2026 13:11:39] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-24 13:11:40,763 [INFO] 127.0.0.1 - - [24/May/2026 13:11:40] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 13:11:56,433 [INFO] 127.0.0.1 - - [24/May/2026 13:11:56] "GET /admin HTTP/1.1" 200 -
+2026-05-24 13:11:56,469 [INFO] 127.0.0.1 - - [24/May/2026 13:11:56] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-24 13:11:58,051 [INFO] 127.0.0.1 - - [24/May/2026 13:11:58] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 13:12:28,275 [INFO] 127.0.0.1 - - [24/May/2026 13:12:28] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 13:13:00,142 [INFO] 127.0.0.1 - - [24/May/2026 13:13:00] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 13:13:04,039 [INFO] 127.0.0.1 - - [24/May/2026 13:13:04] "GET /export_commandes HTTP/1.1" 200 -
+2026-05-24 13:13:31,156 [INFO] 127.0.0.1 - - [24/May/2026 13:13:31] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 13:13:50,257 [INFO] 127.0.0.1 - - [24/May/2026 13:13:50] "[32mGET /logout HTTP/1.1[0m" 302 -
+2026-05-24 13:13:50,278 [INFO] 127.0.0.1 - - [24/May/2026 13:13:50] "GET / HTTP/1.1" 200 -
+2026-05-24 13:13:50,502 [INFO] 127.0.0.1 - - [24/May/2026 13:13:50] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-24 13:14:05,936 [INFO] Connexion reussie : user
+2026-05-24 13:14:05,937 [INFO] 127.0.0.1 - - [24/May/2026 13:14:05] "[32mPOST / HTTP/1.1[0m" 302 -
+2026-05-24 13:14:09,836 [INFO] 127.0.0.1 - - [24/May/2026 13:14:09] "GET /boutique HTTP/1.1" 200 -
+2026-05-24 13:14:09,875 [INFO] 127.0.0.1 - - [24/May/2026 13:14:09] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-24 13:14:11,476 [INFO] 127.0.0.1 - - [24/May/2026 13:14:11] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 13:14:30,100 [INFO] 127.0.0.1 - - [24/May/2026 13:14:30] "GET /boutique?categorie=Toutes&search=&promo=0&prix_min=&prix_max=&tri=nom&page=3 HTTP/1.1" 200 -
+2026-05-24 13:14:30,135 [INFO] 127.0.0.1 - - [24/May/2026 13:14:30] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-24 13:14:31,786 [INFO] 127.0.0.1 - - [24/May/2026 13:14:31] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 13:14:34,222 [INFO] 127.0.0.1 - - [24/May/2026 13:14:34] "GET /boutique?categorie=Toutes&search=&promo=0&prix_min=&prix_max=&tri=nom&page=2 HTTP/1.1" 200 -
+2026-05-24 13:14:34,258 [INFO] 127.0.0.1 - - [24/May/2026 13:14:34] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-24 13:14:35,921 [INFO] 127.0.0.1 - - [24/May/2026 13:14:35] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 13:14:41,761 [INFO] 127.0.0.1 - - [24/May/2026 13:14:41] "POST /ajouter_panier_ajax HTTP/1.1" 200 -
+2026-05-24 13:14:46,440 [INFO] 127.0.0.1 - - [24/May/2026 13:14:46] "POST /ajouter_panier_ajax HTTP/1.1" 200 -
+2026-05-24 13:15:05,560 [INFO] 127.0.0.1 - - [24/May/2026 13:15:05] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 13:15:11,176 [INFO] Commande - Binta Kouyate - 510 FCFA
+2026-05-24 13:15:11,177 [INFO] 127.0.0.1 - - [24/May/2026 13:15:11] "POST /commander HTTP/1.1" 200 -
+2026-05-24 13:15:11,219 [INFO] 127.0.0.1 - - [24/May/2026 13:15:11] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-24 13:15:13,614 [INFO] 127.0.0.1 - - [24/May/2026 13:15:13] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 13:15:44,873 [INFO] 127.0.0.1 - - [24/May/2026 13:15:44] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 13:16:14,977 [INFO] 127.0.0.1 - - [24/May/2026 13:16:14] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 13:16:29,369 [INFO] 127.0.0.1 - - [24/May/2026 13:16:29] "GET /apropos HTTP/1.1" 200 -
+2026-05-24 13:16:29,415 [INFO] 127.0.0.1 - - [24/May/2026 13:16:29] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-24 13:16:31,251 [INFO] 127.0.0.1 - - [24/May/2026 13:16:31] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 13:16:35,797 [INFO] 127.0.0.1 - - [24/May/2026 13:16:35] "GET /suivi HTTP/1.1" 200 -
+2026-05-24 13:16:35,926 [INFO] 127.0.0.1 - - [24/May/2026 13:16:35] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-24 13:16:38,797 [INFO] 127.0.0.1 - - [24/May/2026 13:16:38] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 13:16:46,608 [INFO] 127.0.0.1 - - [24/May/2026 13:16:46] "GET /historique HTTP/1.1" 200 -
+2026-05-24 13:16:46,641 [INFO] 127.0.0.1 - - [24/May/2026 13:16:46] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-24 13:16:47,952 [INFO] 127.0.0.1 - - [24/May/2026 13:16:47] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 13:16:52,518 [INFO] 127.0.0.1 - - [24/May/2026 13:16:52] "GET /historique HTTP/1.1" 200 -
+2026-05-24 13:16:52,549 [INFO] 127.0.0.1 - - [24/May/2026 13:16:52] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-24 13:16:53,749 [INFO] 127.0.0.1 - - [24/May/2026 13:16:53] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 13:16:55,653 [INFO] 127.0.0.1 - - [24/May/2026 13:16:55] "GET /historique?email=binta.kouyate@gmail.com HTTP/1.1" 200 -
+2026-05-24 13:16:55,683 [INFO] 127.0.0.1 - - [24/May/2026 13:16:55] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-24 13:16:56,889 [INFO] 127.0.0.1 - - [24/May/2026 13:16:56] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 13:17:01,776 [INFO] 127.0.0.1 - - [24/May/2026 13:17:01] "GET /facture/6a12f9df9bc19f5888138975 HTTP/1.1" 200 -
+2026-05-24 13:17:01,816 [INFO] 127.0.0.1 - - [24/May/2026 13:17:01] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-24 13:17:03,204 [INFO] 127.0.0.1 - - [24/May/2026 13:17:03] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 13:17:27,942 [INFO] 127.0.0.1 - - [24/May/2026 13:17:27] "GET /boutique HTTP/1.1" 200 -
+2026-05-24 13:17:27,978 [INFO] 127.0.0.1 - - [24/May/2026 13:17:27] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-05-24 13:17:28,280 [INFO] 127.0.0.1 - - [24/May/2026 13:17:28] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-05-24 13:17:29,699 [INFO] 127.0.0.1 - - [24/May/2026 13:17:29] "GET /nb_commandes_attente HTTP/1.1" 200 -

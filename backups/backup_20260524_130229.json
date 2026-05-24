@@ -1,13 +1,13 @@
 {
-  "date": "2026-05-24 09:02:08.093957",
+  "date": "2026-05-24 13:02:29.026307",
   "nb_produits": 19,
-  "nb_commandes": 3,
+  "nb_commandes": 0,
   "produits": [
     {
       "nom": "Mangues Kent",
       "categorie": "Fruits",
       "prix": 1500,
-      "stock": 169,
+      "stock": 200,
       "producteur": "Verger de Casamance",
       "image": "🥭",
       "photo": "https://images.pexels.com/photos/918643/pexels-photo-918643.jpeg?w=300",
@@ -15,9 +15,7 @@
       "attributs": {
         "origine": "Ziguinchor",
         "bio": true
-      },
-      "promo": 20,
-      "prix_final": 1200
+      }
     },
     {
       "nom": "Bissap Seche",
@@ -31,9 +29,7 @@
       "attributs": {
         "origine": "Louga",
         "bio": true
-      },
-      "prix_final": 2500,
-      "promo": 0
+      }
     },
     {
       "nom": "Ditakh",
@@ -47,9 +43,7 @@
       "attributs": {
         "origine": "Fatick",
         "bio": true
-      },
-      "promo": 0,
-      "prix_final": 2000
+      }
     },
     {
       "nom": "Tamarin",
@@ -63,9 +57,7 @@
       "attributs": {
         "origine": "Thies",
         "bio": false
-      },
-      "prix_final": 1000,
-      "promo": 0
+      }
     },
     {
       "nom": "Gombo Frais",
@@ -79,9 +71,7 @@
       "attributs": {
         "origine": "Dakar",
         "bio": false
-      },
-      "promo": 0,
-      "prix_final": 800
+      }
     },
     {
       "nom": "Oignons Violets",
@@ -95,9 +85,7 @@
       "attributs": {
         "origine": "Saint-Louis",
         "bio": false
-      },
-      "prix_final": 600,
-      "promo": 0
+      }
     },
     {
       "nom": "Aubergine Africaine",
@@ -111,9 +99,7 @@
       "attributs": {
         "origine": "Kaolack",
         "bio": true
-      },
-      "prix_final": 700,
-      "promo": 0
+      }
     },
     {
       "nom": "Piment Demon",
@@ -127,9 +113,7 @@
       "attributs": {
         "origine": "Ziguinchor",
         "bio": true
-      },
-      "prix_final": 1200,
-      "promo": 0
+      }
     },
     {
       "nom": "Mil Local",
@@ -143,9 +127,7 @@
       "attributs": {
         "origine": "Diourbel",
         "bio": true
-      },
-      "prix_final": 500,
-      "promo": 0
+      }
     },
     {
       "nom": "Riz Broken",
@@ -159,9 +141,7 @@
       "attributs": {
         "origine": "Saint-Louis",
         "bio": false
-      },
-      "prix_final": 450,
-      "promo": 0
+      }
     },
     {
       "nom": "Mais Local",
@@ -175,9 +155,7 @@
       "attributs": {
         "origine": "Tambacounda",
         "bio": true
-      },
-      "prix_final": 400,
-      "promo": 0
+      }
     },
     {
       "nom": "Huile d'Arachide",
@@ -191,9 +169,7 @@
       "attributs": {
         "origine": "Kaolack",
         "bio": true
-      },
-      "prix_final": 3500,
-      "promo": 0
+      }
     },
     {
       "nom": "Huile de Palme Rouge",
@@ -207,9 +183,7 @@
       "attributs": {
         "origine": "Kolda",
         "bio": true
-      },
-      "prix_final": 2800,
-      "promo": 0
+      }
     },
     {
       "nom": "Thiof Seche",
@@ -222,9 +196,7 @@
       "unite": "kg",
       "attributs": {
         "origine": "Kayar"
-      },
-      "prix_final": 8000,
-      "promo": 0
+      }
     },
     {
       "nom": "Yeet Mollusque",
@@ -237,35 +209,60 @@
       "unite": "kg",
       "attributs": {
         "origine": "Mbour"
-      },
-      "prix_final": 5000,
-      "promo": 0
+      }
     },
     {
-      "nom": "kama",
-      "categorie": "Legumes",
-      "prix": 3,
-      "stock": 4,
+      "nom": "uhfduy",
+      "categorie": "Cereales",
+      "prix": 5,
+      "stock": 9,
       "unite": "kg",
-      "producteur": "koussanar",
+      "producteur": "CAMARAiofcj",
       "image": "📦",
       "photo": "",
       "ajoute_par": "ipc",
       "attributs": {
         "origine": "",
         "bio": false
-      },
-      "prix_final": 1,
-      "promo": 0,
-      "promo_global": 50
+      }
     },
     {
-      "nom": "Ib Camara",
-      "categorie": "Cereales",
-      "prix": 5,
-      "stock": 5,
+      "nom": "okyiy",
+      "categorie": "Poissons",
+      "prix": 7,
+      "stock": 13,
       "unite": "kg",
-      "producteur": "CAMARAiofcj",
+      "producteur": "kouss",
+      "image": "📦",
+      "photo": "",
+      "ajoute_par": "ipc",
+      "attributs": {
+        "origine": "",
+        "bio": false
+      }
+    },
+    {
+      "nom": "slkjc",
+      "categorie": "Fruits",
+      "prix": 3,
+      "stock": 8,
+      "unite": "kg",
+      "producteur": "kkkouss",
+      "image": "📦",
+      "photo": "",
+      "ajoute_par": "cmr",
+      "attributs": {
+        "origine": "",
+        "bio": false
+      }
+    },
+    {
+      "nom": "wsdjc",
+      "categorie": "Epices",
+      "prix": 20,
+      "stock": 30,
+      "unite": "kg",
+      "producteur": "kkkkouss",
       "image": "📦",
       "photo": "",
       "ajoute_par": "cmr",
@@ -273,138 +270,9 @@
         "origine": "",
         "bio": false
       },
-      "promo": 0,
-      "prix_final": 5
-    },
-    {
-      "nom": "AAAY",
-      "categorie": "Poissons",
-      "prix": 4,
-      "stock": 10,
-      "unite": "kg",
-      "producteur": "jkreuhr",
-      "image": "📦",
-      "photo": "",
-      "ajoute_par": "ipc",
-      "attributs": {
-        "origine": "",
-        "bio": false
-      },
-      "prix_final": 4,
-      "promo_global": 50,
-      "promo": 0
-    },
-    {
-      "nom": "PHUP",
-      "categorie": "Boissons",
-      "prix": 19,
-      "stock": 38,
-      "unite": "kg",
-      "producteur": "koussanar",
-      "image": "📦",
-      "photo": "",
-      "ajoute_par": "ipc",
-      "attributs": {
-        "origine": "",
-        "bio": false
-      },
-      "prix_final": 9,
-      "promo_global": 50
+      "prix_final": 16,
+      "promo": 20
     }
   ],
-  "commandes": [
-    {
-      "client": {
-        "nom": "Mariama Diop",
-        "email": "mariama.diop@gmail.com",
-        "telephone": "+221701234572",
-        "ville": "Tambacounda"
-      },
-      "date": "2026-05-16 20:23:20.397000",
-      "articles": [
-        {
-          "image": "🥭",
-          "nom": "Mangues Kent",
-          "prix_final": 1500,
-          "prix_unitaire": 1500,
-          "promo": 0,
-          "quantite": 5,
-          "unite": "kg"
-        }
-      ],
-      "statut": "en_attente",
-      "sous_total": 7500,
-      "reduction": 0,
-      "total": 8000,
-      "devise": "FCFA",
-      "livraison": {
-        "type": "normal",
-        "frais": 500,
-        "ville": "Dakar",
-        "region": "Dakar"
-      }
-    },
-    {
-      "client": {
-        "nom": "Rokhaya Sarr",
-        "email": "rokhaya.sarr@gmail.com",
-        "telephone": "+221781234574",
-        "ville": "Fatick"
-      },
-      "date": "2026-05-16 20:25:26.652000",
-      "articles": [
-        {
-          "image": "🥭",
-          "nom": "Mangues Kent",
-          "prix_final": 1500,
-          "prix_unitaire": 1500,
-          "promo": 0,
-          "quantite": 25,
-          "unite": "kg"
-        }
-      ],
-      "statut": "expediee",
-      "sous_total": 37500,
-      "reduction": 0,
-      "total": 38000,
-      "devise": "FCFA",
-      "livraison": {
-        "type": "normal",
-        "frais": 500,
-        "ville": "Dakar",
-        "region": "Dakar"
-      }
-    },
-    {
-      "client": {
-        "nom": "Ibrahima Fall",
-        "email": "ibrahima.fall@gmail.com",
-        "telephone": "+221781234571",
-        "ville": "Kaolack"
-      },
-      "date": "2026-05-21 11:51:32.933000",
-      "articles": [
-        {
-          "image": "🥭",
-          "nom": "Mangues Kent",
-          "prix_final": 1500,
-          "prix_unitaire": 1500,
-          "promo": 0,
-          "quantite": 1,
-          "unite": "kg"
-        }
-      ],
-      "statut": "en_attente",
-      "sous_total": 1500,
-      "reduction": 0,
-      "total": 2000,
-      "devise": "FCFA",
-      "livraison": {
-        "type": "normal",
-        "frais": 500,
-        "ville": "Dakar",
-        "region": "Dakar"
-      }
-    }
-  ]
+  "commandes": []
 }

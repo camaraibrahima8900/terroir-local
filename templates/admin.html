@@ -483,6 +483,7 @@
                     <small class="text-muted">Sauvegarder les donnees</small>
                 </a>
             </div>
+            {% if username == 'admin' %}
             <div class="col-md-3">
                 <a href="/admin/reinitialiser"
                    onclick="return confirm('Reinitialiser les stocks ?')"
@@ -501,6 +502,7 @@
                     <small class="text-muted">Effacer commandes</small>
                 </a>
             </div>
+            {% endif %}
             <div class="col-md-3">
                 <a href="/stats" class="card border-0 shadow-sm rounded-3 p-4 text-center text-decoration-none h-100 d-block">
                     <i class="fas fa-chart-bar fa-2x text-success mb-2"></i>

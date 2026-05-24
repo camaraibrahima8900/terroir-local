@@ -770,6 +770,8 @@ def backup():
 @login_requis
 @admin_requis
 def reinitialiser():
+    if session.get("username") != "admin":
+        return redirect(url_for("admin"))
     import importlib
     import setup_db as sdb
     importlib.reload(sdb)
@@ -781,6 +783,8 @@ def reinitialiser():
 @login_requis
 @admin_requis
 def supprimer_commandes():
+    if session.get("username") != "admin":
+        return redirect(url_for("admin"))
     db = get_db()
     if db is not None:
         result = db.commandes.delete_many({})
