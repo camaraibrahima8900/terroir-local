@@ -20,6 +20,9 @@ BACKUP_DIR = os.path.join(BASE_DIR, "backups")
 LOG_FILE = os.path.join(BASE_DIR, "logs", "terroir.log")
 USERS_FILE = os.path.join(BASE_DIR, "users.json")
 
+# SECURITE
+SECRET_KEY = os.environ.get("SECRET_KEY", "terroir_local_secret_key_2024_senegal_koussanar")
+
 # APPLICATION
 DEVISE = "FCFA"
 APP_NOM = "Terroir Local Senegal"

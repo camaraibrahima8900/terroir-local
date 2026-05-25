@@ -1,13 +1,13 @@
 {
-  "date": "2026-05-24 13:02:29.026307",
+  "date": "2026-05-25 08:17:35.740760",
   "nb_produits": 19,
-  "nb_commandes": 0,
+  "nb_commandes": 3,
   "produits": [
     {
       "nom": "Mangues Kent",
       "categorie": "Fruits",
       "prix": 1500,
-      "stock": 200,
+      "stock": 199,
       "producteur": "Verger de Casamance",
       "image": "🥭",
       "photo": "https://images.pexels.com/photos/918643/pexels-photo-918643.jpeg?w=300",
@@ -215,7 +215,7 @@
       "nom": "uhfduy",
       "categorie": "Cereales",
       "prix": 5,
-      "stock": 9,
+      "stock": 7,
       "unite": "kg",
       "producteur": "CAMARAiofcj",
       "image": "📦",
@@ -230,7 +230,7 @@
       "nom": "okyiy",
       "categorie": "Poissons",
       "prix": 7,
-      "stock": 13,
+      "stock": 11,
       "unite": "kg",
       "producteur": "kouss",
       "image": "📦",
@@ -274,5 +274,117 @@
       "promo": 20
     }
   ],
-  "commandes": []
+  "commandes": [
+    {
+      "client": {
+        "nom": "Ibrahima Fall",
+        "email": "ibrahima.fall@gmail.com",
+        "telephone": "+221781234571",
+        "ville": "Kaolack"
+      },
+      "date": "2026-05-24 13:06:13.701000",
+      "articles": [
+        {
+          "image": "📦",
+          "nom": "okyiy",
+          "prix_final": 6,
+          "prix_unitaire": 7,
+          "promo": 9,
+          "quantite": 1,
+          "unite": "kg"
+        },
+        {
+          "image": "📦",
+          "nom": "uhfduy",
+          "prix_final": 4,
+          "prix_unitaire": 5,
+          "promo": 9,
+          "quantite": 1,
+          "unite": "kg"
+        }
+      ],
+      "statut": "en_attente",
+      "sous_total": 12,
+      "reduction": 2,
+      "total": 510,
+      "devise": "FCFA",
+      "livraison": {
+        "type": "normal",
+        "frais": 500,
+        "ville": "Tambacounda",
+        "region": "Tambacounda"
+      }
+    },
+    {
+      "client": {
+        "nom": "Binta Kouyate",
+        "email": "binta.kouyate@gmail.com",
+        "telephone": "+221701234578",
+        "ville": "Kaffrine"
+      },
+      "date": "2026-05-24 13:15:10.749000",
+      "articles": [
+        {
+          "image": "📦",
+          "nom": "okyiy",
+          "prix_final": 6,
+          "prix_unitaire": 7,
+          "promo": 9,
+          "quantite": 1,
+          "unite": "kg"
+        },
+        {
+          "image": "📦",
+          "nom": "uhfduy",
+          "prix_final": 4,
+          "prix_unitaire": 5,
+          "promo": 9,
+          "quantite": 1,
+          "unite": "kg"
+        }
+      ],
+      "statut": "confirmee",
+      "sous_total": 12,
+      "reduction": 2,
+      "total": 510,
+      "devise": "FCFA",
+      "livraison": {
+        "type": "normal",
+        "frais": 500,
+        "ville": "Kaffrine",
+        "region": "Kaffrine"
+      }
+    },
+    {
+      "client": {
+        "nom": "Fatou Ndiaye",
+        "email": "fatou.ndiaye@gmail.com",
+        "telephone": "+221781234568",
+        "ville": "Thies"
+      },
+      "date": "2026-05-24 14:52:10.418000",
+      "articles": [
+        {
+          "image": "🥭",
+          "nom": "Mangues Kent",
+          "prix_final": 1500,
+          "prix_unitaire": 1500,
+          "promo": 0,
+          "quantite": 1,
+          "unite": "kg"
+        }
+      ],
+      "statut": "en_attente",
+      "sous_total": 1500,
+      "reduction": 0,
+      "total": 2000,
+      "devise": "FCFA",
+      "livraison": {
+        "type": "normal",
+        "frais": 500,
+        "ville": "Dakar",
+        "region": "Dakar"
+      }
+    }
+  ]
 }

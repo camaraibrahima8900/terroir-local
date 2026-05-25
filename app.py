@@ -84,6 +84,9 @@ def login():
         username = request.form.get("username", "").strip()
         password = request.form.get("password", "").strip()
         role = authentifier(username, password)
+        if role == "BLOQUE":
+            return render_template("login.html",
+                error="⛔ Compte bloque ! Contactez l administrateur.")
         if role:
             session["username"] = username
             session["role"] = role

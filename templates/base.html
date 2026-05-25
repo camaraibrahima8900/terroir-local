@@ -21,6 +21,35 @@
         .promo { color: #27ae60; font-weight: bold; }
         .footer { background-color: #2C5F2D; color: white; padding: 15px; text-align: center; margin-top: 40px; }
     </style>
+<!-- Google Translate -->
+<script type="text/javascript">
+function googleTranslateElementInit() {
+    new google.translate.TranslateElement({
+        pageLanguage: 'fr',
+        includedLanguages: 'en,fr,ar,wo,pt,es,de,it,zh,ru,tr,ha,sw,am',
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+        autoDisplay: false
+    }, 'google_translate_element');
+}
+</script>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<style>
+.goog-te-banner-frame { display: none !important; }
+.goog-te-menu-value span { color: white !important; }
+#google_translate_element { display: inline-block; }
+#google_translate_element select {
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.5);
+    color: white;
+    border-radius: 8px;
+    padding: 4px 8px;
+    font-size: 0.85rem;
+    cursor: pointer;
+}
+.goog-te-gadget { color: transparent !important; font-size: 0 !important; }
+.goog-te-gadget select { font-size: 0.85rem !important; }
+body { top: 0 !important; }
+</style>
 </head>
 <body>
 {% if role %}
@@ -42,10 +71,11 @@
             <a href="/profil" class="badge {% if role == "administrateur" %}badge-admin{% else %}badge-user{% endif %} px-3 py-2 text-decoration-none">
                 <i class="fas fa-user"></i> {{ username }} ({{ role }})
             </a>
+            <div id="google_translate_element"></div>
             <button onclick="toggleDarkMode()" class="btn btn-sm btn-outline-light rounded-3" title="Mode sombre">
                 <i class="fas fa-moon"></i>
             </button>
-            <a class="btn btn-danger btn-sm" href="/logout"><i class="fas fa-sign-out-alt"></i> Deconnexion</a>
+            <a class="btn btn-danger btn-sm" href="/logout"><i class="fas fa-sign-out-alt"></i> <span data-trad="Deconnexion">Deconnexion</span></a>
         </div>
     </div>
 </nav>

@@ -5,9 +5,10 @@
     <div class="col-12 d-flex justify-content-between align-items-center">
         <div>
             <h2 class="fw-bold text-success">
-                <i class="fas fa-store me-2"></i>Boutique Terroir Local
+                <i class="fas fa-store me-2"></i><h2 class="fw-bold text-success">
+                <i class="fas fa-store me-2"></i><span data-trad="Boutique Terroir Local">Boutique Terroir Local</span>
             </h2>
-            <p class="text-muted mb-0">Produits frais des cooperatives senegalaises</p>
+            <p class="text-muted mb-0"><span data-trad="Produits frais des cooperatives senegalaises">Produits frais des cooperatives senegalaises</span></p>
         </div>
         <span class="badge bg-success fs-6">{{ produits|length }} produits</span>
     </div>
@@ -52,7 +53,7 @@
                     <option value="prix_asc" {% if tri == 'prix_asc' %}selected{% endif %}>Prix croissant</option>
                     <option value="prix_desc" {% if tri == 'prix_desc' %}selected{% endif %}>Prix decroissant</option>
                     <option value="stock" {% if tri == 'stock' %}selected{% endif %}>Stock disponible</option>
-                    <option value="categorie" {% if tri == 'categorie' %}selected{% endif %}>Categorie</option>
+                    <option value="categorie" {% if tri == 'categorie' %}selected{% endif %}><span data-trad="Categorie">Categorie</span></option>
                 </select>
             </div>
             <div class="col-md-1 d-flex align-items-end gap-2">
@@ -146,7 +147,7 @@
                     <span class="badge-promo">-{{ p.promo }}%</span>
                     {% endif %}
                     {% if p.stock > 100 %}
-                    <span class="badge bg-primary" style="font-size:0.7rem">NOUVEAU</span>
+                    <span class="badge bg-primary" style="font-size:0.7rem"><span data-trad="NOUVEAU">NOUVEAU</span></span>
                     {% endif %}
                     {% if p.stock == 0 %}
                     <span class="badge bg-danger" style="font-size:0.7rem">RUPTURE</span>
@@ -180,7 +181,7 @@
                     </div>
 
                     {% if p.stock == 0 %}
-                    <span class="badge-rupture mb-2">Rupture de stock</span>
+                    <span class="badge-rupture mb-2"><span data-trad="Rupture de stock">Rupture de stock</span></span>
                     {% elif p.stock < 5 %}
                     <small class="text-warning mb-1"><i class="fas fa-exclamation-triangle me-1"></i>Stock bas: {{ p.stock }}</small>
                     {% else %}
@@ -332,14 +333,14 @@
             {% else %}
                 <div class="text-center py-4 text-muted">
                     <i class="fas fa-shopping-cart fa-2x mb-2 d-block opacity-25"></i>
-                    <small>Panier vide</small>
+                    <small><span data-trad="Panier vide">Panier vide</span></small>
                 </div>
             {% endif %}
             </div>
 
             <div class="panier-total p-3">
                 <div class="d-flex justify-content-between small mb-1">
-                    <span>Sous-total:</span>
+                    <span><span data-trad="Sous-total">Sous-total</span>:</span>
                     <span class="fw-bold" id="panier-total">{{ total }} FCFA</span>
                 </div>
                 <div class="d-flex justify-content-between small mb-2">
@@ -347,7 +348,7 @@
                     <span id="frais-display" class="fw-bold text-warning">500 FCFA</span>
                 </div>
                 <div class="d-flex justify-content-between mb-3">
-                    <span class="fw-bold fs-6">TOTAL:</span>
+                    <span class="fw-bold fs-6"><span data-trad="TOTAL">TOTAL</span>:</span>
                     <span id="total-display" class="total-amount">{{ total + 500 }} FCFA</span>
                 </div>
 
