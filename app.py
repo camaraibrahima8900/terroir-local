@@ -890,37 +890,84 @@ def historique():
 def export_commandes():
     import csv
     import io
+    from datetime import datetime
     db = get_db()
     if db is None:
         return redirect(url_for("admin"))
     commandes = list(db.commandes.find({}).sort("date", -1))
     output = io.StringIO()
-    # Point-virgule pour Excel francais
+    output.write('﻿')  # BOM UTF-8 pour Excel
     writer = csv.writer(output, delimiter=";")
-    writer.writerow(["Date", "Client", "Telephone", "Ville", "Region",
-                     "Livraison", "Frais FCFA", "Total FCFA", "Statut",
-                     "Numero Commande", "Lieu Livraison"])
+
+    # En-tetes completes
+    writer.writerow([
+        "Numero Commande",
+        "Date",
+        "Heure",
+        "Nom Client",
+        "Telephone Client",
+        "Ville Client",
+        "Region Livraison",
+        "Lieu Precis",
+        "Type Livraison",
+        "Frais Livraison (FCFA)",
+        "Sous Total (FCFA)",
+        "Reduction (FCFA)",
+        "Total (FCFA)",
+        "Statut",
+        "Articles"
+    ])
+
     for c in commandes:
-        articles = ", ".join([
-            f"{a.get('nom','?')} x{a.get('quantite',1)}"
-            for a in c.get("articles", [])
-        ])
+        # Date et heure
+        date_obj = c.get("date")
+        if date_obj:
+            date_str = date_obj.strftime("%d/%m/%Y")
+            heure_str = date_obj.strftime("%H:%M:%S")
+        else:
+            date_str = ""
+            heure_str = ""
+
+        # Articles detailles
+        articles_list = []
+        for a in c.get("articles", []):
+            nom = a.get("nom", "?")
+            qte = a.get("quantite", 1)
+            prix = a.get("prix_final", a.get("prix_unitaire", 0))
+            unite = a.get("unite", "")
+            promo = a.get("promo", 0)
+            if promo > 0:
+                articles_list.append(f"{nom} x{qte} {unite} = {qte*prix} FCFA (-{promo}%)")
+            else:
+                articles_list.append(f"{nom} x{qte} {unite} = {qte*prix} FCFA")
+        articles_str = " | ".join(articles_list)
+
         writer.writerow([
-            c["date"].strftime("%d/%m/%Y %H:%M"),
-            c["client"]["nom"],
-            c["client"].get("telephone", ""),
+            c.get("numero", "N/A"),
+            date_str,
+            heure_str,
+            c["client"].get("nom", ""),
+            c.get("telephone_client", c["client"].get("telephone", "")),
             c["client"].get("ville", ""),
-            c["livraison"].get("region", ""),
-            c["livraison"].get("type", "normal"),
-            c["total"],
-            c.get("statut", "en_attente")
+            c.get("livraison", {}).get("region", ""),
+            c.get("lieu_livraison", ""),
+            c.get("livraison", {}).get("type", "normal"),
+            c.get("livraison", {}).get("frais", 500),
+            c.get("sous_total", c.get("total", 0)),
+            c.get("reduction", 0),
+            c.get("total", 0),
+            c.get("statut", "en_attente"),
+            articles_str
         ])
+
     output.seek(0)
     from flask import Response
     return Response(
         output.getvalue(),
-        mimetype="text/csv",
-        headers={"Content-Disposition": "attachment;filename=commandes_terroir_local.csv"}
+        mimetype="text/csv; charset=utf-8-sig",
+        headers={
+            "Content-Disposition": f"attachment;filename=commandes_terroir_local_{datetime.now().strftime('%Y%m%d_%H%M')}.csv"
+        }
     )
 
 @app.route("/verifier_promo", methods=["POST"])
