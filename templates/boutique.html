@@ -281,9 +281,9 @@
                     <label class="form-label fw-semibold small">
                         <i class="fas fa-map-marker-alt me-1 text-success"></i>Region
                     </label>
-                    <select id="region-select" class="form-select form-select-sm rounded-3">
+                    <select id="region-select" class="form-select form-select-sm rounded-3 notranslate" translate="no">
                         {% for r in regions %}
-                        <option>{{ r }}</option>
+                        <option class="notranslate" translate="no">{{ r }}</option>
                         {% endfor %}
                     </select>
                 </div>
@@ -366,7 +366,7 @@
                     <div id="promo-msg" class="small mt-1"></div>
                 </div>
 
-                <form method="POST" action="/commander" id="form-commande" onsubmit="sauvegarderScroll()">
+                <form method="POST" action="/commander" id="form-commande" translate="no" class="notranslate" onsubmit="sauvegarderScroll()">
                     <input type="hidden" name="region" id="region-input" value="Dakar">
                     <input type="hidden" name="livraison" id="livraison-input" value="normal">
                     <input type="hidden" name="frais_custom" id="frais-custom-hidden" value="">

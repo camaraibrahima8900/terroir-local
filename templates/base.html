@@ -20,7 +20,10 @@
         .rupture { color: #c0392b; font-weight: bold; }
         .promo { color: #27ae60; font-weight: bold; }
         .footer { background-color: #2C5F2D; color: white; padding: 15px; text-align: center; margin-top: 40px; }
-    </style>
+    .notranslate { font-family: inherit !important; }
+/* Proteger numeros telephone et commandes */
+.no-trad, .notranslate { unicode-bidi: plaintext; }
+</style>
 <!-- Google Translate -->
 <script type="text/javascript">
 function googleTranslateElementInit() {
@@ -49,6 +52,27 @@ function googleTranslateElementInit() {
 .goog-te-gadget { color: transparent !important; font-size: 0 !important; }
 .goog-te-gadget select { font-size: 0.85rem !important; }
 body { top: 0 !important; }
+/* Navbar sous barre Google Translate */
+.navbar {
+    position: relative !important;
+    top: 0 !important;
+    z-index: 1000 !important;
+    margin-top: 0 !important;
+}
+.goog-te-banner-frame {
+    height: 40px !important;
+}
+.container.mt-4 {
+    margin-top: 20px !important;
+    padding-top: 10px !important;
+}
+body {
+    top: 0 !important;
+    padding-top: 40px !important;
+}
+.notranslate { font-family: inherit !important; }
+/* Proteger numeros telephone et commandes */
+.no-trad, .notranslate { unicode-bidi: plaintext; }
 </style>
 </head>
 <body>

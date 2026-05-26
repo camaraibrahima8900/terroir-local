@@ -1,3 +1,4 @@
+{# notranslate #}
 {% extends 'base.html' %}
 {% block content %}
 <div class="row justify-content-center">
@@ -24,7 +25,7 @@
             <div class="row mb-4">
                 <div class="col-6">
                     <h6 class="fw-bold text-success">Client</h6>
-                    <div class="fw-semibold">{{ cmd.client.nom }}</div>
+                    <div class="fw-semibold"><span class="notranslate">{{ cmd.client.nom }}</span></div>
                     <div class="text-muted small">{{ cmd.client.telephone }}</div>
                     <div class="text-muted small">{{ cmd.client.email }}</div>
                     <div class="text-muted small">{{ cmd.client.ville }}</div>

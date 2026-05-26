@@ -884,91 +884,378 @@ def historique():
         email=email, total_depense=total_depense,
         role=session.get("role"), username=session.get("username"))
 
+@app.route("/preview_commandes")
+@login_requis
+@admin_requis
+def preview_commandes():
+    db = get_db()
+    if db is None:
+        return redirect(url_for("admin"))
+    commandes = list(db.commandes.find({}).sort("date", -1))
+    for c in commandes:
+        c["_id"] = str(c["_id"])
+        if c.get("date"):
+            c["date_str"] = c["date"].strftime("%d/%m/%Y %H:%M")
+    return render_template("preview_commandes.html",
+        commandes=commandes,
+        role=session.get("role"),
+        username=session.get("username"))
+
+@app.route("/export_commandes/<langue>")
+@login_requis
+@admin_requis
+def export_langue(langue):
+    import openpyxl, io
+    from datetime import datetime
+    from openpyxl.styles import Font, PatternFill, Alignment
+
+    TRAD = {
+        'fr': {
+            'headers': ["N Commande","Date","Heure","Nom Client","Telephone","Ville",
+                       "Region","Lieu Precis","Livraison","Frais FCFA","Sous-Total","Reduction","Total","Statut","Articles"],
+            'sheet': 'Commandes',
+            'statuts': {"en_attente":"En attente","confirmee":"Confirmee","expediee":"Expediee","livree":"Livree"},
+            'types': {"normal":"Normal","express":"Express","custom":"Personnalise"},
+            'filename': 'commandes_fr'
+        },
+        'en': {
+            'headers': ["Order No","Date","Time","Customer","Phone","City",
+                       "Region","Location","Delivery","Fee FCFA","Subtotal","Discount","Total","Status","Items"],
+            'sheet': 'Orders',
+            'statuts': {"en_attente":"Pending","confirmee":"Confirmed","expediee":"Shipped","livree":"Delivered"},
+            'types': {"normal":"Normal","express":"Express","custom":"Custom"},
+            'filename': 'orders_en'
+        },
+        'ar': {
+            'headers': ["رقم الطلب","التاريخ","الوقت","العميل","الهاتف","المدينة",
+                       "المنطقة","الموقع","التوصيل","الرسوم","المجموع","الخصم","الاجمالي","الحالة","المنتجات"],
+            'sheet': 'الطلبات',
+            'statuts': {"en_attente":"قيد الانتظار","confirmee":"مؤكد","expediee":"تم الشحن","livree":"تم التسليم"},
+            'types': {"normal":"عادي","express":"سريع","custom":"مخصص"},
+            'filename': 'commandes_ar'
+        },
+        'pt': {
+            'headers': ["N Pedido","Data","Hora","Cliente","Telefone","Cidade",
+                       "Regiao","Local","Entrega","Taxa","Subtotal","Desconto","Total","Estado","Artigos"],
+            'sheet': 'Pedidos',
+            'statuts': {"en_attente":"Pendente","confirmee":"Confirmado","expediee":"Enviado","livree":"Entregue"},
+            'types': {"normal":"Normal","express":"Expresso","custom":"Personalizado"},
+            'filename': 'pedidos_pt'
+        },
+        'es': {
+            'headers': ["N Pedido","Fecha","Hora","Cliente","Telefono","Ciudad",
+                       "Region","Lugar","Entrega","Tarifa","Subtotal","Descuento","Total","Estado","Articulos"],
+            'sheet': 'Pedidos',
+            'statuts': {"en_attente":"Pendiente","confirmee":"Confirmado","expediee":"Enviado","livree":"Entregado"},
+            'types': {"normal":"Normal","express":"Expres","custom":"Personalizado"},
+            'filename': 'pedidos_es'
+        },
+        'de': {
+            'headers': ["Bestell-Nr","Datum","Zeit","Kunde","Telefon","Stadt",
+                       "Region","Ort","Lieferung","Gebühr","Zwischensumme","Rabatt","Gesamt","Status","Artikel"],
+            'sheet': 'Bestellungen',
+            'statuts': {"en_attente":"Ausstehend","confirmee":"Bestatigt","expediee":"Versandt","livree":"Geliefert"},
+            'types': {"normal":"Normal","express":"Express","custom":"Benutzerdefiniert"},
+            'filename': 'bestellungen_de'
+        },
+        'wo': {
+            'headers': ["N Yegël","Date","Yoon","Tur","Telefon","Dëkk",
+                       "Bunt","Yëgël","Xëtu","Xaalis","Lim","Waafu","Yëpp","Kañ","Njënd"],
+            'sheet': 'Yegël yi',
+            'statuts': {"en_attente":"Di xaar","confirmee":"Dëgëlë","expediee":"Dem","livree":"Fëkk"},
+            'types': {"normal":"Dëgëlëk","express":"Bu yomb","custom":"Bu neex"},
+            'filename': 'commandes_wo'
+        },
+    }
+
+    t = TRAD.get(langue, TRAD['fr'])
+    db = get_db()
+    if db is None:
+        return redirect(url_for("admin"))
+
+    commandes = list(db.commandes.find({}).sort("date", -1))
+    wb = openpyxl.Workbook()
+    ws = wb.active
+    ws.title = t['sheet']
+
+    header_font = Font(bold=True, color="FFFFFF")
+    header_fill = PatternFill("solid", fgColor="1a6b3a")
+
+    ws.append(t['headers'])
+    for col in range(1, len(t['headers'])+1):
+        cell = ws.cell(row=1, column=col)
+        cell.font = header_font
+        cell.fill = header_fill
+        cell.alignment = Alignment(horizontal="center")
+
+    # Traduction automatique si langue pas fr
+    def traduire(texte, lang):
+        if lang == 'fr' or not texte:
+            return texte
+        try:
+            from deep_translator import GoogleTranslator
+            return GoogleTranslator(source='fr', target=lang).translate(str(texte))
+        except:
+            return texte
+
+    for c in commandes:
+        date_obj = c.get("date")
+        articles_list = []
+        for a in c.get("articles", []):
+            nom = traduire(a.get("nom","?"), langue)
+            qte = a.get("quantite", 1)
+            prix = a.get("prix_final", 0)
+            articles_list.append(f"{nom} x{qte} = {qte*prix} FCFA")
+
+        tel = str(c.get("telephone_client", c["client"].get("telephone", "")))
+        region = traduire(c.get("livraison", {}).get("region", ""), langue)
+        lieu = traduire(c.get("lieu_livraison", ""), langue)
+        ville = traduire(c["client"].get("ville", ""), langue)
+        type_liv = t["types"].get(c.get("livraison", {}).get("type", "normal"), "Normal")
+        statut = t["statuts"].get(c.get("statut", "en_attente"), "En attente")
+
+        ws.append([
+            c.get("numero", "N/A"),
+            date_obj.strftime("%d/%m/%Y") if date_obj else "",
+            date_obj.strftime("%H:%M:%S") if date_obj else "",
+            c["client"].get("nom", ""),
+            tel,
+            ville,
+            region,
+            lieu,
+            type_liv,
+            c.get("livraison", {}).get("frais", 500),
+            c.get("sous_total", c.get("total", 0)),
+            c.get("reduction", 0),
+            c.get("total", 0),
+            statut,
+            " | ".join(articles_list)
+        ])
+        ws.cell(row=ws.max_row, column=5).number_format = "@"
+
+    for col in ws.columns:
+        max_len = max(len(str(cell.value or "")) for cell in col)
+        ws.column_dimensions[col[0].column_letter].width = min(max_len + 3, 40)
+
+    output = io.BytesIO()
+    wb.save(output)
+    output.seek(0)
+    from flask import Response
+    return Response(
+        output.getvalue(),
+        mimetype="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+        headers={"Content-Disposition": f"attachment;filename={t['filename']}_{datetime.now().strftime('%Y%m%d')}.xlsx"}
+    )
+
+@app.route("/export_commandes_en")
+@login_requis
+@admin_requis
+def export_commandes_en():
+    import openpyxl, io
+    from datetime import datetime
+    from openpyxl.styles import Font, PatternFill, Alignment
+    db = get_db()
+    if db is None:
+        return redirect(url_for("admin"))
+    commandes = list(db.commandes.find({}).sort("date", -1))
+    wb = openpyxl.Workbook()
+    ws = wb.active
+    ws.title = "Orders"
+    header_font = Font(bold=True, color="FFFFFF")
+    header_fill = PatternFill("solid", fgColor="1a6b3a")
+    headers = [
+        "Order Number", "Date", "Time",
+        "Customer Name", "Phone", "City",
+        "Delivery Region", "Precise Location", "Delivery Type",
+        "Delivery Fee (FCFA)", "Subtotal (FCFA)", "Discount (FCFA)",
+        "Total (FCFA)", "Status", "Items Ordered"
+    ]
+    ws.append(headers)
+    for col in range(1, len(headers)+1):
+        cell = ws.cell(row=1, column=col)
+        cell.font = header_font
+        cell.fill = header_fill
+        cell.alignment = Alignment(horizontal="center")
+    statuts_en = {
+        "en_attente": "Pending",
+        "confirmee": "Confirmed",
+        "expediee": "Shipped",
+        "livree": "Delivered"
+    }
+    types_en = {"normal": "Normal", "express": "Express", "custom": "Custom"}
+    for c in commandes:
+        date_obj = c.get("date")
+        articles_list = [
+            f"{a.get('nom','?')} x{a.get('quantite',1)} = {a.get('quantite',1)*a.get('prix_final',0)} FCFA"
+            for a in c.get("articles", [])
+        ]
+        tel = str(c.get("telephone_client", c["client"].get("telephone", "")))
+        ws.append([
+            c.get("numero", "N/A"),
+            date_obj.strftime("%d/%m/%Y") if date_obj else "",
+            date_obj.strftime("%H:%M:%S") if date_obj else "",
+            c["client"].get("nom", ""),
+            tel,
+            c["client"].get("ville", ""),
+            c.get("livraison", {}).get("region", ""),
+            c.get("lieu_livraison", ""),
+            types_en.get(c.get("livraison", {}).get("type", "normal"), "Normal"),
+            c.get("livraison", {}).get("frais", 500),
+            c.get("sous_total", c.get("total", 0)),
+            c.get("reduction", 0),
+            c.get("total", 0),
+            statuts_en.get(c.get("statut", "en_attente"), "Pending"),
+            " | ".join(articles_list)
+        ])
+        ws.cell(row=ws.max_row, column=5).number_format = "@"
+    for col in ws.columns:
+        max_len = max(len(str(cell.value or "")) for cell in col)
+        ws.column_dimensions[col[0].column_letter].width = min(max_len + 3, 40)
+    output = io.BytesIO()
+    wb.save(output)
+    output.seek(0)
+    from flask import Response
+    return Response(
+        output.getvalue(),
+        mimetype="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+        headers={"Content-Disposition": f"attachment;filename=orders_{datetime.now().strftime('%Y%m%d_%H%M')}.xlsx"}
+    )
+
 @app.route("/export_commandes")
 @login_requis
 @admin_requis
 def export_commandes():
-    import csv
-    import io
+    import csv, io
     from datetime import datetime
     db = get_db()
     if db is None:
         return redirect(url_for("admin"))
     commandes = list(db.commandes.find({}).sort("date", -1))
-    output = io.StringIO()
-    output.write('﻿')  # BOM UTF-8 pour Excel
-    writer = csv.writer(output, delimiter=";")
 
-    # En-tetes completes
-    writer.writerow([
-        "Numero Commande",
-        "Date",
-        "Heure",
-        "Nom Client",
-        "Telephone Client",
-        "Ville Client",
-        "Region Livraison",
-        "Lieu Precis",
-        "Type Livraison",
-        "Frais Livraison (FCFA)",
-        "Sous Total (FCFA)",
-        "Reduction (FCFA)",
-        "Total (FCFA)",
-        "Statut",
-        "Articles"
-    ])
+    # Utiliser xlwt pour Excel propre
+    try:
+        import openpyxl
+        wb = openpyxl.Workbook()
+        ws = wb.active
+        ws.title = "Commandes"
 
-    for c in commandes:
-        # Date et heure
-        date_obj = c.get("date")
-        if date_obj:
-            date_str = date_obj.strftime("%d/%m/%Y")
-            heure_str = date_obj.strftime("%H:%M:%S")
-        else:
-            date_str = ""
-            heure_str = ""
+        # Style entetes
+        from openpyxl.styles import Font, PatternFill, Alignment
+        header_font = Font(bold=True, color="FFFFFF")
+        header_fill = PatternFill("solid", fgColor="1a6b3a")
 
-        # Articles detailles
-        articles_list = []
-        for a in c.get("articles", []):
-            nom = a.get("nom", "?")
-            qte = a.get("quantite", 1)
-            prix = a.get("prix_final", a.get("prix_unitaire", 0))
-            unite = a.get("unite", "")
-            promo = a.get("promo", 0)
-            if promo > 0:
-                articles_list.append(f"{nom} x{qte} {unite} = {qte*prix} FCFA (-{promo}%)")
-            else:
+        # En-tetes
+        headers = [
+            "N° Commande", "Date", "Heure",
+            "Nom du Client", "Telephone", "Ville",
+            "Region de Livraison", "Lieu Precis", "Type de Livraison",
+            "Frais de Livraison (FCFA)", "Sous-Total (FCFA)", "Reduction (FCFA)",
+            "Total (FCFA)", "Statut de la Commande", "Articles Commandes"
+        ]
+        ws.append(headers)
+        for col in range(1, len(headers)+1):
+            cell = ws.cell(row=1, column=col)
+            cell.font = header_font
+            cell.fill = header_fill
+            cell.alignment = Alignment(horizontal="center")
+
+        # Donnees
+        for c in commandes:
+            date_obj = c.get("date")
+            date_str = date_obj.strftime("%d/%m/%Y") if date_obj else ""
+            heure_str = date_obj.strftime("%H:%M:%S") if date_obj else ""
+
+            articles_list = []
+            for a in c.get("articles", []):
+                nom = a.get("nom", "?")
+                qte = a.get("quantite", 1)
+                prix = a.get("prix_final", a.get("prix_unitaire", 0))
+                unite = a.get("unite", "")
                 articles_list.append(f"{nom} x{qte} {unite} = {qte*prix} FCFA")
-        articles_str = " | ".join(articles_list)
 
+            # Telephone comme texte pour garder le format complet
+            tel = str(c.get("telephone_client", c["client"].get("telephone", "")))
+
+            ws.append([
+                c.get("numero", "N/A"),
+                date_str,
+                heure_str,
+                c["client"].get("nom", ""),
+                tel,
+                c["client"].get("ville", ""),
+                c.get("livraison", {}).get("region", ""),
+                c.get("lieu_livraison", ""),
+                {"normal": "Normal", "express": "Express", "custom": "Personnalise"}.get(c.get("livraison", {}).get("type", "normal"), "Normal"),
+                c.get("livraison", {}).get("frais", 500),
+                c.get("sous_total", c.get("total", 0)),
+                c.get("reduction", 0),
+                c.get("total", 0),
+                {"en_attente": "En attente", "confirmee": "Confirmee", "expediee": "Expediee", "livree": "Livree"}.get(c.get("statut", "en_attente"), "En attente"),
+                " | ".join(articles_list)
+            ])
+
+            # Forcer telephone comme texte
+            tel_cell = ws.cell(row=ws.max_row, column=5)
+            tel_cell.number_format = "@"
+
+        # Ajuster largeur colonnes
+        for col in ws.columns:
+            max_len = max(len(str(cell.value or "")) for cell in col)
+            ws.column_dimensions[col[0].column_letter].width = min(max_len + 3, 40)
+
+        output = io.BytesIO()
+        wb.save(output)
+        output.seek(0)
+
+        from flask import Response
+        return Response(
+            output.getvalue(),
+            mimetype="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+            headers={
+                "Content-Disposition": f"attachment;filename=commandes_terroir_{datetime.now().strftime('%Y%m%d_%H%M')}.xlsx"
+            }
+        )
+
+    except ImportError:
+        # Fallback CSV si openpyxl pas installe
+        output = io.StringIO()
+        output.write('﻿')
+        writer = csv.writer(output, delimiter=";")
         writer.writerow([
-            c.get("numero", "N/A"),
-            date_str,
-            heure_str,
-            c["client"].get("nom", ""),
-            c.get("telephone_client", c["client"].get("telephone", "")),
-            c["client"].get("ville", ""),
-            c.get("livraison", {}).get("region", ""),
-            c.get("lieu_livraison", ""),
-            c.get("livraison", {}).get("type", "normal"),
-            c.get("livraison", {}).get("frais", 500),
-            c.get("sous_total", c.get("total", 0)),
-            c.get("reduction", 0),
-            c.get("total", 0),
-            c.get("statut", "en_attente"),
-            articles_str
+            "Numero", "Date", "Heure", "Client", "Telephone",
+            "Ville", "Region", "Lieu", "Livraison", "Frais",
+            "Sous Total", "Reduction", "Total", "Statut", "Articles"
         ])
-
-    output.seek(0)
-    from flask import Response
-    return Response(
-        output.getvalue(),
-        mimetype="text/csv; charset=utf-8-sig",
-        headers={
-            "Content-Disposition": f"attachment;filename=commandes_terroir_local_{datetime.now().strftime('%Y%m%d_%H%M')}.csv"
-        }
-    )
+        for c in commandes:
+            date_obj = c.get("date")
+            articles_list = [
+                f"{a.get('nom','?')} x{a.get('quantite',1)}"
+                for a in c.get("articles", [])
+            ]
+            writer.writerow([
+                c.get("numero", ""),
+                date_obj.strftime("%d/%m/%Y") if date_obj else "",
+                date_obj.strftime("%H:%M") if date_obj else "",
+                c["client"].get("nom", ""),
+                "'" + str(c.get("telephone_client", c["client"].get("telephone", ""))),
+                c["client"].get("ville", ""),
+                c.get("livraison", {}).get("region", ""),
+                c.get("lieu_livraison", ""),
+                {"normal": "Normal", "express": "Express", "custom": "Personnalise"}.get(c.get("livraison", {}).get("type", "normal"), "Normal"),
+                c.get("livraison", {}).get("frais", 500),
+                c.get("sous_total", c.get("total", 0)),
+                c.get("reduction", 0),
+                c.get("total", 0),
+                {"en_attente": "En attente", "confirmee": "Confirmee", "expediee": "Expediee", "livree": "Livree"}.get(c.get("statut", "en_attente"), "En attente"),
+                " | ".join(articles_list)
+            ])
+        output.seek(0)
+        from flask import Response
+        return Response(
+            output.getvalue(),
+            mimetype="text/csv; charset=utf-8-sig",
+            headers={"Content-Disposition": f"attachment;filename=commandes_{datetime.now().strftime('%Y%m%d')}.csv"}
+        )
 
 @app.route("/verifier_promo", methods=["POST"])
 @login_requis
