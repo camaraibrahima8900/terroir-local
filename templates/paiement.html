@@ -1,0 +1,370 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="row justify-content-center mt-4">
+    <div class="col-md-8">
+        <h2 class="fw-bold text-success mb-4">
+            <i class="fas fa-credit-card me-2"></i>Paiement Securise
+        </h2>
+
+        <!-- Resumé commande -->
+        <div class="card border-0 shadow-sm rounded-3 p-4 mb-4"
+             style="background:linear-gradient(135deg,#f0faf0,#e8f5e9)">
+            <div class="d-flex justify-content-between align-items-center">
+                <div>
+                    <div class="fw-bold text-success fs-5">
+                        <i class="fas fa-shopping-basket me-2"></i>Commande {{ numero }}
+                    </div>
+                    <div class="text-muted small">{{ client_nom }}</div>
+                </div>
+                <div class="text-end">
+                    <div class="fw-bold fs-4 text-success">{{ total }} FCFA</div>
+                    <div class="text-muted small">≈ {{ total_eur }} EUR</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Methodes de paiement -->
+        <div class="row g-3 mb-4">
+
+            <!-- Wave -->
+            <div class="col-md-6">
+                <div class="card border-0 shadow-sm rounded-3 p-4 text-center h-100 payment-card"
+                     onclick="choisirPaiement('wave')" id="card-wave"
+                     style="cursor:pointer;border:2px solid transparent !important;transition:all 0.2s">
+                    <div style="font-size:2.5rem">🌊</div>
+                    <div class="fw-bold mt-2 fs-5">Wave</div>
+                    <div class="text-muted small">Mobile Money Senegal</div>
+                    <div class="badge bg-success mt-2">Instantane</div>
+                    <div class="small text-success mt-1 fw-bold">+221 78 476 03 84</div>
+                </div>
+            </div>
+
+            <!-- Orange Money -->
+            <div class="col-md-6">
+                <div class="card border-0 shadow-sm rounded-3 p-4 text-center h-100 payment-card"
+                     onclick="choisirPaiement('orange')" id="card-orange"
+                     style="cursor:pointer;border:2px solid transparent !important;transition:all 0.2s">
+                    <div style="font-size:2.5rem">🟠</div>
+                    <div class="fw-bold mt-2 fs-5">Orange Money</div>
+                    <div class="text-muted small">Mobile Money Afrique</div>
+                    <div class="badge bg-warning mt-2">Rapide</div>
+                    <div class="small text-warning mt-1 fw-bold">+221 78 476 03 84</div>
+                </div>
+            </div>
+
+            <!-- Carte Bancaire Stripe -->
+            <div class="col-md-6">
+                <div class="card border-0 shadow-sm rounded-3 p-4 text-center h-100 payment-card"
+                     onclick="choisirPaiement('carte')" id="card-carte"
+                     style="cursor:pointer;border:2px solid transparent !important;transition:all 0.2s">
+                    <div style="font-size:2.5rem">💳</div>
+                    <div class="fw-bold mt-2 fs-5">Carte Bancaire</div>
+                    <div class="text-muted small">Visa / Mastercard / Amex</div>
+                    <div class="badge bg-primary mt-2">International</div>
+                    <div class="d-flex justify-content-center gap-1 mt-2">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/visa/visa-original.svg" width="35">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Mastercard-logo.svg/200px-Mastercard-logo.svg.png" width="35">
+                    </div>
+                </div>
+            </div>
+
+            <!-- PayPal -->
+            <div class="col-md-6">
+                <div class="card border-0 shadow-sm rounded-3 p-4 text-center h-100 payment-card"
+                     onclick="choisirPaiement('paypal')" id="card-paypal"
+                     style="cursor:pointer;border:2px solid transparent !important;transition:all 0.2s">
+                    <div style="font-size:2.5rem">🅿️</div>
+                    <div class="fw-bold mt-2 fs-5">PayPal</div>
+                    <div class="text-muted small">Paiement mondial securise</div>
+                    <div class="badge bg-info mt-2">Mondial</div>
+                    <div class="small text-info mt-1">paypal.me/terroirlocal</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Formulaire paiement dynamique -->
+        <div id="zone-paiement" style="display:none">
+
+            <!-- Zone Wave -->
+            <div id="form-wave" class="payment-form" style="display:none">
+                <div class="card border-0 shadow-sm rounded-3 p-4">
+                    <h5 class="fw-bold text-success mb-3">
+                        <i class="fas fa-mobile-alt me-2"></i>Paiement Wave
+                    </h5>
+                    <div class="row align-items-center">
+                        <div class="col-md-6">
+                            <p class="text-muted">Envoyez <strong class="text-success fs-5">{{ total }} FCFA</strong> au :</p>
+                            <div class="p-3 rounded-3 text-center mb-3" style="background:#e8f5e9">
+                                <div class="fw-bold fs-4 text-success">+221 78 476 03 84</div>
+                                <div class="text-muted small">Terroir Local Senegal</div>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label fw-semibold small">Votre numero Wave</label>
+                                <input type="tel" id="tel-wave" class="form-control rounded-3"
+                                       placeholder="+221 7X XXX XX XX">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label fw-semibold small">Reference de transaction</label>
+                                <input type="text" id="ref-wave" class="form-control rounded-3"
+                                       placeholder="Ex: TF123456789">
+                            </div>
+                            <button onclick="confirmerPaiement('wave')"
+                                    class="btn btn-success rounded-3 w-100 fw-bold">
+                                <i class="fas fa-check-circle me-2"></i>Confirmer le paiement
+                            </button>
+                        </div>
+                        <div class="col-md-6 text-center">
+                            <div class="fw-semibold text-muted small mb-2">Scanner le QR Code</div>
+                            <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://send.wave.com/m/ibrahimacamara"
+                                 class="rounded-3 shadow" width="150">
+                            <div class="mt-2">
+                                <a href="https://send.wave.com/m/ibrahimacamara" target="_blank"
+                                   class="btn btn-success rounded-3 mt-2">
+                                    <i class="fas fa-external-link-alt me-1"></i>Ouvrir Wave
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Zone Orange Money -->
+            <div id="form-orange" class="payment-form" style="display:none">
+                <div class="card border-0 shadow-sm rounded-3 p-4">
+                    <h5 class="fw-bold" style="color:#ff6600">
+                        <i class="fas fa-mobile-alt me-2"></i>Paiement Orange Money
+                    </h5>
+                    <div class="row align-items-center mt-3">
+                        <div class="col-md-6">
+                            <p class="text-muted">Envoyez <strong style="color:#ff6600" class="fs-5">{{ total }} FCFA</strong> au :</p>
+                            <div class="p-3 rounded-3 text-center mb-3" style="background:#fff3e0">
+                                <div class="fw-bold fs-4" style="color:#ff6600">+221 78 476 03 84</div>
+                                <div class="text-muted small">Terroir Local Senegal</div>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label fw-semibold small">Votre numero Orange Money</label>
+                                <input type="tel" id="tel-orange" class="form-control rounded-3"
+                                       placeholder="+221 7X XXX XX XX">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label fw-semibold small">Reference de transaction</label>
+                                <input type="text" id="ref-orange" class="form-control rounded-3"
+                                       placeholder="Reference OM">
+                            </div>
+                            <button onclick="confirmerPaiement('orange')"
+                                    class="btn rounded-3 w-100 fw-bold text-white"
+                                    style="background:#ff6600">
+                                <i class="fas fa-check-circle me-2"></i>Confirmer le paiement
+                            </button>
+                        </div>
+                        <div class="col-md-6 text-center">
+                            <div style="font-size:5rem">🟠</div>
+                            <div class="fw-semibold">Composez sur votre telephone</div>
+                            <div class="p-2 rounded-3 mt-2" style="background:#fff3e0">
+                                <code class="fs-5">#144#</code>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Zone Carte Bancaire -->
+            <div id="form-carte" class="payment-form" style="display:none">
+                <div class="card border-0 shadow-sm rounded-3 p-4">
+                    <h5 class="fw-bold text-primary mb-3">
+                        <i class="fas fa-lock me-2"></i>Paiement Securise par Carte
+                    </h5>
+                    <div class="alert alert-info rounded-3 small">
+                        <i class="fas fa-shield-alt me-2"></i>
+                        Paiement crypte SSL - Vos donnees sont protegees
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label fw-semibold small">Numero de carte</label>
+                        <input type="text" id="card-number" class="form-control rounded-3"
+                               placeholder="1234 5678 9012 3456" maxlength="19"
+                               oninput="formatCard(this)">
+                    </div>
+                    <div class="row g-3 mb-3">
+                        <div class="col-6">
+                            <label class="form-label fw-semibold small">Date expiration</label>
+                            <input type="text" id="card-expiry" class="form-control rounded-3"
+                                   placeholder="MM/AA" maxlength="5"
+                                   oninput="formatExpiry(this)">
+                        </div>
+                        <div class="col-6">
+                            <label class="form-label fw-semibold small">CVV</label>
+                            <input type="text" id="card-cvv" class="form-control rounded-3"
+                                   placeholder="123" maxlength="3">
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label fw-semibold small">Nom sur la carte</label>
+                        <input type="text" id="card-name" class="form-control rounded-3"
+                               placeholder="IBRAHIMA CAMARA">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label fw-semibold small">Email de confirmation</label>
+                        <input type="email" id="card-email" class="form-control rounded-3"
+                               placeholder="email@exemple.com">
+                    </div>
+                    <button onclick="confirmerPaiement('carte')"
+                            class="btn btn-primary rounded-3 w-100 fw-bold">
+                        <i class="fas fa-lock me-2"></i>Payer {{ total }} FCFA
+                    </button>
+                    <div class="text-center mt-3">
+                        <div class="d-flex justify-content-center gap-3 align-items-center">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/visa/visa-original.svg" width="50">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Mastercard-logo.svg/200px-Mastercard-logo.svg.png" width="50">
+                            <i class="fas fa-lock text-success fs-4"></i>
+                            <span class="badge bg-success">SSL Secure</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Zone PayPal -->
+            <div id="form-paypal" class="payment-form" style="display:none">
+                <div class="card border-0 shadow-sm rounded-3 p-4 text-center">
+                    <h5 class="fw-bold text-primary mb-3">
+                        <i class="fab fa-paypal me-2"></i>Paiement PayPal
+                    </h5>
+                    <p class="text-muted">Montant: <strong class="text-primary fs-5">{{ total_eur }} EUR</strong></p>
+                    <a href="https://paypal.me/terroirlocal/{{ total_eur }}"
+                       target="_blank"
+                       class="btn btn-primary rounded-3 fw-bold px-5 py-3 mb-3">
+                        <i class="fab fa-paypal me-2"></i>Payer avec PayPal
+                    </a>
+                    <div class="mb-3">
+                        <label class="form-label fw-semibold small">Reference PayPal</label>
+                        <input type="text" id="ref-paypal" class="form-control rounded-3"
+                               placeholder="ID transaction PayPal">
+                    </div>
+                    <button onclick="confirmerPaiement('paypal')"
+                            class="btn btn-outline-primary rounded-3 w-100">
+                        <i class="fas fa-check me-2"></i>Confirmer
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Succes paiement -->
+        <div id="succes-paiement" style="display:none" class="text-center py-4">
+            <div style="font-size:4rem">✅</div>
+            <h3 class="text-success fw-bold mt-3">Paiement Confirme !</h3>
+            <p class="text-muted">Merci pour votre paiement. Votre commande est en cours de traitement.</p>
+            <div class="d-flex gap-3 justify-content-center mt-4">
+                <a href="/boutique" class="btn btn-success rounded-3">
+                    <i class="fas fa-store me-2"></i>Continuer les achats
+                </a>
+                <a href="/historique" class="btn btn-outline-success rounded-3">
+                    <i class="fas fa-history me-2"></i>Voir mes commandes
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+.payment-card:hover {
+    border: 2px solid #27ae60 !important;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(39,174,96,0.2) !important;
+}
+.payment-card.selected {
+    border: 2px solid #27ae60 !important;
+    background: #f0faf0 !important;
+}
+</style>
+
+<script>
+var methodePaiement = null;
+
+function choisirPaiement(methode) {
+    methodePaiement = methode;
+
+    // Reset tous les cards
+    document.querySelectorAll('.payment-card').forEach(function(c) {
+        c.classList.remove('selected');
+    });
+    document.getElementById('card-' + methode).classList.add('selected');
+
+    // Cacher tous les formulaires
+    document.querySelectorAll('.payment-form').forEach(function(f) {
+        f.style.display = 'none';
+    });
+
+    // Afficher le bon formulaire
+    document.getElementById('zone-paiement').style.display = 'block';
+    document.getElementById('form-' + methode).style.display = 'block';
+
+    // Scroll vers formulaire
+    document.getElementById('zone-paiement').scrollIntoView({behavior: 'smooth'});
+}
+
+function confirmerPaiement(methode) {
+    var scrollY = window.scrollY;
+    var ref = '';
+    var tel = '';
+
+    if (methode === 'wave') {
+        tel = document.getElementById('tel-wave').value;
+        ref = document.getElementById('ref-wave').value;
+        if (!tel || !ref) {
+            alert('Veuillez renseigner votre numero Wave et la reference !');
+            return;
+        }
+    } else if (methode === 'orange') {
+        tel = document.getElementById('tel-orange').value;
+        ref = document.getElementById('ref-orange').value;
+        if (!tel || !ref) {
+            alert('Veuillez renseigner votre numero Orange Money et la reference !');
+            return;
+        }
+    } else if (methode === 'carte') {
+        var num = document.getElementById('card-number').value;
+        var exp = document.getElementById('card-expiry').value;
+        var cvv = document.getElementById('card-cvv').value;
+        if (!num || !exp || !cvv) {
+            alert('Veuillez remplir tous les champs de la carte !');
+            return;
+        }
+        ref = 'CARD-' + Date.now();
+    } else if (methode === 'paypal') {
+        ref = document.getElementById('ref-paypal').value;
+        if (!ref) {
+            alert('Veuillez entrer la reference PayPal !');
+            return;
+        }
+    }
+
+    // Envoyer confirmation
+    var formData = new FormData();
+    formData.append('methode', methode);
+    formData.append('reference', ref);
+    formData.append('telephone', tel);
+    formData.append('commande_id', '{{ commande_id }}');
+
+    fetch('/confirmer_paiement', {method: 'POST', body: formData})
+    .then(r => r.json())
+    .then(function(data) {
+        if (data.success) {
+            document.getElementById('zone-paiement').style.display = 'none';
+            document.getElementById('succes-paiement').style.display = 'block';
+            document.getElementById('succes-paiement').scrollIntoView({behavior: 'smooth'});
+        }
+    });
+}
+
+function formatCard(input) {
+    var v = input.value.replace(/\D/g, '').replace(/(.{4})/g, '$1 ').trim();
+    input.value = v;
+}
+
+function formatExpiry(input) {
+    var v = input.value.replace(/\D/g, '');
+    if (v.length >= 2) v = v.substring(0,2) + '/' + v.substring(2);
+    input.value = v;
+}
+</script>
+{% endblock %}

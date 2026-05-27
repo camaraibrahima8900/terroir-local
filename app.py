@@ -317,16 +317,23 @@ def commander():
         frais = int(frais_custom)
     else:
         frais = FRAIS_LIVRAISON.get(type_livraison, 500)
+    import uuid
+    numero_commande = "TLS-" + datetime.now().strftime("%Y%m%d") + "-" + str(uuid.uuid4())[:6].upper()
+    lieu_livraison = request.form.get("lieu_livraison", "").strip()
+    telephone_client = request.form.get("telephone_client", "").strip()
     client = random.choice(CLIENTS)
     sous_total = sum(i["quantite"] * i["prix_unitaire"] for i in panier)
     total_final = sum(i["quantite"] * i["prix_final"] for i in panier)
     reduction = sous_total - total_final
     total_avec_frais = total_final + frais
     commande = {
+        "numero": numero_commande,
         "client": client,
         "date": datetime.now(),
         "articles": panier.copy(),
         "statut": "en_attente",
+        "lieu_livraison": lieu_livraison,
+        "telephone_client": telephone_client,
         "sous_total": round(sous_total, 2),
         "reduction": round(reduction, 2),
         "total": round(total_avec_frais, 2),
@@ -344,7 +351,8 @@ def commander():
                 {"_id": ObjectId(item["produit_id"])},
                 {"$inc": {"stock": -item["quantite"]}}
             )
-        db.commandes.insert_one(commande)
+        result = db.commandes.insert_one(commande)
+        commande_id = str(result.inserted_id)
         log_info("Commande - " + client["nom"] + " - " + str(total_avec_frais) + " FCFA")
     except Exception as e:
         log_erreur("Erreur commande: " + str(e))
@@ -354,6 +362,10 @@ def commander():
         client=client, region=region, type_livraison=type_livraison,
         frais=frais, sous_total=sous_total, reduction=reduction,
         total=total_avec_frais, devise=DEVISE,
+        cmd_numero=numero_commande,
+        commande_id=commande_id if "commande_id" in dir() else "",
+        lieu_livraison=lieu_livraison,
+        telephone_client=telephone_client,
         role=session.get("role"), username=session.get("username"))
 
 @app.route("/stats")
@@ -1368,6 +1380,156 @@ def nb_commandes_attente():
         return jsonify({"nb": 0})
     nb = db.commandes.count_documents({"statut": "en_attente"})
     return jsonify({"nb": nb})
+
+@app.route("/paiement/<commande_id>")
+@login_requis
+def paiement(commande_id):
+    db = get_db()
+    if db is None:
+        return redirect(url_for("boutique"))
+    try:
+        from bson import ObjectId
+        commande = db.commandes.find_one({"_id": ObjectId(commande_id)})
+    except:
+        commande = db.commandes.find_one({"numero": commande_id})
+    if not commande:
+        return redirect(url_for("boutique"))
+    total = commande.get("total", 0)
+    # Convertir FCFA en EUR (1 EUR = 655 FCFA)
+    total_eur = round(total / 655.957, 2)
+    return render_template("paiement.html",
+        commande_id=str(commande["_id"]),
+        numero=commande.get("numero", "N/A"),
+        client_nom=commande["client"]["nom"],
+        total=total,
+        total_eur=total_eur,
+        role=session.get("role"),
+        username=session.get("username"))
+
+@app.route("/confirmer_paiement", methods=["POST"])
+@login_requis
+def confirmer_paiement():
+    db = get_db()
+    if db is None:
+        return jsonify({"success": False})
+    commande_id = request.form.get("commande_id")
+    methode = request.form.get("methode")
+    reference = request.form.get("reference")
+    telephone = request.form.get("telephone", "")
+    try:
+        from bson import ObjectId
+        db.commandes.update_one(
+            {"_id": ObjectId(commande_id)},
+            {"$set": {
+                "paiement": {
+                    "methode": methode,
+                    "reference": reference,
+                    "telephone": telephone,
+                    "date": datetime.now(),
+                    "statut": "paye"
+                },
+                "statut": "confirmee"
+            }}
+        )
+        log_info(f"Paiement confirme: {methode} ref={reference}")
+        return jsonify({"success": True})
+    except Exception as e:
+        log_erreur("Erreur paiement: " + str(e))
+        return jsonify({"success": False})
+
+@app.route("/traiter_paiement", methods=["POST"])
+@login_requis
+def traiter_paiement():
+    methode = request.form.get("methode")
+    commande_id = request.form.get("commande_id")
+    total = float(request.form.get("total", 0))
+    reference = "TLS-PAY-" + datetime.now().strftime("%Y%m%d%H%M%S")
+
+    db = get_db()
+    if db is None:
+        return jsonify({"success": False, "message": "Erreur DB"})
+
+    try:
+        if methode == "stripe":
+            # Integration Stripe
+            import os
+            stripe_key = os.environ.get("STRIPE_SECRET_KEY", "")
+            if stripe_key and stripe_key.startswith("sk_"):
+                try:
+                    import stripe
+                    stripe.api_key = stripe_key
+                    # Convertir FCFA en centimes EUR
+                    montant_eur = int(total / 655.957 * 100)
+                    intent = stripe.PaymentIntent.create(
+                        amount=montant_eur,
+                        currency="eur",
+                        metadata={"commande_id": commande_id}
+                    )
+                    reference = intent.id
+                except Exception as e:
+                    log_erreur("Stripe error: " + str(e))
+                    reference = "STRIPE-SIM-" + datetime.now().strftime("%H%M%S")
+            else:
+                # Mode simulation
+                reference = "STRIPE-SIM-" + datetime.now().strftime("%H%M%S")
+
+        elif methode == "paydunya":
+            operateur = request.form.get("operateur", "wave")
+            telephone = request.form.get("telephone", "")
+            # Integration PayDunya
+            paydunya_key = os.environ.get("PAYDUNYA_MASTER_KEY", "")
+            if paydunya_key:
+                try:
+                    import requests as req
+                    headers = {
+                        "PAYDUNYA-MASTER-KEY": paydunya_key,
+                        "Content-Type": "application/json"
+                    }
+                    payload = {
+                        "invoice": {
+                            "total_amount": total,
+                            "description": "Commande Terroir Local " + commande_id
+                        },
+                        "store": {"name": "Terroir Local Senegal"},
+                        "actions": {
+                            "cancel_url": "https://terroir-local.onrender.com/boutique",
+                            "return_url": "https://terroir-local.onrender.com/historique"
+                        }
+                    }
+                    r = req.post("https://app.paydunya.com/api/v1/checkout-invoice/create",
+                                json=payload, headers=headers, timeout=10)
+                    data = r.json()
+                    if data.get("response_code") == "00":
+                        return jsonify({
+                            "success": True,
+                            "redirect_url": data.get("invoice_url"),
+                            "reference": data.get("token")
+                        })
+                except Exception as e:
+                    log_erreur("PayDunya error: " + str(e))
+            reference = "PAYDUNYA-SIM-" + datetime.now().strftime("%H%M%S")
+
+        # Sauvegarder paiement
+        from bson import ObjectId
+        db.commandes.update_one(
+            {"_id": ObjectId(commande_id)},
+            {"$set": {
+                "paiement": {
+                    "methode": methode,
+                    "reference": reference,
+                    "date": datetime.now(),
+                    "statut": "paye",
+                    "montant": total
+                },
+                "statut": "confirmee"
+            }}
+        )
+        log_info(f"Paiement {methode} confirme: {reference}")
+        return jsonify({"success": True, "reference": reference})
+
+    except Exception as e:
+        log_erreur("Erreur paiement: " + str(e))
+        return jsonify({"success": False, "message": str(e)})
 
 @app.route("/apropos")
 def apropos():

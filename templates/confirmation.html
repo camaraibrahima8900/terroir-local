@@ -2,102 +2,428 @@
 {% extends 'base.html' %}
 {% block content %}
 <div class="row justify-content-center mt-4">
-    <div class="col-md-8">
-        <div class="card border-0 shadow-sm rounded-3 text-center p-4 animate-in">
+    <div class="col-md-9">
+        <div class="card border-0 shadow-sm rounded-3 text-center p-4">
             <div style="font-size:5rem">✅</div>
             <h2 class="text-success fw-bold mt-3">Commande Confirmee !</h2>
             <p class="text-muted">Merci pour votre commande sur Terroir Local Senegal</p>
+            {% if cmd_numero %}
+            <div class="badge bg-success fs-6 px-4 py-2 mb-3">N° {{ cmd_numero }}</div>
+            {% endif %}
             <hr>
+
+            <!-- Infos client et livraison -->
             <div class="row text-start mt-3 g-3">
                 <div class="col-md-6">
-                    <div class="card border-0 bg-light rounded-3 p-3 h-100">
-                        <h6 class="text-success fw-bold mb-3">
+                    <div class="p-3 rounded-3" style="background:#f0faf0">
+                        <h6 class="text-success fw-bold">
                             <i class="fas fa-user me-2"></i>Informations Client
                         </h6>
-                        <p class="mb-1"><strong>Nom :</strong> <span class="notranslate">{{ client.nom }}</span></p>
-                        <p class="mb-1"><strong>Tel :</strong> {{ client.telephone }}</p>
+                        <p class="mb-1"><strong>Nom :</strong> {{ client.nom }}</p>
+                        <p class="mb-1"><strong>Tel :</strong> {{ telephone_client or client.telephone }}</p>
                         <p class="mb-0"><strong>Email :</strong> {{ client.email }}</p>
+                        {% if lieu_livraison %}
+                        <p class="mb-0"><strong>Lieu :</strong> {{ lieu_livraison }}</p>
+                        {% endif %}
                     </div>
                 </div>
                 <div class="col-md-6">
-                    <div class="card border-0 bg-light rounded-3 p-3 h-100">
-                        <h6 class="text-success fw-bold mb-3">
+                    <div class="p-3 rounded-3" style="background:#f0faf0">
+                        <h6 class="text-success fw-bold">
                             <i class="fas fa-truck me-2"></i>Informations Livraison
                         </h6>
                         <p class="mb-1"><strong>Region :</strong> {{ region }}</p>
                         <p class="mb-1"><strong>Type :</strong>
-                            <span class="badge {% if type_livraison == 'express' %}bg-warning{% else %}bg-success{% endif %}">
-                                {{ type_livraison }}
-                            </span>
+                            <span class="badge bg-success">{{ type_livraison }}</span>
                         </p>
-                        <p class="mb-0"><strong>Frais :</strong> {{ frais }} {{ devise }}</p>
+                        <p class="mb-0"><strong>Frais :</strong> {{ frais }} FCFA</p>
                     </div>
                 </div>
             </div>
-            <hr>
-            <div class="row g-3 mt-2">
-                <div class="col-md-4">
-                    <div class="card border-0 bg-light rounded-3 p-3">
-                        <div class="text-muted small mb-1">Sous-total</div>
-                        <div class="fs-5 fw-bold">{{ sous_total }} {{ devise }}</div>
+
+            <!-- Totaux -->
+            <div class="row g-3 mt-3">
+                <div class="col-4">
+                    <div class="p-3 rounded-3 bg-light">
+                        <div class="text-muted small">Sous-total</div>
+                        <div class="fw-bold">{{ sous_total }} FCFA</div>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="card border-0 rounded-3 p-3" style="background:#e8f5e9">
-                        <div class="text-muted small mb-1">Reduction</div>
-                        <div class="fs-5 fw-bold text-success">-{{ reduction }} {{ devise }}</div>
+                <div class="col-4">
+                    <div class="p-3 rounded-3" style="background:#e8f5e9">
+                        <div class="text-muted small">Reduction</div>
+                        <div class="fw-bold text-danger">-{{ reduction }} FCFA</div>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="card border-0 rounded-3 p-3" style="background:linear-gradient(135deg,#1a6b3a,#27ae60);color:white">
-                        <div class="small mb-1 opacity-75">TOTAL</div>
-                        <div class="fs-4 fw-bold">{{ total }} {{ devise }}</div>
+                <div class="col-4">
+                    <div class="p-3 rounded-3 text-white" style="background:#27ae60">
+                        <div class="small">TOTAL</div>
+                        <div class="fw-bold fs-5">{{ total }} FCFA</div>
                     </div>
                 </div>
             </div>
-            <div class="mt-4">
-            <h5 class="fw-bold text-success mb-3">
-                <i class="fas fa-mobile-alt me-2"></i>Payer maintenant
-            </h5>
-            <div class="row g-3 mb-4">
+
+            <!-- Email confirmation -->
+            <div class="card border-0 rounded-3 p-3 mt-3" style="background:#e8f5e9">
+                <div class="d-flex align-items-center gap-3">
+                    <div style="font-size:2rem">📧</div>
+                    <div>
+                        <div class="fw-bold text-success">Confirmation envoyee !</div>
+                        <div class="text-muted small">Email envoye a {{ client.email }}</div>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="my-4">
+
+            <!-- PAIEMENT STRIPE + PAYDUNYA -->
+            <div class="mt-4 mb-3">
+                <div class="d-flex align-items-center gap-3 mb-4">
+                    <div style="height:2px;flex:1;background:linear-gradient(to right,transparent,#27ae60)"></div>
+                    <h5 class="fw-bold text-success mb-0">
+                        <i class="fas fa-credit-card me-2"></i>Mode de Paiement
+                    </h5>
+                    <div style="height:2px;flex:1;background:linear-gradient(to left,transparent,#27ae60)"></div>
+                </div>
+            </div>
+
+            <div class="row g-4 mb-4">
+                <!-- Stripe -->
                 <div class="col-md-6">
-                    <a href="https://send.wave.com/m/ibrahimacamara" target="_blank"
-                       onclick="this.parentNode.querySelector('img').style.display='block'"
-                       class="card border-0 shadow-sm rounded-3 p-3 text-center text-decoration-none d-block h-100"
-                       style="background:linear-gradient(135deg,#1a75ff,#00d4ff);color:white">
-                        <div style="font-size:2.5rem">🌊</div>
-                        <div class="fw-bold mt-2">Payer avec Wave</div>
-                        <div class="small opacity-75">+221 78 476 03 84</div>
-                        <div class="fw-bold mt-1">{{ total }} FCFA</div>
-                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=80x80&data=https://send.wave.com/m/ibrahimacamara"
-                             class="mt-2 rounded-2" width="70" style="display:none">
-                    </a>
+                    <div class="payment-option rounded-3 overflow-hidden"
+                         onclick="ouvrirPaiement('stripe')"
+                         style="cursor:pointer;border:2px solid #e0e0e0;transition:all 0.3s">
+                        <!-- Header Stripe -->
+                        <div class="p-3 text-white text-center"
+                             style="background:linear-gradient(135deg,#6772e5,#9c27b0)">
+                            <div class="fw-bold fs-5">
+                                <i class="fas fa-lock me-2"></i>Stripe
+                            </div>
+                            <div class="small opacity-75">Paiement International Securise</div>
+                        </div>
+                        <!-- Body Stripe -->
+                        <div class="p-3 text-center" style="background:#fafafa">
+                            <div class="d-flex gap-2 justify-content-center align-items-center mb-2">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Visa_Inc._logo.svg" height="28">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" height="28">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/3/30/American_Express_logo.svg" height="28">
+                            </div>
+                            <div class="small text-muted">
+                                <i class="fas fa-shield-alt text-success me-1"></i>
+                                Cryptage SSL 256 bits
+                            </div>
+                            <div class="mt-2">
+                                <span class="badge" style="background:#6772e5">
+                                    💳 Visa / Mastercard / Amex
+                                </span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+
+                <!-- PayDunya -->
                 <div class="col-md-6">
-                    <a href="tel:+221784760384"
-                       class="card border-0 shadow-sm rounded-3 p-3 text-center text-decoration-none d-block h-100"
-                       style="background:linear-gradient(135deg,#ff6600,#ff9900);color:white">
-                        <div style="font-size:2.5rem">🟠</div>
-                        <div class="fw-bold mt-2">Orange Money</div>
-                        <div class="small opacity-75">+221 78 476 03 84</div>
-                        <div class="fw-bold mt-1">{{ total }} FCFA</div>
-                    </a>
+                    <div class="payment-option rounded-3 overflow-hidden"
+                         onclick="ouvrirPaiement('paydunya')"
+                         style="cursor:pointer;border:2px solid #e0e0e0;transition:all 0.3s">
+                        <!-- Header PayDunya -->
+                        <div class="p-3 text-white text-center"
+                             style="background:linear-gradient(135deg,#27ae60,#2980b9)">
+                            <div class="fw-bold fs-5">
+                                <i class="fas fa-mobile-alt me-2"></i>PayDunya
+                            </div>
+                            <div class="small opacity-75">Mobile Money Afrique</div>
+                        </div>
+                        <!-- Body PayDunya -->
+                        <div class="p-3 text-center" style="background:#fafafa">
+                            <div class="d-flex gap-3 justify-content-center align-items-center mb-2">
+                                <div class="text-center">
+                                    <div style="font-size:1.8rem">🌊</div>
+                                    <div class="small fw-bold text-primary">Wave</div>
+                                </div>
+                                <div style="width:1px;height:40px;background:#ddd"></div>
+                                <div class="text-center">
+                                    <div style="font-size:1.8rem">🟠</div>
+                                    <div class="small fw-bold text-warning">Orange Money</div>
+                                </div>
+                                <div style="width:1px;height:40px;background:#ddd"></div>
+                                <div class="text-center">
+                                    <div style="font-size:1.8rem">💳</div>
+                                    <div class="small fw-bold text-success">Carte</div>
+                                </div>
+                            </div>
+                            <div class="small text-muted">
+                                <i class="fas fa-bolt text-warning me-1"></i>
+                                Paiement instantane
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="mt-2 d-flex gap-3 justify-content-center">
-                {% set msg = "Nouvelle commande Terroir Local:%0ANom: " + client.nom + "%0ATel: " + client.telephone + "%0ARegion: " + region + "%0ALivraison: " + type_livraison + "%0ATotal: " + total|string + " FCFA" %}
-            <a href="https://wa.me/221784760384?text={{ msg }}" target="_blank" class="btn btn-success rounded-3 px-4" style="background:#25D366;border:none">
-                <i class="fab fa-whatsapp me-2"></i>Confirmer via WhatsApp
-            </a>
-            <a href="/boutique" class="btn btn-success rounded-3 px-4">
+
+            <!-- Formulaire Stripe -->
+            <div id="form-stripe" style="display:none" class="mb-4">
+                <div class="card border-0 shadow-sm rounded-3 p-4 text-start">
+                    <h6 class="fw-bold text-primary mb-3">
+                        <i class="fas fa-lock me-2"></i>Paiement Stripe Securise
+                    </h6>
+                    <div class="mb-3">
+                        <label class="form-label fw-semibold small">Numero de carte</label>
+                        <input type="text" id="stripe-card" class="form-control rounded-3"
+                               placeholder="1234 5678 9012 3456" maxlength="19"
+                               oninput="formatCard(this)">
+                    </div>
+                    <div class="row g-3 mb-3">
+                        <div class="col-6">
+                            <label class="form-label fw-semibold small">Expiration</label>
+                            <input type="text" id="stripe-exp" class="form-control rounded-3"
+                                   placeholder="MM/AA" maxlength="5"
+                                   oninput="formatExpiry(this)">
+                        </div>
+                        <div class="col-6">
+                            <label class="form-label fw-semibold small">CVV</label>
+                            <input type="password" id="stripe-cvv" class="form-control rounded-3"
+                                   placeholder="***" maxlength="4">
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label fw-semibold small">Nom sur la carte</label>
+                        <input type="text" id="stripe-nom" class="form-control rounded-3"
+                               placeholder="IBRAHIMA CAMARA">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label fw-semibold small">Email</label>
+                        <input type="email" id="stripe-email" class="form-control rounded-3"
+                               placeholder="email@exemple.com" value="{{ client.email }}">
+                    </div>
+                    <button onclick="payerStripe()"
+                            class="btn btn-primary rounded-3 w-100 fw-bold py-3">
+                        <i class="fas fa-lock me-2"></i>Payer {{ total }} FCFA
+                        <span class="small opacity-75">(≈ {{ (total/655.957)|round(2) }} EUR)</span>
+                    </button>
+                    <div class="text-center mt-2">
+                        <small class="text-muted">
+                            <i class="fas fa-shield-alt text-success me-1"></i>
+                            Cryptage SSL 256 bits - Donnees securisees
+                        </small>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Formulaire PayDunya -->
+            <div id="form-paydunya" style="display:none" class="mb-4">
+                <div class="card border-0 shadow-sm rounded-3 p-4 text-start">
+                    <h6 class="fw-bold text-success mb-3">
+                        <i class="fas fa-mobile-alt me-2"></i>Paiement PayDunya
+                    </h6>
+
+                    <!-- Choix operateur -->
+                    <div class="d-flex gap-2 mb-3">
+                        <button onclick="choisirOperateur('wave')" id="btn-wave"
+                                class="btn btn-outline-primary rounded-3 flex-grow-1 operateur-btn">
+                            🌊 Wave
+                        </button>
+                        <button onclick="choisirOperateur('orange')" id="btn-orange"
+                                class="btn btn-outline-warning rounded-3 flex-grow-1 operateur-btn">
+                            🟠 Orange Money
+                        </button>
+                        <button onclick="choisirOperateur('cb')" id="btn-cb"
+                                class="btn btn-outline-success rounded-3 flex-grow-1 operateur-btn">
+                            💳 Carte
+                        </button>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label fw-semibold small">Numero de telephone</label>
+                        <input type="tel" id="paydunya-tel" class="form-control rounded-3"
+                               placeholder="+221 7X XXX XX XX"
+                               value="{{ telephone_client or client.telephone }}">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label fw-semibold small">Email</label>
+                        <input type="email" id="paydunya-email" class="form-control rounded-3"
+                               placeholder="email@exemple.com" value="{{ client.email }}">
+                    </div>
+
+                    <button onclick="payerPayDunya()"
+                            class="btn btn-success rounded-3 w-100 fw-bold py-3">
+                        <i class="fas fa-bolt me-2"></i>Payer {{ total }} FCFA via PayDunya
+                    </button>
+                    <div class="text-center mt-2">
+                        <small class="text-muted">
+                            <i class="fas fa-shield-alt text-success me-1"></i>
+                            Paiement securise par PayDunya
+                        </small>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Succes paiement -->
+            <div id="succes-paiement" style="display:none" class="text-center py-4">
+                <div style="font-size:4rem">🎉</div>
+                <h3 class="text-success fw-bold mt-2">Paiement Confirme !</h3>
+                <p class="text-muted">Votre paiement a ete traite avec succes.</p>
+                <div class="badge bg-success fs-6 px-4 py-2 mb-3" id="ref-paiement"></div>
+            </div>
+
+            <!-- Boutons actions -->
+            <div class="d-flex gap-3 justify-content-center mt-4 flex-wrap">
+                <a href="https://wa.me/221784760384?text=Commande {{ cmd_numero }} - {{ total }} FCFA"
+                   target="_blank"
+                   class="btn btn-success rounded-3">
+                    <i class="fab fa-whatsapp me-2"></i>Confirmer via WhatsApp
+                </a>
+                <a href="/boutique" class="btn btn-success rounded-3">
                     <i class="fas fa-store me-2"></i>Continuer les achats
                 </a>
-                <a href="/stats" class="btn btn-outline-success rounded-3 px-4">
+                {% if role == 'administrateur' %}
+                <a href="/stats" class="btn btn-outline-success rounded-3">
                     <i class="fas fa-chart-bar me-2"></i>Voir les stats
                 </a>
+                {% endif %}
             </div>
         </div>
     </div>
 </div>
+
+<style>
+.payment-option:hover {
+    border: 2px solid #27ae60 !important;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(39,174,96,0.15) !important;
+}
+.payment-option.active {
+    border: 2px solid #27ae60 !important;
+    background: #f0faf0 !important;
+}
+.operateur-btn.active {
+    background: #27ae60 !important;
+    color: white !important;
+    border-color: #27ae60 !important;
+}
+</style>
+
+<script>
+var operateur = 'wave';
+
+function ouvrirPaiement(type) {
+    // Reset
+    document.querySelectorAll('.payment-option').forEach(function(el) {
+        el.classList.remove('active');
+    });
+    document.getElementById('form-stripe').style.display = 'none';
+    document.getElementById('form-paydunya').style.display = 'none';
+
+    // Activer
+    if (type === 'stripe') {
+        document.getElementById('form-stripe').style.display = 'block';
+    } else {
+        document.getElementById('form-paydunya').style.display = 'block';
+    }
+
+    document.getElementById('form-' + type).scrollIntoView({behavior: 'smooth'});
+}
+
+function choisirOperateur(op) {
+    operateur = op;
+    document.querySelectorAll('.operateur-btn').forEach(function(b) {
+        b.classList.remove('active');
+    });
+    document.getElementById('btn-' + op).classList.add('active');
+}
+
+function formatCard(input) {
+    var v = input.value.replace(/\D/g, '').substring(0, 16);
+    v = v.replace(/(.{4})/g, '$1 ').trim();
+    input.value = v;
+}
+
+function formatExpiry(input) {
+    var v = input.value.replace(/\D/g, '');
+    if (v.length >= 2) v = v.substring(0,2) + '/' + v.substring(2,4);
+    input.value = v;
+}
+
+function payerStripe() {
+    var card = document.getElementById('stripe-card').value.replace(/\s/g,'');
+    var exp = document.getElementById('stripe-exp').value;
+    var cvv = document.getElementById('stripe-cvv').value;
+    var nom = document.getElementById('stripe-nom').value;
+    var email = document.getElementById('stripe-email').value;
+
+    if (!card || card.length < 16 || !exp || !cvv || !nom || !email) {
+        alert('Veuillez remplir tous les champs !');
+        return;
+    }
+
+    var btn = event.target;
+    btn.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>Traitement en cours...';
+    btn.disabled = true;
+
+    var formData = new FormData();
+    formData.append('methode', 'stripe');
+    formData.append('card_number', card);
+    formData.append('card_exp', exp);
+    formData.append('card_nom', nom);
+    formData.append('email', email);
+    formData.append('commande_id', '{{ commande_id }}');
+    formData.append('total', '{{ total }}');
+
+    fetch('/traiter_paiement', {method: 'POST', body: formData})
+    .then(r => r.json())
+    .then(function(data) {
+        if (data.success) {
+            document.getElementById('form-stripe').style.display = 'none';
+            document.getElementById('succes-paiement').style.display = 'block';
+            document.getElementById('ref-paiement').textContent = 'Ref: ' + data.reference;
+            document.getElementById('succes-paiement').scrollIntoView({behavior: 'smooth'});
+        } else {
+            btn.innerHTML = '<i class="fas fa-lock me-2"></i>Payer {{ total }} FCFA';
+            btn.disabled = false;
+            alert('Erreur: ' + (data.message || 'Paiement refuse'));
+        }
+    });
+}
+
+function payerPayDunya() {
+    var tel = document.getElementById('paydunya-tel').value;
+    var email = document.getElementById('paydunya-email').value;
+
+    if (!tel) {
+        alert('Veuillez entrer votre numero de telephone !');
+        return;
+    }
+
+    var btn = event.target;
+    btn.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>Traitement...';
+    btn.disabled = true;
+
+    var formData = new FormData();
+    formData.append('methode', 'paydunya');
+    formData.append('operateur', operateur);
+    formData.append('telephone', tel);
+    formData.append('email', email);
+    formData.append('commande_id', '{{ commande_id }}');
+    formData.append('total', '{{ total }}');
+
+    fetch('/traiter_paiement', {method: 'POST', body: formData})
+    .then(r => r.json())
+    .then(function(data) {
+        if (data.success) {
+            if (data.redirect_url) {
+                window.location.href = data.redirect_url;
+            } else {
+                document.getElementById('form-paydunya').style.display = 'none';
+                document.getElementById('succes-paiement').style.display = 'block';
+                document.getElementById('ref-paiement').textContent = 'Ref: ' + data.reference;
+                document.getElementById('succes-paiement').scrollIntoView({behavior: 'smooth'});
+            }
+        } else {
+            btn.innerHTML = '<i class="fas fa-bolt me-2"></i>Payer {{ total }} FCFA via PayDunya';
+            btn.disabled = false;
+            alert('Erreur: ' + (data.message || 'Paiement refuse'));
+        }
+    });
+}
+</script>
 {% endblock %}
