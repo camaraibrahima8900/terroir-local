@@ -1452,7 +1452,6 @@ def traiter_paiement():
     try:
         if methode == "stripe":
             # Integration Stripe
-            import os
             stripe_key = os.environ.get("STRIPE_SECRET_KEY", "")
             if stripe_key and stripe_key.startswith("sk_"):
                 try:
