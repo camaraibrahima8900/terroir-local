@@ -393,7 +393,7 @@ def stats():
     ca_regions = [r for r in db.commandes.aggregate(pipeline_region) if r["_id"]]
     top_produits = list(db.commandes.aggregate([
         {"$unwind": "$articles"},
-        {"$group": {"_id": "$articles.produit_id", "nom": {"$first": "$articles.nom_produit"}, "qte": {"$sum": "$articles.quantite"}}},
+        {"$group": {"_id": "$articles.produit_id", "nom": {"$first": "$articles.nom"}, "qte": {"$sum": "$articles.quantite"}}},
         {"$sort": {"qte": -1}}, {"$limit": 5}
     ]))
     ruptures = list(db.produits.find({"stock": {"$lt": 5}}).sort("stock", 1))

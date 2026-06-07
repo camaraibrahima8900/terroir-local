@@ -14337,3 +14337,32 @@
 2026-06-07 13:17:53,534 [ERROR] Connexion MongoDB echouee : No replica set members match selector "Primary()", Timeout: 10.0s, Topology Description: <TopologyDescription id: 6a256f77990c35d04344debc, topology_type: ReplicaSetNoPrimary, servers: [<ServerDescription ('ac-qnmlyva-shard-00-00.5r4lftj.mongodb.net', 27017) server_type: RSSecondary, rtt: 0.365439917997719>, <ServerDescription ('ac-qnmlyva-shard-00-01.5r4lftj.mongodb.net', 27017) server_type: Unknown, rtt: None>, <ServerDescription ('ac-qnmlyva-shard-00-02.5r4lftj.mongodb.net', 27017) server_type: RSSecondary, rtt: 0.32156440199833014>]>
 2026-06-07 13:17:53,535 [INFO] 127.0.0.1 - - [07/Jun/2026 13:17:53] "GET /nb_commandes_attente HTTP/1.1" 200 -
 2026-06-07 13:17:54,872 [INFO] 127.0.0.1 - - [07/Jun/2026 13:17:54] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-06-07 13:48:53,161 [INFO] Backup automatique demarre (toutes les 24h)
+2026-06-07 13:48:53,163 [INFO] Application Flask demarree !
+2026-06-07 13:48:53,225 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.21.81.121:5000
+2026-06-07 13:48:53,226 [INFO] [33mPress CTRL+C to quit[0m
+2026-06-07 13:48:53,229 [INFO]  * Restarting with stat
+2026-06-07 13:48:53,715 [INFO] Backup automatique demarre (toutes les 24h)
+2026-06-07 13:48:53,715 [INFO] Application Flask demarree !
+2026-06-07 13:48:53,765 [WARNING]  * Debugger is active!
+2026-06-07 13:48:53,774 [INFO]  * Debugger PIN: 556-560-558
+2026-06-07 13:49:05,194 [ERROR] Connexion MongoDB echouee : No replica set members found yet, Timeout: 10.0s, Topology Description: <TopologyDescription id: 6a2576c667936e422f18b6cb, topology_type: ReplicaSetNoPrimary, servers: [<ServerDescription ('ac-qnmlyva-shard-00-00.5r4lftj.mongodb.net', 27017) server_type: Unknown, rtt: None>, <ServerDescription ('ac-qnmlyva-shard-00-01.5r4lftj.mongodb.net', 27017) server_type: Unknown, rtt: None>, <ServerDescription ('ac-qnmlyva-shard-00-02.5r4lftj.mongodb.net', 27017) server_type: Unknown, rtt: None>]>
+2026-06-07 13:49:05,195 [INFO] 127.0.0.1 - - [07/Jun/2026 13:49:05] "GET /boutique HTTP/1.1" 200 -
+2026-06-07 13:49:21,369 [INFO] Backup cree : /home/ibrahima/terroir_local/backups/backup_20260607_134920.json
+2026-06-07 13:49:21,369 [ERROR] Erreur backup : [Errno 2] No such file or directory: '/home/ibrahima/terroir_local/backups/backup_20260605_234153.json'
+2026-06-07 13:49:22,503 [INFO] 127.0.0.1 - - [07/Jun/2026 13:49:22] "GET /boutique HTTP/1.1" 200 -
+2026-06-07 13:49:22,557 [INFO] 127.0.0.1 - - [07/Jun/2026 13:49:22] "GET /static/css/style.css HTTP/1.1" 200 -
+2026-06-07 13:49:30,260 [INFO] 127.0.0.1 - - [07/Jun/2026 13:49:30] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-06-07 13:49:30,468 [INFO] 127.0.0.1 - - [07/Jun/2026 13:49:30] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-06-07 13:49:41,983 [INFO] 127.0.0.1 - - [07/Jun/2026 13:49:41] "GET /stats HTTP/1.1" 200 -
+2026-06-07 13:49:42,043 [INFO] 127.0.0.1 - - [07/Jun/2026 13:49:42] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-06-07 13:49:45,254 [INFO] 127.0.0.1 - - [07/Jun/2026 13:49:45] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-06-07 13:50:17,661 [INFO] 127.0.0.1 - - [07/Jun/2026 13:50:17] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-06-07 13:50:45,686 [INFO] 127.0.0.1 - - [07/Jun/2026 13:50:45] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-06-07 13:51:19,617 [INFO] 127.0.0.1 - - [07/Jun/2026 13:51:19] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-06-07 13:51:52,998 [INFO] 127.0.0.1 - - [07/Jun/2026 13:51:52] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-06-07 13:52:20,014 [INFO] 127.0.0.1 - - [07/Jun/2026 13:52:20] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-06-07 13:52:50,704 [INFO] 127.0.0.1 - - [07/Jun/2026 13:52:50] "GET /nb_commandes_attente HTTP/1.1" 200 -
