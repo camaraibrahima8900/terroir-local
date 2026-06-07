@@ -8,7 +8,7 @@
     "telephone": "+221784760384",
     "lieu": "Koussanar",
     "cree_par": "admin",
-    "promo_global": 13
+    "promo_global": 7
   },
   "user": {
     "password": "$2b$12$eN1uBY0I4.K7XUW5EuIMj.5nrNiN0Cr1GNBo.Sa.TXkHDvcv/OrYG",
@@ -31,7 +31,7 @@
     "bloque": false,
     "telephone": "+221707621322",
     "lieu": "Koussanar",
-    "promo_global": 9
+    "promo_global": 0
   },
   "cmr": {
     "password": "$2b$12$I.rVCidNHdKGiZNqd4c3JOnfkOTDxHvSFqKeeef4wnDSZlvtET0a.",

@@ -32,7 +32,7 @@
                 <div class="card border-0 shadow-sm rounded-3 p-4 text-center h-100 payment-card"
                      onclick="choisirPaiement('wave')" id="card-wave"
                      style="cursor:pointer;border:2px solid transparent !important;transition:all 0.2s">
-                    <div style="font-size:2.5rem">🌊</div>
+                    <img src="{{ url_for('static', filename='img/wave.png') }}" alt="Wave" style="height:50px;object-fit:contain">
                     <div class="fw-bold mt-2 fs-5">Wave</div>
                     <div class="text-muted small">Mobile Money Senegal</div>
                     <div class="badge bg-success mt-2">Instantane</div>
@@ -45,7 +45,7 @@
                 <div class="card border-0 shadow-sm rounded-3 p-4 text-center h-100 payment-card"
                      onclick="choisirPaiement('orange')" id="card-orange"
                      style="cursor:pointer;border:2px solid transparent !important;transition:all 0.2s">
-                    <div style="font-size:2.5rem">🟠</div>
+                    <img src="{{ url_for('static', filename='img/orange_money.jpg') }}" alt="Orange Money" style="height:50px;object-fit:contain">
                     <div class="fw-bold mt-2 fs-5">Orange Money</div>
                     <div class="text-muted small">Mobile Money Afrique</div>
                     <div class="badge bg-warning mt-2">Rapide</div>

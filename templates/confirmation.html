@@ -138,12 +138,12 @@
                         <div class="p-3 text-center" style="background:#fafafa">
                             <div class="d-flex gap-3 justify-content-center align-items-center mb-2">
                                 <div class="text-center">
-                                    <div style="font-size:1.8rem">🌊</div>
+                                    <img src="{{ url_for('static', filename='img/wave.png') }}" alt="Wave" style="height:40px;object-fit:contain">
                                     <div class="small fw-bold text-primary">Wave</div>
                                 </div>
                                 <div style="width:1px;height:40px;background:#ddd"></div>
                                 <div class="text-center">
-                                    <div style="font-size:1.8rem">🟠</div>
+                                    <img src="{{ url_for('static', filename='img/orange_money.jpg') }}" alt="Orange Money" style="height:40px;object-fit:contain">
                                     <div class="small fw-bold text-warning">Orange Money</div>
                                 </div>
                                 <div style="width:1px;height:40px;background:#ddd"></div>
@@ -221,11 +221,11 @@
                     <div class="d-flex gap-2 mb-3">
                         <button onclick="choisirOperateur('wave')" id="btn-wave"
                                 class="btn btn-outline-primary rounded-3 flex-grow-1 operateur-btn">
-                            🌊 Wave
+                            <img src="{{ url_for('static', filename='img/wave.png') }}" alt="Wave" style="height:30px;object-fit:contain"> Wave
                         </button>
                         <button onclick="choisirOperateur('orange')" id="btn-orange"
                                 class="btn btn-outline-warning rounded-3 flex-grow-1 operateur-btn">
-                            🟠 Orange Money
+                            <img src="{{ url_for('static', filename='img/orange_money.jpg') }}" alt="Orange Money" style="height:30px;object-fit:contain"> Orange Money
                         </button>
                         <button onclick="choisirOperateur('cb')" id="btn-cb"
                                 class="btn btn-outline-success rounded-3 flex-grow-1 operateur-btn">

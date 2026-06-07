@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 50">
+  <rect width="160" height="50" rx="8" fill="#FF6600"/>
+  <circle cx="28" cy="25" r="16" fill="white"/>
+  <circle cx="28" cy="25" r="11" fill="#FF6600"/>
+  <circle cx="28" cy="25" r="6" fill="white"/>
+  <text x="100" y="21" font-family="Arial" font-size="12" font-weight="bold" fill="white" text-anchor="middle">Orange</text>
+  <text x="100" y="36" font-family="Arial" font-size="12" font-weight="bold" fill="white" text-anchor="middle">Money</text>
+</svg>
