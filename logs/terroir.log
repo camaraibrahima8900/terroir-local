@@ -14366,3 +14366,67 @@
 2026-06-07 13:51:52,998 [INFO] 127.0.0.1 - - [07/Jun/2026 13:51:52] "GET /nb_commandes_attente HTTP/1.1" 200 -
 2026-06-07 13:52:20,014 [INFO] 127.0.0.1 - - [07/Jun/2026 13:52:20] "GET /nb_commandes_attente HTTP/1.1" 200 -
 2026-06-07 13:52:50,704 [INFO] 127.0.0.1 - - [07/Jun/2026 13:52:50] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-06-07 14:03:16,257 [INFO] Backup automatique demarre (toutes les 24h)
+2026-06-07 14:03:16,258 [INFO] Application Flask demarree !
+2026-06-07 14:03:16,311 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.21.81.121:5000
+2026-06-07 14:03:16,312 [INFO] [33mPress CTRL+C to quit[0m
+2026-06-07 14:03:16,316 [INFO]  * Restarting with stat
+2026-06-07 14:03:16,838 [INFO] Backup automatique demarre (toutes les 24h)
+2026-06-07 14:03:16,839 [INFO] Application Flask demarree !
+2026-06-07 14:03:16,896 [WARNING]  * Debugger is active!
+2026-06-07 14:03:16,903 [INFO]  * Debugger PIN: 556-560-558
+2026-06-07 14:03:27,105 [INFO] Backup cree : /home/ibrahima/terroir_local/backups/backup_20260607_140327.json
+2026-06-07 14:03:29,671 [INFO] Backup cree : /home/ibrahima/terroir_local/backups/backup_20260607_140329.json
+2026-06-07 14:03:31,054 [INFO] 127.0.0.1 - - [07/Jun/2026 14:03:31] "GET /stats HTTP/1.1" 200 -
+2026-06-07 14:03:31,120 [INFO] 127.0.0.1 - - [07/Jun/2026 14:03:31] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-06-07 14:03:32,762 [INFO] 127.0.0.1 - - [07/Jun/2026 14:03:32] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-06-07 14:03:35,293 [INFO] 127.0.0.1 - - [07/Jun/2026 14:03:35] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-06-07 14:04:08,441 [INFO] 127.0.0.1 - - [07/Jun/2026 14:04:08] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-06-07 14:08:17,601 [INFO] Backup automatique demarre (toutes les 24h)
+2026-06-07 14:08:17,602 [INFO] Application Flask demarree !
+2026-06-07 14:08:17,651 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.21.81.121:5000
+2026-06-07 14:08:17,651 [INFO] [33mPress CTRL+C to quit[0m
+2026-06-07 14:08:17,656 [INFO]  * Restarting with stat
+2026-06-07 14:08:18,166 [INFO] Backup automatique demarre (toutes les 24h)
+2026-06-07 14:08:18,167 [INFO] Application Flask demarree !
+2026-06-07 14:08:18,218 [WARNING]  * Debugger is active!
+2026-06-07 14:08:18,228 [INFO]  * Debugger PIN: 556-560-558
+2026-06-07 14:08:28,654 [INFO] Backup cree : /home/ibrahima/terroir_local/backups/backup_20260607_140828.json
+2026-06-07 14:08:28,655 [INFO] Backup cree : /home/ibrahima/terroir_local/backups/backup_20260607_140828.json
+2026-06-07 14:08:30,931 [INFO] 127.0.0.1 - - [07/Jun/2026 14:08:30] "GET /stats HTTP/1.1" 200 -
+2026-06-07 14:08:30,984 [INFO] 127.0.0.1 - - [07/Jun/2026 14:08:30] "GET /static/css/style.css HTTP/1.1" 200 -
+2026-06-07 14:08:36,021 [INFO] 127.0.0.1 - - [07/Jun/2026 14:08:36] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-06-07 14:08:37,203 [INFO] 127.0.0.1 - - [07/Jun/2026 14:08:37] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-06-07 14:09:05,688 [INFO] 127.0.0.1 - - [07/Jun/2026 14:09:05] "GET /boutique HTTP/1.1" 200 -
+2026-06-07 14:09:05,738 [INFO] 127.0.0.1 - - [07/Jun/2026 14:09:05] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-06-07 14:09:06,535 [INFO] 127.0.0.1 - - [07/Jun/2026 14:09:06] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-06-07 14:09:11,021 [INFO] 127.0.0.1 - - [07/Jun/2026 14:09:11] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-06-07 14:09:26,718 [INFO] 127.0.0.1 - - [07/Jun/2026 14:09:26] "GET /boutique?categorie=Toutes&search=&promo=0&prix_min=&prix_max=&tri=nom&page=2 HTTP/1.1" 200 -
+2026-06-07 14:09:26,764 [INFO] 127.0.0.1 - - [07/Jun/2026 14:09:26] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-06-07 14:09:34,439 [INFO] 127.0.0.1 - - [07/Jun/2026 14:09:34] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-06-07 14:09:52,692 [INFO] 127.0.0.1 - - [07/Jun/2026 14:09:52] "GET /admin HTTP/1.1" 200 -
+2026-06-07 14:09:52,736 [INFO] 127.0.0.1 - - [07/Jun/2026 14:09:52] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-06-07 14:09:57,752 [INFO] 127.0.0.1 - - [07/Jun/2026 14:09:57] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-06-07 14:10:29,232 [INFO] 127.0.0.1 - - [07/Jun/2026 14:10:29] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-06-07 14:11:00,109 [INFO] 127.0.0.1 - - [07/Jun/2026 14:11:00] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-06-07 14:11:28,823 [INFO] 127.0.0.1 - - [07/Jun/2026 14:11:28] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-06-07 14:11:59,482 [INFO] 127.0.0.1 - - [07/Jun/2026 14:11:59] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-06-07 14:12:33,328 [INFO] 127.0.0.1 - - [07/Jun/2026 14:12:33] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-06-07 14:13:00,554 [INFO] 127.0.0.1 - - [07/Jun/2026 14:13:00] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-06-07 14:13:30,117 [INFO] 127.0.0.1 - - [07/Jun/2026 14:13:30] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-06-07 14:13:58,670 [INFO] 127.0.0.1 - - [07/Jun/2026 14:13:58] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-06-07 14:14:32,104 [INFO] 127.0.0.1 - - [07/Jun/2026 14:14:32] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-06-07 14:15:00,157 [INFO] 127.0.0.1 - - [07/Jun/2026 14:15:00] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-06-07 14:15:47,325 [ERROR] Connexion MongoDB echouee : ac-qnmlyva-shard-00-01.5r4lftj.mongodb.net:27017: timed out (configured timeouts: connectTimeoutMS: 20000.0ms)
+2026-06-07 14:15:47,326 [INFO] 127.0.0.1 - - [07/Jun/2026 14:15:47] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-06-07 14:16:01,048 [INFO] 127.0.0.1 - - [07/Jun/2026 14:16:01] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-06-07 14:16:27,695 [INFO] 127.0.0.1 - - [07/Jun/2026 14:16:27] "GET /nb_commandes_attente HTTP/1.1" 200 -
+2026-06-07 14:16:58,989 [ERROR] Connexion MongoDB echouee : ac-qnmlyva-shard-00-01.5r4lftj.mongodb.net:27017: timed out (configured timeouts: connectTimeoutMS: 20000.0ms)
+2026-06-07 14:16:58,989 [INFO] 127.0.0.1 - - [07/Jun/2026 14:16:58] "GET /boutique HTTP/1.1" 200 -
+2026-06-07 14:17:00,044 [INFO] 127.0.0.1 - - [07/Jun/2026 14:17:00] "GET /nb_commandes_attente HTTP/1.1" 200 -

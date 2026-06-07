@@ -149,7 +149,7 @@
                 <div class="col-md-3">
                     <div class="card border-danger h-100">
                         <div class="card-body text-center p-3">
-                            <div style="font-size:2.5rem">{{ p.image }}</div>
+                            {% if p.photo %}<img src="{{ p.photo }}" style="height:60px;width:60px;object-fit:cover;border-radius:8px">{% else %}<div style="font-size:2.5rem">{{ p.image }}</div>{% endif %}
                             <div class="fw-bold small mt-2">{{ p.nom }}</div>
                             <div class="text-danger fw-bold">Stock: {{ p.stock }}</div>
                             <div class="text-muted" style="font-size:0.75rem">{{ p.producteur }}</div>
